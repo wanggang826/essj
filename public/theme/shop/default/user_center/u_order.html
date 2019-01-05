@@ -1,0 +1,322 @@
+<link type="text/css" rel="stylesheet" href="{$css}/myindent.css" />
+        <div class="h_concent">
+            <div class="position">
+                <p>您的位置：</p>
+                <a href="">首页 ></a>
+                <a href="">订单中心 ></a>
+                <p>我的订单</p>
+            </div>
+            <div class="h_indent">
+                <div class="indent_fl">
+                    <div class="h_sidebar">
+                    {include file="default/user_center/side_bar"}
+                    </div>
+                </div>
+                <div class="indent_ri">
+                     <div id="notice-tit" class="notice-tit">
+                   <ul>
+                    <li class="select" >全部订单<span>{$recycle.all}</span></li>
+                    <li >待付款<span>{$recycle.money}</span></li>
+                    <li >待发货<span>{$recycle.momentum}</span></li>
+                    <li >待收货<span>{$recycle.delivery}</span></li>
+                    <li class="order_11">待评价<span>{$recycle.evaluation}</span></li>
+                    <div class="h_dustbin"><a href="{:U('order_recycle')}"><i class="icon i-lajixiang"></i><span>订单回收站</span></a></div>
+                    <div class="clear"></div>
+                   </ul>
+                     </div>
+
+            <div class="notice-con" id="notice-con">
+                <div class="mod">
+                    <div class="h_modhear">
+                        <div class="h_modheardiv1 h_sp"><span class="modhear_sp1">订单详情</span></div>
+                        <div class="h_modheardiv2 h_sp"><span class="modhear_sp2">收货人</span></div>
+                        <div class="h_modheardiv3 h_sp"><span class="modhear_sp3">金额</span></div>
+                        <div class="h_modheardiv4 h_sp"><div class="h_spdiv h_spdivi"><span class="modhear_sp4 clickdddddd">全部状态</span><i class="icon i-xiala"></i></div></div>
+                        <div class="h_modheardiv5 h_sp"><span class="modhear_sp5">订单详情</span></div>
+                        <div class="clear"></div>
+                        <div class="modhearsp4box">
+                            <ul>
+                                <li onclick="status_Ajax(0,0)">全部状态</li>
+                                <li onclick="status_Ajax(2,0)">等待买家付款</li>
+                                <li onclick="status_Ajax(3,0)">买家已付款</li>
+                                <li onclick="status_Ajax(5,0)">卖家已发货</li>
+                                <li onclick="status_Ajax(6,0)">交易成功</li>
+                                <li onclick="status_Ajax(7,0)">退款中的订单</li>
+                                <li onclick="status_Ajax(12,0)">取消交易</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {include file="default/user_center/order_list"}
+                </div>
+                <div class="mod">
+                    <div class="h_modhear">
+                        <div class="h_modheardiv1 h_sp"><span class="modhear_sp1">订单详情</span></div>
+                        <div class="h_modheardiv2 h_sp"><span class="modhear_sp2">收货人</span></div>
+                        <div class="h_modheardiv3 h_sp"><span class="modhear_sp3">金额</span></div>
+                        <div class="h_modheardiv4 h_sp"><div class="h_spdiv"><span class="modhear_sp4">买家待付款</span></div></div>
+                        <div class="h_modheardiv5 h_sp"><span class="modhear_sp5">订单详情</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    {include file="default/user_center/order_list"}
+                </div>
+                <div class="mod">
+                    <div class="h_modhear">
+                        <div class="h_modheardiv1 h_sp"><span class="modhear_sp1">订单详情</span></div>
+                        <div class="h_modheardiv2 h_sp"><span class="modhear_sp2">收货人</span></div>
+                        <div class="h_modheardiv3 h_sp"><span class="modhear_sp3">金额</span></div>
+                        <div class="h_modheardiv4 h_sp"><div class="h_spdiv"><span class="modhear_sp4">买家待收货</span></div></div>
+                        <div class="h_modheardiv5 h_sp"><span class="modhear_sp5">订单详情</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    {include file="default/user_center/order_list"}
+                </div>
+                <div class="mod">
+                    <div class="h_modhear">
+                        <div class="h_modheardiv1 h_sp"><span class="modhear_sp1">订单详情</span></div>
+                        <div class="h_modheardiv2 h_sp"><span class="modhear_sp2">收货人</span></div>
+                        <div class="h_modheardiv3 h_sp"><span class="modhear_sp3">金额</span></div>
+                        <div class="h_modheardiv4 h_sp"><div class="h_spdiv"><span class="modhear_sp4">买家待发货</span></div></div>
+                        <div class="h_modheardiv5 h_sp"><span class="modhear_sp5">订单详情</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    {include file="default/user_center/order_list"}
+                </div>
+                <div class="mod">
+                    <div class="h_modhear">
+                        <div class="h_modheardiv1 h_sp"><span class="modhear_sp1">订单详情</span></div>
+                        <div class="h_modheardiv2 h_sp"><span class="modhear_sp2">收货人</span></div>
+                        <div class="h_modheardiv3 h_sp"><span class="modhear_sp3">金额</span></div>
+                        <div class="h_modheardiv4 h_sp"><div class="h_spdiv"><span class="modhear_sp4">买家待评价</span></div></div>
+                        <div class="h_modheardiv5 h_sp"><span class="modhear_sp5">订单详情</span></div>
+                        <div class="clear"></div>
+                    </div>
+                    {include file="default/user_center/order_list"}
+                </div>
+            </div>
+            {include file="default/user_center/recom_goodlist"}
+        </div>
+        <div class="clear"></div>
+            </div>
+                 </div>
+
+        <!--foot-->
+
+<script>
+    //定义ajax全局变量开始
+    var htmlobj = $('.indent_list .h_details').eq(0).clone();//克隆的部分模板
+    var good =  htmlobj.find('.details_butdiv1').eq(0).clone();//克隆的部分模板
+    var status_texe = htmlobj.find('.details_butdiv4').eq(0).clone();
+    //定义ajax全局变量结束
+        $(document).ready(function() {
+            var order_css = $("#order_css").val();
+            var titles=document.getElementById('notice-tit').getElementsByTagName('li');
+            $(titles).removeAttr("class");
+            $(titles).eq(order_css).addClass('select');
+            //点击删除
+            $(".dustbin").click(function(){
+                $(this).parent().parent().remove();
+            })
+           //头部收藏
+            $(".shouc").hover(function() {
+                $(".shouc img").attr("src", "img/shoucangh.png")
+            },function() {
+                $(".shouc img").attr("src", "img/shoucang.png")
+            });
+            //全部状态的下拉列表
+        $(".modhearsp4box li").bind('click', function(){
+            $(".clickdddddd").html($(this).html());
+        });
+        $(".clickdddddd").click(function(){
+                $(".modhearsp4box").toggle();
+                $(this).parent().toggleClass("h_spdivbor");
+                $(this).addClass("h_spdivborsp");
+                $(".modhear_spimg").attr('src','img/jian2.png');
+                $(".h_spdiv").css({"border":"0"});
+                if($(".modhearsp4box").css("display")==="none"){
+                    $(".clickdddddd").removeClass("h_spdivborsp");
+                    $(".h_spdiv").css({"border":"1px solid #FFF","border":"0"});
+                    $(".modhear_spimg").attr('src','img/jian.png');
+                }
+            })
+          }).click (function (e){
+            e = e || window.event;
+            if (e.target != $ ('.clickdddddd')[0] && e.target != $ ('.modhearsp4box')[0])
+            {
+                $('.modhearsp4box').hide();
+                $(".modhear_spimg").attr('src','img/jian.png');
+                $(".clickdddddd").removeClass("h_spdivborsp");
+                $(".h_spdiv").css({"border":"1px solid #fff","border":"0"});
+            }
+          });
+         //选项卡
+            window.onload=function(){
+                //全部订单
+            var titles=document.getElementById('notice-tit').getElementsByTagName('li');
+            var divs=document.getElementById('notice-con').getElementsByClassName('mod');
+            if(titles.length!=divs.length)
+                return;
+                for(var i=0;i<titles.length;i++){
+                    titles[i].id=i;
+                    titles[i].onclick=function(){
+                        for(var j=0;j<titles.length;j++){
+                            titles[j].className='';
+                            divs[j].style.display='none';
+                        }
+                        titles[this.id].className='select';
+                        divs[this.id].style.display='block';
+                        //AJAX切换数据
+                        var status;
+                        if(this.id==0){
+                            status=0;
+                        }else if(this.id==1){
+                            status=2;
+                        }else if(this.id==2){
+                            status=4;
+                        }else if(this.id==3){
+                            status=5;
+                        }else if(this.id==4){
+                            status=11;
+                        }
+                        status_Ajax(status,this.id);
+
+                    }
+                }
+                //为你推荐
+                function tab(){
+                    var index=0;
+                    var timer=null;
+                    var commoditys=document.getElementById('h_commodity');
+                    var recommendTopli=document.getElementById('h_recommendtopli').getElementsByTagName('li');
+                    var commodity=document.getElementById('h_commodity').getElementsByClassName('commodity_particulars');
+                    var prev = document.getElementById('hrecommendtopli_fl');
+                    var next = document.getElementById('hrecommendtopli_ri');
+                    for(var i=0;i<recommendTopli.length;i++){
+                        recommendTopli[i].id=i;
+                        recommendTopli[i].onmouseover=function(){
+                        clearInterval(timer);
+                        changeOption(this.id);
+                    }
+                        recommendTopli[i].onmouseout=function(){
+                        timer=setInterval(autoPlay,4000);
+                    }
+                }
+                    commoditys.onmouseover=function(){
+                        clearInterval(timer);
+                    }
+                    commoditys.onmouseout=function(){
+                        timer=setInterval(autoPlay,4000);
+                    }
+                        next.onclick = function() {
+                            if(index >=3) {
+                             index = 0;
+                           } else {
+                             index += 1;
+                        }
+                           changeOption(index);
+                        }
+                        prev.onclick = function() {
+                            if(index <= 0) {
+                             index = 3;
+                           } else {
+                             index -= 1;
+                        }
+                           changeOption(index);
+                        }
+                        if(timer){
+                           clearInterval(timer);
+                           timer=null;
+                        }
+                        timer=setInterval(autoPlay,4000);
+                          function autoPlay(){
+                              index++;
+                              if(index>=recommendTopli.length){
+                              index=0;
+                           }
+                           changeOption(index);
+                       }
+                 function changeOption(curIndex){
+                    for(var j=0;j<recommendTopli.length;j++){
+                       recommendTopli[j].className='';
+                       commodity[j].style.display='none';
+                   }
+                    recommendTopli[curIndex].className='backradius';
+                    commodity[curIndex].style.display='block';
+                    index=curIndex;
+                }
+            }
+                tab();
+        }
+        function status_Ajax(status,id) {
+            var  url = "{:U('UserCenter/u_order')}";
+            var  status = status;
+            $.ajax({
+                url:url,
+                type:'post',
+                data:{'status':status,'id':id},
+                dataType:'json',
+                success:function(order){
+                    var data    = order.data;
+                    var length  = data.length;
+                    htmlobj.find('.details_butdiv1').remove();
+                    $(".indent_list").empty();
+                    $(".page1").empty();
+                    if(length){
+                        for (i=0;i<length;i++){
+                            var html = htmlobj.clone();
+                            //头部循环开始
+                            html.find('.order_create_time').html(data[i].create_time);
+                            html.find('.order_sn').html(data[i].order_sn);
+                            html.find('.order_shop_id').html(data[i].shop_id);
+                            //头部循环结束
+                            for(j=0;j<data[i].goods_info.length;j++){
+                                //商品循环开始
+                                var goods =good.clone();
+                                goods.find('.good_image').attr('src',data[i].good_image+data[i].goods_info[j].good_image);
+                                goods.find('.goods_name').html(data[i].goods_info[j].goods_name);
+                                goods.find('.goods_count').html("x"+data[i].goods_info[j].goods_count);
+                                html.find('.details_butdiv').append(goods[0].outerHTML);
+                                //商品循环结束
+                            }
+                            html.find('.user_name').html(data[i].user_name);
+                            html.find('.total_price').html(data[i].total_price);
+                            html.find('.deal_price').html(data[i].deal_price);
+                            html.find('.status_text').html(data[i].statusText);
+                            html.find('.url_info').attr('href',data[i].url_info +"?order_id="+ data[i].order_id +"& order_sn="+data[i].order_sn);
+                            if (data[i].status == 2){
+                                html.find('.url_method').html('去付款');
+                                html.find('.url_method').attr('href',data[i].url_money +"?order_id="+ data[i].order_id +"& step=2 &paytype="+data[i].paytype);
+                                html.find('.cancel_order').html('取消清单');
+                                html.find('.cancel_order').attr('href','#');
+                            }else if(data[i].status == 5){
+                                html.find('.url_method').html('确认收货');
+                                html.find('.url_method').attr('href','#');
+                                html.find('.cancel_order').html('取消清单');
+                                html.find('.cancel_order').attr('href','#');
+                            }else if(data[i].status == 6){
+                                html.find('.url_method').html('');
+                                html.find('.url_method').attr('href','#');
+                                html.find('.cancel_order').html('取消清单');
+                                html.find('.cancel_order').attr('href','#');
+                            }else if(data[i].status == 11){
+                                html.find('.url_method').html('去评价');
+                                html.find('.url_method').attr('href',data[i].url_evaluate +"?order_sn="+data[i].order_sn);
+                                html.find('.cancel_order').html('取消清单');
+                                html.find('.cancel_order').attr('href','#');
+                            }
+                            $(html).appendTo(".indent_list");
+                        }
+                        $(data[0].page).appendTo(".page1");
+                        $(".active").addClass("adcol");
+                    }
+                },
+            })
+        }
+
+    //分页
+    $(function(){
+        $(".active").addClass("adcol");
+        $(".active").unbind();
+    })
+        </script>
+    </body>
+</html>

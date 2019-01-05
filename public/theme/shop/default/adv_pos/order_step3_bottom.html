@@ -1,0 +1,10 @@
+{if condition='isset($adv["ORDER_STEP3_BOTTOM"])'}
+{~$vo=$adv['ORDER_STEP3_BOTTOM']['0']}
+<a  href="{$vo.adv_url}" ><img src="{$vo.adv_img|getImg}" alt="" class="footba"></a>
+<style type="text/css">
+    .footba{
+        width: 100%;
+        height: 113px;
+    }
+</style>
+{/if}

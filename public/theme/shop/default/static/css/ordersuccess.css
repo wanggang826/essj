@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 微软雅黑;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+.ordercont{
+    width: 1190px;
+    margin: 0 auto;
+}
+.l_hand{
+    color: #ED145B;
+    font-size: 60px;
+    font-weight: 600;
+    margin: 50px 0;
+}
+.l_handson{
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 30px;
+}
+.cont{
+    text-align: center;
+    border: 1px solid #F1F1F1;
+}
+.gouzi{
+   margin-top: 50px;
+    font-size: 22px;
+    color: #ED145B;
+}
+.img1{
+    vertical-align: middle;
+}
+.fanhui{
+    margin: 50px;
+}
+.onea{
+    padding: 5px 10px;
+    background: #ED145B;
+    color: white;
+    font-size: 14px;
+}
+.twoa{
+    color: #BDBDBD;
+    font-size: 18px;
+    padding-left: 60px;
+}
+.backgr{
+    background: #FBFBFB;
+    padding: 15px;
+    border-top: 1px solid #F1F1F1;
+}
+
+
+
+
+.content{
+    border: 1px solid #F1F1F1;
+    position: relative;
+}
+.contson{
+    width:900px ;
+    margin: 70px auto;
+    color: #949494;
+}
+.contimg{
+    width: 50px;
+    position: absolute;
+    left: 80px;
+    top: 55px;
+}
+.contson p{
+    margin-top: 25px;
+    font-size: 16px;
+}
+.cont_so{
+    font-size: 22px;
+    color: #F27595;
+}
+.contsonri{
+    float: right;
+    font-size: 24px;
+    color: black;
+}
+.contsonri span{
+    color: #F27595;
+}
+.contson_a{
+    color: #F48BA3;
+    font-size: 16px;
+}
+.lincaor{
+    color: black;
+}
+.lincaor span{
+    color: #949494 ;
+}
+.zhifukuang{
+    border: 1px solid #F1F1F1;
+    width:1000px ;
+    margin: 50px auto;
+    box-shadow:3px 3px 5px rgba(235,235,235, .5);
+}
+.zhifukuang h1{
+    font-size: 22px;
+    padding: 10px 50px;
+}
+.zhifukuang h1 p{
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.zhifukuangson{
+    width: 700px;
+    margin: 50px auto;
+    height: 400px;
+    position: relative;
+}
+
+.qitazhifu{
+    font-size: 20px;
+    color: #949494;
+    margin-left: 50px;
+    display: block;
+    margin-bottom: 50px;
+}
+.footba{
+ margin: 50px 0 30px 0;
+}
+
+
+
+
+.d_dingdan img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.d_dingdan p {
+    color: #ED3263;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.d_padding {
+    padding: 0 !important;
+}
+
+.grap {
+    color: #999999 !important;
+}
+
+.d_title {
+    font-size: 34px;
+    color: #4C4C4C;
+    margin-top: 40px;
+}
+
+.ibackgroud {
+    position: relative;
+    cursor: pointer;
+    width: 23%;
+    float: left;
+    padding: 3px !important;
+    background: url(../../img/buxuanzedingdan_05.jpg)no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mag-left1 {
+    margin-left: 30px;
+}
+
+.address {
+    color: #4C4C4C;
+    background: white;
+    margin: 3px;
+    height: 115px;
+    overflow: hidden;
+}
+
+.address p {
+    margin: 0 2.5%;
+}
+
+.default {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.maginTop {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.height1 {
+    height: 40px;
+    overflow: hidden;
+}
+

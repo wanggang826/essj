@@ -1,0 +1,161 @@
+
+        <link rel="stylesheet" type="text/css" href="{$css}/ckdingdan.css" />
+
+
+            <!--head-->
+            <div class="container">
+                <div class="row">
+                    <div class="position">
+                        <p>您的位置：</p>
+                        <a href="">首页 ></a>
+                        <a href="">卖家中心 ></a>
+                        <p>订单详情</p>
+                    </div>
+                    <div class="order_deatail">
+                           <p>订单编号：<span>{$deliverInfo.order_sn}</span>创建时间：<span>{$deliverInfo.create_time}</span></p>
+                    </div>
+                    <div class="d-message">
+                        <div class="messagedindan">
+                            <div class="messagehead">
+                                <p class="zuoce">
+                                </p>
+                                <p class="messagedaohang">
+                                    物流编号：{$deliverInfo.shipping_code}
+                                </p>
+                            </div>
+                            <div class="messagediv">
+                                <div class="messagep">
+                                    <p class="messagep1">发货方式：</p>
+                                    <p class="messagep2">在线下单</p>
+                                </div>
+                                <div class="messagep">
+                                    <p class="messagep1">物流公司：</p>
+                                    <p class="messagep2">{$deliverInfo.method}</p>
+                                </div>
+                                <div class="messagep">
+                                    <p class="messagep1">运单号：</p>
+                                    <p class="messagep2">{$deliverInfo.waybill_sn}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="messagediv2">
+                            <div class="messagehead">
+                                <p class="zuoce">
+                                </p>
+                                <p class="messagedaohang">
+                                    物流信息
+                                </p>
+
+                            </div>
+                            <div class="messageinfo">
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/img_ssss.jpg" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                                <div class="messageinfodiv">
+                                    <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                                    <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart">
+                        <div class="messagehead">
+                            <p class="zuoce"></p>
+                            <p class="messagedaohang">
+                                商品信息
+                            </p>
+                        </div>
+                        <div class="cartdiv">
+                            <div class="cartdiv1">
+                                <p class="cartdiv1p width1">
+                                    商品名称
+                                </p>
+                                <p class="cartdiv1p width2">
+                                    商品属性
+                                </p>
+                                <p class="cartdiv1p width3">
+                                    单价
+                                </p>
+                                <p class="cartdiv1p width4">
+                                    数量
+                                </p>
+                                <p class="cartdiv1p width5">
+                                    状态
+                                </p>
+                            </div>
+
+                            <div class="cartov">
+                                <div class="carthead">
+                                    <p class="cart-p1"><span class="cartspan1">店铺名称:</span><span>{$deliverInfo.shop_name}</span></p>
+                                    <p class="cart-p1"><span>卖家名称:</span><span>{$deliverInfo.user_name}</span></p>
+                                </div>
+                                {volist name="goodsInfo" id="vo"}
+                                <div class="cartfont heights">
+                                    <div class="width1 cartcont">
+                                        <img class="cartimg" src="{$vo.good_image|getImg}" alt="" />
+                                        <div class="cartfontdiv">
+                                            <p class="cartfontdiv1">{$vo.recom_desc}</p>
+                                            <p>春夏新款 CA200190359</p>
+                                        </div>
+                                        <div class="dnumber">
+                                            <p>x{$vo.goods_count}</p>
+                                        </div>
+                                    </div>
+                                    <div class="cartcont cartleft1 width2">
+                                        {volist name="vo['good_attr']" id="good_attr" k="key"}
+                                        <p>{$key}：{$good_attr}</p>
+                                        {/volist}
+                                    </div>
+                                    <div class="cartcont cartleft2 width3">
+                                        <p>{$vo.price}</p>
+
+                                    </div>
+                                    <div class="cartcont cartleft2 width4">
+                                        <p>{$vo.goods_count}</p>
+
+                                    </div>
+                                    <div class="cartcont cartleft2 width5 margin5">
+                                        <p>{$vo.status}</p>
+                                    </div>
+                                </div>
+                                {/volist}
+                                <div class="carttext">
+                                    <div class="carttext1">
+                                        <p class="cartdp"><span class="cartpspan">运费（快递）</span>￥{$deliverInfo.despatch_money}</p>
+                                        <p class="cartdp"><span>商品总价</span> ￥{$deliverInfo.deal_price}</p>
+                                        <p class="cartdp"><span>订单总价</span> ￥{$deliverInfo.deal_price}</p>
+                                    </div>
+                                    <p class="cartdp1"><span>实付款：</span>￥{$deliverInfo.pay_price} </p>
+                                </div>
+                            </div>
+
+                            <div class="order_deconts">
+                                <h5><span>收货信息：</span>{$addressInfo.citys}{$addressInfo.address} ， {$addressInfo.user_name} ，{$addressInfo.post_code} ， {$addressInfo.user_phone}  </h5>
+                                <h5><span>发货信息：</span>{$deliverInfo.citys}{$deliverInfo.address} ， {$deliverInfo.user_name} ， {$deliverInfo.user_phone}  </h5>
+                                <h5><span>退货信息：</span>{$deliverInfo.citys}{$deliverInfo.address} ， {$deliverInfo.user_name} ， {$deliverInfo.user_phone}  </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

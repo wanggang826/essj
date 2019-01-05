@@ -1,0 +1,4 @@
+{if condition='isset($adv["SHOP_INDEX_BOTTOM"])'}
+{~$vo=$adv['SHOP_INDEX_BOTTOM']['0']}
+<a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img class="banrbottom" src="{$vo.adv_img|getImg}" alt="店铺首页底部广告位shop_index_bottom" /></a>
+{/if}

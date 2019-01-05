@@ -1,0 +1,98 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('users/index')}" class="panel-body hidden-xs form-inline">
+                <div class="form-group">
+                    <input type="text" placeholder="用户名" id="ex1" class="form-control" name="account" value="{:input('account')}">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="昵称" id="ex1" class="form-control" name="nickname" value="{:input('nickname')}">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="手机" id="ex1" class="form-control" name="phone" value="{:input('phone')}">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="邮箱" id="ex1" class="form-control" name="email" value="{:input('email')}">
+                </div>
+
+                <div class="form-group pull-right">
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                            <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                        </button>
+                        <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                            <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                        </a>
+                    </div>
+                </div>
+
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+        <a href="{:U('users/add')}" class="btn btn-outline btn-default js-window-load"js-title="新增用户" js-unique="true">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+        </a>
+        <a href="{:U('Users/del')}" class="btn btn-outline btn-default js-del-btn del-all" text="删除后将无法恢复，请谨慎操作">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+        </a>
+        </div>
+        <div class="pull-right">
+            {$lists->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="50">ID</th>
+                <th>用户名</th>
+                <th class="hidden-xs">昵称</th>
+                <th width="50" class="hidden-xs">性别</th>
+                <th class="hidden-xs">手机</th>
+                <th class="hidden-xs">邮箱</th>
+                <th class="hidden-xs">会员地址</th>
+                <th width="160" class="hidden-xs">注册日期</th>
+                <th width="160" class="hidden-xs">最后登录时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {volist name="lists" id="vo"}
+            <tr>
+       		   <td width='1'><input type="checkbox" class="i-checks" value="{$vo.user_id}" name="input[]"></td>
+                <td>{$vo.user_id}</td>
+                <td>{$vo.account}</td>
+                <td class="hidden-xs">{$vo.nickname}</td>
+                <td class="hidden-xs">
+                {switch name="vo.sex"}
+                    {case value="1"}男{/case}
+                    {case value="2"}女{/case}
+                    {default}未知
+                {/switch}
+                </td>
+                <td class="hidden-xs">{$vo.phone}</td>
+                <td class="hidden-xs">{$vo.email}</td>
+                <td><a href="{:U('users/address_detail',['user_id'=>$vo.user_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.account}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">查看地址</span></a></td>
+                <td class="hidden-xs">{$vo.create_time}</td>
+                <td class="hidden-xs">{$vo.last_login_time|date="Y-m-d H:i:s",###}</td>
+                <td>
+                    <span class="btn-group">
+                        <a href="{:U('users/edit',['user_id'=>$vo.user_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.account}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+                        {if condition="$vo.status eq 0"}
+                        <a href="{:U('users/status',['user_id'=>$vo.user_id,'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="启用后该用户可以正常登录"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用</span></a>
+                        {elseif condition="$vo.status eq 1"/}
+                        <a href="{:U('users/status',['user_id'=>$vo.user_id,'status'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后该用户将无法登录,请谨慎操作！"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a>
+                        {/if}
+                        <a href="{:U('users/del',['id'=>$vo.user_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                    </span>
+                </td>
+            </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    function page_size(){
+        $('.pagesize_form').submit();
+    }
+</script>

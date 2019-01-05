@@ -1,0 +1,46 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('users/rank_edit')}" method='post'>
+    <!-- 自定义大小 -->
+    <input type='hidden' name='rank_id' value='{$rank_info.rank_id}'>
+    <div class="form-group">
+        <label for="rank_name" class="col-sm-2 control-label">等级类别</label>
+        <div class="col-sm-4">
+            <input type="text" name="rank_name" class="form-control" id="rank_name" placeholder="等级类别名称" value="{$rank_info.rank_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="start_score" class="col-sm-2 control-label">开始积分</label>
+        <div class="col-sm-4">
+            <input type="text" name="start_score" class="form-control" id="start_score" placeholder="开始积分" value="{$rank_info.start_score}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="end_score" class="col-sm-2 control-label">结束积分</label>
+        <div class="col-sm-4">
+            <input type="text" name="end_score" class="form-control" id="end_score" placeholder="结束积分" value="{$rank_info.end_score}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sort" class="col-sm-2 control-label">排序</label>
+        <div class="col-sm-2">
+            <input type="tel" name="sort" class="form-control" id="sort" placeholder="排序" value="{$rank_info.sort}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="status" value='1' class="mgr mgr-primary mgr-lg" {if condition='$rank_info.status eq 1'}checked{/if}><span>正常</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="status" value='0' class="mgr mgr-primary mgr-lg" {if condition='$rank_info.status eq 0'}checked{/if}><span>禁用</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>

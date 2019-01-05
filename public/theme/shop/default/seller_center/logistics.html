@@ -1,0 +1,192 @@
+
+<link rel="stylesheet" href="{$css}/usernew.css">
+<link rel="stylesheet" href="{$web_static}icon/iconfont.css">
+<style>
+    .management_rightsoninputone,
+    .management_rightsoninputbutton{
+        width:180px;
+        margin-top:-5px;
+    }
+</style>
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>物流管理</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">物流管理</div></div>
+        <form action="{:U('logistics')}" method="post">
+            <div class="management_right">
+                <div class="management_rightson">
+                    <span>收件人</span>
+                    <input type="text" name="user_name" class="management_rightsoninput">
+                </div>
+
+                <div class="management_rightson">
+                    <span>买家昵称</span>
+                    <select name="user_id" id="nickname" class="management_rightsoninput">
+                        <option value="">全部</option>
+                        {volist name="nickname" id="vo" k="key"}
+                        <option value="{$key}">{$vo}</option>
+                        {/volist}
+                    </select>
+                </div>
+
+                <div class="management_rightson">
+                    <span>订单状态</span>
+                    <select name="status" id="status" class="management_rightsoninput">
+                        <option value="">全部</option>
+                        {volist name="status" id="vo" k="key"}
+                        <option value="{$key}">{$vo}</option>
+                        {/volist}
+                    </select>
+                </div>
+
+                <div class="management_rightson setime">
+                    <span>创建时间</span>
+                    <input type="text" name="datestart" class="management_rightsoninputone  i-datestart" id="date3" placeholder="开始日期" />
+                    至
+                    <input type="text" name="dateend" class="management_rightsoninputone  i-dateend" placeholder="结束日期" />
+                </div>
+
+                <div class="management_rightson">
+                    <!--<button class="management_rightsoninputbutton sousuo-btn js-submit-btn" type="submit">搜索</button>-->
+                    <input type="submit" value="搜索" class="management_rightsoninputbutton sousuo-btn" />
+                </div>
+            </div>
+        </form>
+
+        <div class="management_rightcont" id="checkAll">
+            <div class="ordercont">
+                <div class="orderconts"><input type="checkbox" id="getId" name="order_id[]" ></div>
+                <input type="button" value="批量发货" onclick="check_submit()" >
+            </div>
+            <form id="check_all" action="{:U('deliver')}" method="post">
+            {volist name="orderInfo" id="vo"}
+            <div class="indent_rirgt_delivercont" >
+                <h6 class="indent_rirgt_deliverh6">
+                    {if condition="$vo.status eq 4"}
+                    <input type="checkbox" class="indent_rirgt_delivercontchbox" name="order_id[]" value="{$vo.order_id}"  oid="{$vo.order_id}">
+                    {/if}
+                    订单编号：<span class="indent_rirgt_deliverhao">{$vo.order_sn}</span>
+                    创建时间：<span>{$vo.create_time}</span>
+                </h6>
+                <div class="indent_rirgt_deliverconts clearfloat">
+
+                    <div class="indent_rirgt_delivercontsleft">
+                        {volist name="vo['orders']" id="orders"}
+                         <div class="indent_rirgt_delivercontslefts">
+                            <img src="{$orders.good_image|getImg}" alt="" class="management_rightconttwospansonimgs">
+                            <div class="management_rightconttwospansonones">
+                                <p>{$orders.goods_name}</p>
+
+                                {volist name="orders['good_attr']" id="good_attr" k="key"}
+                                <p>{$key}：{$good_attr}</p>
+                                {/volist}
+
+                            </div>
+                            <div class="management_rightconttwospansononess">
+                                ￥{$orders.price}x{$orders.goods_count}
+                            </div>
+                        </div>
+                        {/volist}
+                    </div>
+
+                    <div class="indent_rirgt_delivercontsright ">
+                        <p>买家帐号：<span>{$vo.user_id}</span></p>
+                        <p>收货地址：<span>{$vo.province}{$vo.city}{$vo.area}{$vo.address}</span></p>
+                        <p>联系电话：<span>{$vo.user_phone}</span></p>
+                        <p>买家备注：<span>{$vo.dess}</span></p>
+                    </div>
+                </div>
+                {if condition="$vo.status eq 4"}
+                <div class="physicafoot clearfloat">
+                    <a href="javascript:delivery('{$vo.order_id}')" class="physicafoota">发货</a>
+                </div>
+                {else/}
+                <div class="physicafoot clearfloat">
+                    <span class="physicafootspan">{$vo.statusText}</span>
+                    <a href="{:U('order_detail',['order_id'=>$vo.order_id])}" class="physicafootas">物流订单详情</a>
+                </div>
+                {/if}
+            </div>
+            {/volist}
+            <div class="page">
+                <div class="page1">
+                    {$orderInfo->render()}
+                </div>
+            </div>
+           <!-- <div class="indent_rirgt_delivercont">
+                <h6 class="indent_rirgt_deliverh6"><input type="checkbox" class="indent_rirgt_delivercontchbox">订单编号：<span class="indent_rirgt_deliverhao">44607652199654</span> 创建时间：  <span>2017-6-2015:09</span> </h6>
+                <div class="indent_rirgt_deliverconts clearfloat">
+                    <div class="indent_rirgt_delivercontsleft">
+                        <img src="{$img}/01.jpg" alt="" class="management_rightconttwospansonimgs">
+                        <div class="management_rightconttwospansonones">
+                            <p>Gap女装 舒适亚麻直筒套头上衣527956 纤维</p>
+                            <p>颜色分类：黑色两件套</p>
+                            <p>尺寸：s</p>
+                        </div>
+                        <div class="management_rightconttwospansononess">
+                            ￥86x1
+                        </div>
+                    </div>
+                    <div class="indent_rirgt_delivercontsright ">
+                        <p>买家帐号：<span>我是大帅哥</span></p>
+                        <p>收货地址：<span>广东省深圳市龙华新区金华大厦99楼909 电话 5181312222</span></p>
+                        <p>买家备注：<span>哈哈哈哈哈哈哈哈</span></p>
+                    </div>
+
+                </div>
+                <div class="physicafoot clearfloat">
+                  <span class="physicafootspan">对方已签收</span>
+                    <a href="" class="physicafootas">物流订单详情</a>
+                </div>
+            </div>-->
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!--分页样式-->
+<script>
+    $(function(){
+        $(".active").addClass("adcol");
+    })
+</script>
+<!--单个订单发货-->
+<script type="text/javascript">
+    function delivery(id) {
+        /*if($('.indent_rirgt_delivercontchbox').is(':checked')) {
+            window.location.href = "{:U('deliver')}?order_id="+id;
+        }else{
+            layer.msg('请选择发货订单',{time:2000,shade:0.2});
+        }*/
+        window.location.href = "{:U('deliver')}?order_id="+id;
+    }
+</script>
+<!--批量发货-->
+<script>
+    $("#getId").click(function () {
+        if(this.checked){
+            $("#checkAll :checkbox").prop('checked',true);
+        }else{
+            $("#checkAll :checkbox").prop('checked',false);
+        }
+    })
+    function check_submit(){
+        if($("#getId").is(':checked')){
+            $('#check_all').submit();
+        }else {
+            layer.msg('未选择发货订单',{time:2000,shade:0.2});
+        }
+    }
+</script>

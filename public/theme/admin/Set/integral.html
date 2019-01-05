@@ -1,0 +1,26 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('addrule')}" method='post'>
+<!-- 自定义大小 -->
+    <div class="form-group">
+        <label  class="col-sm-2 control-label">积分兑换</label>
+        <div class="col-sm-10" >
+            <input type="text" name="{$max_integral['config_mark']}" style="width: 200px;border: 1px solid #e5e6e7;height: 34px" value="{$max_integral['config_value']}">
+            积分兑换
+            <input type="text" name="{$scale_integral['config_mark']}" style="width: 200px;border: 1px solid #e5e6e7;height: 34px" value="{$scale_integral['config_value']}">人民币
+        </div>
+    </div>
+{foreach name="data" item="vo"}
+<div class="form-group">
+    <label  class="col-sm-2 control-label">{$vo.config_name}</label>
+    <div class="col-sm-4" style="width: 240px">
+        <input type="text" name="{$vo.config_mark}" style="width: 200px;border: 1px solid #e5e6e7;height: 34px" value="{$vo.config_value}">
+    </div>
+</div>
+{/foreach}
+<div class="form-group">
+    <label class="col-sm-2 control-label"></label>
+    <div class="col-sm-3">
+        <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+        <button type="reset" class="btn btn-info">重置</button>
+    </div>
+</div>
+</form>

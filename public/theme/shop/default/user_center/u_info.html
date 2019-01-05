@@ -1,0 +1,185 @@
+<!-- 个人信息 by wanggang  -->
+<script src="{$web_static}/plugins/layui/laydate/laydate.js" charset="utf-8"></script>
+<script type="text/javascript" src="{$web_static}/js//uploadImg.js"></script>
+<link rel="stylesheet" href="{$css}/usernew.css">
+<form class="js-ajax-form" action="{:url('UserCenter/u_info')}" method="post">
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>设置 ></p>
+        <p>个人信息</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/user_center/side_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt">
+        <div class="right_nav">个人信息</div>
+            <div class="userimg">
+                <div class="img_cont">
+                    <div class="img_prev"></div>
+                        <input type="file" name="photo" id="photo" value="{$user_info.photo}" />
+                        <input type="hidden" name="user_id" value="{$user_info.user_id}">
+                    </div>
+                </div>
+            <div class="indent_rirgtcont">
+                <div class="indent_rirgtcontson"><span class="indent_rirgtcontspan"><img src="{$img}/right.png" alt="" class="ceimg">用户名</span> <input type="text" class="username" id="account" name="account" js-check="account" value="{$user_info.account}">
+                </div>
+            <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan"><img src="{$img}/right.png" alt="" class="ceimg">昵<span  class="textinde"></span>称</span> <input type="text" class="username" id="nickname
+                " name="nickname" js-check="nickname" value="{$user_info.nickname}">
+            </div>
+            <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan"><img src="{$img}/right.png" alt="" class="ceimg">性<span  class="textinde"></span>别</span>
+                <label for="man" style="font-weight: normal;" class="man">
+                    <div class="hui">
+                        <div class="hei"></div>
+                    </div>
+                    
+                    <input type="radio" style="display: none" name="sex" id="man" value="1" {if condition="$user_info.sex = 1"}checked{/}>
+                     男
+                </label>
+                <label for="women" style="font-weight: normal;" class="man">
+                    <div class="hui">
+                        <div class="hei"></div>
+                    </div>
+                    <input type="radio" style="display: none" name="sex" id="women" value="2" {if condition="$user_info.sex = 2"}checked{/}>
+                     女
+                </label>
+                <label for="women" style="font-weight: normal;" class="man">
+                    <div class="hui">
+                        <div class="hei"></div>
+                    </div>
+                    <input type="radio" style="display: none" name="sex" id="baomi" value="0" {if condition="$user_info.sex = 0"}checked{/}>
+                     保密
+                </label>
+             </div>
+             <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan">生<span  class="textinde"></span>日</span> <input type="text" class="i-date username" name="birthday" >
+             </div>
+             <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan">邮<span  class="textinde"></span>箱</span> <span>{$user_info.email}</span> <a class="indent_rirgtcontbtn" href="{:url('u_email',['user_id'=>$user_info.user_id])}">修改</a>
+             </div>
+             <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan"><img src="{$img}/right.png" alt="" class="ceimg">手机号码</span> <span>{$user_info.phone}</span> <a class="indent_rirgtcontbtn" href="{:url('u_phone',['user_id'=>$user_info.user_id])}">修改</a>
+             </div>
+             <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan"><img src="{$img}/right.png" alt="" class="ceimg">真实姓名</span> <input type="text" class=" username" name="realname" js-check="realname" value="{$user_info.realname}">
+             </div>
+             <div class="indent_rirgtcontson">
+                <span class="indent_rirgtcontspan"></span><button class="usersubmit username js-submit-btn">提交</button>
+             </div>
+         </div>
+
+     </div>                    
+</div>
+</form>
+<script src="{$web_static}/js/checkForm.js"></script>
+<script type="text/javascript">
+    $('#photo').imgUpload({
+        allowedNum:1,//允许上传最大数量
+        width:'142',//预览框宽度
+        height:'142',//预览框高度
+        imgWidth:142,//图片上传宽度
+        imgHeight:142,//图片上传高度
+        files:{
+            1:'{$user_info.photo|getImg}',
+        }
+    })
+  /*  $('#photo').imgUpload({
+        allowedNum:1,//允许上传最大数量
+        width:'142',//预览框宽度
+        height:'142',//预览框高度
+        imgWidth:142,//图片上传宽度
+        imgHeight:142,//图片上传高度
+        allowedNum:1,//允许上传最大数量
+        files:{
+            1:'{$user_info.photo|getImg}',
+        }
+    })*/
+</script>
+<script>
+    //侧边栏
+        $('.h_sidebar li').click(function(){
+        $(this).find('a').parent().parent().parent().find('a').removeClass('sidebar_red')
+        $(this).parent().parent().find('li').removeClass('sidebar_lired');
+        $(this).find('a').addClass('sidebar_red');
+        $(this).addClass('sidebar_lired');
+       });
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+      $(this).children(".hei").addClass("adddis")
+
+    })
+
+</script>
+<script>
+$('.i-date').focus(function(e){
+    var id = 'date-' +parseInt(e.timeStamp);
+    $(this).attr('id',id).attr('value',laydate.now('',date.format));
+    date.format = $(this).attr('istime') ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD';
+    date.istime = $(this).attr('istime') ? true : false;
+    date.elem = '#'.id;
+    laydate(date);
+    delete  date;
+})
+
+var date= {
+    format: 'YYYY-MM-DD',
+    // min: laydate.now(-7),
+    // max: laydate.now(),
+    istime: false, //是否开启时间选择
+    isclear: false, //是否显示清空
+    istoday: true, //是否显示今天
+    issure: true, //是否显示确认
+}
+// function eler() {
+//     var userval = $("#suername").val();
+//     var uservni = $("#suerni").val();
+// //    帐号验证
+//     if (userval == "") {
+//         $("#suername").parents(".indent_rirgtcontson").append('<div class="alert"> <div class="box2"><img src="{$img}/5.png" alt="" class="img5">用户名不能为空</div></div>');
+       
+//     }
+//     if (uservni == "") {
+//         $("#suerni").parents(".indent_rirgtcontson").append('<div class="alert"> <div class="box2"><img src="{$img}/5.png" alt="" class="img5">昵称不能为空</div></div>');
+        
+//     }
+//     $('input').bind('input propertychange', function() {
+//         $(this).parent(".indent_rirgtcontson").children(".alert").remove();
+        
+
+//     });
+// }
+
+
+</script>
+<script type="text/javascript">
+    //验证用户名
+    function account(e){
+      var account = $(e).val();
+      if (account == '') {
+          return '请填写用户名!';
+      }
+      return true;
+    }
+    //验证昵称
+    function nickname(e){
+      var nickname = $(e).val();
+      if (nickname == '') {
+          return '请填写昵称!';
+      }
+      return true;
+    }
+    //验证姓名
+    function realname(e){
+      var realname = $(e).val();
+      if (realname == '') {
+          return '请填写姓名!';
+      }
+      return true;
+    }
+</script>
+</html>

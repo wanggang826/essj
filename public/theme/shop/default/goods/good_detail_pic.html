@@ -1,0 +1,45 @@
+<div class="lanrenzhijia">
+	<!-- 大图begin 800*800 -->
+	<!--<div  id="preview" class="spec-preview">&lt;!&ndash;id="content"&ndash;&gt;
+		<a href="{$upload}{$good_info.goods_thums}" class="jqzoom" ><img  src="{$upload}{$good_info.goods_thums}" /></a>
+	</div>-->
+	<div >
+		<div id="magnifier" class="spec-preview">
+			<img jqimg="" src="{$upload}{$good_info.goods_thums}" id="img" />
+			<div id="Browser"></div>
+		</div>
+	</div>
+	<div id="mag"><img id="magnifierImg" /></div>
+	<!-- 大图end 350*350 -->
+	<!-- 缩略图begin 50*50 -->
+	<div class="spec-scroll">
+		<a class="prev"><img src="{$img}/detali_lf.png"/></a>
+		<a class="next"><img src="{$img}/detali_ri.png"/></a>
+		<div class="items">
+			<ul >
+				<!-- bimg大图 -->
+				{if condition="$good_info['goods_img1'] neq ''"}
+					<li><img bimg="" class="jane_img" src="{$upload}{$good_info.goods_img1}" onmousemove="preview(this);"></li>
+				{/if}
+				{if condition="$good_info['goods_img2'] neq ''"}
+					<li><img bimg="" class="jane_img" src="{$upload}{$good_info.goods_img2}" onmousemove="preview(this);"></li>
+				{/if}
+				{if condition="$good_info['goods_img3'] neq ''"}
+					<li><img bimg="" class="jane_img" src="{$upload}{$good_info.goods_img3}" onmousemove="preview(this);"></li>
+				{/if}
+				{if condition="$good_info['goods_img4'] neq ''"}
+					<li><img bimg="" class="jane_img" src="{$upload}{$good_info.goods_img4}" onmousemove="preview(this);"></li>
+				{/if}
+				{if condition="$good_info['goods_img5'] neq ''"}
+					<li><img bimg="" class="jane_img" src="{$upload}{$good_info.goods_img5}" onmousemove="preview(this);"></li>
+				{/if}
+
+
+
+				<!--<li><img bimg="" src="" onmousemove="preview(this);"></li>
+				<li><img bimg="" src="" onmousemove="preview(this);"></li>
+				<li><img bimg="" src="" onmousemove="preview(this);"></li>-->
+			</ul>
+		</div>
+	</div>
+</div>

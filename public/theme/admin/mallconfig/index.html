@@ -1,0 +1,102 @@
+<script src="{$web_static}/js/uploadImg.js"></script>
+<div class="clearfix">
+    <div class="col-sm-12 ">
+        <div class="tabs-container">
+            <ul class="nav nav-tabs">
+            {foreach name=":config('mall_config_type')" key="i" item="val" }
+                <li class=""><a data-toggle="tab" href="#{$i}" aria-expanded="true">{$val}</a></li>
+            {/foreach}
+            </ul>
+            <form class="form-horizontal js-ajax-form clearfix" action="{:U('Mallconfig/index')}" method='post' enctype="multipart/form-data">
+                <div class="tab-content">
+                    {foreach name=":config('mall_config_type')" key="j" item="c_type"}
+                    <div id="{$j}" class="tab-pane">
+                        <div class="panel-body">
+                            {foreach name="configs" item="config"}
+                                {if condition="$config['group'] eq $j"}
+                                    {if condition="$config['type'] eq 'file'"}
+                                        <div class="form-group imgUpload" js-img="{$config['id']}" >
+                                            <label  class="col-sm-2 control-label">{$config['config_name']}</label>
+                                            <div class="img_cont col-sm-4">
+                                                <div class="img_prev"></div>
+                                                <input type="file" name="{$config['config_mark']}" id="{$config['config_mark']}" />
+                                            </div>
+                                            <div class="col-sm-4">{$config['config_des']}</div>
+                                            <script>
+                                                $("#{$config['config_mark']}").imgUpload({
+                                                    allowedNum:1,//允许上传最大数量
+                                                    files:{1:"{$config['config_value']|getImg}",}
+                                                })
+                                            </script>
+                                        </div>
+                                    {else/}
+                                        <div class="form-group " >
+                                            <label  class="col-sm-2 control-label">{$config['config_name']}</label>
+                                            <div class="col-sm-4">
+                                                {if condition="$config['type'] eq 'select'"}
+                                                    <select class="form-control"  name="{$config.id}{$config.config_mark}">
+                                                    {foreach name="$config['type_value']" item="val"}
+                                                        {if condition="$config['config_value'] eq $val['value']"}
+                                                        <option value="{$val['value']}" selected="selected">{$val.value}</option>
+                                                        {else/}
+                                                        <option value="{$val['value']}" >{$val.value} </option>
+                                                        {/if}
+                                                    {/foreach}
+                                                    </select>
+                                                {/if}
+                                                {if condition="$config['type'] eq 'textarea'"}
+                                                    <textarea class="form-control" name="{$config.id}{$config.config_mark}" id="" cols="53" rows="5">{$config.config_value}</textarea>
+                                                {/if}
+                                                {if condition="$config['type'] eq 'checkbox'"}
+                                                    {foreach name="$config['type_value']" item="box" key="k"}
+                                                        <label class="i-lab">
+                                                            <input  class="mgc mgc-primary"  type="checkbox" name="{$config.id}{$config['config_mark']}[{$k}]" value="{$box['value']}"
+                                                                   {if condition="in_array($box['value'],(array)$config['config_value'])"} checked="checked"{/if}>
+                                                            <span>
+                                                                {$box.value}
+                                                            </span>
+                                                        </label>
+                                                    {/foreach}
+                                                {/if}
+                                                {if condition="$config['type'] eq 'radio' "}
+                                                    {foreach name="$config['type_value']" item="box" key="k"}
+                                                        <label class="i-lab"><input class="mgr mgr-primary mgr-lg" type="radio" name="{$config.id}{$config.config_mark}" value="{$box['value']}" {if condition="$config['config_value'] eq $box['value']"}checked="checked"{/if} class="mgr">
+                                                            {if condition="$box['value'] eq 0 and $config['id'] eq 3"}<span>关闭</span>{elseif condition="$box['value'] eq 1 and $config['id'] eq 3"/}<span>开启</span>
+                                                            {else/}<span>{$box.value}</span>{/if}</label>
+                                                    {/foreach}
+                                                {/if}
+                                                {if condition="$config.type eq 'text'"}
+                                                    <input type="{$config.type}" class="form-control" name="{$config.id}{$config.config_mark}"  id="{$config.config_mark}" value="{$config.config_value}">
+                                                {/if}
+                                            </div>
+                                                <div class="col-sm-4">
+                                                    <p class="form-control-static">{$config['config_des']}</p>
+                                                </div>
+                                        </div>
+                                    {/if}
+                                {/if}
+                            {/foreach}
+                        </div>
+                    </div>
+                    {/foreach}
+
+                </div>
+                <div class="panel-footer clearfix fixed">
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label"></label>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+                            <a href="{:url('')}" class="btn btn-info">重置</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('ul.nav.nav-tabs li').first().addClass('active');
+        $('.tab-content .tab-pane').first().addClass('active')
+    })
+</script>

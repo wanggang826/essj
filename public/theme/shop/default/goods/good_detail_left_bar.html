@@ -1,0 +1,54 @@
+				<div class="detailshow_lf">
+					<div class="detailshow_lftop">
+						<span>{$good_info.shop_name}</span>
+					</div>
+					<div class="detailshow_lfbut">
+						<button><a href="#">进入店铺</a></button>
+						<button class="ajax_collection" id='collection_shop'  data-id="{$good_info.shop_id}" data-type="shop" data-url="{:url('Collection/ajax_collection')}">
+						{if condition="$good_info.c_shop eq 1"}
+			        		<a href="#">取消店铺收藏</a>
+			        	{else /}
+			        		<a href="#">收藏店铺</a>
+			        	{/if}
+						</button>
+					</div>
+					<div class="detailshow_center">
+						<div class="call">
+							<span>客服中心</span>
+						</div>
+						<div class="service">
+						<div class="call_list">
+							<span><a href="#">客服001</a></span>
+							<img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=3246316512&o=im.qq.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:3246316512:10 alt="点击这里给我发消息">
+						</div>
+						<div class="call_list">
+							<span><a href="#">客服002</a></span>
+							<img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=3246316512&o=im.qq.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:3246316512:10 alt="点击这里给我发消息">
+						</div>
+						<div class="call_list">
+							<span><a href="#">客服003</a></span>
+							<img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=3246316512&o=im.qq.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:3246316512:10 alt="点击这里给我发消息">
+						</div>						
+						</div>
+						<div class="work_time">
+							<span>工作时间</span> 
+							<span>周一至周五:8:30-24:00</span>
+						    <span>周六至周日:8:30-24:00</span>
+						</div>						
+					</div>
+					<div class="detailshow_center">
+						<div class="call">
+							<span>销售排行榜</span>
+						</div>
+					{if condition="isset($sale_goods)"}
+						{volist name='$sale_goods' id='vo'}	
+						<div class="ranking_list">
+							<a href="{:U('Shop/good_detail',['id'=>$vo['goods_id']])}"><img src="{$vo.goods_thums|getImg}"/></a>
+							<p><a href="{:U('Shop/good_detail',['id'=>$vo['goods_id']])}">{$vo.goods_name}&nbsp;{$vo.recom_desc}</a></p>
+							<span>￥{$vo.shop_price}</span><span>已销售{$vo.sale_count}</span>
+							<div class="clear"></div>
+						</div>
+						{/volist}
+					{/if}
+					</div>
+				</div>

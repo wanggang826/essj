@@ -1,0 +1,72 @@
+<script src="{$web_static}/js/uploadImg.js"></script>
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('advers/adv_edit',['page'=>input('page')])}" method='post' enctype=multipart/form-data>
+    <!-- 自定义大小 -->
+    <input type="hidden" name='adv_id' value="{$adv_info.adv_id}">
+    <div class="form-group">
+        <label for="adv_title" class="col-sm-2 control-label">广告标题</label>
+        <div class="col-sm-4">
+             <input type="text" name="adv_title" class="form-control" id="adv_title" placeholder="广告标题" value="{$adv_info.adv_title}">
+        </div>
+    </div>
+    <div class="form-group">
+         <label for="" class="col-sm-2 control-label">广告位置</label>
+        <div class="col-sm-4">
+            <input type="hidden" name="adv_pos" value="{$adv_info.adv_pos}">
+            <input type="hidden" name="pos_type" value="{$adv_info.pos_type}">
+            <p class="form-control-static">{$adv_info.advpos_name}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="adv_url" class="col-sm-2 control-label">广告链接</label>
+        <div class="col-sm-4">
+            <input type="text" name="adv_url" class="form-control" id="adv_url" placeholder="广告链接" value="{$adv_info.adv_url}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="menu_name" class="col-sm-2 control-label">广告图片</label>
+        <div class="img_cont col-sm-10">
+            <div class="img_prev"></div>
+            <input type="file" name="adv_img" id="adv_img" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="adv_price" class="col-sm-2 control-label">广告图片背景色</label>
+        <div class="col-sm-4">
+            <input type="color" name="bg_color" class="form-control" id="bg_color" value="{$adv_info.bg_color}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">广告日期</label>
+        <div class="col-sm-4">
+            <input type="text" name="start_time" class="form-control i-datestart" id="date2" placeholder="开始日期" value="{$adv_info.start_time}">
+            <input type="text" name="end_time" class="form-control i-dateend" id="date2" placeholder="结束日期" value="{$adv_info.end_time}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="adv_price" class="col-sm-2 control-label">总价格</label>
+        <div class="col-sm-4">
+            <input type="text" name="adv_price" class="form-control" id="adv_price" placeholder="总价格" value="{$adv_info.adv_price}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $('#adv_img').imgUpload({
+        width:200,//预览宽度
+        height:200,//预览高度
+        imgWidth:{$advpos.advpos_width},//图片上传宽度
+        imgHeight:{$advpos.advpos_height},//图片上传高度
+        isCut:false,//是否裁剪
+        maxSize: 10240,//允许上传最大值(KB)
+        allowedNum:1,//允许上传最大数量
+        files:["{$adv_info['adv_img']|getImg}",]
+            
+    });
+</script>

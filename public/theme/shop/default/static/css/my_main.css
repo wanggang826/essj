@@ -1,0 +1,344 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;	
+	color: rgb(102,102,102);
+}
+img{
+	border: 0;
+}
+.clear{
+	clear: both;	
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.fright{
+	float: right;	
+}
+
+.fleft {
+    float: left;
+}
+.navMid{
+    /*padding-left: 20px;*/
+    width: 980px;
+    /*margin-left:20px;*/
+}
+.qbgn{
+    position: relative;
+}
+.qbgn{
+    height:30px;
+    line-height: 30px;
+    padding-left:0px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 158px;
+}
+.level1:hover>a{
+    text-decoration: none;
+}
+.level1>a{
+    color:#707070;
+}
+.dpjbxx>p{
+    height:40px;
+    line-height: 40px;
+    background:#F6F6F6;
+}
+.dpjbxx .jb{
+    color:#ED145B;
+    border:2px solid #ED145B;
+    display: inline-block;
+    float: left;
+    height: 36px;
+}
+.dpjbxx .dp{
+    margin-left: 20px;
+    font-weight: bold;
+    color: #3A3A3A;
+    font-size: 15px;
+}
+
+/*******************************************钱包****************************************************/
+.money-ka{
+	background: #F6F6F6;
+    margin-top: 10px;
+    color:#808080;
+    
+}
+.money-ka>ul>li>span{
+	font-size: 14px;
+}
+.money-ka>ul:first-child{
+	margin:20px;
+}
+.money-ka>.tiQ{
+	display: inline-block;
+	width: 100px;
+    height: 25px;
+    background: #ED145B;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.cha{
+	display: inline-block;
+	width: 100px;
+	height: 25px;
+	background: #ED145B;
+	border: 0;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	line-height: 25px;
+}
+.xiadan>input{
+	width: 137px;
+	height: 28px;
+	margin-top: -4px;
+}
+
+
+.money-ka>ul:nth-child(3){
+	margin: 20px 123px;
+}
+.money-ka>ul:nth-child(3){
+	margin: 20px 148px;
+}
+.money-ka>ul:nth-child(3)>li:not(:first-child){
+	margin-left: 87px;
+}
+.money-ka>.xinZ{
+	width:72px;
+	position: relative;
+    /*z-index:22px;*/
+    /* z-index: 23; */
+	top: -3px;
+	left: 674px;
+    color: #EE4978;
+}
+.money-qing>ul:first-child>li{
+	margin-right: 84px;
+}
+.money-qing>ul:first-child>li>input{
+	margin: 0 8px;
+}
+.money-qing>ul:first-child>li:first-child>input{
+	padding-left: 9px;
+    width: 137px;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid #ccc;
+    height: 25px;
+    font-size: 12px;
+    color: #999999;
+}
+.money-qing>ul:first-child>li:nth-child(2)>input{
+	width:95px;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid #ccc;
+    height: 25px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.money-xin{
+	margin-top:10px;
+}
+.money-xin>ul:not(:first-child){
+	/*border-left:1px solid #E8E8E8;*/
+	border-bottom:1px solid #E8E8E8;
+	/*border-right:1px solid #E8E8E8;*/
+}
+.money-xin>ul:first-child>li{
+	border-bottom: 2px solid #FF80AA;
+}
+.money-xin>ul>li{
+	width: 178px;
+	margin-left: 3px;
+}
+.money-xin>ul>li:first-child{
+	margin-left: 0;
+}
+.money-xin>ul>li:first-child>span{
+	    margin-left: 10px;	
+}
+.money-xin>ul>li:nth-child(4){
+	width: 435px;
+}
+.money-xin>ul:first-child>li:last-child{
+	border: 0;
+	margin-left:0;
+}
+.money-xin>ul>li:nth-child(4)>span:last-child{
+	color: #FF80AA;
+}  
+.my-img{
+	margin:0 auto;
+}
+.money-xin>ul:first-child{
+	padding-left: 0;
+}
+.money-xin>ul:first-child>li:nth-child(4)>span:last-child{
+	color: #3f3f3f;
+}
+.my-ul{
+	margin-top: 14px;
+	margin-left: 20px;
+}
+.my-ul:nth-child(4){
+	margin-right: 132px;
+}
+.my-ul:nth-child(4)>li:not(:first-child){
+	margin-left: 87px;
+}
+/**********下面图片部分*****************/
+.my_position{
+    margin-bottom: 70px;
+    margin-left: 348px;
+}
+.my-relative{
+	position:relative;
+}
+/*银行卡弹窗*/     /*取现*/
+.quxian{
+	width:147px;
+	height:28px;
+	outline: 0;
+	border-radius: 6px;
+	border:1px solid #E6E6E6;
+}
+
+.yingHang,.yingHang1,.yingHang2{
+	width:500px;
+	height:380px;
+	background: #fff;
+	display: none;    
+	position: absolute;
+    top: 100px;
+    left: 240px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.yingHang>p,.yingHang1>p,.yingHang2>p{
+	height:60px;
+	line-height: 60px;
+	text-align: center;
+	color:#515151;
+	font-size: 14px;
+	border-bottom: 1px solid #FBFBFB;
+}
+.yingHang>p>b,.yingHang1>p>b,.yingHang2>p>b{
+	float:right;
+	margin-right: 10px;
+	font-size: 30px;
+}
+.yingHang>div>p{
+	margin-left: 25px;
+	color: #505050;
+}
+.yingHang1 select{
+	width:210px;
+	height:28px;
+	border:1px solid #D7D7D7;
+	outline: 0;
+	border-radius:6px;
+}
+.yingHang>div>ul,.yingHang1>div>ul{
+	width:350px;
+	height:180px;
+	margin: 0 auto;
+}
+.yingHang>div>ul>li,.yingHang1>div>ul>li{
+	color: #505050;
+	line-height: 45px;
+}
+.yingHang>div>ul>li>span,.yingHang1>div>ul>li>span{
+	display: inline-block;
+	width:75px;
+	text-align: right;
+	font-size: 14px;
+	margin-right: 15px;
+}
+.yingHang>div>ul>li:first-child>span,.yingHang1>div>ul>li:first-child>span{
+	margin-right: 12px;
+}
+.yingHang>div>ul>li:last-child>input,.yingHang1>div>ul>li:last-child>input{
+	width:140px;
+	margin-right: 2px;
+}
+.yingHang>div>ul>li:last-child>span:first-child,.yingHang1>div>ul>li:last-child>span:first-child{
+	margin-right: 10px;
+}
+.yingHang>div>ul>li:last-child>span:last-child,.yingHang1>div>ul>li:last-child>span:last-child{
+	font-size: 10px;
+	width:58px;
+	height:28px;
+	line-height: 28px;
+	text-align: center;
+	margin-right: 0;
+	border:1px solid #ED145B;
+	border-radius:6px;
+}
+.yingHang>div>ul>li>input,.yingHang1>div>ul>li>input{
+	width:210px;
+	height:28px;
+	outline: 0;
+	border:1px solid #EDEDED;
+	border-radius: 6px;
+}
+.yingHang1>a,.yingHang2>div>a{
+	display: block;
+	width:210px;
+	color:white;
+	margin:10px 162px ;
+	text-align: center;
+	background: #ED145B;
+	border-radius: 6px;
+}
+.yingHang>a{
+	display: block;
+	width:210px;
+	color:white;
+	margin:55px 162px ;
+	text-align: center;
+	background: #ED145B;
+	border-radius: 6px;
+}
+/*操作成功*/
+.yingHang2{
+	height:250px;
+}
+.yingHang2 div b{
+	display: block;
+	width:80px;
+	height:80px;
+	margin:5px auto;
+	background: url("../../img/dagou.png") no-repeat;
+}
+.yingHang2 div p{
+	width:70px;
+	color: #4D4D4D;
+	margin:0 auto;
+	font-size: 14px;
+}
+.yingHang2>div>a{
+	margin-left: 144px;
+}

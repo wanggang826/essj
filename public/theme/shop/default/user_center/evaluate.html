@@ -1,0 +1,195 @@
+<!-- 个人评价管理 by wanggang -->
+<!-- <link type="text/css" rel="stylesheet" href="{$css}/evaluate.css" /> -->
+<link type="text/css" rel="stylesheet" href="{$css}/manage.css" />
+<!-- <link rel="stylesheet" href="{$css}/usernew.css"> -->
+        <div class="h_concent">
+            <div class="position">
+                <p>您的位置：</p>
+                <a href="">首页 ></a>
+                <a href="">订单中心 ></a>
+                <p>评价管理</p>
+            </div>
+            <div class="h_indent">
+                <div class="indent_fl">
+                    <div class="h_sidebar">
+                        {include file="default/user_center/side_bar"}
+                    </div>
+                </div>
+                <div class="indent_ri">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>最近一周</th>
+                                <th>最近1个月</th>
+                                <th>最近6个月</th>
+                                <th>总计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>非常满意</td>
+                                <td>{$data5['w']}</td>
+                                <td>{$data5['m']}</td>
+                                <td>{$data5['lm']}</td>
+                                <td>{$data5['z']}</td>
+                            </tr>
+                            <tr>
+                                <td>满意</td>
+                                <td>{$data4['w']}</td>
+                                <td>{$data4['m']}</td>
+                                <td>{$data4['lm']}</td>
+                                <td>{$data4['z']}</td>
+                            </tr>
+                            <tr>
+                                <td>一般</td>
+                                <td>{$data3['w']}</td>
+                                <td>{$data3['m']}</td>
+                                <td>{$data3['lm']}</td>
+                                <td>{$data3['z']}</td>
+                            </tr>
+                            <tr>
+                                <td>不满意</td>
+                                <td>{$data2['w']}</td>
+                                <td>{$data2['m']}</td>
+                                <td>{$data2['lm']}</td>
+                                <td>{$data2['z']}</td>
+                            </tr>
+                            <tr>
+                                <td>非常不满意</td>
+                                <td>{$data1['w']}</td>
+                                <td>{$data1['m']}</td>
+                                <td>{$data1['lm']}</td>
+                                <td>{$data1['z']}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="h_managebox">
+                        <div class="h_manage">
+                            <div class="h_managediv1 h_sp1">
+                                <div class="h_divsp1">
+                                    <span class="h_managesp1">评价</span>
+    <!--                                 <img class="modhear_spimg" src="img/jian.png"/> -->
+                                </div>
+                            </div>
+                            <div class="h_managediv2 h_sp1">
+                                <span class="h_managesp2">被评价人</span>
+                            </div>
+                            <div class="h_managediv3 h_sp1">
+                                <span class="h_managesp3">商品信息</span>
+                            </div>
+                            <div class="h_managediv4 h_sp1">
+                                <span class="h_managesp4">操作</span>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="modhearsp4box1">
+                                <ul>
+                                    <li>评价</li>
+                                    <li>好评</li>
+                                    <li>中评</li>
+                                    <li>差评</li>
+                                </ul>
+                            </div>
+                        </div>
+                        {volist name="comments" id="vo"}
+                        <div class="h_managelist">
+                            <div class="h_pingjia">
+                                <p>{$vo.comment}</p>
+                                {if condition="$vo.com_img1 !=null"}
+                                <img class="h_pingjiaimg" src="{$vo.com_img1|getImg}"/>
+                                {/if}
+                                {if condition="$vo.com_img2 !=null"}
+                                <img class="h_pingjiaimg" src="{$vo.com_img2|getImg}"/>
+                                {/if}
+                                {if condition="$vo.com_img3 !=null"}
+                                <img class="h_pingjiaimg" src="{$vo.com_img3|getImg}"/>
+                                {/if}
+                                {if condition="$vo.com_img4 !=null"}
+                                <img class="h_pingjiaimg" src="{$vo.com_img4|getImg}"/>
+                                {/if}
+                                {if condition="$vo.com_img5 !=null"}
+                                <img class="h_pingjiaimg" src="{$vo.com_img5|getImg}"/>
+                                {/if}                                
+                                <div class="clear"></div>
+                                <div class="h_xing">
+                                   <div  class="block clearfix " >
+                                        <ul class="star{$vo.score}"></ul>
+                                        <div class="clearfix">
+                                            <span class="fenshu">{$vo.score}分</span><span>[{$vo.create_time}]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {if condition="$vo.comment_reply neq ''"}
+                                <div class="vendor">卖家回复：<span>{$vo.comment_reply}</span>
+                                </div>
+                                {/if}
+                                <div class="clear"></div>
+                            </div>
+                            <div class="merchant_name">
+                                <p>商家名称：</p>
+                                <span>{$vo.shop_name}</span>
+                            </div>
+                            <div class="commodity">
+                                <p>{$vo.goods_name}</p>
+                                <span>{$vo.goods_price}</span>
+                            </div>
+                            <!-- <div class="reply_but">
+                                <input type="button" name="" id="" value="回复" />
+                            </div> -->
+                            <div class="clear"></div>
+                        </div>
+                        
+                        {/volist}
+                        
+                        <div class="page">
+                                <div class="page1">
+                                   <!--  <input class="pagefy" type="button" name="" id="" value="首页" />
+                                    <input class="pagefy" type="button" name="" id="" value="上一页" />
+                                    <input class="pagefy" type="button" name="" id="" value="1" />
+                                    <input class="pagefy" type="button" name="" id="" value="2" />
+                                    <input class="pagefy" type="button" name="" id="" value="3" />
+                                    <input class="pagefy" type="button" name="" id="" value="..." />
+                                    <input class="pagefy" type="button" name="" id="" value="20" />
+                                    <input class="pagefy" type="button" name="" id="" value="末页" />
+                                    <input class="pagefy" type="button" name="" id="" value="下一页" />
+                                    <span class="gon">共20页</span>
+                                    <span>跳转至</span>
+                                    <input class="tiaoz" type="text" name="" id="" value="" />
+                                    <span>页</span>
+                                    <input class="pagefy" type="button" name="" id="" value="确定" /> -->
+                                    {$comments->render()}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="{$js}/jquery.inisStar.js"></script>
+    <script type="text/javascript" src="{$web_static}/js/uploadImg.js"></script>
+    <script>
+     $(function(){
+        $('.star1').initStar({
+            score   : 1
+        });
+        $('.star2').initStar({
+            score   : 2
+        })
+        $('.star3').initStar({
+            score   : 3
+        });
+        $('.star4').initStar({
+            score   : 4
+        })
+        $('.star5').initStar({
+            score   : 5
+        });
+        // $(".pagefy").eq(2).addClass("adcol");
+        //     $(".pagefy").click(function(){
+        //     $(this).addClass("adcol").siblings().removeClass("adcol")
+        // })
+        $(".active").addClass("adcol");
+        $(".active").unbind();
+    })
+
+    </script>
+

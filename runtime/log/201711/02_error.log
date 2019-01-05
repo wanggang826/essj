@@ -1,0 +1,3 @@
+---------------------------------------------------------------
+[ 2017-11-02T17:53:39+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ error ] [2]openssl_sign(): supplied key param cannot be coerced into a private key[D:\phpStudy\WWW\ershoushouji\vendor\alipay\AopClient.php:104]

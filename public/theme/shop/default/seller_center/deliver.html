@@ -1,0 +1,157 @@
+
+<link rel="stylesheet" href="{$css}/usernew.css">
+<!-- 地区插件 -->
+<link href="{$web_static}/plugins/citypicker/css/city-picker.css" rel="stylesheet">
+<script src="{$web_static}/cache/city.cache.js"></script>
+<script src="{$web_static}/plugins/citypicker/js/city-picker.js"></script>
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>发货</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+           {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">发货</div></div>
+        {if condition="count($orderInfo) neq 0"}
+        {volist name="orderInfo" id="vo"}
+        <div class="indent_rirgt_deliver">
+            <h5 class="indent_rirgt_deliverh5">收货信息订单详情</h5>
+            <div class="indent_rirgt_delivercont">
+                <h6 class="indent_rirgt_deliverh6">
+                    订单编号：<span class="indent_rirgt_deliverhao">{$vo.order_sn}</span>
+                    创建时间：<span>{$vo.create_time}</span>
+                </h6>
+                <div class="indent_rirgt_deliverconts clearfloat">
+                    <div class="indent_rirgt_delivercontsleft">
+                        {volist name="vo['orders']" id="orders"}
+                        <div class="indent_rirgt_delivercontslefts">
+                            <img src="{$orders.good_image|getImg}" alt="" class="management_rightconttwospansonimgs">
+                            <div class="management_rightconttwospansonones">
+                                <p>{$orders.goods_name}</p>
+
+                                {volist name="orders['good_attr']" id="good_attr" k="key"}
+                                <p>{$key}：{$good_attr}</p>
+                                {/volist}
+
+                            </div>
+                            <div class="management_rightconttwospansononess">
+                                ￥{$orders.price}x{$orders.goods_count}
+                            </div>
+                        </div>
+                        {/volist}
+                    </div>
+
+                    <div class="indent_rirgt_delivercontsright ">
+                        <p>买家帐号：<span>{$vo.user_id}</span></p>
+                        <p>收货地址：<span>{$vo.province}{$vo.city}{$vo.area}{$vo.address}</span></p>
+                        <p>联系电话：<span>{$vo.user_phone}</span></p>
+                        <p>买家备注：<span>{$vo.dess}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="indent_rirgt_deliverh5">发货信息/退货信息</h5>
+            <div class="indent_rirgt_delivercontfahuodizi">
+                <p class="indent_rirgt_delivercontp">发货地址信息：
+                    <span class="indent_rirgt_delivercontdizi">{$vo.province}{$vo.city}{$vo.area}{$vo.address}  ，{$vo.user_name}  ，{$vo.user_phone}</span>
+                    <a href="javascript:updateAddr({$vo.order_id},'发货地址')" class="indent_rirgt_delivercontxiugaidizi">修改发货地址</a>
+                </p>
+                <p class="indent_rirgt_delivercontp">退货地址信息：
+                    <span class="indent_rirgt_delivercontdizi">{$vo.province}{$vo.city}{$vo.area}{$vo.address}  ，{$vo.user_name}  ，{$vo.user_phone}</span>
+                    <a href="javascript:updateAddr({$vo.order_id},'退货地址')" class="indent_rirgt_delivercontxiugaidizi">修改退货地址</a>
+                </p>
+            </div>
+
+            <h5 class="indent_rirgt_deliverh5">选择物流方式</h5>
+            <form action="{:U('delivers',['order_id'=>$vo.order_id])}" method="post" class="js-ajax-form">
+                <div class="indent_rirgt_delivercontfahuodizi">
+                    <p class="indent_rirgt_delivercontwuliu">
+                        <input type="radio" id="active2" name="switch" value="1" checked> 选择物流
+                        <input type="radio" id="active1" name="switch" value="2" > 无需物流
+                    </p>
+                    <div class="deliver-input">
+                        <p class="indent_rirgt_delivercontwuliuxuanze">
+                            <span>选择物流</span>
+                            <select name="method" id="method" class="indent_rirgt_deliverselect">
+                                <option value="">全部</option>
+                                {volist name="delivers" id="v"}
+                                <option value="{$v}">{$v}</option>
+                                {/volist}
+                            </select>
+                        </p>
+                        <p class="indent_rirgt_delivercontwuliuxuanze">
+                            <span >填写订单号</span>
+                            <input type="text" name="waybill_sn" value="{$vo.waybill_sn}">
+                        </p>
+                        <p class="indent_rirgt_delivercontwuliuxuanze">
+                            <span>物流费用</span>
+                            <input type="text" name="despatch_money" value="{$vo.despatch_money}">
+                        </p>
+                    </div>
+                </div>
+                <button class="indent_rirgt_delivesure js-submit-btn sousuo-btn" type="submit" >确认发货</button>
+            </form>
+        </div>
+        {/volist}
+        {else/}
+        <div class="empty_msg"><p>抱歉，当前没有符合要求的发货订单信息！</p></div>
+        {/if}
+    </div>
+</div>
+</body>
+<div id="addr-form" >{include file="default/layout/update_address"}</div>
+<script>
+
+    $("#active1").click(function () {
+        $(".deliver-input").css('display','none');
+    })
+
+    $("#active2").click(function () {
+        $(".deliver-input").css('display','block');
+    })
+
+</script>
+<!--修改收货、退货地址信息-->
+<script>
+ function updateAddr(id,title) {
+     var form = $('#addr-form');
+     form.css('display','block');
+     $('.city-picker-span,.city-picker-dropdown').css('width','300px');
+     console.log(id);
+     layer.open({
+         type: 1 //Page层类型
+         ,area: ['700px', '450px']
+         ,title: '发货>修改'+title
+         ,shade: 0.6 //遮罩透明度
+         ,maxmin: true //允许全屏最小化
+         ,anim: 1 //0-6的动画形式，-1不开启
+         ,content: form
+         ,end:function () {
+            $('#js-submit').submit();
+             form.css('display','none');
+         }
+     });
+     /*获取修改地址数据*/
+     $.ajax({
+         url:"{:U('editor_addrs')}",
+         type:"post",
+         data:{order_id:id},
+         success:function (re) {
+             console.log(re);
+             $('.placeholder')[0].innerText = re.citys;
+             $('#city').attr('value',re.citys);
+             $('#order_id').attr('value',re.order_id);
+             $('#address')[0].innerText = re.address;
+             $('#user_name').attr('value',re.user_name);
+             $('#user_phone').attr('value',re.user_phone);
+         }
+     })
+ }
+</script>

@@ -1,0 +1,116 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('Navigation/nav_edit')}">
+    <input type="hidden" name="id" value="{$nao_info.id}">
+<div class="form-group">
+    <label for="menu_name" class="col-sm-2 control-label">导航名称</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" class="form-control" id="name" placeholder="导航名称" value="{$nao_info.name}">
+    </div>
+</div>
+<div class="form-group">
+    <label for="sort" class="col-sm-2 control-label">状态</label>
+    <div class="col-sm-4">
+        <label class="i-lab">
+            <input type="radio" name="status" value='1' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['status'] eq 1"}checked{/if}><span>显示</span>
+        </label>
+        <label class="i-lab">
+            <input type="radio" name="status" value='0' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['status'] eq 0"}checked{/if}><span>隐藏</span>
+        </label>
+    </div>
+</div>
+   <div class="form-group">
+        <label for="type" class="col-sm-2 control-label">导航位置</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="type" id="type" value='1' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['type'] eq 1"}checked{/if}><span>顶部</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="type" id="type" value='2' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['type'] eq 2"}checked{/if}><span>底部</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="open_way" class="col-sm-2 control-label">打开方式</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="open_way" id="open_way" value='1' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['open_way'] eq 1"}checked{/if}><span>窗口</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="open_way" id="open_way" value='2' class="mgr mgr-primary mgr-lg" {if condition="$nao_info['open_way'] eq 2"}checked{/if}><span>跳转</span>
+            </label>
+        </div>
+    </div>
+<div class="form-group">
+    <label for="menu_des" class="col-sm-2 control-label">导航描述</label>
+    <div class="col-sm-4">
+        <input type="text" name="des" class="form-control" id="menu_des" placeholder="导航描述" value="{$nao_info.des}">
+    </div>
+</div>
+<div class="form-group">
+    <label for="" class="col-sm-2 control-label">URL类型</label>
+    <div class="col-sm-4">
+        <label class="i-lab">
+            <input type="radio" name="url_type" value='1' text="内链接" class="mgr mgr-primary mgr-lg" {if condition="$nao_info['url_type'] eq 1"}checked{/if}><span>内链接</span>
+        </label>
+        <label class="i-lab">
+            <input type="radio" name="url_type" value='2' text="外链接" class="mgr mgr-primary mgr-lg" {if condition="$nao_info['url_type'] eq 2"}checked{/if}  > <span>外链接</span>
+        </label>
+    </div>
+</div>
+    <div class="form-group">
+        <label for="sort" class="col-sm-2 control-label">排序</label>
+        <div class="col-sm-2">
+            <input type="text" js-test="" name="sort" class="form-control" id="sort" placeholder="排序"><i id="sortwarning" style="color: red" value="{$nao_info.sort}"></i>
+        </div>
+    </div>
+<div id="in">
+    <div class="form-group">
+        <label for="module" class="col-sm-2 control-label">模块</label>
+        <div class="col-sm-4">
+            <input type="text" name="module" class="form-control" id="module" placeholder="" value="{$nao_info.module}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="controller" class="col-sm-2 control-label" >控制器</label>
+        <div class="col-sm-4">
+            <input type="text" name="controller" class="form-control" id="controller" placeholder="" value="{$nao_info.controller}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="action" class="col-sm-2 control-label">方法</label>
+        <div class="col-sm-4">
+            <input type="text" name="action" class="form-control" id="action" placeholder="" value="{$nao_info.action}">
+        </div>
+    </div>
+</div>
+<div id="out">
+    <div class="form-group">
+        <label for="url" class="col-sm-2 control-label">链接地址</label>
+        <div class="col-sm-4">
+            <input type="text" name="url" class="form-control" id="url" placeholder="" value="{$nao_info.url}">
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary js-submit-btn mr_3px">确认</button>
+        <button type="reset" class="btn btn-primary">重置</button>
+    </div>
+</div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[name="url_type"]').each(function(){
+            if (this.checked) {
+                $(this).val()==1 && $('#in').css('display','block') && $('#out').css('display','none');
+                $(this).val()==2 && $('#in').css('display','none') && $('#out').css('display','block');
+            }
+        })
+        $('input[name="url_type"]').click(function(){
+            $(this).val()==1 && $('#in').css('display','block') && $('#out').css('display','none');
+            $(this).val()==2 && $('#in').css('display','none') && $('#out').css('display','block');
+        })
+    })
+</script>

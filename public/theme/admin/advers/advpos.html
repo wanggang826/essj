@@ -1,0 +1,87 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('advers/advpos')}" class="panel-body hidden-xs form-inline">
+        <div class="form-group">
+            <input class="form-control" name="searchText" type="text" placeholder="广告位名称" value="{:input('searchText')}">
+        </div>
+        <div class="form-group">
+            <select   class="form-control"  name="advpos_type">
+                <option value="">-- 类型 --</option>
+                <option value="PC" {if condition="input('advpos_type') == 'PC'"}selected = "selected"{/if}>PC</option>
+                <option value="APP" {if condition="input('advpos_type') == 'APP'"}selected = "selected"{/if}>APP</option>
+            </select>
+        </div>
+        <div class="form-group pull-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                    <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                </button>
+                <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                    <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                </a>
+            </div>
+        </div>
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+        <a href="{:U('advers/advpos_add')}" class="btn btn-outline btn-default js-window-load"js-title="新增广告位" js-unique="true">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+        </a>
+        <!-- <a href="{:U('advers/advpos_del')}" class="btn btn-outline btn-default js-del-btn del-all" text="删除后将无法恢复，请谨慎操作">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+        </a> -->
+        </div>
+        <div class="pull-right">
+            {$lists->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="200">名称</th>
+                <th width="80">类型</th>
+                <th width="80">宽度</th>
+                <th width="80">高度</th>
+                <th width='120' class="hidden-xs">图片可放置个数</th>
+                <th class="hidden-xs">标识</th>
+                <th class="hidden-xs">创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {volist name="lists" id="vo"}
+            <tr>
+               <td width='1'><input type="checkbox" class="i-checks" value="{$vo.advpos_id}" name="input[]"></td>
+                <td>{$vo.advpos_name}</td>
+                <td>{$vo.advpos_type}</td>
+                <td>{if condition="$vo.advpos_width eq 0"}100%{else/}{$vo.advpos_width}{/if}</td>
+                <td>{if condition="$vo.advpos_height eq 0"}100%{else/}{$vo.advpos_height}{/if}</td>
+                <td class="hidden-xs">{$vo.img_num}</td>
+                <td class="hidden-xs">{$vo.advpos_ename}</td>
+                <td class="hidden-xs">{$vo.create_time}</td>
+                <td>
+                    <span class="btn-group">
+                        <a href="{:U('advers/advpos_edit',['advpos_id'=>$vo.advpos_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.advpos_name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+                        {if condition="$vo.status eq 0"}
+                        <a href="{:U('advers/advpos_status',['advpos_id'=>$vo.advpos_id,'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="启用后该广告位可以正常展示"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用</span></a>
+                        {elseif condition="$vo.status eq 1"/}
+                        <a href="{:U('advers/advpos_status',['advpos_id'=>$vo.advpos_id,'status'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后该广告位将无法展示，请谨慎操作"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a> 
+                        <a href="{:U('advers/adv_add',['advpos_id'=>$vo.advpos_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.advpos_name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">添加广告</span></a>
+                        {/if}
+                        {if condition="$vo.adv eq '-1'"}
+                        <a href="{:U('advers/advpos_del',['id'=>$vo.advpos_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="如该广告位已在页面上使用，请勿删除！否则页面将会出错！！！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                        {/if}
+                    </span>
+                </td>
+            </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    function page_size(){
+        $('.pagesize_form').submit();
+    }
+</script>

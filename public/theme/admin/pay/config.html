@@ -1,0 +1,24 @@
+<form role="form" action="{:url('pay/config')}" class="row panel-body form-horizontal js-ajax-form">
+<input type="hidden" name="id" value="{$id}">
+ <table class="table table-condensed">
+    <tr class="visibility-hidden">
+        <th width="150"></th>
+        <th width="350"></th>
+        <th class="hidden-xs"></th>
+    </tr>
+    {foreach name="pay_config" item="vo" key="k"}
+    <tr>
+        <td align="right">{$vo.name}</td>
+        <td> <input type="text" placeholder="{$vo.name}" class="form-control" name="{$k}" value="{$vo.val}"></td>
+        <td>{$vo.desc}</td>
+    </tr>
+    {/foreach}
+    <tr>
+        <td></td>
+        <td colspan="2">
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+        </td>
+    </tr>
+ </table>
+
+</form>

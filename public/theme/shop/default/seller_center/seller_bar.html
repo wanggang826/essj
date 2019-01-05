@@ -1,0 +1,31 @@
+<div class="sidebar_centre">
+    <ul>
+        <div class="h_square">
+            <img src="{$img}/dian.png" class="ceimg"/><span>全部功能</span>
+        </div>
+        <li><a href="{:urldo('seller_center/basic_settings')}">店铺基本信息</a></li>
+        <li><a href="{:urldo('seller_center/cash')}">我的钱包</a></li>
+        <li><a href="{:urldo('seller_center/s_good_mgr')}">商品管理</a></li>
+        <li><a href="{:urldo('seller_center/release_good')}" >发布商品</a></li>
+        <li><a href="{:urldo('seller_center/in_application')}">资质认证</a></li>
+        <li><a href="">店铺经营许可证</a></li>
+        <li><a href="{:urldo('seller_center/logistics')}">物流管理</a></li>
+        <li><a href="{:urldo('seller_center/deliver')}">发货</a></li>
+        <li><a href="{:urldo('seller_center/manage')}">评价管理</a></li>
+        <li><a href="{:urldo('seller_center/s_order')}">订单列表</a></li>
+        <li><a href="{:urldo('seller_center/s_nav')}">分类菜单设置</a></li>
+        <div class="h_borde"></div>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var url = window.location.href;
+    var $a  = $('.sidebar_centre ul li').find('a');
+    $a.parent().removeClass('sidebar_lired');
+    $a.removeClass('sidebar_red');
+    $a.each(function() {
+        if($(this).attr('href') == url){
+            $(this).addClass('sidebar_red');
+        }
+    });
+</script>

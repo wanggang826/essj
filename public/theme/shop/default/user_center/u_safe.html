@@ -1,0 +1,115 @@
+
+    <link rel="stylesheet" href="{$css}/usernew.css">
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>设置 ></p>
+        <p>安全中心</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/user_center/side_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt">
+        <div class="right_nav">安全中心</div>
+        <div class="indent_rirgt_zhang">
+            <div class="indent_rirgt_zhangson">
+                <div class="indent_rirgt_zhangsonone">
+                    <div class="indent_rirgt_zhangsonan">
+                        <img src="{$img}/an.jpg" alt="">
+                        <div class="indent_rirgt_zhangsonwan">已完成</div>
+                    </div>
+                      <div class="indent_rirgt_zhangsonba">手机验证</div>
+                   </div>
+                <div class="indent_rirgt_zhangsonfour">您验证的手机： 150*****464    若已丢失或停用，请立即更换，避免账户被盗</div>
+                <div class="indent_rirgt_zhangsonthree">
+                    <button class="indent_rirgt_zhangsonbang">绑 定</button>
+                </div>
+
+            </div>
+            <div class="indent_rirgt_zhangson">
+                <div class="indent_rirgt_zhangsonone">
+                    <div class="indent_rirgt_zhangsonan">
+                        <img src="{$img}/an.jpg" alt="">
+                        <div class="indent_rirgt_zhangsonwan">已完成</div>
+                    </div>
+                    <div class="indent_rirgt_zhangsonba">邮箱验证</div>
+                </div>
+                <div class="indent_rirgt_zhangsonfour">您验证的邮箱： 12*****42@qq.com</div>
+                <div class="indent_rirgt_zhangsonthree">
+                    <button class="indent_rirgt_zhangsonbang">绑 定</button>
+                </div>
+                </div>
+
+
+
+
+            <div class="indent_rirgt_zhangson">
+                <div class="indent_rirgt_zhangsonone">
+                    <div class="indent_rirgt_zhangsonan">
+                        <img src="{$img}/an.jpg" alt="">
+                        <div class="indent_rirgt_zhangsonwan">已完成</div>
+                    </div>
+                    <div class="indent_rirgt_zhangsonba">实名验证</div>
+                </div>
+                <div class="indent_rirgt_zhangsonfour">您认证的实名信息： **三 35************1175</div>
+                <div class="indent_rirgt_zhangsonthree">
+                    <button class="indent_rirgt_zhangsonbang">绑 定</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="indent_rirgt_zhangson">
+                <div class="indent_rirgt_zhangsonone">
+                    <div class="indent_rirgt_zhangsonan">
+                        <img src="{$img}/an.jpg" alt="">
+                        <div class="indent_rirgt_zhangsonwan">已完成</div>
+                    </div>
+                    <div class="indent_rirgt_zhangsonba">支付密码</div>
+                </div>
+                <div class="indent_rirgt_zhangsonfour">您验证的邮箱： 12*****42@qq.com</div>
+                <div class="indent_rirgt_zhangsonthree">
+                    <button class="indent_rirgt_zhangsonbang">绑 定</button>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+    //侧边栏
+    $('.h_sidebar li').click(function(){
+        $(this).find('a').parent().parent().parent().find('a').removeClass('sidebar_red')
+        $(this).parent().parent().find('li').removeClass('sidebar_lired');
+        $(this).find('a').addClass('sidebar_red');
+        $(this).addClass('sidebar_lired');
+    });
+
+
+
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+        $(this).children(".hei").addClass("adddis")
+
+    })
+
+</script>
+
+</html>

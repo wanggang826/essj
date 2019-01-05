@@ -1,0 +1,313 @@
+<link rel="stylesheet" href="{$css}/usernew.css">
+<link rel="stylesheet" href="{$css}/my_main.css">
+<link rel="stylesheet" href="{$static}icon/iconfont.css">
+<link rel="stylesheet" href="{$css}/usernew.css">
+	<!--head-->
+	<div class="h_concent">
+		<div class="position">
+			<p>您的位置：</p>
+			<a href="">首页 ></a>
+			<p>卖家中心 ></p>
+			<p>发货</p>
+		</div>
+		<div class="indent_fl">
+			<div class="h_sidebar">
+				{include file="default/seller_center/seller_bar"}
+			</div>
+		</div>
+		<div class="indent_rirgt_basic"  id="mainnav">
+			<div class="qbgn level1">
+				<div class="navMid fleft ">
+					<div class="dpjbxx">
+						<p>
+							<span class="jb"></span>
+							<span class="dp">我的钱包</span>
+						</p>
+						<div class="money-ka">
+							<a class="xinZ">新增银行卡</a>
+							<ul class="fleft my-ul">
+                                <input type="hidden"  id="img_url" value="{$img}">
+                                <input type="hidden" name="usable_money" id="usable_money" value="{$user_info.money}">
+								<li><span>可取金额： <span class="user_money">{$user_info.money}元</span></span></li>
+								<li><span>待到帐金额： <span>{$stay_money}元</span></span></li>
+								<li><span>总金额： <span>{$all_money}</span></span></li>
+							</ul>
+							<a class="tiQ">提现</a>
+
+							<ul class="fright my-ul">
+								{volist name="bank" id="banks"}
+								<li>{if condition="$key eq 0"}<span>绑定银行卡： <span>{/if}{$banks.account_name}（尾号{$banks.account_end}）</span></span></li>
+								{/volist}
+							</ul>
+
+							<form id="add_bank" action="{:U('Bank/add_bank')}" method="post" class="js-ajax-form">
+								<div class="yingHang">
+									<p class="my-clear">绑定银行卡<b>×</b></p>
+									<div>
+										<p>请绑定持卡人本人银行卡</p>
+										<ul>
+											<input type="hidden" name="user_id" value="{$user_info.user_id}">
+											<li><span>持有人</span> <input type="text" name="realname" id="realname" value=""/></li>
+                                            <li><span>账号类型</span><select name="account_type" id="account_type" style="width: 210px;height:28px;">
+                                                    <option value="银行卡" selected="selected">银行卡</option>
+                                                    <option value="支付宝">支付宝</option>
+                                                </select>
+                                            </li>
+											<li><span>账号</span><input type="text" name="account"  id="account" value=""/></li>
+											<li><span>手机号码</span><input type="text" name="phone"  id="phone" value=""/></li>
+											<li>
+												<span>短信验证码</span>
+												<input type="text" name="money_code"  id="money_code" value=""/>
+												<span><b>20</b>秒重发</span>
+											</li>
+										</ul>
+									</div>
+									<a href="javascript:;" class="ding1" onclick="present('bank')">确定</a>
+								</div>
+								<div class="clear"></div>
+							</form>
+						</div>
+						<div class="money-ka money-qing">
+							<ul class="fleft">
+								<li class="fleft">
+									<form id="cash" action="{:U('SellerCenter/cash')}" method="post" class="js-ajax-form">
+										<div class="yingHang1">
+											<p class="my-clear">取现<b>×</b></p>
+											<div>
+												<ul style="height:140px">
+													<li style="margin-top: 15px;">
+														<span style="width:112px">请选择转入银行卡</span>
+														<select name="account" id="checkbank">
+															{volist name="bank" id="banks"}
+																<option value="{$banks['account']}" {if condition="$banks['status'] eq 1"} selected="selected" {/if}>{$banks.account_name}({$banks.account})</option>
+															{/volist}
+														</select>
+													</li>
+													<li><span style="width:112px">输入取现金额</span><input type="text" id="money"  name="money"  value="{:input('money')}"/></li>
+													<li>
+														<span style="width:112px">短信验证码</span>
+														<input type="text" name="bank_code" id="bank_code"  value="{:input('bank_code')}" />
+														<span><b>20</b>秒重发</span>
+													</li>
+												</ul>
+											</div>
+											<a href="javascript:;" style="margin-left: 200px;" class="queD" onclick="present('cash')">确定</a>
+										</div>
+									</form>
+									<div class="yingHang2">
+										<p class="my-clear">操作成功<b>×</b></p>
+										<div>
+											<b id="images"></b>
+											<p class="add_type">添加成功 !</p>
+											<a href="" class="wang1">完成</a>
+										</div>
+
+									</div>
+								</li>
+                                <form id="accounts" action="{:U('SellerCenter/cash')}" method="post">
+                                    <li class="fleft">
+                                        <span>金额情况:&nbsp;</span>
+                                        <select name="type"  class="quxian" >
+                                            <option value="">所有情况</option>
+                                            <option value="out">支出</option>
+                                            <option value="in">收入</option>
+                                        </select>
+                                        <span></span>
+                                    </li>
+                                    <li class="fleft xiadan" style="margin-left: 50px;">
+                                        <span>时间: </span>
+                                        <input type="text" style="width: 137px;height: 28px;margin-top: -4px;" name="statr_time" class="management_rightsoninputone  i-datestart"  placeholder="开始日期" />
+                                         至
+                                        <input type="text" style="width: 137px;height: 28px;margin-top: -4px;" name="end_time" class="management_rightsoninputone  i-dateend" placeholder="结束日期" />
+                                    </li>
+                                    <li class="fleft" style="margin-left: 218px;">
+                                        <a href="javascript:;" class="cha" onclick="present('account')">查询</a>
+                                    </li>
+                                </form>
+								<li class="clear"></li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						<div class="money-xin my-relative">
+							<ul class="my-clear">
+								<li class="fleft">
+									<span>时间</span>
+								</li>
+								<li class="fleft">
+									<span>金额情况</span>
+								</li>
+								<li class="fleft">
+									<span>金额</span>
+								</li>
+								<li class="fleft">
+									<span>备注信息</span>
+								</li>
+								<li class="clear"></li>
+							</ul>
+							{volist name="account" id="accounts"}
+								<ul class="my-clear">
+									<li class="fleft">
+										<span>{$accounts.create_time}</span>
+									</li>
+									<li class="fleft">
+										<span>{if condition="$accounts['type'] eq 'in'"}进账{elseif condition="$accounts['type'] eq 'out'"/}支出{/if}</span>
+									</li>
+									<li class="fleft">
+										<span>{$accounts.amount}</span>
+									</li>
+									<li class="fleft">
+										<span>{$accounts.desc}</span>
+										<span>金额{$accounts.amount}元</span>
+									</li>
+									<li class="clear"></li>
+								</ul>
+							{/volist}
+						</div>
+						<div style="text-align: center">{$page}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="{$web_static}/plugins/layui/laydate/laydate.js" charset="utf-8"></script>
+	<script type="text/javascript" src="{$web_static}/js//uploadImg.js"></script>
+	<script src="{$js}/jquery-migrate-1.2.1.min.js"></script>
+	<script src="{$js}/main.js"></script>
+	<script>
+        //提交表单
+        function present(type){
+            if(type === 'bank'){
+                var number       = 1;
+                var img_url      = $("#img_url").val();
+                var account_type = $("#account_type").val();
+                var realname     = $("#realname").val();
+                var account      = $("#account").val();
+                var money_code   = $("#money_code").val();
+                var phone        = $("#phone").val();
+                var regex        = /^1[3|4|5|7|8][0-9]{9}$/;
+                if(!regex.test(phone) || (phone == "")) {
+                    number++;
+                    callFun("请填写有效手机号码!","phone");
+                }
+                if(realname == ""){
+                    number++;
+                    callFun("请填写持有人!","realname");
+                }
+                if(account_type == ""){
+                    number++;
+                }
+                if(account == ""){
+                    number++;
+                    callFun("请填写有效账号!","account");
+                }
+                if(money_code == ""){
+                    number++;
+                    callFun("请填写有效验证码!","money_code");
+                }
+                if(number==1){
+                    var url = "{:U('Bank/add_bank')}";
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:{'realname':realname,'account_type':account_type,'account':account},
+                        dataType:'json',
+                        success:function(msg){
+                              if(msg === 1){
+                                  $(".yingHang").css("display","none");
+                                  $(".yingHang2").css("display","block");
+                              }else{
+                                  $(".yingHang2").find('.my-clear').html("操作失败!");
+                                  document.getElementById("images").style.backgroundImage="url(../../theme/shop/default/static/img/dacha.png) ";
+                                  $(".yingHang2").find('.add_type').html(msg);
+                                  $(".yingHang2").css("display","block");
+                                  $("#mainnav").css("marginBottom","129px");
+							  }
+                        }
+                    })
+                }
+
+            }else if(type === 'cash'){
+                var number       = 1;
+                var money        = parseFloat($("#money").val()) ;
+                var bank         = $("#checkbank").val();
+                var bank_code    = $("#bank_code").val();
+                var usable_money =$("#usable_money").val() ;
+                if ((money == '') || (usable_money < money) || isNaN(money)) {
+                    number++;
+                    callFun("请填写有效的取现金额!","money");
+                }
+                if(bank == ""){
+                    number++;
+                }
+                if(bank_code == ""){
+                    number++;
+                    callFun("请填写有效验证码!","bank_code");
+                }
+                if(number==1){
+                    var url = "{:U('SellerCenter/cash')}";
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:{'money':money,'bank':bank},
+                        dataType:'json',
+                        success:function(msg){
+                            if(msg === 1){
+                                $(".user_money").html(usable_money-money+"元");
+                                $(".yingHang1").css("display","none");
+                                $(".yingHang2").css("display","block");
+                                $(".yingHang2").find('.add_type').html("取现成功!");
+                            }else{
+                                $(".yingHang2").find('.my-clear').html("操作失败!");
+                                document.getElementById("images").style.backgroundImage="url(../../theme/shop/default/static/img/dacha.png) ";
+                                $(".yingHang2").find('.add_type').html("可能由于可取金额不足的原因导致失败!");
+                                $(".yingHang2").css("display","block");
+                                $("#mainnav").css("marginBottom","129px");
+							}
+                        }
+                    })
+                }
+            }else if(type === 'account'){
+                $("#accounts").submit();
+            }
+        }
+        //分页样式
+        $(function(){
+            $(".active").addClass("adcol");
+            $(".active").unbind();
+        })
+        /**
+         * 调用弹框
+         */
+        function  callFun(text,name){
+            var tag   = '.js-ajax-form input[name="'+name+'"]';
+            layerTips('<span class="msgFont" style="color:#000">'+text+'</span>',tag,'#FCEEF3',115);
+            $('.msgFont').css({
+                'padding-left': '22px',
+                'background':'url(../../static/img/5.png) no-repeat',
+            });
+        }
+        /**
+         * 弹框样式
+         */
+        function layerTips(content,tag,color,offset){
+            content = content ? content : '提示：错误';
+            offset  = offset  ? offset  : 0;
+            var tips_index = layer.open({
+                content:[content,tag],
+                type:4,
+                shade :false,
+                tips :[1,color],
+                time:0,
+                tipsMore: true,
+                closeBtn:0,
+            });
+            var left = $(tag).offset().left + offset;
+            $('.layui-layer-tips').css({
+                'left':left
+            });
+            $(tag).data('tips',tips_index);
+        }
+
+
+
+	</script>

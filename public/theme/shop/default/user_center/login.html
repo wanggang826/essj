@@ -1,0 +1,133 @@
+
+<link rel="stylesheet" href="{$css}/login.css">
+<script type="text/javascript" src='{$web_static}/js/adaptive-backgrounds.js'></script>
+<div class="container mag-top">
+    <div class="row">
+        <div class="col-sm-4 d_padi">
+            <div class="d_logo">
+                {include file="default/layout/logo"}
+            </div>
+        </div>
+        <div class="col-sm-6 d_padi input">
+
+        </div>
+    </div>
+</div>
+{if condition="isset($adv['LOGIN_LEFT'])"}
+{~$vo = $adv['LOGIN_LEFT']['0']}
+<div class="conta image-wrapper" style="background-color:{$vo.bg_color}">
+{/if}
+<div class="l_cont" >
+    {include file="default/adv_pos/login_left"}
+    <div class="l_content">
+        <form action="{:U('UserCenter/login')}" method="post" class="js-ajax-form" />
+            <h1>用户登录</h1>
+            <div class="content">
+                <div class="content_cont">用户名</div>
+                <input type="text" class="co_input" name="username" js-check="username" id="username" value="{:input('username')}">
+            </div>
+            <div class="content">
+                <span class="con_span content_cont">密码</span>
+                <input type="password" name="password" id="password"  js-check="password" class="co_input" value="{:input('password')}">
+            </div>
+            <div class="content">
+             <div class="content_cont">验证码</div>
+                <div class="co_input_div">
+                    <input type="text" class="yanzheng" js-check="entry"  id="entry" name="entry" value="">
+                    <a href="javascript:void(0)" ><img src="{:U('UserCenter/verify')}" alt="" id="image" class="img2" onClick="this.src=this.src+'?'+Math.random();" ></a>
+                    <a href="javascript:void(0)"  onclick="entryimg()">换一张</a>
+                </div>
+            </div>
+            <div class="content">
+                <a class="back js-submit-btn btn button_denglu" >登录</a>
+                <a href="{:U('UserCenter/image')}" class="wangji">忘记密码？</a>
+            </div>
+        </form>
+       <div class="xian"></div>
+        <div class="content text">
+            <span class="muzhang">没有帐号？</span>
+            <a href="{:url('user_center/reg')}" class="zhuce">免费注册</a>
+        </div>
+    </div>
+</div>
+</div>
+<script src="{$web_static}/js/checkForm.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var $window       = $(window);
+    var $imgWrapper   = $('.image-wrapper');
+    var $imgs         = $imgWrapper.find("img");
+    $imgs.on('ab-color-found', function(e, data){
+      $(this).parents('.image-wrapper')
+             .attr('data-color', data.color);
+        $(this).css({
+            border: "1px solid " + data.palette[0].replace(')', ",0.25)").replace('rgb', "rgba")
+        });
+        $(this).parents('.image-wrapper')
+             .find('.swatch')
+             .css({ background: data.color })
+             .after(data.color)
+        if ( $(this).attr('data-description') == 'grandpa' ){
+            $(this).parents('.image-wrapper')
+               .css({ background: data.color })
+        }
+    });
+    $.adaptiveBackground.run({ parent: '1' });
+  })
+/*
+* 换验证码
+* */
+  function entryimg(){
+      document.getElementById('image').src = "{:U('UserCenter/verify')}" + '?randomNum=' + Math.random() * 1000;
+  }
+  /*
+  * 验证用户名
+  * */
+  function username(e){
+      var username = $(e).val();
+      if (username == '') {
+          return '请填写用户名!';
+      }
+      return true;
+  }
+  function password(e){
+      var password = $(e).val();
+      if (password == '') {
+          return '请填写密码!';
+      }
+      return true;
+  }
+  /*
+  * 验证验证码
+  * */
+  function entry(e){
+      var entry = $(e).val();
+      if (entry == '') {
+          return '请填写验证码!';
+      }
+      return true;
+  }
+
+  /*
+   * 验证验证码
+   * */
+/*  function check_entry(){
+      var entry = $("#entry").val();
+      var url = "{:U('UserCenter/check_entry')}";
+      $.ajax({
+          url:url,
+          type:'post',
+          data:{'entry':entry},
+          dataType:'json',
+          success:function (msg) {
+              if(!msg){
+                  alert('验证码有误!');
+                  $("#image").click();
+              }
+          }
+      })
+  }*/
+</script>
+
+}
+</script>

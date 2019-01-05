@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2017-10-13T10:29:39+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit/goods_id/110/page/4.shtml
+[ error ] [8]未定义数组下标: 10[D:\phpStudy\WWW\ershoushouji\runtime\temp\20fd75c18906c45e5bb7085549b4f9ce.php:12]
+---------------------------------------------------------------
+[ 2017-10-13T10:29:51+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit/goods_id/110/page/4.shtml
+[ error ] [8]未定义数组下标: 10[D:\phpStudy\WWW\ershoushouji\runtime\temp\20fd75c18906c45e5bb7085549b4f9ce.php:12]

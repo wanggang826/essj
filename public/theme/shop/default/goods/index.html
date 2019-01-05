@@ -1,0 +1,89 @@
+
+<link rel="stylesheet" href="{$css}/goods.css" />
+
+
+<script src="{$js}/tab.js" type="text/javascript"></script>
+
+<div class="d_shop">
+    <div class="container">
+        {include file="default/index/cate_nav"}
+        {include file="default/index/nav_top"}
+    </div>
+</div>
+<div class="container bordertop">
+    <div class="row">
+        <p class="firtspan">{$goods.cate_name}</p>
+        <p class="lastspan">搜索到<span class="coloryellow">{$goods.goods_count}</span>件相关商品</p>
+        {include file="default/goods/condition"}
+    </div>
+</div>
+<div class="container mabtom">
+    <div class="row">
+    {include file="default/goods/good_recom"}
+        <div class="d_shops col-lg-10  col-sm-9">
+            <div class="d_float1">
+            {include file="default/goods/sort_bar"}
+                <div class="ovfow" id='goods-list'>
+                    {include file="default/goods/good_list"}
+                </div>
+                <div class="page1">
+                    {$goods.page}
+                </div>
+            </div>
+        </div>
+        {include file="default/adv_pos/goods_bottom"}
+    </div>
+</div>
+
+<script src="{$js}/myjs.js" type="text/javascript" charset="utf-8"></script>
+<!-- 条件搜索 -->
+<script>
+    function getGoods(data,type,all){
+        var id = $(data).data('id');//品牌或属性id
+        var attr_value = $(data).data('val');//属性值
+        if(type == 'attr' && all == '0'){
+            var attr_value = '0';
+        }
+        $.ajax({
+            url:"{:url('Goods/index')}",
+            data:{type:type,id:id,attr_value:attr_value,is_all:all},
+            type:"post",
+            dataType:"json",
+            success:function(data){
+                var goods = data['goods_list']['data'];
+                $('#goods-list').empty();
+                $('.page1').empty();
+                htmlgood = '';
+                if(goods != null){
+                    for (var i = 0;i < goods.length; i++) {
+                        htmlgood += "<div class='col-lg-3 col-md-4 col-sm-6 d_mabottom1'>";
+                        htmlgood += "<a href='"+goods[i].detail_url+"'><img src='"+goods[i].goods_thums+"' /></a>";
+                        htmlgood += "<span class='firstp1'>￥"+goods[i].shop_price+"</span>";
+                        htmlgood += "<a href='"+goods[i].detail_url+"' class='lastp1'>"+goods[i].goods_name+"&nbsp;"+goods[i].recom_desc+"</a>";
+                        htmlgood += "<div class='mag01'>";
+                        htmlgood += "<a href='"+goods[i].shop_url+"' class='firp1'>"+goods[i].shop_name+"</a>";
+                        htmlgood += "<p class='latp1'>"+goods[i].sale_count+"人付款</p></div>";
+                        htmlgood += "<div class='d_baoyou'>";
+                        htmlgood += '<a class="bya1" href="">包邮</a>';
+                        htmlgood += '<a class="bya2" href="">险</a></div></div>';
+                    }
+                    $(htmlgood).appendTo('#goods-list');
+                }
+                console.log(data['page']);
+                $(data['page']).appendTo(".page1");   
+                $(goods.length).appendTo('#goods_count');
+                // $(goods.length).appendTo('#goods_count');
+                $(".active").addClass("adcol");
+                
+            }
+        })
+    }
+
+    //分页
+    $(function(){
+        $(".pagination a:first ").attr('id','shang');
+        $(".pagination a:last ").attr('id','xia');
+        $(".active").addClass("adcol");
+        $(".active").unbind();
+    })
+</script>

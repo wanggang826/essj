@@ -1,0 +1,204 @@
+<script src="{$web_static}/plugins/layui/laydate/laydate.js" charset="utf-8"></script>
+<script type="text/javascript" src="{$web_static}/js//uploadImg.js"></script>
+<link rel="stylesheet" href="{$css}/usernew.css">
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>商品管理</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品管理</div></div>
+            <div class="management_right">
+                <form action="{:U('SellerCenter/s_order')}" method="post">
+                    <div class="management_rightson">
+                        <span>商品名称</span>
+                        <input type="text" name="goods_id" class="management_rightsoninput" value="{:input('good_name')}">
+                    </div>
+                    <div class="management_rightson">
+                        <span>订单状态</span>
+                        <select name="status" id="" class="management_rightsoninput">
+                            <option></option>
+                            {volist name="status" id="type"}
+                            <option value="{$type['id']}">{$type.name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                    <div class="management_rightson">
+                        <span>订单编号</span>
+                        <input type="text " name="order_sn" class="management_rightsoninput" value="{:input('order_sn')}">
+                    </div>
+                    <div class="management_rightson">
+                        <span>买家名称</span>
+                        <input type="text" name="user_id" class="management_rightsoninput" value="{:input('realname')}">
+                    </div>
+
+                    <div class="management_rightson setime">
+                        <span>创建时间</span>
+                        <input type="text" name="datestart" class="management_rightsoninputone  i-datestart" id="date3" placeholder="开始日期" />
+                        至
+                        <input type="text" name="dateend" class="management_rightsoninputone  i-dateend" placeholder="结束日期" />
+                    </div>
+                    <div class="clear"></div>
+                    <div class="management_rightson">
+                        <input type="submit" value="搜索" class="management_rightsoninputbutton sousuo-btn" />
+                    </div>
+                </form>
+            </div>
+        <div class="management_rightcont">
+            <div class="management_rightcontone">
+                <a href="javascript:;" class="management_rightcontone_addback" onclick="order_status(0)">全部订单</a>
+                <a href="javascript:;" onclick="order_status(2)">等待买家付款</a>
+                <a href="javascript:;" onclick="order_status(4)">等待发货</a>
+                <a href="javascript:;" onclick="order_status(5)">已发货</a>
+                <a href="javascript:;" onclick="order_status(7)">退款中</a>
+                <a href="javascript:;" onclick="order_status(11)">未评价</a>
+                <a href="javascript:;" onclick="order_status(6)">交易成功</a>
+                <a href="javascript:;" onclick="order_status(12)">取消订单</a>
+            </div>
+            <div class="management_rightconttwo">
+                <span class="management_rightconttwospanone">商品名称</span>
+                <span class="management_rightconttwospanstwo">价格/数量</span>
+                <span class="management_rightconttwospanstwo">买家</span>
+                <span class="management_rightconttwospanstwo">状态</span>
+                <span class="management_rightconttwospanstwo">实收款</span>
+                <span class="management_rightconttwospanstwo">操作</span>
+
+            </div>
+            <div class="ordercont  order_checkbox">
+               <!-- <div class="orderconts"><input type="checkbox"></div>
+                <input type="button" value="批量发货">-->
+            </div>
+            <form id="order_check_all" action="{:U('SellerCenter/deliver')}" method="post">
+            <div class="order_list" id="check_arr">
+                {volist name="orders" id="order"}
+                    <div class="management_rightcontthreeparent">
+                        <div class="management_rightcontthreesons">
+                            <div class="ordercont">
+                                <div class="orderconts"><input type="checkbox" name="order_id[]" value="{$order.order_id}"></div>
+                                <span> 订单编号：<span class="order_sn">{$order.order_sn}</span></span>
+                                <span class="orderconts_left"> 创建时间：<span class="create_time">{$order.create_time}</span></span>
+                                <span class="orderconts_leftwao">{$order.method}</span>
+                                <span class="orderconts_lefttwo"> 运单号：<span class="waybill_sn">{$order.waybill_sn}</span></span>
+                            </div>
+                        </div>
+                        <div class="good_list">
+                            {volist name="$order['goods_info']" id="good"}
+                            <div class="management_rightcontthree_son">
+                                    <span class="management_rightconttwospanss">
+                                        <img src="{$upload}{$good.good_image}" alt="" class="management_rightconttwospansonimg">
+                                        <div class="management_rightconttwospansononesin">
+                                            <p class="goods_name">{$good.goods_name}</p>
+                                             <div class="attr_list ">
+                                                {volist name="$good['good_attr']" id="attr"}
+                                                    <p class="goods_attr">{$key}：{$attr}</p>
+                                                {/volist}
+                                             </div>
+                                        </div>
+                                    </span>
+                                <div class="management_rightconttwospanstwoparent">
+                                    <span class="management_rightconttwospanstw">￥{$good.price}x{$good.goods_count}</span>
+                                    <span class="management_rightconttwospanstw  user_id">{$order.user_id}</span>
+                                    <span class="status"><p class="status1">{$good.statusText}</p>
+                                        <a href="{:urldo('seller_center/order_detail',['order_id'=>$order.order_id])}"  class="management_rightconttwospanstwa">物流订单详情</a>
+                                    </span>
+                                    <span class="total_price"> <p class="total_price1">{$good.total_price}</p>
+                                        <p class="despatch_money">（含运费￥{$order.despatch_money}）</p>
+                                    </span>
+                                    <a  class="management_rightconttwospanstw good_info">详情</a>
+                                </div>
+                            </div>
+                            {/volist}
+                        </div>
+                    </div>
+                {/volist}
+            </div>
+            </form>
+            <div class="page">{$orders->render()}</div>
+        </div>
+    </div>
+</div>
+<script>
+    var htmlobj = $(".management_rightcontthreeparent").eq(0).clone();
+    var goodsobj = htmlobj.find('.management_rightcontthree_son').eq(0).clone();
+ function order_status(status){
+     var url = "{:U('SellerCenter/s_order')}";
+     var  status = status;
+     $.ajax({
+         url:url,
+         type:'post',
+         data:{'status':status},
+         dataType:'json',
+         success:function(msg){
+             $(".management_rightcontthreeparent").remove();
+             htmlobj.find(".management_rightcontthree_son").remove();
+             htmlobj.find(".attr_list").empty();
+             $('.order_checkbox').empty();
+             $(".page").empty();
+             var data    = msg.data;
+             var length  = data.length;
+             if(length>0){
+                 for (var i=0;i<length;i++){
+                     var html = htmlobj.clone();
+                     html.find('.order_sn').html(data[i].order_sn);
+                     html.find('.create_time').html(data[i].create_time);
+                     html.find('.orderconts_leftwao').html(data[i].method);
+                     html.find('.waybill_sn').html(data[i].waybill_sn);
+                     for (var j=0;j<data[i].goods_info.length;j++){
+                         var goods = goodsobj.clone();
+                         goods.find('.management_rightconttwospansonimg').attr('src',data[i].good_image+data[i].goods_info[j].good_image);
+                         goods.find('.goods_name').html(data[i].goods_info[j].goods_name);
+                         goods.find('.management_rightconttwospanstw').html("￥"+data[i].goods_info[j].price+"x"+data[i].goods_info[j].goods_count);
+                         goods.find('.user_id').html(data[i].user_id);
+                         goods.find('.status1').html(data[i].goods_info[j].statusText);
+                         goods.find('.management_rightconttwospanstwa').attr('href',data[i].url_info+"?order_id="+data[i].order_id);
+                         goods.find('.management_rightconttwospanstwa').html("物流订单详情");
+                         goods.find('.total_price1').html(data[i].goods_info[j].total_price);
+                         goods.find('.despatch_money').html("(包含运费￥"+data[i].despatch_money+")");//物流费
+                         goods.find('.good_info').attr('href',data[i].url_info+"?waybill_sn="+data[i].waybill_sn);//商品详情
+                         goods.find('.good_info').html('详情')
+                         html.find('.good_list').append(goods[0].outerHTML);
+                         var good_attr = data[i].goods_info[j].good_attr;
+                         for (var l in good_attr){
+                             var attr ="";
+                             attr =" <p class='goods_attr'>"+l+':'+good_attr[l]+"</p>"
+                             html.find('.attr_list').eq(j).append(attr);
+                         }
+                     }
+                 }
+                if(data[0].order_status ==4){
+                     var checkbox = "";
+                     checkbox = "<div class='orderconts'><input type='checkbox' id='order_all' onclick='order_all()' name='order_id[]' ></div><input type='button' onclick='order_check()' value='批量发货'>"
+                     $(checkbox).appendTo('.order_checkbox');
+                 }
+                 $(data[0].page).appendTo(".page");
+                 $(".active").addClass("adcol");
+                 $(html).appendTo(".order_list");
+             }
+        }
+    })
+     return false;
+ }
+    //分页样式
+    $(function(){
+        $(".active").addClass("adcol");
+        $(".active").unbind();
+    })
+ function order_all(){
+     var check_all = $("#order_all").is(':checked');
+     if(check_all === true){
+        $("#check_arr :checkbox").prop("checked", true);
+     }else{
+        $("#check_arr :checkbox").prop("checked",false);
+     }
+ }
+function order_check(){
+     $("#order_check_all").submit();
+}
+</script>

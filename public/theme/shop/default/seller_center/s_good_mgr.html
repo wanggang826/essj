@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理</title>
+</head>
+<link rel="stylesheet" href="{$css}/usernew.css">
+<body>
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>商品管理</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品管理</div></div>
+        <form action="{:url('s_good_mgr')}" method="post">
+            <div class="management_right">
+               <div class="management_rightson">
+                  <span>商品名称</span>
+                  <input type="text" class="management_rightsoninput" name="goods_name" value="{:input('goods_name')}">
+                </div>
+              <div class="management_rightson">
+                  <span>菜单分类</span>
+                  <select name="cate_id1" id="" class="management_rightsoninput">
+                    <option value="">全部</option>
+                    {volist name="cates" id="vo"}
+                      <option value="{$vo.cate_id}" {if condition="input('cate_id1') ==$vo.cate_id"}selected{/if}>{$vo.name}</option>
+                    {/volist}
+                  </select>
+              </div>
+              <div class="management_rightson">
+                  <span>商品价格</span>
+                  <input type="text" class="management_rightsoninputone good_price" name="statr_price" value="{:input('statr_price')}" placeholder="￥">
+                  到
+                  <input type="text" class="management_rightsoninputone good_price" name="end_price" value="{:input('end_price')}" placeholder="￥">
+              </div>
+                <div class="clear"></div>
+              <div class="management_rightson">
+                  <span>审核状态</span>
+                  <select name="is_check" id="" class="management_rightsoninput" name="">
+                      <option value="">全部</option>
+                      <option value="0" {if condition="input('is_check') ==0 && input('is_check')!=null"}selected{/if}>审核中</option>
+                      <option value="1" {if condition="input('is_check') ==1"}>审核通过</option>
+                      <option value="-1" {if condition="input('is_check') ==-1"}>审核未通过</option>
+                  </select>
+              </div>
+              <div class="management_rightson" name="">
+                  <span>是否推荐</span>
+                  <select name="is_recom" id="" class="management_rightsoninput">
+                      <option value="">全部</option>
+                      <option value="0" {if condition="input('is_recom') ==0 && input('is_recom')!=null"}selected{/if}>未推荐</option>
+                      <option value="1" {if condition="input('is_recom') ==1"}selected{/if}>推荐</option>
+                  </select>
+              </div>
+              <div class="management_rightson">
+                  <input type="submit" value="搜索" class="management_rightsoninputbutton ">
+              </div>
+          </div>
+        </form>
+        <div class="management_rightcont">
+            <div class="management_rightcontone">
+                <input type="checkbox" class="my-all-check">全选
+                <a href="{:url('SellerCenter/del_goods')}" class="del-all" text="删除后将无法恢复，请谨慎操作">删除</a>
+                <a href="{:url('SellerCenter/is_sale',array('is_sale'=>1))}" class="del-all" text="确认上架">上架</a>
+                <a href="{:url('SellerCenter/is_sale',array('is_sale'=>0))}" class="del-all" text="确认下架">下架</a>
+                <a href="{:url('SellerCenter/is_recom',array('is_recom'=>1))}" class="del-all" text="确认推荐">设置推荐</a>
+                <a href="{:url('SellerCenter/is_recom',array('is_recom'=>0))}" class="del-all" text="确认取消推荐">取消推荐</a>               
+            </div>
+            <div class="management_rightconttwo">
+                <span class="management_rightconttwospan">商品名称</span>
+                <span class="management_rightconttwospan">价格/数量</span>
+                <span class="management_rightconttwospan">库存</span>
+                <span class="management_rightconttwospan">总销量</span>
+                <span class="management_rightconttwospan">状态</span>
+                <span class="management_rightconttwospan">发布时间</span>
+                <span class="management_rightconttwospan">操作</span>
+            </div>
+            {volist name="goods" id="v1"}
+            <div class="management_rightcontthree">
+                <span class="management_rightconttwospans">
+                    <div class="management_rightconttwospanson">
+                        <input type="checkbox" value="{$v1.goods_id}" name="input[]" class="i-checks">
+                        {if condition="$v1.is_recom == 1"}<span>已推荐</span>{/if}
+                    </div>
+                    <img src="{$v1.goods_thums|getImg}" alt="" class="management_rightconttwospansonimg">
+                    <div class="management_rightconttwospansonone">
+                    <p>{$v1.goods_name}</p>
+                    {volist name="v1['attrs']" id="v2"}
+                        {if condition ="$key elt 1"}
+                        <p>{$v2.attr_name}:
+                        {volist name="$v2.value" id="v3"}
+                        {$v3}&nbsp;
+                        {/volist}
+                        </p>
+                        {/if}
+                    {/volist}
+                    </div>
+                </span>
+                <span class="management_rightconttwospans">{$v1.shop_price}</span>
+                <span class="management_rightconttwospans"><input type="text" name="inventory" value="{$v1.inventory}" id="{$v1.goods_id}" style="width: 60px;text-align: center;" class="inventory"></span>
+                <span class="management_rightconttwospans">{$v1.sale_count}</span>
+                <span class="management_rightconttwospans">{if condition="$v1.is_check == 1"}审核通过{elseif condition="$v1.is_check==0"}审核中{else}审核未通过{/if}</span>
+                <span class="management_rightconttwospans">{$v1.create_time}</span>
+                <span class="management_rightconttwospans"><a href="{:url('SellerCenter/edit_goods',array('goods_id'=>$v1.goods_id))}" style="color: black">编辑</a></span>
+            </div>
+            {/volist}
+            <div class="page">
+                <div class="page1">
+                {$goods->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{$web_static}js/common.js"></script>
+<script type="text/javascript">
+$(function(){
+    $(".active").addClass("adcol");
+    $(".active").unbind();
+
+})
+$(".inventory").change(function(){
+    var field    =$(this).attr('name');
+    var value    =$(this).val();
+    var goods_id  =$(this).attr('id');
+    $.ajax({
+        url:"{:url('edit_inventory')}",
+        data:{value:value,field:field,goods_id:goods_id},
+        type:"post",
+        dataType:"json",
+        beforeSend:function(){
+                layer.load(2,{shade:0.2});
+        },
+        complete:function(){
+            layer.closeAll();
+            layer.msg('已经修改',{time:2000,shade:0.2});
+        }
+    })
+})
+</script>
+

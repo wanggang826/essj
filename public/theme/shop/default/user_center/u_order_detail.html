@@ -1,0 +1,242 @@
+<link rel="stylesheet" type="text/css" href="{$css}/ckdingdan.css" />
+
+
+<!--head-->
+<div class="container">
+    <div class="row">
+        <div class="position">
+            <p>您的位置：</p>
+            <a href="">首页 ></a>
+            <a href="">订单中心 ></a>
+            <p>收藏的商品</p>
+        </div>
+        <div class="ckliuche">
+            <div class="l_clcik">
+                <div class="l_clcikson">
+                    {if condition="$order_info['status'] egt 2"}
+                        <sapn  class="red">拍下商品</sapn>
+                        <img src="{$img}/dingdan_01.png" alt="" class="ding">
+                    {else/}
+                        <sapn>拍下商品</sapn>
+                        <img src="{$img}/dingdan_02.png" alt="">
+                    {/if}
+                </div>
+                <div class="l_clcikson">
+                    {if condition="$order_info['status'] egt 3"}
+                        <sapn class="red" >付款</sapn>
+                        <img src="{$img}/dingdan_01.png" alt="" class="ding">
+                    {else/}
+                        <sapn>付款</sapn>
+                        <img src="{$img}/dingdan_02.png" alt="">
+                    {/if}
+                </div>
+                <div class="l_clcikson">
+                    {if condition="$order_info['status'] egt 5 "}
+                        <sapn class="red">商家发货</sapn>
+                        <img src="{$img}/dingdan_01.png" alt="" class="ding">
+                    {else/}
+                        <sapn>商家发货</sapn>
+                        <img src="{$img}/dingdan_02.png" alt="">
+                    {/if}
+                </div>
+                <div class="l_clcikson">
+                    {if condition="$order_info['status'] egt 6"}
+                        <sapn class="red">确认收货</sapn>
+                        <img src="{$img}/dingdan_01.png" alt="" class="ding">
+                    {else/}
+                        <sapn>确认收货</sapn>
+                        <img src="{$img}/dingdan_02.png" alt="">
+                    {/if}
+                </div>
+                <div class="l_clcikson">
+                    {if condition="$order_info['status'] gt 11"}
+                        <sapn class="red">评价</sapn>
+                        <img src="{$img}/dingdan_01.png" alt="" class="ding">
+                    {else/}
+                        <sapn>评价</sapn>
+                        <img src="{$img}/dingdan_02.png" alt="">
+                    {/if}
+                </div>
+
+            </div>
+            <div class="d-message_content">
+                <div class="d-message_contentson">{$order_info.create_time}</div>
+                <div class="d-message_contentson"></div>
+                <div class="d-message_contentson"></div>
+                <div class="d-message_contentson"></div>
+                <div class="d-message_contentson"></div>
+            </div>
+        </div>
+        <div class="d-message">
+            <div class="messagedindan">
+                <div class="messagehead">
+                    <p class="zuoce">
+                    </p>
+                    <p class="messagedaohang">
+                        订单信息
+                    </p>
+                </div>
+                <div class="messagediv">
+                    <div class="messagep">
+                        <p class="messagep1">订单编号：</p>
+                        <p class="messagep2">{$order_info.order_sn}</p>
+                    </div>
+                    <div class="messagep">
+                        <p class="messagep1">收货地址：</p>
+                        <p class="messagep2">{$order_info.province}{$order_info.city}{$order_info.area}{$order_info.address}</p>
+                    </div>
+                    <div class="messagep">
+                        <p class="messagep1">快递方式：</p>
+                        <p class="messagep2">{$order_info.method}</p>
+                    </div>
+                    <div class="messagep">
+                        <p class="messagep1">运单号：</p>
+                        <p class="messagep2">{$order_info.waybill_sn}</p>
+                    </div>
+                    <div class="messagep">
+                        <p class="messagep1">买家留言：</p>
+                        <p class="messagep2">{$order_info.dess}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="messagediv2">
+                <div class="messagehead">
+                    <p class="zuoce">
+                    </p>
+                    <p class="messagedaohang">
+                        物流信息
+                    </p>
+
+                </div>
+                <div class="messageinfo">
+
+                    <div class="messageinfodiv">
+                        <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                        <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                    </div>
+                    <div class="messageinfodiv">
+                        <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                        <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                    </div>
+                    <div class="messageinfodiv">
+                        <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                        <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                    </div>
+                    <div class="messageinfodiv">
+                        <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                        <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                    </div>
+                    <div class="messageinfodiv">
+                        <img class="messageinfoimg" src="{$img}/huiyuan_03.png" alt="" />
+                        <p class="messageinfop">2017-04-28周五18:56:25您的订单已签收。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <div class="messagehead">
+                <p class="zuoce">
+                </p>
+                <p class="messagedaohang">
+                    商品信息
+                </p>
+            </div>
+            <div class="cartdiv">
+                <div class="cartdiv1">
+                    <p class="cartdiv1p width1">
+                        商品名称
+                    </p>
+                    <p class="cartdiv1p width2">
+                        商品属性
+                    </p>
+                    <p class="cartdiv1p width3">
+                        单价
+                    </p>
+                    <p class="cartdiv1p width4">
+                        数量
+                    </p>
+                    <p class="cartdiv1p width5">
+                        状态
+                    </p>
+                </div>
+                <div class="cartov">
+                    <div class="carthead">
+                        <p class="cart-p1"><span class="cartspan1">店铺名称:</span><span>{$order_info.shop_id}</span></p>
+                        <p class="cart-p1"><span>卖家名称:</span><span>{$order_info.shop_id}</span></p>
+                    </div>
+                    {volist name="goods" id="good"}
+                    <div class="cartfont heights">
+                        <div class="width1 cartcont">
+                            <img class="cartimg" src="{$upload}{$good.good_image}" alt="" />
+                            <div class="cartfontdiv">
+                                <p class="cartfontdiv1">{$good.goods_name}</p>
+                                <!--<p>春夏新款 CA200190359</p>-->
+                            </div>
+                            <div class="dnumber">
+                                <p>x{$good.goods_count}</p>
+                            </div>
+                        </div>
+                        <div class="cartcont cartleft1 width2">
+                            {foreach name="good.good_attr" item="atter" key="k"}
+                            <p>{$k}：{$atter}</p>
+                            {/foreach}
+                        </div>
+                        <div class="cartcont cartleft2 width3">
+                            <p>{$good.price}</p>
+
+                        </div>
+                        <div class="cartcont cartleft2 width4">
+                            <p>{$good.goods_count}</p>
+
+                        </div>
+                        <div class="cartcont cartleft2 width5 margin5">
+                            <p>{$good.statusText}</p>
+
+                        </div>
+                    </div>
+                    {/volist}
+                    <!--<div class="cartfont heights">-->
+                    <!--<div class="width1 cartcont">-->
+                    <!--<img class="cartimg" src="{$img}/touxiang (2).png" alt="" />-->
+                    <!--<div class="cartfontdiv">-->
+                    <!--<p class="cartfontdiv1">C＆A印花收腰短款衬衫女2017</p>-->
+                    <!--<p>春夏新款 CA200190359</p>-->
+                    <!--</div>-->
+                    <!--<div class="dnumber">-->
+                    <!--<p>x1</p>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cartcont cartleft1 width2">-->
+                    <!--<p>颜色分类：浅绿色</p>-->
+                    <!--<p>尺码：L</p>-->
+                    <!--</div>-->
+                    <!--<div class="cartcont cartleft2 width3">-->
+                    <!--<p>391</p>-->
+
+                    <!--</div>-->
+                    <!--<div class="cartcont cartleft2 width4">-->
+                    <!--<p>1</p>-->
+
+                    <!--</div>-->
+                    <!--<div class="cartcont cartleft2 width5 margin5">-->
+                    <!--<p>交易成功</p>-->
+
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="carttext">
+                        <div class="carttext1">
+
+                            <p class="cartdp"><span>商品总价</span> ￥{$order_info.deal_price}</p>
+                            <p class="cartdp"><span>订单总价</span> ￥{$order_info.all_price}</p>
+                        </div>
+                        <p class="cartdp1"><span>实付款：</span>￥{$order_info.all_price} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<script src="{$js}/myjs.js" type="text/javascript" charset="utf-8"></script>

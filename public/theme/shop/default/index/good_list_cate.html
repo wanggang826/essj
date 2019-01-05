@@ -1,0 +1,36 @@
+<!-- 一个分类商品 by wanggang -->
+{volist name="cates" id="vo"}
+<div class="h_household">
+    <div class="household_lf">
+        <div class="household_lftop">
+            <span  class="householdlftop_img1">{$vo.name}</span>
+            <a href="{:url('goods/index',['cate_id'=>$vo['cate_id']])}"><img class="householdlftop_img2" src="{$img}/more_03.png"/></a>
+        </div>
+        <div class="household_lfbut row">
+            <div class="lfbut_img col-sm-3">
+                {if condition="$vo['cate_banner'] != null"}
+                <a href="{$vo.cate_banner.banner_url}"><img src="{$vo.cate_banner.banner_img|getImg}" alt="侧边热销banner"/></a>
+                {else /}
+                <a href=""><img src="{$web_static}img/default1.png" alt="侧边热销banner"/></a>
+                {/if}
+            </div>
+            <div class="lfbut_product col-sm-9">
+            {if condition="isset($vo['goods_rec'])"}
+                {volist name="vo.goods_rec" id="v1"}
+                <div class="product">
+                    <a href="{:U('Shop/good_detail',['goods_id'=>$v1['goods_id']])}"><img src="{$v1['goods_thums']|getImg}"/></a>
+                    <p><a href="{:U('Shop/good_detail',['goods_id'=>$v1['goods_id']])}">{$v1.goods_name}</a></p>
+                    <span>{$v1.market_price}元</span>
+                </div>
+                {/volist}
+            {/if}
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="household_ri">
+        {include file="default/index/ranking"}
+    </div>
+    <div class="clear"></div>
+</div>
+    {/volist}

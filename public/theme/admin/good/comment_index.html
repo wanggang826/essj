@@ -1,0 +1,84 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('comment_index')}" class="panel-body hidden-xs form-inline">
+                <div class="form-group">
+                    <select   class="form-control"  name="score">
+                        <option value="">-- 类型 --</option>
+                        <option value="1" {if condition="input('score') ==1"}selected{/if}>差评</option>
+                        <option value="2" {if condition="input('score') ==2"}selected{/if}>中评</option>
+                        <option value="3" {if condition="input('score') ==3"}selected{/if}>好评</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                   <input type="text" placeholder="评论时间(开始)" name="statr_time" class="form-control i-datestart" id="date3"  value="{:input('statr_time')}">
+                </div>
+                <div class="form-group">
+                   <input type="text" placeholder="评论时间(结束)" name="end_time" class="form-control i-datestart" id="date3"  value="{:input('end_time')}">
+                </div>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                        <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                    </button>
+                    <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                        <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                    </a>
+                </div>
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="pull-left btn-group hidden-xs" >
+            <!-- <a href="{:url('add_comment')}" class="btn btn-default js-window-load" js-title="新增评价" js-unique="true" js-width="60%" js-height="80%">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+            </a> -->
+            <a href="{:url('del_comment')}" class="btn btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+            {$comments->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="150" class="hidden-xs">商品名称</th>
+                <th class="hidden-xs">评论</th>
+                <th width="50">评分</th>
+                <th width="150">评论人</th>
+                <th width="150">手机号</th>
+                <th width="150">评论图</th>
+                <th width="200" >评论时间</th>
+                <th width="150">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="comments" id="vo"}
+            <tr>
+                   <td width='1'><input type="checkbox" value="{$vo.comment_id}" class="i-checks" name="input[]"></td>
+                    <td class="hidden-xs">{$vo.goods_name}</td>
+                    <td class="hidden-xs">{$vo.comment}</td>
+                    <td>{$vo.score|get_comment_type}</td>
+                    <td>{$vo.nickname}</td>
+                    <td>{$vo.tel}</td>
+                    <td>
+                        <a href="{:U('comment_img',['comment_id'=>$vo.comment_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="评价图" js-width="50%" js-height="70%"><span class="hidden-xs">查看评价图</span></a>
+                    </td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <span class="btn-group">
+                            <a href="{:U('del_comment',['id'=>$vo.comment_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                        </span>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+        <!-- <div class="cleanfix">
+            <div class="pull-left pagination hidden-xs" >
+            </div>
+            <div class="pull-left">
+            </div>
+        </div> -->
+
+    </div>

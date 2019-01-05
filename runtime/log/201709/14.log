@@ -1,0 +1,3071 @@
+---------------------------------------------------------------
+[ 2017-09-14T09:25:08+08:00 ] 127.0.0.4 127.0.0.1 GET /
+[ info ] 127.0.0.4/ [运行时间：0.310018s][吞吐率：3.23req/s] [内存消耗：5,256.47kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:08+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/publics/login.shtml
+[ info ] 127.0.0.4/admin/publics/login.shtml [运行时间：0.298017s][吞吐率：3.36req/s] [内存消耗：5,409.70kb] [文件加载：55]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Publics->login[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Publics.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\publics\login.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:15+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/publics/login.shtml
+[ info ] 127.0.0.4/admin/publics/login.shtml [运行时间：0.163009s][吞吐率：6.13req/s] [内存消耗：2,298.72kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/publics/login.shtml',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '30',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Publics->login[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Publics.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `status` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ui_admin`  SET `last_login_time`=1505352315,`last_login_ip`='127.0.0.1',`login_status`=1,`update_time`=1505352315  WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_log` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] INSERT INTO `ui_log` (`admin_id` , `module` , `controller` , `action` , `data_id` , `des` , `create_time` , `update_time`) VALUES (1 , 'admin' , 'Publics' , 'login' , 'admin' , '登录系统' , 1505352315 , 1505352315) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:17+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ info ] 127.0.0.4/admin/index/index.shtml [运行时间：0.362021s][吞吐率：2.76req/s] [内存消耗：2,690.46kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/publics/login.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'menus',
+  16 => 'headimg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:18+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ info ] 127.0.0.4/admin/index/main.shtml [运行时间：0.456026s][吞吐率：2.19req/s] [内存消耗：8,190.69kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->main[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\main.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'date',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:18+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.103006s][吞吐率：9.71req/s] [内存消耗：2,149.53kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:22+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/index.shtml
+[ info ] 127.0.0.4/admin/good/index.shtml [运行时间：0.411222s][吞吐率：2.43req/s] [内存消耗：6,052.83kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'goods',
+  16 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 1 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 2 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 3 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 3 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 4 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:25:29+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.395622s][吞吐率：2.53req/s] [内存消耗：5,737.29kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:32:47+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.374621s][吞吐率：2.67req/s] [内存消耗：5,736.12kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:33:31+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.365620s][吞吐率：2.74req/s] [内存消耗：5,736.18kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:34:31+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.375021s][吞吐率：2.67req/s] [内存消耗：5,736.16kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:35:24+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.570631s][吞吐率：1.75req/s] [内存消耗：5,736.22kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.197012s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:35:53+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.394622s][吞吐率：2.53req/s] [内存消耗：5,736.25kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:33+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.388621s][吞吐率：2.57req/s] [内存消耗：5,736.25kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002001s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:46+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.378220s][吞吐率：2.64req/s] [内存消耗：5,736.25kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:49+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ info ] 127.0.0.4/admin/index/index.shtml [运行时间：0.385621s][吞吐率：2.59req/s] [内存消耗：2,697.19kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/publics/login.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'menus',
+  16 => 'headimg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:50+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ info ] 127.0.0.4/admin/index/main.shtml [运行时间：0.483027s][吞吐率：2.07req/s] [内存消耗：8,189.97kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->main[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\main.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'date',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:50+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：2,150.12kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:56+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/index.shtml
+[ info ] 127.0.0.4/admin/good/index.shtml [运行时间：0.443625s][吞吐率：2.25req/s] [内存消耗：6,053.00kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'goods',
+  16 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 1 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 2 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 3 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 3 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 4 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:36:58+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.397622s][吞吐率：2.51req/s] [内存消耗：5,736.25kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:37:45+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ info ] 127.0.0.4/admin/index/index.shtml [运行时间：0.379220s][吞吐率：2.64req/s] [内存消耗：2,697.17kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/publics/login.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'menus',
+  16 => 'headimg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:37:46+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ info ] 127.0.0.4/admin/index/main.shtml [运行时间：0.485027s][吞吐率：2.06req/s] [内存消耗：8,189.97kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->main[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\main.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'date',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:37:46+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：2,150.12kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:37:48+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/index.shtml
+[ info ] 127.0.0.4/admin/good/index.shtml [运行时间：0.406622s][吞吐率：2.46req/s] [内存消耗：6,053.00kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'goods',
+  16 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 1 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 2 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 3 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 3 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 4 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:37:49+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.393023s][吞吐率：2.54req/s] [内存消耗：5,736.32kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:38:43+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ info ] 127.0.0.4/admin/index/index.shtml [运行时间：0.628234s][吞吐率：1.59req/s] [内存消耗：2,697.19kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/publics/login.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'menus',
+  16 => 'headimg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.257015s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:38:44+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ info ] 127.0.0.4/admin/index/main.shtml [运行时间：0.469027s][吞吐率：2.13req/s] [内存消耗：8,189.95kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Index->main[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\index\main.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'date',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:38:44+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：2,150.12kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:38:46+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/index.shtml
+[ info ] 127.0.0.4/admin/good/index.shtml [运行时间：0.417623s][吞吐率：2.39req/s] [内存消耗：6,053.00kb] [文件加载：65]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'goods',
+  16 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods` WHERE `ui_goods`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 1 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 2 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 3 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 3 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 4 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 2 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE (  `brand_id` = 0 ) AND `ui_goods_brand`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:38:47+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.399022s][吞吐率：2.51req/s] [内存消耗：5,736.73kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:45:15+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.440624s][吞吐率：2.27req/s] [内存消耗：5,736.73kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+  16 => 'cates',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.050003s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_cate` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_cate` WHERE (  `pid` = 0 ) AND `ui_goods_cate`.`delete_time` IS NULL [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:49:26+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/attr_index.shtml
+[ info ] 127.0.0.4/admin/good/attr_index.shtml [运行时间：0.388622s][吞吐率：2.57req/s] [内存消耗：5,804.65kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'attr_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->attr_index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\attr_index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attrs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/attr_index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:49:28+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit_attr/attr_id/1/page/1.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr/attr_id/1/page/1.shtml [运行时间：0.394022s][吞吐率：2.54req/s] [内存消耗：5,660.39kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/attr_index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '1',
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\edit_attr.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attr_info',
+  16 => 'page',
+  17 => 'input_type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 1 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:50:49+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/edit_attr.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr.shtml [运行时间：0.147607s][吞吐率：6.77req/s] [内存消耗：2,507.96kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/1/page/1.shtml',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '242',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '1',
+  'page' => '1',
+  'attr_name' => '网络制式',
+  'sort' => '5',
+  'type' => 'checkbox',
+  'status' => '1',
+  'type_val' => 
+  array (
+    0 => '移动',
+    1 => '联通',
+    2 => '电信',
+    3 => '全网通',
+  ),
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 1 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `attr_id` FROM `ui_goods_attr` WHERE (  `attr_name` = '网络制式'  AND `attr_id` <> 1 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ui_goods_attr`  SET `attr_name`='网络制式',`sort`=5,`type`='checkbox',`status`=1,`value`='a:4:{i:0;a:1:{s:5:\"value\";s:9:\"全网通\";}i:1;a:1:{s:5:\"value\";s:6:\"电信\";}i:2;a:1:{s:5:\"value\";s:6:\"移动\";}i:3;a:1:{s:5:\"value\";s:6:\"联通\";}}',`update_time`='1505353849'  WHERE (  `attr_id` = 1 ) AND `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:50:50+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/attr_index/page/1.shtml
+[ info ] 127.0.0.4/admin/good/attr_index/page/1.shtml [运行时间：0.371021s][吞吐率：2.70req/s] [内存消耗：5,805.17kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'attr_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/1/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->attr_index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\attr_index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attrs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/attr_index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:51:17+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit_attr/attr_id/3/page/1.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr/attr_id/3/page/1.shtml [运行时间：0.372021s][吞吐率：2.69req/s] [内存消耗：5,660.39kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/attr_index/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '3',
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\edit_attr.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attr_info',
+  16 => 'page',
+  17 => 'input_type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 3 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:52:01+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/edit_attr.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr.shtml [运行时间：0.133606s][吞吐率：7.48req/s] [内存消耗：2,507.54kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/3/page/1.shtml',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '160',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '3',
+  'page' => '1',
+  'attr_name' => '容量',
+  'sort' => '0',
+  'type' => 'checkbox',
+  'status' => '1',
+  'type_val' => 
+  array (
+    0 => '16GB',
+    1 => '32GB',
+    2 => '64GB',
+    3 => '128GB',
+  ),
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 3 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `attr_id` FROM `ui_goods_attr` WHERE (  `attr_name` = '容量'  AND `attr_id` <> 3 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ui_goods_attr`  SET `attr_name`='容量',`sort`=0,`type`='checkbox',`status`=1,`value`='a:4:{i:0;a:1:{s:5:\"value\";s:5:\"128GB\";}i:1;a:1:{s:5:\"value\";s:4:\"16GB\";}i:2;a:1:{s:5:\"value\";s:4:\"32GB\";}i:3;a:1:{s:5:\"value\";s:4:\"64GB\";}}',`update_time`='1505353921'  WHERE (  `attr_id` = 3 ) AND `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:52:02+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/attr_index/page/1.shtml
+[ info ] 127.0.0.4/admin/good/attr_index/page/1.shtml [运行时间：0.356020s][吞吐率：2.81req/s] [内存消耗：5,805.39kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'attr_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/3/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->attr_index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\attr_index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attrs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/attr_index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:52:10+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit_attr/attr_id/4/page/1.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr/attr_id/4/page/1.shtml [运行时间：0.349020s][吞吐率：2.87req/s] [内存消耗：5,659.49kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/attr_index/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '4',
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\edit_attr.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attr_info',
+  16 => 'page',
+  17 => 'input_type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 4 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:53:02+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/edit_attr.shtml
+[ info ] 127.0.0.4/admin/good/edit_attr.shtml [运行时间：0.138206s][吞吐率：7.24req/s] [内存消耗：2,506.51kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'edit_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/4/page/1.shtml',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '182',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'attr_id' => '4',
+  'page' => '1',
+  'attr_name' => '新旧',
+  'sort' => '1',
+  'type' => 'checkbox',
+  'status' => '1',
+  'type_val' => 
+  array (
+    0 => '全新',
+    1 => '6成新',
+    2 => '4成新',
+  ),
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Good->edit_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/edit_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE (  `attr_id` = 4 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `attr_id` FROM `ui_goods_attr` WHERE (  `attr_name` = '新旧'  AND `attr_id` <> 4 ) AND `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ui_goods_attr`  SET `attr_name`='新旧',`sort`=1,`type`='checkbox',`status`=1,`value`='a:3:{i:0;a:1:{s:5:\"value\";s:7:\"4成新\";}i:1;a:1:{s:5:\"value\";s:7:\"6成新\";}i:2;a:1:{s:5:\"value\";s:6:\"全新\";}}',`update_time`='1505353982'  WHERE (  `attr_id` = 4 ) AND `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:53:04+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/attr_index/page/1.shtml
+[ info ] 127.0.0.4/admin/good/attr_index/page/1.shtml [运行时间：0.372021s][吞吐率：2.69req/s] [内存消耗：5,805.41kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'attr_index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/edit_attr/attr_id/4/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->attr_index[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\attr_index.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'attrs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/attr_index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 100 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL LIMIT 0,15 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:58:09+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add_attr.shtml
+[ info ] 127.0.0.4/admin/good/add_attr.shtml [运行时间：0.369620s][吞吐率：2.71req/s] [内存消耗：5,614.82kb] [文件加载：57]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add_attr',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/attr_index/page/1.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add_attr[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add_attr.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'input_type',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add_attr.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 106 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T09:58:15+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.385221s][吞吐率：2.60req/s] [内存消耗：5,732.14kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T10:03:07+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.402023s][吞吐率：2.49req/s] [内存消耗：5,724.50kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.002001s ]
+---------------------------------------------------------------
+[ 2017-09-14T10:03:23+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ info ] 127.0.0.4/admin/good/add.shtml [运行时间：0.383022s][吞吐率：2.61req/s] [内存消耗：5,732.67kb] [文件加载：59]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'good',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/good/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Good->add[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\good\add.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+  15 => 'brands',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/good/add.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 102 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_brand` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_brand` WHERE `ui_goods_brand`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_goods_attr` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_goods_attr` WHERE `ui_goods_attr`.`delete_time` IS NULL [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T10:28:44+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：2,149.64kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-09-14T11:18:44+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.100006s][吞吐率：10.00req/s] [内存消耗：2,149.64kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T12:08:44+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：2,149.64kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T12:58:45+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ info ] 127.0.0.4/admin/index/isuniquelogin.shtml [运行时间：0.099005s][吞吐率：10.10req/s] [内存消耗：2,148.88kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'isuniquelogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->isUniqueLogin[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T14:06:47+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ info ] 127.0.0.4/admin/index/index.shtml [运行时间：0.309018s][吞吐率：3.24req/s] [内存消耗：5,260.37kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-09-14T14:06:48+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/publics/login.shtml
+[ info ] 127.0.0.4/admin/publics/login.shtml [运行时间：0.288016s][吞吐率：3.47req/s] [内存消耗：5,410.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mf3v43mc2jbsrfb596tklm0vp6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.4/admin/index/index.shtml',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'admin',
+)
+[ info ] [ RUN ] app\admin\controller\Publics->login[ D:\phpStudy\WWW\ershoushouji\application\admin\controller\Publics.php ]
+[ info ] [ VIEW ] D:\phpStudy\WWW\ershoushouji/public\theme\admin\publics\login.html [ array (
+  0 => 'module_name',
+  1 => 'controller_name',
+  2 => 'action_name',
+  3 => 'public_path',
+  4 => 'static_path',
+  5 => 'web_public',
+  6 => 'web_static',
+  7 => 'js',
+  8 => 'css',
+  9 => 'img',
+  10 => 'title',
+  11 => 'admin_title',
+  12 => 'nowpage',
+  13 => 'upload',
+  14 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]

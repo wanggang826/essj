@@ -1,0 +1,41 @@
+<script src="{$web_static}/js/uploadImg.js"></script>
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('ArticleCates/articleCate_add')}" method='post' enctype=multipart/form-data>
+    <!-- 自定义大小 -->
+    <div class="form-group">
+        <label for="select-tree" class="col-sm-2 control-label">上级分类</label>
+        <div class="col-sm-4">
+            <select class="i-select form-control" name="pid" id="select-tree">
+                <option value="0" >顶级菜单</option>
+                {volist name="articleCates" id="vo"}
+                    <option value="{$vo.cate_id}" {if condition = "$articleCate_info.cate_id eq $vo.cate_id"}selected{/if}>{$vo.cate_name}</option>
+                {/volist}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cate_name" class="col-sm-2 control-label">分类名称</label>
+        <div class="col-sm-4">
+            <input type="text" name="cate_name" class="form-control"  placeholder="分类名称">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">分类类型</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="cate_type" value='0' class="mgr mgr-primary mgr-lg" checked><span>系统</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="cate_type" value='1' class="mgr mgr-primary mgr-lg" disabled><span>普通</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>

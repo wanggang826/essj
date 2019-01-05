@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+        <a href="{:U('users/rank_add')}" class="btn btn-outline btn-default js-window-load"js-title="新增等级" js-unique="true">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+        </a>
+        <a href="{:U('Users/rank_del')}" class="btn btn-outline btn-default js-del-btn del-all" text="删除后将无法恢复，请谨慎操作">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+        </a>
+        </div>
+        <div class="pull-right">
+            {$lists->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="200">类别名称</th>
+                <th class="hidden-xs">积分</th>
+                <th width="50" class="hidden-xs">排序</th>
+                <th width="200">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {volist name="lists" id="vo"}
+            <tr>
+       		    <td width='1'><input type="checkbox" class="i-checks" value="{$vo.rank_id}" name="input[]"></td>
+                <td>{$vo.rank_name}</td>
+                <td class="hidden-xs">{$vo.start_score}-{$vo.end_score}</td>
+                <td class="hidden-xs">{$vo.sort}</td>
+                <td>
+                    <span class="btn-group">
+                        <a href="{:U('users/rank_edit',['rank_id'=>$vo.rank_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑--{$vo.rank_name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+                        {if condition="$vo.status eq 0"}
+                        <a href="{:U('users/rank_status',['rank_id'=>$vo.rank_id,'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="启用后该等级可以正常使用"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用</span></a>
+                        {elseif condition="$vo.status eq 1"/}
+                        <a href="{:U('users/rank_status',['rank_id'=>$vo.rank_id,'status'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后该等级将无法使用,请谨慎操作！"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a>
+                        {/if}
+                        <a href="{:U('users/rank_del',['id'=>$vo.rank_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                    </span>
+                </td>
+            </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    function page_size(){
+        $('.pagesize_form').submit();
+    }
+</script>

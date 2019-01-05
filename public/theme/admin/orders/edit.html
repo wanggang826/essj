@@ -1,0 +1,55 @@
+
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('Orders/edit')}" method='post'>
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th width="110">订单编号</th>
+            <th width="280">区域</th>
+            <th width="100">订单流水号</th>
+            <th width="120">下单时间</th>
+            <th width="80">买家账号</th>
+            <th width="80">原总价</th>
+            <th width="80">成交总价</th>
+            <th width="100">订单状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{$order_info.order_sn}</td>
+            <td>{$order_info.province}{$order_info.city}{$order_info.area}{$order_info.address}</td>
+            <td >{$order_info.serial_sn}</td>
+            <td>{$order_info.create_time}</td>
+            <td>{$order_info.user_id}</td>
+            <td>{$order_info.total_price}</td>
+            <td>{$order_info.deal_price}</td>
+            <td>{$order_info.status}</td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th width="110">商品ID</th>
+            <th width="280">商品名称</th>
+            <th width="100">卖家账号</th>
+            <th width="80">商品数量</th>
+            <th width="120">商品原价</th>
+            <th width="80">优惠价</th>
+            <th width="80">商品总价</th>
+            <th width="100">状态</th>
+        </tr>
+        </thead>
+        <tbody id="list">
+        {volist name ="orders" id ="order"}
+        <tr>
+            <td>{$order.goods_id}</td>
+            <td>{$order.goods_name}</td>
+            <td >{$order.shop_id} </td>
+            <td>{$order.goods_count}</td>
+            <td>{$order.market_price}</td>
+            <td>{$order.price}</td>
+            <td>{$order.deal_price}</td>
+            <td>{$order.status}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</form>

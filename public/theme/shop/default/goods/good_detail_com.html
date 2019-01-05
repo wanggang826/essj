@@ -1,0 +1,176 @@
+	<div class="xing">
+		<input type="hidden" id="average" value="{$comment_info.average}">
+		<img src="{$img}/xing.jpg"/>
+		<img src="{$img}/qingjia.png"/>
+		<img class="mobel" src="{$img}/qin5.png"/>
+		<div class="clear"></div>
+	</div>
+	<div class="evaluate">
+		<div class="evaluate_top">
+			<div class="h_radio">
+			<input type="radio" name="radio" onclick="radio(this.value,'{$good_info.goods_id}')"  value="all" checked />
+			<span>全部评价<span>({$comment_info.all_num})</span></span>
+			</div>
+			<div class="h_radio">
+			<input type="radio" name="radio" class="radioimg" onclick="radio(this.value,'{$good_info.goods_id}')"  value="img" />
+			<span>晒图<span>({$comment_info.img_num})</span></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="evaluate_list">
+			<!--<div class="evaluate_div">
+					<div class="evaluate_img">
+						<img src=""/>
+						<span>j***4</span>
+						<span>铜牌等级</span>
+					</div>
+					<div class="evaluate_quality">
+						<img src=""/>
+						<p>布料不错，做工精细，非常不错</p>
+						<span>颜色：xxx</span>
+						<span>规格：xxx</span>
+						<span>2017-05-10 09：40</span>
+					</div>
+					<div class="clear"></div>
+			</div>-->
+
+			{volist name="goods_comment" id="comment"}
+			{if condition="$key eq 0"}
+			<input type="hidden" id="css" value="{$comment.css}">
+			{/if}
+			<div class="add">
+				<div class="evaluate_div">
+					<div class="evaluate_img">
+						<img class="headimg" src="{$upload}{$comment.headimg}"/>
+						<span class="nickname">{$comment.nickname}</span>
+						<!--<span>铜牌等级</span>-->
+					</div>
+					<div class="evaluate_quality">
+						<p class="comment">{$comment.comment}</p>
+						<div class="quality_img">
+							{if condition="$comment['com_img1'] neq ''"}
+								<img src="{$upload}{$comment.com_img1}"/>
+							{/if}
+							{if condition="$comment['com_img2'] neq ''"/}
+								<img src="{$upload}{$comment.com_img2}"/>
+							{/if}
+							{if condition="$comment['com_img3'] neq ''"/}
+								<img src="{$upload}{$comment.com_img3}"/>
+							{/if}
+							{if condition="$comment['com_img4'] neq ''"/}
+								<img src="{$upload}{$comment.com_img4}"/>
+							{/if}
+							{if condition="$comment['com_img5'] neq ''"/}
+								<img src="{$upload}{$comment.com_img5}"/>
+							{/if}
+							<div class="clear"></div>
+						</div>
+						<div class="quality_sp">
+							<div class="attr">
+								{if condition="$comment['good_attr'] neq ''"}
+									{volist name="comment['good_attr']" id="attr"}
+										<span>{$key}：{$attr}</span>
+									{/volist}
+								{/if}
+							</div>
+							<!--<span>颜色：xxx</span>
+							<span>规格：xxx</span>-->
+							<span class="time">{$comment.create_time}</span>
+						</div>
+						<div class="tail">
+							{if condition="$comment['reply'] neq '' "}
+								<span>[买家回复: ]</span>
+								<p>{$comment.reply.comment}</p>
+							{/if}
+							<!--<span>[购买5天后追评]</span>
+							<p>布料不错，做工精细，非常不错</p>-->
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			{/volist}
+		</div>
+		<div class="page">
+			<div class="page1" style="text-align: center">
+				{$goods_comment->render()}
+			</div>
+		</div>
+	</div>
+	<script>
+        var add = $(".add").eq(0).clone();
+        add.empty();
+        var htmlobj = $(".evaluate_div").eq(0).clone();
+        htmlobj.find(".quality_img").empty();//图片
+		htmlobj.find(".attr").empty();//属性
+		htmlobj.find(".tail").empty();//回复
+        //分页
+        $(function(){
+            $(".active").addClass("adcol")
+        })
+		function radio(type,id){
+		    var url = "{:U('Shop/good_detail')}";
+		    $.ajax({
+				url:url,
+				type:'post',
+				data:{type:type,goods_id:id},
+				dataType:'json',
+				success:function(msg){
+				    var data   = msg.data;
+				    var length = data.length;
+                    $(".add").remove();
+                    $(".evaluate_div").remove();
+                    $(".page1").empty();
+				    if(length){
+                        var  addhtml = add.clone();
+						for(var i=0;i<length;i++){
+						    var img  = "";//图片
+						    var attr = "";//属性
+							var tail ="";//回复
+						    var html = htmlobj.clone();
+                            html.find(".nickname").html(data[i].nickname);
+                            html.find(".comment").html(data[i].comment);
+                            html.find(".headimg").attr('src',data[0].headimg_url+data[i].headimg);
+							html.find(".time").html(data[i].create_time);
+                            if(data[i].com_img1 !=null){
+                                img += '<img src='+data[0].headimg_url+data[i].com_img1+'>';
+                            }
+                            if(data[i].com_img2 !=null){
+                                img += '<img src='+data[0].headimg_url+data[i].com_img2+'>';
+                            }
+                            if(data[i].com_img3 !=null){
+                                img += '<img src='+data[0].headimg_url+data[i].com_img3+'>';
+                            }
+                            if(data[i].com_img4 !=null){
+                                img += '<img src='+data[0].headimg_url+data[i].com_img4+'>';
+                            }
+                            if(data[i].com_img5 !=null){
+                                img += '<img src='+data[0].headimg_url+data[i].com_img5+'>';
+                            }
+                            html.find('.quality_img').append(img);
+                            if(data[i].good_attr !=null){
+                                var good_attr = data[i].good_attr;
+                                for (var l in good_attr){
+                                    var attr ="";
+                                    attr =" <span>"+l+':'+good_attr[l]+"</span>"
+                                    html.find('.attr').append(attr);
+                                }
+                            }
+                            if(data[i].reply !=''){
+                                tail += "<span>[买家回复: ]</span>";
+                                tail += '<p>'+data[i].reply.comment+'</p>';
+                            }
+                            html.find('.tail').append(tail);
+                            addhtml.append(html[0].outerHTML);
+						}
+                        $(addhtml).appendTo('.evaluate_list');
+                        $(".page1").html(data[0].page);
+                        $(".active").addClass("adcol");
+                        $(".quality_sp").css('margin-top','72px');
+					}
+				}
+			})
+		}
+
+
+	</script>

@@ -1,0 +1,15 @@
+---------------------------------------------------------------
+[ 2017-10-19T10:10:33+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ error ] [8]未定义变量: openId[D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php:199]
+---------------------------------------------------------------
+[ 2017-10-19T10:13:21+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ error ] [1]Cannot access protected property Vendor\WxPayUnifiedOrder::$values[D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php:201]
+---------------------------------------------------------------
+[ 2017-10-19T10:17:15+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ error ] [1]Call to a member function GetJsApiParameters() on a non-object[D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php:204]
+---------------------------------------------------------------
+[ 2017-10-19T11:24:16+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]未定义数组索引: order_sn[D:\phpStudy\WWW\ershoushouji\runtime\temp\caf306ad1f30dc28abcdd2b3b9ba4b05.php:14]
+---------------------------------------------------------------
+[ 2017-10-19T11:27:54+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]未定义数组索引: order_sn[D:\phpStudy\WWW\ershoushouji\runtime\temp\caf306ad1f30dc28abcdd2b3b9ba4b05.php:14]

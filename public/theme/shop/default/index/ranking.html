@@ -1,0 +1,21 @@
+<!-- 排行榜 -->
+<div class="household_ritop">
+    <span class="ritop_sp1">销量排行榜</span>
+</div>
+<div class="householdribut">
+    <!-- 一个商品循环 start 做完数据删除该注释 -->
+    {if condition="isset($vo['goods_hot'])"}
+    {volist name="vo.goods_hot" id="v3"}
+    <div class="ranking_list">
+        <img class="list_img2" src="{$img}/sanjiao.png"/>
+        <a href="#"><img class="list_img1" src="
+        {$v3['goods_thums']|getImg}"/></a>
+        <div class="list_sp">
+        <span>￥{$v3.market_price}</span>
+        <p><a href="#">{$v3.goods_name}</a></p>
+        </div>
+    </div>
+    {/volist}
+    {/if}
+    <!-- 一个商品循环 end 做完数据删除该注释 -->
+</div>

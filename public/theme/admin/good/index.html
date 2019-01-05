@@ -1,0 +1,133 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('good/index')}" class="panel-body hidden-xs form-inline">
+                <div class="form-group">
+                    <input type="text" placeholder="商品名称" id="ex1" class="form-control" name="goods_name" value="{:input('goods_name')}">
+                </div>
+                <div class="form-group group1">
+                   <input type="text" name="statr_time" class="form-control i-datestart" id="date3" placeholder="发布开始时间" js-icon='false' value="{:input('statr_time')}">
+                </div>
+                <div class="form-group group2">
+                   <input type="text" name="end_time" class="form-control i-datestart" id="date3" placeholder="发布结束时间" value="{:input('end_time')}">
+                </div>
+                <div class="form-group">
+                    <select  class="form-control"  name="brand_id">
+                        <option value="">-- 品牌查询 --</option>
+                        {volist name="brands" id="vo"}
+                        <option value="{$vo.brand_id}" {if condition="input('brand_id') ==$vo.brand_id"}selected{/if}>{$vo.brand_name}</option>
+
+                        {/volist}
+                    </select>
+                </div>
+             
+                <div class="form-group">
+                    <select   class="form-control"  name="is_sale">
+                        <option value="">-- 状态 --</option>
+                        <option value="1" {if condition="input('is_sale') ==1"}selected{/if}>上架</option>
+                        <option value="0" {if condition="input('is_sale') ==0 && input('is_sale')!=null"}selected{/if}>下架</option>
+                    </select>
+                </div>
+               
+
+            <div class="form-group pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                        <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                    </button>
+                    <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                        <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                    </a>
+                </div>
+            </div>
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="pull-left btn-group hidden-xs" >
+            <a href="{:U('add')}" class="btn btn-default js-window-load" js-title="新增商品" js-unique="true" js-width="65%" js-height="90%">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+            </a>
+            <a href="{:U('good/del')}" class="btn btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+        {$goods->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="200">商品名称</th>
+                <th width="150" class="hidden-xs">商品编码</th>
+                <th width="150" class="hidden-xs">商品品牌</th>
+                <th width="50" class="hidden-xs">商品价格</th>
+                <th width="50" class="hidden-xs">销量</th>
+                <th width="100" class="hidden-xs">创建人</th>
+                <th width="150" class="hidden-xs">创建时间</th>
+                <th width="50" class="hidden-xs">上|下架</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="goods" id="vo"}
+            <tr>
+                   <td width='1'><input type="checkbox" value="{$vo.goods_id}" class="i-checks" name="input[]"></td>
+                    <td>{$vo.goods_name}</td>
+                    <td class="hidden-xs">{$vo.goods_sn}</td>
+                    <td class="hidden-xs">{$vo.brand_name}</td>
+                    <td class="hidden-xs">{$vo.shop_price}</td>
+                    <td class="hidden-xs">{$vo.sale_count}</td>
+                    <td class="hidden-xs">{$vo.create_admin}</td>
+                    <td class="hidden-xs">{$vo.create_time}</td>
+                    <td class="hidden-xs">
+                    {if condition="$vo.is_sale eq 1"}
+                        <a href="{:U('changeStatus',['goods_id'=>$vo.goods_id,'is_sale'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="下架后商品不可见" js-btn="<i class='fa fa-times fa-fw'></i>下架"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">上架</span></a>
+                        {elseif condition="$vo.is_sale eq 0"/}
+                        <a href="{:U('changeStatus',['goods_id'=>$vo.goods_id,'is_sale'=>1])}" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="上架后前台可见" js-btn="<i class='fa fa-check fa-fw'></i>上架"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">下架</span></a>
+                    {/if}
+                    </td>
+                    <td >
+                        <span class="btn-group">
+                            <a href="{:U('edit',['goods_id'=>$vo.goods_id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="详情--{$vo.goods_name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+
+                            <a href="{:U('del',['id'=>$vo.goods_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+
+                        </span>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+    </div>
+    <!-- <script type="text/javascript">
+    function get_cate(data,type){
+        cate_id= data.value;
+        // console.log(cate_id)
+        $.ajax({
+            url:"{:url('good/ajax_get_cate')}",
+            data:{cate_id:cate_id},
+            type:"post",
+            dataType:"json",
+            success:function(msg){
+                console.log(msg)
+                var html ="";
+                html +="<option value='-1' ></option>"
+                if(type == 'cate1'){
+                    $('#cate_id2').empty();
+                    $('#cate_id3').empty();
+                    for(var i=0;i<msg.length;i++){
+                        html += "<option value='"+msg[i].cate_id+"'}selected{/if}>"+msg[i].name+"</option>";
+                    }
+                    $(html).appendTo($("#cate_id2"));
+                }else if(type == 'cate2'){
+                    $('#cate_id3').empty();
+                    for(var i=0;i<msg.length;i++){
+                        html += "<option value='"+msg[i].cate_id+"'>"+msg[i].name+"</option>";
+                    }
+                    $(html).appendTo($("#cate_id3"));
+                }
+            }
+        })
+    }
+    </script> -->

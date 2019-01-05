@@ -1,0 +1,4 @@
+{if condition="isset($adv['GOOD_DETAIL_BOTTOM'])"}
+{~$vo=$adv['GOOD_DETAIL_BOTTOM']['0']}
+<a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img src="{$vo.adv_img|getImg}" alt='商品详情页广告位good_detail_bottom'/></a>
+{/if}

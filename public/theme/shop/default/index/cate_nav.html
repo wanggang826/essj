@@ -1,0 +1,39 @@
+<!-- 分类导航 by wanggang-->
+<div class="h_wraptop">
+    <a href="#"><span class="wraptop_sp1">商品分类<img class="li_img1" src="{$img}/iconfont-fenlei.png"/></span></a>
+</div>
+<div class="wrap" id="test">
+    <ul>
+    {volist name="cate" id="vo"}
+        <li data-id="{$vo.cate_id}">
+            <i class="fa fa-fw fa-lg fa-{$vo.cate_icon}"></i>
+            <a href="{:url('goods/index',['cate_id'=>$vo['cate_id']])}">{$vo.name}</a>
+        </li>
+    {/volist}
+    </ul>
+    <div id="sub" class="none">
+    {volist name="cate" id="vo"}
+        <div id="{$vo.cate_id}" class="sub_content none">
+            {if condition="isset($vo['child'])"}
+            {volist name="vo.child" id="v1"}
+            <dl>
+                <dt>
+                    <a href="{:url('goods/index',['cate_id'=>$v1['cate_id']])}">{$v1.name}</a>
+                    <img class="li_img3" src="{$img}/dayuhei.png"/>
+                    <a href="{:url('goods/index',['cate_id'=>$v1['cate_id']])}">更多</a>
+                </dt>
+                <dd>
+                    {if condition="isset($v1['child'])"}
+                        {volist name="v1.child" id="v2"}
+                        <a href="{:url('goods/index',['cate_id'=>$v2['cate_id']])}">{$v2.name}</a>
+                        {/volist}
+                    {/if}
+                </dd>
+            </dl>
+            {/volist}
+            {/if}
+        </div>
+    {/volist}
+    </div>
+</div>
+<div class="clear"></div>

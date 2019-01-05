@@ -1,0 +1,4 @@
+{if condition="isset($adv['ORDER_STEP1_BOTTOM'])"}
+ {~$vo=$adv['ORDER_STEP1_BOTTOM']['0']}
+<a  href="{$vo.adv_url}" ><img class="banneri" src="{$vo.adv_img|getImg}" alt="" />
+{/if}

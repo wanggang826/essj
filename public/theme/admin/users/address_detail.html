@@ -1,0 +1,38 @@
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width="150">用户账号</th>
+                <th width="100">接收人</th>
+                <th width="100">联系号码</th>
+                <th width="100">省</th>
+                <th width="100">市</th>
+                <th width="100">区</th>
+                <th width="250">详细地址</th>
+                <th width="100">邮编</th>
+                <th width="100">默认地址</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {volist name="lists" id="vo"}
+            <tr>
+                <td>{$vo.account}</td>
+                <td>{$vo.user_name}</td>
+                <td>{$vo.user_phone}</td>
+                <td>{$vo.area_id1}</td>
+                <td>{$vo.area_id2}</td>
+                <td>{$vo.area_id3}</td>
+                <td>{$vo.address}</td>
+                <td>{$vo.post_code}</td>
+                <td>{if condition='$vo.is_default eq 1'}<i class="glyphicon glyphicon-ok">{/if}</td>
+                <td>
+                    <span class="btn-group">
+                        <a href="{:U('users/address_del',['id'=>$vo.address_id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                    </span>
+                </td>
+            </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>

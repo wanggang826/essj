@@ -1,0 +1,4 @@
+---------------------------------------------------------------
+[ 2017-09-19T11:58:26+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/index.shtml
+[ info ] 127.0.0.4/admin/orders/index.shtml [运行时间：0.498029s][吞吐率：2.01req/s] [内存消耗：6,041.46kb] [文件加载：73]
+[ error ] [8]未定义数组索引: goods_name[D:\phpStudy\WWW\ershoushouji\runtime\temp\63a2ec08b30487139b088e028e1e8bcd.php:12]

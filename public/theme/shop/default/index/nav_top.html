@@ -1,0 +1,14 @@
+<!-- 轮播图上部导航 -->
+<div class="h_navigation">
+    <ul>
+        {volist name="top_nav" id="navs"}
+            <li>
+                <a  href="{$navs.url}">{$navs.name}</a>
+            </li>
+        {/volist}
+
+    </ul>
+</div>
+<script>
+    $(".h_navigation ul li").first().find('a').addClass('lia');
+</script>

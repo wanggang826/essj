@@ -1,0 +1,132 @@
+
+<script src="{$web_static}/js/uploadImg.js"></script>
+<form name="form0" class="js-ajax-form" id="form0" method="post">
+<div class="img_cont">
+    <div class="img_prev"></div>
+    <input type="file" name="file" id="file" multiple="multiple" />
+</div>
+<hr>
+
+<div class="img_cont">
+    <div class="img_prev"></div>
+    <input type="file" name="file1" id="file1" />
+</div>
+<hr>
+<div class="img_cont">
+    <div class="img_prev"></div>
+    <input type="file" name="file2" id="file2" />
+</div>
+
+<a href="" class="js-submit-btn btn btn-info">提交</a>
+</form>
+<style type="text/css">
+
+</style>
+<script>
+$('#file').imgUpload({
+    width:'120',//预览宽度
+    height:'120',//预览高度
+    imgWidth:false,//图片上传宽度
+    imgHeight:false,//图片上传高度
+    multiple:true,//是否允许多选
+    btnText:'&nbsp;选择',//按钮文字
+    btnClass:'btn btn-info',//按钮类名
+    btnIcon:'fa fa-folder-open fa-fw',//按钮字体图标
+    loadIcon:'fa fa-spinner fa-fw fa-spin',//按钮加载字体图标
+    allowedNum:5,//允许上传最大数量
+    picList:false,//显示上传框,为true时不显示按钮
+    maxSize: 100,//允许上传最大值(KB)
+    autoReplace:true,//自动替换
+    files:{
+        2:'http://127.0.0.3/static/img/default.jpg',
+        4:'http://127.0.0.3/static/img/default.jpg',
+    }
+})
+
+$('#file1').imgUpload({
+    width:150,//预览宽度
+    height:150,//预览高度
+    imgWidth:150,//图片上传宽度
+    imgHeight:150,//图片上传高度
+    allowedNum:5,//允许上传最大数量
+    files:{
+        2:'http://127.0.0.3/static/img/default.jpg',
+        4:'http://127.0.0.3/static/img/default.jpg',
+    }
+})
+
+$('#file2').imgUpload({
+    width:150,//预览宽度
+    height:150,//预览高度
+    imgWidth:150,//图片上传宽度
+    imgHeight:150,//图片上传高度
+    allowedNum:1,//允许上传最大数量
+    showBtn:true,
+})
+
+</script>
+<script type="text/javascript">
+    var NotificationHandler = {
+        isNotificationSupported : 'Notification' in window,
+        isPermissionGranted : function() {
+            return Notification.permission === 'granted';
+        },
+        requestPermission : function() {
+            if (!this.isNotificationSupported) {
+                console.log('当前浏览器不支持Notification API');
+                return;
+            }
+            Notification.requestPermission(function(status) {
+                console.log('status: ' + status);
+                var permission = Notification.permission;
+                console.log('permission: ' + permission);
+            });
+        },
+        showNotification : function() {
+            if (!this.isNotificationSupported) {
+                console.log('当前浏览器不支持Notification API');
+                return;
+            }
+            if (!this.isPermissionGranted()) {
+                this.requestPermission()
+                console.log('当前页面未被授权使用Notification通知');
+                return;
+            }
+
+            var n = new Notification("您有一条新消息", {
+                icon : 'cat.jpg',
+                body : '请五分钟后到老总办公室领取本年度奖金！'
+            });
+            n.onshow = function() {
+                console.log('显示通知信息');
+                //5秒后自动关闭消息框
+                setTimeout(function() {
+                    n.close();
+                }, 5000);
+            };
+
+
+            n.onclick = function() {
+                alert('打开相关视图');
+
+                n.close();
+            };
+
+
+            n.onerror = function() {
+                console.log('产生错误');
+
+            };
+
+
+            n.onclose = function() {
+                console.log('关闭通知窗口');
+
+            };
+        }
+    };
+
+</script>
+<body>
+    <button onclick="NotificationHandler.showNotification()">通知</button>
+</body>

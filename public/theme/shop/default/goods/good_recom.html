@@ -1,0 +1,13 @@
+<div class="col-lg-2  col-sm-3 d_padding ">
+    <div class="recommend lborder">
+        <p class="recommendtop">商品推荐</p>
+        {volist name='goods.goods_rec' id='vo'}
+        <div class="lnav">
+            <a href=""><img src="{$vo.goods_thums|getImg}" alt="" /></a>
+            <a class="lfitstp">￥{$vo.market_price}</a>
+            <a href="" class="llastp">{$vo.goods_name}&nbsp;{$vo.recom_desc}</a>
+            <p class="lpostp">{$vo.sale_count}人付款</p>
+        </div>
+        {/volist}
+    </div>
+</div>

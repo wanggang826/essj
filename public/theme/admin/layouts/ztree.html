@@ -1,0 +1,31 @@
+<form class="form-horizontal js-ajax-form clearfix">
+	<div class="form-group imgUpload" js-img="aaa" >
+        <label for="menu_name" class="col-sm-2 control-label">类别名称</label>
+        <div class="col-sm-4">
+            <input id="img" name="header" type="file" multiple="">
+        </div>
+    </div>
+    <div class="form-group imgUpload" js-img="bbb">
+        <label for="menu_name" class="col-sm-2 control-label">类别名称</label>
+        <div class="col-sm-4">
+            <input id="img1" type="file">
+        </div>
+    </div>
+
+	<a class="btn btn-info js-submit-btn">提交</a>
+</form>
+
+<script type="text/javascript">
+	$(function(){
+        var img = [
+            'http://127.0.0.3/upload/config/2017/05/1495440244.jpeg',
+            'http://127.0.0.3/upload/config/2017/05/1495192395.jpeg'
+        ];
+		setImgUpload('#img',img);
+		setImgUpload('#img1');
+	})
+</script>
+
+
+
+

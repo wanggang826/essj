@@ -1,0 +1,44 @@
+
+    <link rel="stylesheet" href="{$css}/usernew.css">
+
+<div class="h_concent">
+    <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">申请开店</div></div>
+    <div class="l_applycont">
+        <div class="l_clciks clearfloat">
+            <div class="l_clciksons addcolorfen">
+                申请成为卖家
+                <img src="{$img}/dingdan_01.png" alt="" class="ding">
+            </div>
+            <div class="l_clciksons addcolorfen">
+                申请成为卖家
+                <img src="{$img}/dingdan_01.png" alt="" class="ding">
+            </div>
+            <div class="l_clciksons addcolorfen">
+                填写相关信息
+                <img src="{$img}/dingdan_03(1).png" alt="">
+            </div>
+            <div class="l_clciksons">
+                申请卖家成功
+                <img src="{$img}/dingdan_02.png" alt="">
+            </div>
+        </div>
+
+         <div class="application clearfloat">
+             <img src="{$img}/touxiang.png" alt="" class="sellercontsimg">
+             <div class="applicationright">
+                {~$user = session('user');}
+                <p>亲爱的{$user.account}，您的身份</p>
+                {if condition="$shop_seller.is_check eq '-1'"}                    
+                <h3>审核不通过 <a href="{:url('SellerCenter/apply_seller',['shop_id'=>$shop_seller.shop_id])}" style='font-size: 14px;color:red;'>>>点击返回修改相关信息</a></h3>
+                <p class="applicationrightp">具体原因为：{$shop_seller.check_des}</p>
+                {elseif condition="$shop_seller.is_check eq '0'"}
+                <h3>正在审核认证中</h3>
+                <p class="applicationrightp">预计在您提交信息24小时之前审核完成，我们会尽快审核，请耐心等待，结果会通过短信、站内信通知，敬请留意！</p>
+                {elseif condition="$shop_seller.is_check eq '1'"}
+                <h3>审核已通过</h3>
+                {/if}
+             </div>
+         </div>
+
+    </div>
+</div>

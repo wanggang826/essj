@@ -1,0 +1,21 @@
+<link type="text/css" rel="stylesheet" href="{$css}/shop_nav.css" />
+<div class="container mag-top1">
+    <div class="row">
+        <div class="d_banner">
+            <a href=""><img src="" alt="shop_banner" /></a>
+        </div>
+    </div>
+</div>
+<div class="d_container-fluid1">
+    <div class="container public">
+        <div class="row">
+            <div class="d_nav">
+                {volist name="nav" id="vo"}
+                <a href="{$vo.url}">{$vo.name}</a>
+                {/volist}
+            </div>
+            <input class="input4" type="button" value="搜索">
+            <input class="input3" type="text" name="" id="" value="" placeholder="输入关键字" />
+        </div>
+    </div>
+</div>

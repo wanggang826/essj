@@ -1,0 +1,5 @@
+{if condition="isset($adv['GOODS_BOTTOM'])"}
+{volist name='adv.GOODS_BOTTOM' id='vo'}
+<a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img class="banrbottom" src="{$vo.adv_img|getImg}" alt="商品页广告位goods_bottom" /></a>
+{/volist}
+{/if}

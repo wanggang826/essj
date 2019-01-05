@@ -1,0 +1,16 @@
+<div class="container list-style">
+
+    {volist name="links" id="vo"}
+        <ul class="ul2">
+            {volist name="vo['name']" id="name"}
+                <li>
+                    <a href="{$name.href}">{$name.article_title}</a>
+                </li>
+            {/volist}
+        </ul>
+    {/volist}
+
+    <div class="ul2">
+        <img src="{$logo='qr_code'|config|getImg}" alt=""  class="qr_code" />
+    </div>
+</div>

@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="{$css}/usernew.css">
+<!-- 地区插件 -->
+<link href="{$web_static}/plugins/citypicker/css/city-picker.css" rel="stylesheet">
+<script src="{$web_static}/cache/city.cache.js"></script>
+<script src="{$web_static}/plugins/citypicker/js/city-picker.js"></script>
+
+<script src="{$web_static}/js/uploadImg.js"></script>
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>店铺基本信息</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+        {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">店铺基本信息</div>
+        </div>
+    <form class="js-ajax-form" action="{:urldo('seller_center/basic_settings')}" method="post" enctype="multipart/form-data" >    
+        <div class="l_rightbasic">
+            <span class="l_rightbasic_sss">店铺名称</span>
+            <input type="text" class="l_rightbasic_son" name="shop_name" value="{$shop_info.shop_name}">
+        </div>
+        <div class="l_rightbasic">
+            <div class="l_rightbasicson">
+                <span class="l_rightbasic_sss">店铺标志</span>
+                <div class="l_rightbasic_right">
+                    <div class="img_cont">
+                            <div class="img_prev" style="padding-left:0px;"></div>
+                            <input type="file" name="shop_logo" id="shop_logo"/>
+                        </div>
+                    <div class="l_rightbasic_rightalert"> <div class="l_rightbasic_rightbox2"><img src="{$img}/5.png" alt="" class="l_rightbasic_rightimg5">文件格式GIF、JPG、JPEG、PNG文件大小1M以 内，建议尺寸80PX*80PX</div></div>
+                </div>
+            </div>
+            <div class="l_rightbasicson">
+                <span class="l_rightbasic_sss">店铺横幅</span>
+                <div class="l_rightbasic_right">
+                        <div class="img_cont">
+                            <div class="img_prev" style="padding-left:0px;"></div>
+                            <input type="file" name="shop_banner" id="shop_banner"/>
+                        </div>
+                    <div class="l_rightbasic_rightalertt"> <div class="l_rightbasic_rightbox2"><img src="{$img}/5.png" alt="" class="l_rightbasic_rightimg5">文件格式GIF、JPG、JPEG、PNG文件大小1M以 内，建议尺寸120PX*1920PX</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="l_rightbasic">
+            <span class="l_rightbasic_sss">经营地址</span>
+            <div class="l_rightbasic_rightson" style="position: relative;">
+                <input class="l_rightbasic_son" readonly type="text" value="{$shop_info.area_id1}/{$shop_info.area_id2}/{$shop_info.area_id3}" name="citys" data-toggle="city-picker">
+            </div>
+        </div>
+        <div class="l_rightbasic">
+            <span class="l_rightbasic_sss">店铺简介</span>
+            <div class="l_rightbasic_rightson">
+                <textarea   rows="10" name="shop_intro" class="l_rightbasic_righttext">{$shop_info.shop_intro} </textarea>
+                </div>
+        </div>
+        <div class="l_rightbasic">
+            <span class="l_rightbasic_sss">店铺介绍</span>
+            <div class="l_rightbasic_rightson">
+                <textarea  rows="10" name="shop_des" class="l_rightbasic_righttext">{$shop_info.shop_des}</textarea>
+            </div>
+        </div>
+        <div class="l_rightbasicbtn">
+            <a class="l_rightbasic_button js-submit-btn">确认提交</a>
+        </div>
+    </form>
+     </div>
+    </div>
+</body>
+<script>
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+        $(this).children(".hei").addClass("adddis")
+
+    })
+
+    $('.i-date').focus(function(e){
+        var id = 'date-' +parseInt(e.timeStamp);
+        $(this).attr('id',id).attr('value',laydate.now('',date.format));
+        date.format = $(this).attr('istime') ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD';
+        date.istime = $(this).attr('istime') ? true : false;
+        date.elem = '#'.id;
+        laydate(date);
+        delete  date;
+    })
+
+    var date= {
+        format: 'YYYY-MM-DD',
+        // min: laydate.now(-7),
+        // max: laydate.now(),
+        istime: false, //是否开启时间选择
+        isclear: false, //是否显示清空
+        istoday: true, //是否显示今天
+        issure: true, //是否显示确认
+    }
+
+    function eler() {
+
+        var userval = $("#suername").val();
+        var uservni = $("#suerni").val();
+//    帐号验证
+        if (userval == "") {
+            $("#suername").parents(".indent_rirgtcontson").append('<div class="alert"> <div class="box2"><img src="../{$img}/5.png" alt="" class="img5">用户名不能为空</div></div>');
+        }
+        if (uservni == "") {
+            $("#suerni").parents(".indent_rirgtcontson").append('<div class="alert"> <div class="box2"><img src="../{$img}/5.png" alt="" class="img5">昵称不能为空</div></div>');
+        }
+
+
+        $('input').bind('input propertychange', function() {
+                $(this).parent(".indent_rirgtcontson").children(".alert").remove();
+
+        });
+    }
+
+    var imgBase64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB+CAIAAABptOLiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowOTQ2MDhFOUQyMzNFNDExODRDQUJBQTZDNUIwOUUyOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDRkE4OTgzNjVDQTUxMUU3OEEyRkQ0MUY3RTIwRDBBNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDRkE4OTgzNTVDQTUxMUU3OEEyRkQ0MUY3RTIwRDBBNSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDUzMzExNzMtMzdmOS1jNzQ2LTg5YjktNWI0ODVlNzA2ZTQwIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6Y2IyNWVhZTAtNDAzMS0xMWU3LThkODYtYmJiOWFiNmMwYjg4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+oKe8KwAAA+BJREFUeNrsnd2O4jAMhYfAlp/3f1IugNLC7hFeEBqgLdSJTX3ORaUZIaBfXPskac1su93+UGU1I3RCJ3SK0AmdInRCpwid0ClCJ3RCpwid0ClCJ3SK0AmdInRCJ3SK0AmdInRCp6YGffZM+P/fq87nM/6UI6GPUkppsVjgOJ/Pcex+saCHTqdT27b4k9Df05+LAFoi+l2BONAfj0ccCb1fCO2qqhDaKu+GkK/r2k/a8Qh9uVyCuO57IuqPFxH6k/S9Wq20AvxRTdMcDgf769iVOVmv172lcmSRwNGce/IDPTfxG3ekL0L/n8fzZZVfUizRXwwdCNQrZ7dQOT6zodOBXv56Rx4rPMy+oMOSm1zsSO5WwW4PXRyFiVmy+mhj6LKuEm28U8wwvw25SWYzhm5r3aSixIKeLgo46sbQDc3yrZyW/w7J9oTNvROhR/kOjha8TGSynxcdetAZKaFThM5Cqi4P2/MspDbQy3NnTv8h9BBpPYUKMboXm3waHbrJYhOhRyTOQkrohB5kRhox0j24F06OQow6J0ecHMWoKyngOd/L5MG7FPCco0d627a2xCNGujzdHG3I7S1j0zTRPtoFdBMPg8RidZHZQ5cn+ENdYS5mpOWfHsdIG9ZwF9BPF0XIaY6gl7/YDXOLL+jFQg+JxXYm7GiVsVj0mTcgcQQdLAoEO8LcfO3BEfQyjsJDnx1fmxh1XWcNdg9h7g46iGfN7E7aSbnbrsuX2Z2EuUfoII4kkyl3OTlHjxvTyDDqIemqRaDTuwF0e5tJS0w/Z+cUOqJSizvylYe2gF8AXZLM+PAE8f1+7+1WsoVP4oq9GqTPBbj7uc3GUQdSUL7vHq17I7V0mz5dZTsA9tABF5Sle3SZ9i+yVyUeyYS+JfTFVVZPB8hqj2ji0CWBVFVl3tbo3lNK4JcpuUWhg7L0off54Ius/EC50ReCLh0/DTPJuzkHbjUf+uzQBbdtK8AxE4Uc6DNCd55Mhicc9YXPLNCloyoCfBoPLar/tIM+dMHtx5loCXmmrmsVc6kJHUawZO95K3MJ9CNXnnWgI66B27BV8XfV2LHQv9ecGKL/HPoXWW9vpv4T6DKJj5NMhkjQD8z170FHUFcXkfJTibPsNfVvQJ+qF1R3luDefffOIOgIcJiTmNXy4xrbcbdaP3SEdpnf2ppeyL/anu2BjpoJ4pH9yUhvA+6P1bULOohvNhuyG6ndbveLe+rI44hxIhuvx1SRhr+U+nDS/xC+6ZU7nPa6VWHJ7Q490Dn9Udc90vTKJhKTru6REq7FABABoRM6ReiEThE6oVOETugUoZvonwADAFMsx43YcpNrAAAAAElFTkSuQmCC';
+
+    $('#shop_logo').imgUpload({
+        btnText:'上传图片',
+        showBtn:true,//是否显示按钮,picList为true,allowedNum为1时可配置,
+        btnClass:'l_rightbasic_rightinput',
+        maxSize: 1020,//允许上传最大值(KB)
+        bg_img:imgBase64,
+        width:120,//预览宽度
+        height:120,//预览高度
+        allowedNum:1,//允许上传最大数量
+        files:[
+        {if condition="isset($shop_info['shop_logo'])"}
+            "{$shop_info['shop_logo']|getImg}",
+        {/if}
+        ]
+    });
+
+    $('#shop_banner').imgUpload({
+        btnText:'上传图片',
+        showBtn:true,//是否显示按钮,picList为true,allowedNum为1时可配置,
+        btnClass:'l_rightbasic_rightinput',
+        maxSize: 1020,//允许上传最大值(KB)
+        bg_img:imgBase64,
+        width:320,//预览宽度
+        height:120,//预览高度
+        allowedNum:1,//允许上传最大数量
+        files:[
+        {if condition="isset($shop_info['shop_banner'])"}
+            "{$shop_info['shop_banner']|getImg}",
+        {/if}
+        ]
+    });
+
+
+</script>

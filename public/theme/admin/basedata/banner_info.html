@@ -1,0 +1,69 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('basedata/banner_info')}" class="panel-body hidden-xs form-inline">
+        <div class="form-group">
+            <input type="text" placeholder="标题"  class="form-control" name="title" value="">
+        </div>
+        <div class="form-group group1">
+            <input type="text" name="begin_time" class="form-control i-datestart" placeholder="开始时间"  value="">
+        </div>
+        <div class="form-group group2">
+            <input type="text" name="end_time" class="form-control i-dateend" placeholder="结束时间" value="">
+        </div>
+        <div class="form-group pull-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                    <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                </button>
+                <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                    <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                </a>
+            </div>
+        </div>
+
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+            <a href="{:U('basedata/banner_add')}" class="btn btn-outline btn-default js-window-load"js-title="新增用户" js-unique="true">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+            </a>
+            <a href="{:U('basedata/banner_del')}" class="btn btn-outline btn-default js-del-btn del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+            {$banners->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+            <th>标题</th>
+            <th>类型</th>
+            <th>排序</th>
+            <th>查看图片</th>
+            <th class="hidden-xs">状态</th>
+            <th>创建日期</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="banners" id="vo"}
+        <tr>
+            <td width='1'><input type="checkbox" class="i-checks" value="{$vo.id}" name="input[]"></td>
+            <td><a href="{:url('basedata/banner_add',['id'=>$vo.id])}">{$vo.title}</a></td>
+            <td>{$vo.type_name}</td>
+            <td>{$vo.rank}</td>
+            <td>
+                <a href="{:U('basedata/banner_pic',['id'=>$vo.id])}" class="btn btn-outline btn-default js-window-load"js-title="查看图片" js-with="200px">
+                    点击查看图片
+                </a>
+            </td>
+            <td>{if condition="$vo.is_using eq 'Y'"}启用{else/}禁用{/if}</a></td>
+            <td>{$vo.create_time}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,78 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('pay/index')}" class="form-inline panel-body hidden-xs">
+        <div class="form-group">
+            <input type="text" placeholder="支付名称" id="pay_name" class="form-control" name="pay_name" value="{:input('pay_name')}">
+        </div>
+        <div class="form-group">
+            <select   class="form-control"  name="status">
+                <option value="">-- 状态查询 --</option>
+                <option value="1" {if condition="input('status') ==1"}selected{/if}>启用</option>
+                <option value="0" {if condition="input('status') ==0 && input('status')!=null"}selected{/if}>禁用</option>
+            </select>
+        </div>
+         <div class="form-group pull-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                    <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                </button>
+                <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                    <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                </a>
+            </div>
+        </div>
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="pull-left btn-group hidden-xs" >
+            <a href="{:U('pay/del')}" class="btn btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+        {$pays->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="150">名称</th>
+                <th width="150" class="hidden-xs">标识</th>
+                <th width="300" class="hidden-xs">描述</th>
+                <th width="200">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="pays" id="vo"}
+                <tr>
+                   <td width='1'><input type="checkbox" value="{$vo.id}" class="i-checks" name="input[]"></td>
+                    <td>{$vo.pay_name}</td>
+                    <td class="hidden-xs">{$vo.pay_mark}</td>
+                    <td class="hidden-xs">{$vo.pay_des}</td>
+                    <td >
+                        <span class="btn-group">
+                            {if condition="$vo.status eq 0"}
+                            <a href="{:U('changeStatus',['id'=>$vo.id,'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="启用后支付方式可用"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用</span></a>
+                            {elseif condition="$vo.status eq 1"/}
+                            <a href="{:U('changeStatus',['id'=>$vo.id,'status'=>0])}" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="禁用后支付方式不能用,请谨慎操作！"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a>
+                            {/if}
+                            <a href="{:U('config',['id'=>$vo.id,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="配置--{$vo.pay_name}
+                            " ><i class="fa fa-edit fa-fw"></i><span class="hidden-xs" >配置</span></a>
+                            <a href="{:U('del',['id'=>$vo.id])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+
+                        
+                        </span>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+        <!-- <div class="cleanfix">
+            <div class="pull-left pagination hidden-xs" >
+            </div>
+            <div class="pull-left">
+            </div>
+        </div> -->
+
+    </div>

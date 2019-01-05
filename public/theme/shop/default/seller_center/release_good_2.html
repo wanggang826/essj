@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发布商品中</title>
+</head>
+<link rel="stylesheet" href="{$css}/usernew.css">
+<body>
+
+<form class="js-ajax-form" action="{:url('SellerCenter/release_good')}">
+<input type="hidden" name="cate_id1" value="{$cate_id1}">
+<input type="hidden" name="cate_id2" value="{$cate_id2}">
+<input type="hidden" name="cate_id3" value="{$cate_id3}">
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>发布商品</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">基本信息</div></div>
+         <p class="right_nav_basic_goods"> <span class="right_nav_basic_goodsspan">商品名称</span><input type="text" class="right_nav_basic_goodsinput" name="goods_name"></p>
+        <p class="right_nav_basic_goods"> <span class="right_nav_basic_goodsspan">商品所属菜单分类</span>
+            {$select}
+        </p>
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">宝贝属性</div><span class="right_nav_basic_goodsspans">：错误填写宝贝属性，可能会引起宝贝下架或搜索流量减少，影响您的正常销售，请认真准确填写！</span></div>
+        <div class="right_nav_basic_goodsbaby">
+            {volist name="attrs" id="vo"}
+                <div class="right_nav_basic_goodsbabyinput">
+                    <span class="right_nav_basic_goodsbabyinputspan">{$vo.attr_name}</span>
+                    {if condition="$vo.type == 'text'"}
+                    <input type="text" class="right_nav_basic_goodsbabyinputs" name="value[]">
+                    {elseif condition="$vo.type == 'select'"}
+                    <select name="value[{$vo.attr_id}]" id="" class="right_nav_basic_goodsbabyinputs" multiple="multiple">
+                        {volist name="$vo.value" id="v1"}
+                        <option value="{$v1.value}">{$v1.value}</option>
+                        {/volist}
+                    </select>
+                    {elseif condition="$vo.type == 'checkbox'"}
+                    
+                    {volist name="$vo.value" id="v1" key="k"}
+                        <input type="checkbox" name="value[{$vo.attr_id}][{$k}]" value="{$v1.value}" class="">{$v1.value}
+                    {/volist}
+                    
+                    {/if}
+                </div>
+            {/volist}
+        </div>
+
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品图片</div><span class="right_nav_basic_goodsspans">：商品图大小不能超过3MB；700*700 以上图片上传后宝贝详情页自动提供放大镜功能</span></div>
+        <div class="img_cont">
+            <div class="img_prev"></div>
+            <input type="file" name="file1" id="file1" />
+        </div>
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品规格</div></div>
+         <div class="img_cont">
+                <div class="indent_rirgt_basic_color">
+                    <span class="indent_rirgt_basic_colors">颜色 <img src="{$img}/goodssss.jpg" alt="" class="indent_rirgt_basic_colorimg"> </span>
+                    <p class="indent_rirgt_basic_colorp"><span>选择标准颜色可增加搜索/导购机会</span>，标准颜色还可填写备注信息（偏深、偏亮）！ <a href="">查看详情</a> </p>
+                    <div class="indent_rirgt_basic_colordiv"><div class="indent_rirgt_basic_colordivonediv"><i class="fa fa-plus add_color"></i> </div><input type="text" placeholder="输入商品颜色" class="indent_rirgt_basic_colordivtwo" name="color_val[0]"><input type="text" placeholder="备注（如偏深偏浅等）" class="indent_rirgt_basic_colordivthree" name="color_des[0]">
+                    <div class="img_cont" style="display: inline;">
+                        <input type="file" name="file[]" id="0" />
+                        <!-- <span class="img_prev"></span> -->
+                    </div>
+                </div>
+            </div>
+             <div class="indent_rirgt_basic_color">
+             </div>
+             <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品价格</div></div>
+                       <div class="right_nav_basic_table">
+                           <div class="right_nav_basic_tables">
+                               <span class="right_nav_basic_tabless">价格</span>
+                               <input type="text" name="shop_price">
+                           </div>
+                           <div class="right_nav_basic_tables">
+                               <span class="right_nav_basic_tabless">数量</span>
+                               <input type="text" name="inventory">
+                           </div>
+                           <div class="right_nav_basic_tables">
+                               <span class="right_nav_basic_tabless">快递费</span>
+                               <input type="text" name="courier_fees">
+                           </div>
+                       </div>
+             <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商品描述</div></div>
+                 <div class="right_nav_basic_fuwenben">
+                     <!--非全屏模式-->
+                     <div id="container">
+                         <!--菜单栏-->
+                         <div id="toolbar-container">
+                             <div id="editor-toolbar"></div>
+                             <div id="btn-container">
+                                 <button id="btn1">全屏</button>
+                             </div>
+                         </div>
+                         <!--编辑区域-->
+                         <div id="editor-text">
+                            <input type="hidden" name="recom_desc" value="" id="recom_desc">
+                         </div>
+                     </div>
+
+                     <!--全屏模式-->
+                     <div id="cover"></div>
+
+                 </div>
+            </div>
+    </div>
+</div>
+<div class="right_nav_basicfabushangpin">
+    <a href="" class="right_nav_basicfabushangpins js-submit-btn">发布商品</a>
+</div>
+</form>
+</body>
+<script type="text/javascript" src="{$web_static}js/uploadImg.js"></script>
+
+<script type="text/javascript" src="{$web_static}plugins/editor/wangEditor.min.js"></script>
+<script type="text/javascript">
+    // 创建编辑器
+    var E = window.wangEditor
+    var editor2 = new E('#editor-toolbar', '#editor-text')
+    editor2.create()
+    $('.js-submit-btn').click(function () {
+        $("#recom_desc").attr('value',editor2.txt.text());
+        console.log(editor2.txt.text());
+    })
+
+    // 获取使用到的元素
+    var toolbarContaner = document.getElementById('toolbar-container')
+    var editorText = document.getElementById('editor-text')
+    var cover = document.getElementById('cover')
+    var container = document.getElementById('container')
+
+    // 全屏事件
+    function doFullScreen() {
+        cover.style.display = 'block'
+        editorText.style.height = '460px';
+        cover.appendChild(toolbarContaner)
+        cover.appendChild(editorText)
+    }
+
+    // 退出全屏事件
+    function unDoFullScreen() {
+        container.appendChild(toolbarContaner)
+        container.appendChild(editorText)
+        editorText.style.height = '300px';
+        cover.style.display = 'none'
+    }
+
+    // 是否是全屏的标志
+    var isFullScreen = false
+
+    // 点击事件
+    var btn1 = document.getElementById('btn1')
+    btn1.addEventListener('click', function () {
+        if (isFullScreen) {
+            isFullScreen = false
+            unDoFullScreen()
+        } else {
+            isFullScreen = true
+            doFullScreen()
+        }
+    }, false)
+</script>
+<script>
+
+    $('#file1').imgUpload({
+        allowedNum:6,//允许上传最大数量
+        width:'120',//预览框宽度
+        height:'120',//预览框高度
+        maxSize: 500,//允许上传最大值(KB)
+//        showBtn:true,  //选择按钮
+//        btnClass:'fileimg', //选择按钮的样式
+    })
+
+</script>
+<style type="text/css">
+    .fileimg1{
+        display: inline-block;
+        border: 1px solid #ddd;
+        padding :5px;
+        margin-left: 5px
+    }
+</style>
+<script>
+
+    function clearradio(){
+        var x=document.getElementsByName("brand");
+        for(var i=0;i<x.length;i++){
+            if (x[i].checked==true)
+            {
+                x[i].checked=false;
+            }
+        }
+    }
+
+
+
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+        $(this).children(".hei").addClass("adddis")
+
+    })
+
+//   几个复选框
+    $(".indent_rirgt_basic_colordivonediv").click(function () {
+        $(this).toggleClass("addbackgroundimg2")
+    })
+    $(".indent_rirgt_basic_color_contssons").click(function () {
+        $(this).toggleClass("addbackgroundimg2")
+    })
+
+//    商品主图
+    $(window).on("load",function () {
+          $('.file1').eq(0).append("<p class='file1_zhu'>商品主图</p>")
+
+    })
+
+
+
+</script>
+
+
+<!-- 颜色input 加减  -->
+<script type="text/javascript">
+    var num   = 100;
+    var obj_s = {
+        allowedNum:1,//允许上传最大数量
+        picList:false,//显示上传框
+        showBtn:true,//是否显示按钮,picList为true,allowedNum为1时可配置,
+        width:'120',//预览框宽度
+        height:'30',//预览框高度
+        showBtn:true,  //选择按钮
+        btnText:'上传图片',//按钮文字
+        btnClass:'fileimg1', //选择按钮的样式
+        maxSize: 500,//允许上传最大值(KB)
+        showView:false,
+    }
+    $('#0').imgUpload(obj_s)
+    $(document).on('click','.add_color',function(){
+        num++;
+        var html = '<div class="indent_rirgt_basic_colordiv"><div class="indent_rirgt_basic_colordivonediv"><i class="fa fa-minus     close_color"></i></div><input type="text" placeholder="输入商品颜色" class="indent_rirgt_basic_colordivtwo" name="color_val['+num+']"><input type="text" placeholder="备注（如偏深偏浅等）" class="indent_rirgt_basic_colordivthree" name="color_des['+num+']"><div class="img_cont" style="display: inline;"><input type="file" name="file[]" id="'+num+'" /></div></div>';
+        $(this).parents('.indent_rirgt_basic_color').append(html)
+        $('#'+num).imgUpload(obj_s)
+        return false;
+    })
+    $(document).on('click','.close_color',function(){
+        $(this).parents('.indent_rirgt_basic_colordiv').remove();
+        return false;
+    })
+
+</script>
+</html>

@@ -1,0 +1,19 @@
+<div class="col-sm-4 d_padding">
+    <div class="d_logo">
+        {include file="default/layout/logo"}
+    </div>
+</div>
+<div class="col-sm-8 d_padding">
+    {volist name="steps" id="st"}
+    <div class="d_dingdan col-sm-4 d_padding">
+        {if condition="$key < $step-1"}
+            <img src="{$img}/dingdan_01.png" />
+        {elseif condition="$key == $step-1"}
+            <img src="{$img}/dingdan_03.png" />
+        {else/}
+            <img src="{$img}/dingdan_02.png" />
+        {/if}
+        <p>{$st}</p>
+    </div>
+    {/volist}
+</div>

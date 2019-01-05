@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2017-10-20T13:51:43+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]未定义数组索引: order_sn[D:\phpStudy\WWW\ershoushouji\runtime\temp\caf306ad1f30dc28abcdd2b3b9ba4b05.php:14]
+---------------------------------------------------------------
+[ 2017-10-20T14:09:17+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]Trying to get property of non-object[D:\phpStudy\WWW\ershoushouji\application\common\model\OrderBack.php:59]
+---------------------------------------------------------------
+[ 2017-10-20T14:11:34+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]Trying to get property of non-object[D:\phpStudy\WWW\ershoushouji\application\common\model\OrderBack.php:60]
+---------------------------------------------------------------
+[ 2017-10-20T14:12:26+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/orders/do_back.shtml
+[ error ] [8]Trying to get property of non-object[D:\phpStudy\WWW\ershoushouji\application\common\model\OrderBack.php:60]

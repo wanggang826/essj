@@ -1,0 +1,42 @@
+---------------------------------------------------------------
+[ 2017-10-12T10:37:50+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]数据表字段不存在:[integral][D:\phpStudy\WWW\ershoushouji\frame\library\think\db\Builder.php:107]
+---------------------------------------------------------------
+[ 2017-10-12T10:39:28+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [8]未定义数组索引: gooods_id[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:134]
+---------------------------------------------------------------
+[ 2017-10-12T10:40:15+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [8]未定义数组索引: goods_id[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:134]
+---------------------------------------------------------------
+[ 2017-10-12T11:23:20+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ error ] [4]语法错误: unexpected '{'[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:985]
+---------------------------------------------------------------
+[ 2017-10-12T11:25:15+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [2]array_merge(): Argument #2 is not an array[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:988]
+---------------------------------------------------------------
+[ 2017-10-12T11:26:23+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [2]array_merge(): Argument #2 is not an array[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:988]
+---------------------------------------------------------------
+[ 2017-10-12T11:27:03+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [1]Call to undefined function app\admin\controller\doExchange()[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:999]
+---------------------------------------------------------------
+[ 2017-10-12T11:27:20+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [2]array_merge(): Argument #2 is not an array[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:986]
+---------------------------------------------------------------
+[ 2017-10-12T11:38:12+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [1]Call to undefined function app\admin\controller\getArrSet()[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:1017]
+---------------------------------------------------------------
+[ 2017-10-12T11:38:44+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [1]Call to undefined function app\admin\controller\getArrSet()[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:1017]
+---------------------------------------------------------------
+[ 2017-10-12T17:35:29+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [8]未定义变量: campaign_price[D:\phpStudy\WWW\ershoushouji\application\admin\controller\Good.php:150]
+---------------------------------------------------------------
+[ 2017-10-12T17:42:42+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]数据表字段不存在:[gooods_id][D:\phpStudy\WWW\ershoushouji\frame\library\think\db\Builder.php:107]
+---------------------------------------------------------------
+[ 2017-10-12T17:42:59+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]数据表字段不存在:[submit_price][D:\phpStudy\WWW\ershoushouji\frame\library\think\db\Builder.php:107]
+---------------------------------------------------------------
+[ 2017-10-12T17:43:14+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]数据表字段不存在:[create_time][D:\phpStudy\WWW\ershoushouji\frame\library\think\db\Builder.php:107]

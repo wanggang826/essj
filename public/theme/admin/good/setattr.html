@@ -1,0 +1,94 @@
+<style type="text/css">
+    
+</style>
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('setAttr')}" >
+    <input type="hidden" name="cate_id" value="{$cate_id}">
+<div class="row">
+    <div class="col-xs-5">
+        <label style="position: relative;width:100%;">待选择的属性
+            <input type="text" name="search" placeholder="关键字" id="search" style="border: 1px solid #02c873;position: absolute;right: 0;bottom: 0px;padding-left: 5px">
+        </label>
+        
+        <select name="from" id="multiselect" class="form-control" size="15" style="height: 300px" multiple="multiple">
+            {volist name="attrs" id="vo"}
+            <option value="{$vo.attr_id}">{$vo.attr_name}</option>
+            {/volist}
+        </select>
+    </div>
+
+    <div class="col-xs-2">
+        <label class="col-xs-10"></label>
+        <button type="button" id="multiselect_rightAll" class="btn btn-block"><i class="glyphicon glyphicon-forward"></i></button>
+        <button type="button" id="multiselect_rightSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-right"></i></button>
+        <button type="button" id="multiselect_leftSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-left"></i></button>
+        <button type="button" id="multiselect_leftAll" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
+    </div>
+
+    <div class="col-xs-5">
+        <label class="col-xs-5">已选择的属性</label>
+        <select name="attr_ids" id="multiselect_to" class="form-control" size="15" multiple="multiple" style="height: 300px">
+            {volist name="has_attrs" id="v"}
+            <option value="{$v.attr_id}">{$v.attr_name}</option>
+            {/volist}
+        </select>
+    </div>
+    
+</div>
+<button type="submit" class="btn btn-primary center-block js-submit-btn" id="submit" submit-before="submit_before">确认</button>
+</form>
+<script src="{$web_static}/plugins/multiselect/multiselect.min.js"></script>
+<script type="text/javascript">
+    $('#multiselect').multiselect();
+    // $("#submit").click(function(){
+    //     var cate_id =$("input[name='cate_id']").val();
+    //     var options=$("#multiselect_to").children();
+    //     var ids =[];
+    //     i=0
+    //     $(options).each(function(){
+    //         ids[i]=$(this).val();
+    //         i=i+1;
+    //     })
+        
+    //     $.ajax({
+    //         url:"{:url('Cates/setAttr')}",
+    //         data:{ids:ids,cate_id:cate_id},
+    //         tyep:"post",
+    //         dataType:"json",
+    //         success:function(msg){
+    //             parent.layer.closeAll('iframe');
+    //             parent.layer.msg(msg.msg,{time:2000,shade:0.2});
+    //         },
+    //         error:function(){
+    //             console.log(3)
+    //         } 
+    //     })
+    // })
+    function submit_before(){
+        var cate_id =$("input[name='cate_id']").val();
+        var options=$("#multiselect_to").children();
+        var ids =[];
+        i=0
+        $(options).each(function(){
+            ids[i]=$(this).val();
+            i=i+1;
+        });
+        ajaxData.data.ids = ids;
+        ajaxData.data.cate_id = cate_id;
+    }
+    $(document).on('input', '#search', function() {
+        var search_attr = $(this).val(),
+            inputText   = $.trim($(this).val());
+            opTag       = $("#multiselect").find('option');
+            if (inputText.length>0) {
+            opTag.css('display', 'none');
+        } else {
+            opTag.css('display', 'block');
+        }
+        for (var i = opTag.length - 1; i >= 0; i--) {
+            if ($(opTag[i]).text().indexOf(inputText) > -1) {
+                $(opTag[i]).css('display', 'block');
+            }
+        }
+    });
+
+</script>

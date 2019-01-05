@@ -1,0 +1,60 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('basedata/article_info')}" class="panel-body hidden-xs form-inline">
+        <input type="hidden" name="type_id" value="{$type_id}">
+        <div class="form-group">
+            <input type="text" placeholder="标题"  class="form-control" name="title" value="{:input('store_name')}">
+        </div>
+        <div class="form-group group1">
+            <input type="text" name="begin_time" class="form-control i-datestart" placeholder="开始时间"  value="{:input('begin_time')}">
+        </div>
+        <div class="form-group group2">
+            <input type="text" name="end_time" class="form-control i-dateend" placeholder="结束时间" value="{:input('end_time')}">
+        </div>
+        <div class="form-group pull-right">
+            <div class="btn-group">
+                <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                    <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                </button>
+                <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                    <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                </a>
+            </div>
+        </div>
+
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+            <a href="{:U('basedata/article_add',['type_id'=>$type_id])}" class="btn btn-outline btn-default js-window-load"js-title="新增用户" js-unique="true">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+            </a>
+            <a href="{:U('basedata/article_del',['type_id'=>$type_id])}" class="btn btn-outline btn-default js-del-btn del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+            {$lists->render()}
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+            <th>标题</th>
+            <th class="hidden-xs">创建人</th>
+            <th>创建日期</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="lists" id="vo"}
+        <tr>
+            <td width='1'><input type="checkbox" class="i-checks" value="{$vo.id}" name="input[]"></td>
+            <td><a href="{:url('basedata/article_add',['id'=>$vo.id,'type_id'=>$type_id])}">{$vo.title}</a></td>
+            <td>{$vo.nickname}</td>
+            <td>{$vo.create_time}</td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>

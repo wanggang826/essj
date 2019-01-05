@@ -1,0 +1,975 @@
+---------------------------------------------------------------
+[ 2017-10-18T10:54:30+08:00 ] 127.0.0.4 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:31+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:38+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT `status` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ui_admin`  SET `last_login_time`=1508295278,`last_login_ip`='127.0.0.1',`login_status`=1,`update_time`=1508295278  WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_log` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] INSERT INTO `ui_log` (`admin_id` , `module` , `controller` , `action` , `data_id` , `des` , `create_time` , `update_time`) VALUES (1 , 'admin' , 'Publics' , 'login' , 'admin' , '登录系统' , 1508295278 , 1508295278) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:39+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:40+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506787200 AND 1506873600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506873600 AND 1506960000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506960000 AND 1507046400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507046400 AND 1507132800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507132800 AND 1507219200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507219200 AND 1507305600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507305600 AND 1507392000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507392000 AND 1507478400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507478400 AND 1507564800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507564800 AND 1507651200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507651200 AND 1507737600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507737600 AND 1507824000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507824000 AND 1507910400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507910400 AND 1507996800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507996800 AND 1508083200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508083200 AND 1508169600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508169600 AND 1508256000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508256000 AND 1508342400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order_back` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_order_back` WHERE (  `status` = 1 ) AND `ui_order_back`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 4 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_user` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_user` WHERE `ui_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:41+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:44+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T10:54:51+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:06:50+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/pay/alipay.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:09:27+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:09:43+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:10:14+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:13:23+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:26:53+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:26:55+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/set/modify.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/modify.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `ui_pay_config`  SET `pay_config`='a:6:{s:10:\"notify_url\";a:3:{s:4:\"name\";s:18:\"异步通知地址\";s:4:\"desc\";s:18:\"异步通知地址\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/notify_url.php\";}s:6:\"app_id\";a:3:{s:4:\"name\";s:5:\"appid\";s:4:\"desc\";s:20:\"绑定支付的APPID\";s:3:\"val\";s:18:\"wx426b3015555a46be\";}s:10:\"return_url\";a:3:{s:4:\"name\";s:12:\"同步跳转\";s:4:\"desc\";s:12:\"同步跳转\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/return_url.php\";}s:7:\"charset\";a:3:{s:4:\"name\";s:12:\"编码格式\";s:4:\"desc\";s:12:\"编码格式\";s:3:\"val\";s:5:\"UTF-8\";}s:9:\"sign_type\";a:3:{s:4:\"name\";s:12:\"签名方式\";s:4:\"desc\";s:12:\"签名方式\";s:3:\"val\";s:4:\"RSA2\";}s:10:\"gatewayUrl\";a:3:{s:4:\"name\";s:15:\"支付宝网关\";s:4:\"desc\";s:15:\"支付宝网关\";s:3:\"val\";s:37:\"https://openapi.alipay.com/gateway.do\";}}'  WHERE  `id` IN (1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:27:04+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/set/modify.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/modify.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `ui_pay_config`  SET `pay_config`='a:6:{s:10:\"notify_url\";a:3:{s:4:\"name\";s:18:\"异步通知地址\";s:4:\"desc\";s:18:\"异步通知地址\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/notify_url.php\";}s:6:\"app_id\";a:3:{s:4:\"name\";s:5:\"appid\";s:4:\"desc\";s:20:\"绑定支付的APPID\";s:3:\"val\";s:18:\"wx426b3015555a46be\";}s:10:\"return_url\";a:3:{s:4:\"name\";s:12:\"同步跳转\";s:4:\"desc\";s:12:\"同步跳转\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/return_url.php\";}s:7:\"charset\";a:3:{s:4:\"name\";s:12:\"编码格式\";s:4:\"desc\";s:12:\"编码格式\";s:3:\"val\";s:5:\"UTF-8\";}s:9:\"sign_type\";a:3:{s:4:\"name\";s:12:\"签名方式\";s:4:\"desc\";s:12:\"签名方式\";s:3:\"val\";s:4:\"RSA2\";}s:10:\"gatewayUrl\";a:3:{s:4:\"name\";s:15:\"支付宝网关\";s:4:\"desc\";s:15:\"支付宝网关\";s:3:\"val\";s:37:\"https://openapi.alipay.com/gateway.do\";}}'  WHERE  `id` IN (1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:14+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:21+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/set/modify.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/modify.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `ui_pay_config`  SET `pay_config`='a:8:{s:10:\"notify_url\";a:3:{s:4:\"name\";s:18:\"异步通知地址\";s:4:\"desc\";s:18:\"异步通知地址\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/notify_url.php\";}s:6:\"app_id\";a:3:{s:4:\"name\";s:5:\"appid\";s:4:\"desc\";s:20:\"绑定支付的APPID\";s:3:\"val\";s:18:\"wx426b3015555a46be\";}s:10:\"return_url\";a:3:{s:4:\"name\";s:12:\"同步跳转\";s:4:\"desc\";s:12:\"同步跳转\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/return_url.php\";}s:7:\"charset\";a:3:{s:4:\"name\";s:12:\"编码格式\";s:4:\"desc\";s:12:\"编码格式\";s:3:\"val\";s:5:\"UTF-8\";}s:9:\"sign_type\";a:3:{s:4:\"name\";s:12:\"签名方式\";s:4:\"desc\";s:12:\"签名方式\";s:3:\"val\";s:4:\"RSA2\";}s:10:\"gatewayUrl\";a:3:{s:4:\"name\";s:15:\"支付宝网关\";s:4:\"desc\";s:15:\"支付宝网关\";s:3:\"val\";s:37:\"https://openapi.alipay.com/gateway.do\";}s:20:\"merchant_private_key\";a:3:{s:4:\"name\";s:12:\"商户私钥\";s:4:\"desc\";s:42:\"商户私钥，您的原始格式RSA私钥\";s:3:\"val\";s:0:\"\";}s:17:\"alipay_public_key\";a:3:{s:4:\"name\";s:15:\"支付宝公钥\";s:4:\"desc\";s:117:\"支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。\";s:3:\"val\";s:0:\"\";}}'  WHERE  `id` IN (1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:23+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:24+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:26+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:37:27+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:38:29+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/set/modify.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/modify.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `ui_pay_config`  SET `pay_config`='a:8:{s:10:\"notify_url\";a:3:{s:4:\"name\";s:18:\"异步通知地址\";s:4:\"desc\";s:18:\"异步通知地址\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/notify_url.php\";}s:6:\"app_id\";a:3:{s:4:\"name\";s:5:\"appid\";s:4:\"desc\";s:20:\"绑定支付的APPID\";s:3:\"val\";s:18:\"wx426b3015555a46be\";}s:10:\"return_url\";a:3:{s:4:\"name\";s:12:\"同步跳转\";s:4:\"desc\";s:12:\"同步跳转\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/return_url.php\";}s:7:\"charset\";a:3:{s:4:\"name\";s:12:\"编码格式\";s:4:\"desc\";s:12:\"编码格式\";s:3:\"val\";s:5:\"UTF-8\";}s:9:\"sign_type\";a:3:{s:4:\"name\";s:12:\"签名方式\";s:4:\"desc\";s:12:\"签名方式\";s:3:\"val\";s:4:\"RSA2\";}s:10:\"gatewayUrl\";a:3:{s:4:\"name\";s:15:\"支付宝网关\";s:4:\"desc\";s:15:\"支付宝网关\";s:3:\"val\";s:37:\"https://openapi.alipay.com/gateway.do\";}s:20:\"merchant_private_key\";a:3:{s:4:\"name\";s:12:\"商户私钥\";s:4:\"desc\";s:42:\"商户私钥，您的原始格式RSA私钥\";s:3:\"val\";s:0:\"\";}s:17:\"alipay_public_key\";a:3:{s:4:\"name\";s:15:\"支付宝公钥\";s:4:\"desc\";s:51:\"支付宝公钥,对应APPID下的支付宝公钥。\";s:3:\"val\";s:0:\"\";}}'  WHERE  `id` IN (1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:38:31+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.028002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:38:37+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:01+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:01+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506787200 AND 1506873600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506873600 AND 1506960000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506960000 AND 1507046400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507046400 AND 1507132800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507132800 AND 1507219200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507219200 AND 1507305600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507305600 AND 1507392000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507392000 AND 1507478400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507478400 AND 1507564800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507564800 AND 1507651200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507651200 AND 1507737600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507737600 AND 1507824000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507824000 AND 1507910400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507910400 AND 1507996800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507996800 AND 1508083200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508083200 AND 1508169600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508169600 AND 1508256000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508256000 AND 1508342400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order_back` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_order_back` WHERE (  `status` = 1 ) AND `ui_order_back`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 4 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_user` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_user` WHERE `ui_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:02+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:05+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.045003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:08+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:19+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T11:39:33+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T12:29:01+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031200s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.031200s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T13:19:01+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015600s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:00:25+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:02:21+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:03:03+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/get_config
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:03:07+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.022001s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:04:09+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:04:37+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:07:45+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:09:01+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015600s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:10:15+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:18+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:19+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:27+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `status` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `ui_admin`  SET `last_login_time`=1508307627,`last_login_ip`='127.0.0.1',`login_status`=1,`update_time`=1508307627  WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_log` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] INSERT INTO `ui_log` (`admin_id` , `module` , `controller` , `action` , `data_id` , `des` , `create_time` , `update_time`) VALUES (1 , 'admin' , 'Publics' , 'login' , 'admin' , '登录系统' , 1508307627 , 1508307627) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:28+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:28+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:35+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/publics/login.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/publics/login.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `status` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `ui_admin`  SET `last_login_time`=1508307635,`last_login_ip`='127.0.0.1',`login_status`=1,`update_time`=1508307635  WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `account` = 'admin' ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_log` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] INSERT INTO `ui_log` (`admin_id` , `module` , `controller` , `action` , `data_id` , `des` , `create_time` , `update_time`) VALUES (1 , 'admin' , 'Publics' , 'login' , 'admin' , '登录系统' , 1508307635 , 1508307635) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:37+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:37+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506787200 AND 1506873600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506873600 AND 1506960000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506960000 AND 1507046400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507046400 AND 1507132800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507132800 AND 1507219200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507219200 AND 1507305600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507305600 AND 1507392000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507392000 AND 1507478400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507478400 AND 1507564800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507564800 AND 1507651200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507651200 AND 1507737600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507737600 AND 1507824000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507824000 AND 1507910400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507910400 AND 1507996800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507996800 AND 1508083200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508083200 AND 1508169600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508169600 AND 1508256000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508256000 AND 1508342400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order_back` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_order_back` WHERE (  `status` = 1 ) AND `ui_order_back`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 4 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_user` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_user` WHERE `ui_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:38+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:40+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:43+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/edit/id/1.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/edit.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:51+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/set/modify.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/modify.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 246 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `pay_config` FROM `ui_pay_config` WHERE (  `id` = 1 ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `ui_pay_config`  SET `pay_config`='a:8:{s:10:\"notify_url\";a:3:{s:4:\"name\";s:18:\"异步通知地址\";s:4:\"desc\";s:18:\"异步通知地址\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/notify_url.php\";}s:6:\"app_id\";a:3:{s:4:\"name\";s:5:\"appid\";s:4:\"desc\";s:20:\"绑定支付的APPID\";s:3:\"val\";s:18:\"wx426b3015555a46be\";}s:10:\"return_url\";a:3:{s:4:\"name\";s:12:\"同步跳转\";s:4:\"desc\";s:12:\"同步跳转\";s:3:\"val\";s:81:\"http://外网可访问网关地址/alipay.trade.page.pay-PHP-UTF-8/return_url.php\";}s:7:\"charset\";a:3:{s:4:\"name\";s:12:\"编码格式\";s:4:\"desc\";s:12:\"编码格式\";s:3:\"val\";s:5:\"UTF-8\";}s:9:\"sign_type\";a:3:{s:4:\"name\";s:12:\"签名方式\";s:4:\"desc\";s:12:\"签名方式\";s:3:\"val\";s:4:\"RSA2\";}s:10:\"gatewayUrl\";a:3:{s:4:\"name\";s:15:\"支付宝网关\";s:4:\"desc\";s:15:\"支付宝网关\";s:3:\"val\";s:37:\"https://openapi.alipay.com/gateway.do\";}s:20:\"merchant_private_key\";a:3:{s:4:\"name\";s:12:\"商户私钥\";s:4:\"desc\";s:42:\"商户私钥，您的原始格式RSA私钥\";s:3:\"val\";s:11:\"fsfdgdfssfd\";}s:17:\"alipay_public_key\";a:3:{s:4:\"name\";s:15:\"支付宝公钥\";s:4:\"desc\";s:51:\"支付宝公钥,对应APPID下的支付宝公钥。\";s:3:\"val\";s:10:\"dfgsdfgsdf\";}}'  WHERE  `id` IN (1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:53+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.031002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:53+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/set/payset.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.036002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.031002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/set/payset.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 241 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE `ui_pay_config`.`delete_time` IS NULL ORDER BY id asc LIMIT 0,15 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:20:59+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:26:03+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:33:41+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.020002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:39:17+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:39:47+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:40:38+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2017-10-18T14:43:09+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T15:10:37+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T16:00:38+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.032601s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T16:15:46+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/index.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/index.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` = 0 ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id` FROM `ui_menu` WHERE `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `menu_id`,`module`,`controller`,`action` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289) ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `ui_menu` WHERE (  `menu_id` IN (83,5,45,74,98,100,237,240,241)  AND `status` = 1  AND `pid` <> 0 ) AND `ui_menu`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `menu_id` IN (2,3,4,5,12,13,45,62,63,64,68,69,72,74,75,76,77,78,80,81,82,83,84,85,86,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,136,138,139,140,141,142,143,144,146,151,152,153,154,155,156,157,158,160,162,163,168,169,170,171,172,173,174,175,176,177,178,179,180,185,186,195,196,197,198,199,200,209,213,214,215,225,228,229,230,231,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,255,256,257,258,259,262,263,264,265,267,271,272,273,274,275,277,278,280,281,283,285,286,287,288,289)  AND `status` = 1 ) AND `ui_menu`.`delete_time` IS NULL ORDER BY `sort`  asc [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_auth_group` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `group_name` FROM `ui_auth_group` WHERE (  `group_id` = 1 ) AND `ui_auth_group`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2017-10-18T16:15:47+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/index/main.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/main.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506787200 AND 1506873600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506873600 AND 1506960000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1506960000 AND 1507046400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507046400 AND 1507132800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507132800 AND 1507219200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507219200 AND 1507305600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507305600 AND 1507392000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507392000 AND 1507478400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507478400 AND 1507564800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507564800 AND 1507651200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507651200 AND 1507737600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507737600 AND 1507824000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507824000 AND 1507910400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507910400 AND 1507996800 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1507996800 AND 1508083200 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508083200 AND 1508169600 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508169600 AND 1508256000 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 6  AND `create_time` BETWEEN 1508256000 AND 1508342400 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_order_back` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_order_back` WHERE (  `status` = 1 ) AND `ui_order_back`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `deal_price` FROM `ui_order` WHERE (  `status` = 4 ) AND `ui_order`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_user` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ui_user` WHERE `ui_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T16:15:47+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:05:47+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.031200s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.015600s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:20:33+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:27:57+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:28:24+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:29:01+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:30:20+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:32:06+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:32:20+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:47:23+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T17:55:47+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/index/isuniquelogin.shtml
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_menu` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_menu` WHERE (  `url` = '/admin/index/isuniquelogin.shtml' ) AND `ui_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_admin` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_admin` WHERE (  `admin_id` = 1 ) AND `ui_admin`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-18T18:09:39+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.019001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T18:11:52+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+---------------------------------------------------------------
+[ 2017-10-18T18:15:23+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.020001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-10-18T18:15:43+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/winxpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]

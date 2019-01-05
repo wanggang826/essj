@@ -1,0 +1,19 @@
+
+    <link rel="stylesheet" href="{$css}/usernew.css">
+{if condition="$rticle_info['type'] eq 'article'"}
+    <div class="h_concent">
+        <h3 class="articdatil">{$rticle_info.article_title}</h3>
+        <p class="articdatilp">时间：<span>{$rticle_info.create_time}</span> 　　阅读：<span>{$rticle_info.hits}</span></p>
+        <div class="articdatilps">
+            {$rticle_info.article_content}
+        </div>
+    </div>
+{else condition="$rticle_info['type'] eq 'message'"/}
+    <div class="h_concent">
+        <h3 class="articdatil">{$rticle_info.title}</h3>
+        <p class="articdatilp">时间：<span>{$rticle_info.create_time}</span> 　　阅读：<span>{if condition="$rticle_info['status'] eq 0""}未读{else/}已读{/if}</span></p>
+        <div class="articdatilps">
+            {$rticle_info.content}
+        </div>
+    </div>
+{/if}

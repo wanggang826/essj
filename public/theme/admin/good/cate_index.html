@@ -1,0 +1,195 @@
+
+<div class="table-responsive">
+    <div class="btn-group pull-left hidden-xs">
+        <a href="{:U('add_cate')}" class="btn btn-outline btn-default js-window-load" js-title="新增" js-unique="true" js-width="45%" js-height="70%">
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+        </a>
+        <!-- <a href="{:U('del_cate')}" class="btn btn-outline btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+        </a> -->
+    </div>
+    <div class="pull-right col-sm-3 search">
+
+    </div>
+    <table id="cateTree"  class="table table-hover table-bordered table-condensed" style="width:100%">
+        <thead>
+            <tr>
+                <th js-order='name' class="js-order">类别名称</th>
+                <th class="hidden-xs">排序</th>
+                <th class="hidden-xs" width="120">类别banner</th>
+                <th class="hidden-xs">状态&nbsp;<i class="fa fa-hand-pointer-o"></i></th>
+                <th class="hidden-xs" width="100">是否首页显示</i></th>
+                <th  width="400">操作</th>
+            </tr>
+        </thead>
+        
+       <!--  <tbody>
+        {volist name="tree" id="vo"}
+            <tr id="{$vo.cate_id}"{if condition="$vo.pid neq 0"}pId="{$vo.pid}"{/if}>
+                <td><input type="checkbox" class="i-checks" name="input[]" value="{$vo.cate_id}"></td>
+                <td controller="true"><i title="" class="fa fa-fw fa-lg"></i>&nbsp;<input type="text" name="name" value="{$vo.name}" class="cate-name" id="{$vo.cate_id}" style=""></td>
+                <td class="hidden-xs"><input type="text" name="sort" value="{$vo.sort}" style="width: 30px;text-align: center;" id="{$vo.cate_id}"></td>
+                <td class="hidden-xs">
+                    <a href="{:U('addBanner',['cate_id'=>$vo.cate_id])}" class="btn btn-outline btn-default btn-xs js-window-load" title="banner新增：{$vo.name}" js-unique="true" ><i class="fa fa-edit fa-fw" ></i><span class="hidden-xs">新增</span></a>
+                    <a href="{:U('cateBanner',['cate_id'=>$vo.cate_id])}" class="btn btn-outline btn-default btn-xs js-window-load" title="banner详情：{$vo.name}" js-unique="true" ><i class="fa fa-edit fa-fw" ></i><span class="hidden-xs">详情</span></a>
+                </td>
+                <td class="hidden-xs">
+                    {if condition="$vo.status eq 0"}
+                        <a href="{:U('changeStatus_cate',['cate_id'=>$vo.cate_id,'status'=>1])}" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="启用后分类可用" js-btn="<i class='fa fa-check fa-fw'></i>启用"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a>
+                    {elseif condition="$vo.status eq 1"/}
+                        <a href="{:U('changeStatus_cate',['cate_id'=>$vo.cate_id,'status'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后分类不可用" js-btn="<i class='fa fa-times fa-fw'></i>禁用"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用
+                        </span></a>
+                    {/if}
+                </td>
+                <td class="hidden-xs">
+                    {if condition="$vo.is_show eq 0"}
+                            <a href="{:U('isShow',['cate_id'=>$vo.cate_id,'is_show'=>1])}" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="显示后平台页面商品分类单独显示" js-btn="<i class='fa fa-check fa-fw'></i>显示"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">隐藏</span></a>
+                    {elseif condition="$vo.is_show eq 1"/}
+                        <a href="{:U('isShow',['cate_id'=>$vo.cate_id,'is_show'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="隐藏后平台页面商品分类不会单独显示" js-btn="<i class='fa fa-times fa-fw'></i>隐藏"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">显示</span></a>
+                    {/if}
+                </td>
+                <td>
+                    <span class="btn-group">
+                        {if condition="$vo['level'] < 2"}
+                            <a href="{:U('add_cate',['pid'=>$vo['cate_id']])}" class="btn btn-outline btn-default btn-xs js-window-load" js-title="新增子菜单" js-unique="true"><i class="fa fa-plus fa-fw"></i><span class="hidden-xs">新增子项</span></a>
+                        {else/}
+                            <a href="javascript:;" class="btn btn-outline btn-default btn-xs disabled"><i class="fa fa-plus fa-fw"></i><span class="hidden-xs">新增子项</span></a>
+                        {/if}
+                            <a href="{:U('setAttr',['cate_id'=>$vo.cate_id])}" class="btn btn-outline btn-default btn-xs js-window-load" title="设置属性：{$vo.name}" js-unique="true" ><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">设置属性</span></a>
+                            <a href="{:U('setBrand',['cate_id'=>$vo.cate_id])}" class="btn btn-outline btn-default btn-xs js-window-load" title="设置品牌：{$vo.name}" js-unique="true"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">设置品牌</span></a>
+                            <a href="{:U('edit_cate',['cate_id'=>$vo.cate_id])}" class="btn btn-outline btn-default btn-xs js-window-load" title="编辑：{$vo.name}" js-unique="true" ><i class="fa fa-edit fa-fw" ></i><span class="hidden-xs">编辑</span></a>
+                            <a href="{:U('del_cate',['id'=>$vo.cate_id])}" class="btn btn-outline btn-danger btn-xs js-del-btn" text="删除：{$vo.name}，将同时删除子菜单！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                    </span>
+                </td>
+            </tr>
+        {/volist} -->
+        </tbody>
+    </table>
+    <ul id="goodCate" class="ztree"></ul>
+    <div class="cleanfix">
+        <div class="pull-left">
+
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="{$web_static}/plugins/ztree/goodcate.css"/>
+<link id="tree_table_default" href="{$web_static}/plugins/treetable/default/jquery.treeTable.css" rel="stylesheet" type="text/css" />
+<script src="{$web_static}/plugins/treetable/jquery.treeTable.js" type="text/javascript"> </script>
+<script src="{$web_static}/plugins/ztree/jquery.ztree.all.min.js" type="text/javascript"> </script>
+<script type="text/javascript">
+
+// $(function(){
+//     var option = {
+//         theme:'default',
+//         column:1,
+//         expandLevel : 1,
+//         beforeExpand : function($treeTable, id) {},//展开过后动作
+//         onSelect : function($treeTable, id) {}//选中时操作
+//     };
+//     $('#cateTree').treeTable(option);
+// });
+$(document).on('change',"input[type='text']",function(){
+    var field    =$(this).attr('name');
+    var value    =$(this).val();
+    var cate_id  =$(this).attr('id');
+    console.log(cate_id);
+    $.ajax({
+        url:"{:url('edit_field')}",
+        data:{value:value,field:field,cate_id:cate_id},
+        type:"post",
+        dataType:"json",
+        beforeSend:function(){
+                layer.load(2,{shade:0.2});
+        },
+        success:function(msg){
+            console.log(msg)
+        },
+        complete:function(){
+            layer.closeAll();
+            layer.msg('已经修改',{time:2000,shade:0.2});
+        }
+    })
+})
+</script>
+<script>
+    var zTreeNodes;
+    var setting = {
+        view: {
+            showLine: false,
+            showIcon: false,
+            addDiyDom: addDiyDom,
+            dblClickExpand:false,
+        },
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "cate_id",
+                pIdKey: "pid",
+                rootPId: 0
+            }
+        },
+        callback: {
+            onClick: onClick
+        }
+    };
+
+    /**
+     * 自定义DOM节点
+     */
+    function addDiyDom(treeId, treeNode) {
+        console.log(treeNode)
+        var aObj = $("#" + treeNode.tId+ '_a');
+        if ($("#diyBtn_"+treeNode.id).length>0) return;
+        var sortSpan    = "<span style='width: 50px;' id='sort_span_" +treeNode.cate_id+ "' >"
+                        + '<input style="text-align: center;" type="text" name="sort" value="'+treeNode.sort+'" id="'+treeNode.cate_id+'">'
+                        + '</span>',
+            bannerSpan  = '<span style="width: 200px;" id="banner_span_' +treeNode.cate_id+ '">'
+                        + '<button data-href="{:urldo("addBanner")}?cate_id='+treeNode.cate_id+'"class="btn btn-outline btn-default btn-xs js-window-load" title="banner新增：'+treeNode.name+'" js-unique="true" ><i class="fa fa-edit fa-fw"></i>新增</button><button data-href="{:urldo("cateBanner")}?cate_id='+treeNode.cate_id+'" class="btn btn-outline btn-default btn-xs js-window-load" title="banner详情：'+treeNode.name+'"js-unique="true" ><i class="fa fa-edit fa-fw" ></i>详情</button>'
+                        + '</span>',
+            statusSpan  = '<span style="width: 80px;" id="status_span_' +treeNode.cate_id+ '">'
+            if(treeNode.status == 0){
+                statusSpan  += '<button data-href="{:urldo("changeStatus_cate")}?cate_id='+treeNode.cate_id+'&status=1" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="启用后分类可用" js-btn="'+"<i class='fa fa-check fa-fw'></i>启用'"+' "><i class="fa fa-times fa-fw"></i>禁用</button>'
+            }else{
+                statusSpan  += '<button data-href="{:urldo("changeStatus_cate")}?cate_id='+treeNode.cate_id+'&status= 0" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后分类不可用" js-btn="'+"<i class='fa fa-times fa-fw'></i>禁用'"+' "><i class="fa fa-check fa-fw"></i>启用</button>'
+            } 
+            statusSpan  += '</span>',
+            indexSpan   = '<span style="width: 100px;" id="status_span_' +treeNode.cate_id+ '">'
+            if(treeNode.is_show == 0){
+                indexSpan   += '<button data-href="{:urldo("isShow")}?cate_id='+treeNode.cate_id+'&is_show=1" js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="显示后平台页面商品分类单独显示" js-btn="'+"<i class='fa fa-check fa-fw'></i>显示'"+' "><i class="fa fa-times fa-fw"></i>隐藏</button>'
+            }else{
+                indexSpan   += '<button data-href="{:urldo("isShow")}?cate_id='+treeNode.cate_id+'&is_show=0" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="隐藏后平台页面商品分类不会单独显示" js-btn="'+"<i class='fa fa-times fa-fw'></i>隐藏'"+' "><i class="fa fa-check fa-fw"></i>显示</button>'
+            }        
+            indexSpan       += '</span>',
+            opSpan      = '<span style="width: 400px;" id="op_span_' +treeNode.cate_id+ '">'
+            if(treeNode.level < 2){
+                opSpan      += '<button data-href="{:urldo("add_cate")}?pid='+treeNode.cate_id+'" class="btn btn-outline btn-default btn-xs js-window-load" js-title="新增子菜单" js-unique="true"><i class="fa fa-plus fa-fw"></i>新增子项</button>'
+            }else{
+                opSpan      += '<button  class="btn btn-outline btn-default btn-xs disabled"><i class="fa fa-plus fa-fw"></i>新增子项</button>'
+            }
+            opSpan          += '<button data-href="{:urldo("setAttr")}?cate_id='+treeNode.cate_id+'" class="btn btn-outline btn-default btn-xs js-window-load" title="设置属性：'+treeNode.name+'" js-unique="true" ><i class="fa fa-edit fa-fw"></i>设置属性</button><button data-href="{:urldo("setBrand")}?cate_id='+treeNode.cate_id+'" class="btn btn-outline btn-default btn-xs js-window-load" title="设置品牌：'+treeNode.name+'" js-unique="true"><i class="fa fa-edit fa-fw"></i>设置品牌</button><button data-href="{:urldo("edit_cate")}?cate_id='+treeNode.cate_id+'" class="btn btn-outline btn-default btn-xs js-window-load" title="编辑：'+treeNode.name+'" js-unique="true" ><i class="fa fa-edit fa-fw" ></i>编辑</button><button data-href="{:urldo("del_cate")}?id='+treeNode.cate_id+'" class="btn btn-outline btn-danger btn-xs js-del-btn" text="删除：'+treeNode.name+'，将同时删除子菜单！"><i class="fa fa-trash-o fa-fw"></i>删除</button>'
+                        
+            opSpan          +='</span>'
+        var editStr = sortSpan + bannerSpan + statusSpan + indexSpan + opSpan
+        aObj.append(editStr);
+    }
+    /**
+     * 查询数据
+     */
+    function query() {
+        zTreeNodes = {$tree};
+        //初始化树
+        $.fn.zTree.init($("#goodCate"), setting, zTreeNodes)//.expandAll(true);
+    }
+
+    function
+    onClick(e,treeId, treeNode) {
+        if (!$(e.target).is('input') && $(e.target).hasClass('node_name')) {
+            var zTree = $.fn.zTree.getZTreeObj("goodCate");
+            zTree.expandNode(treeNode);
+        }
+    }
+    $(function () {
+        //初始化数据
+        query();
+    })
+</script>

@@ -1,0 +1,32 @@
+<div class="h_carousel">
+    <div id="container">
+        <div id="list" style="left: -650px;">
+        {if condition='isset($adv["CAROUSEL_FIGURE"])'}
+        {volist name='adv.CAROUSEL_FIGURE' id='vo'}
+            <a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img src="{$vo.adv_img|getImg}" alt="轮播广告位" /></a>
+        {/volist}
+        {/if}
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:;" id="prev" class="arrow"><img src="{$img}/detali_lf.png"/></a>
+        <a href="javascript:;" id="next" class="arrow"><img src="{$img}/detali_ri.png"/></a>
+    </div>
+</div>
+<div class="lunbo_img">
+    {if condition="isset($adv['CAROUSEL_FIGURE_BOTTOM_THREE'])"}
+        {volist name='adv.CAROUSEL_FIGURE_BOTTOM_THREE' id='vo'}
+            <a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img class="lunbo_img{$key+1}" src="{$vo.adv_img|getImg}" alt="轮播下方小广告位carousel_figure_buttom_three"/></a>
+        {/volist}
+    {/if}
+</div>
+
+<script type="text/javascript">
+    var html = $("#list a")[0];
+    $(html).clone().prependTo('#list');
+</script>

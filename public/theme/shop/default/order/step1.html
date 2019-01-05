@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="{$css}/dingdan.css" />
+
+        <form action="{:U('Order/index',['step'=>2])}"  method="post">
+            <div class="container mag-top">
+                <div class="row">
+                    {include file="default/order/header"}
+                    <p class="d_title">填写并核对订单信息</p>
+                </div>
+            </div>
+            <div class="container tab">
+                <div class="row">
+                    <div class="infor">
+                        <p class="d_redborder maginbom"></p>
+                        <p class="d_bold maginbom">收货人信息</p>
+                    </div>
+
+                    <div class="maginTop">
+                    {include file="default/order/address"}
+                    </div>
+                    <p class="show1" href="">显示全部地址</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="infor">
+                        <p class="d_redborder maginbom"></p>
+                        <p class="d_bold maginbom">支付方式</p>
+                    </div>
+                    <div class="payment">
+                        {include file="default/pay_html/pay_type"}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="infor">
+                        <p class="d_redborder maginbom"></p>
+                        <p class="d_bold maginbom">确认订单信息</p>
+                    </div>
+                    <div class="magt">
+                        <div class="inforhead">
+                            <p class="leh1">商品名称</p>
+                        </div>
+                        <div class="inforhead lft">
+                            <p class="leh">商品属性</p>
+                        </div>
+                        <div class="inforhead1 lft">
+                            <p class="leh">单价</p>
+                        </div>
+                        <div class="inforhead1 lft">
+                            <p class="leh">数量</p>
+                        </div>
+                        <div class="inforhead1 lft">
+                            <p class="leh">小计</p>
+                        </div>
+                    </div>
+                    {include file="default/order/good_detail"}
+
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="widt">
+                        <p class="yunfei">合计（含运费）<span class="adred" >￥<span id="total_num">{$shop_list.money}</span></span></p>
+                        <p class="zonge">应付总额：<span class="adred" >￥<span id="all">{$shop_list.money}</span></span></p>
+                        <p class="jisong"><span class="bolds">寄送至：</span ><span id="areas"> </span></p>
+                        <p class="jisong"><span class="bolds" >收货人：</span> <span id="usersname"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="tij">
+                        <div class="widt">
+                            <input  type="hidden" name="serial_sn"  value="{$serial_sn}" /><!--流水号 用于判断表单之前是否提交-->
+                            <input class="tijiao" type="submit" name="" id="" value="提交订单" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                {include file="default/adv_pos/order_step1_bottom"}
+            </div>
+        </form>
+
+<script type="text/javascript">
+/*订单数量加*/
+function jia(cart_id) {
+    var number  = $("#"+cart_id+"good_count").val();/*原数量*/
+    var  price  = $("#"+cart_id+"present_price").text();/*单价*/
+    var  heji   = $("#total_num").text();
+    var  all    = $("#all").text();
+
+
+    number++;
+    $("#"+cart_id+"good_count").val(number);
+    $("#"+cart_id+"total_price").text((price*number).toFixed(2));
+    heji =   (parseFloat(price) + parseFloat(heji)).toFixed(2);
+    $("#total_num").text(heji);
+    $("#all").text(heji);
+
+}
+/*订单数量减*/
+function jian(cart_id) {
+    var number  = $("#"+cart_id+"good_count").val();/*原数量*/
+    var  price  = $("#"+cart_id+"present_price").text();/*单价*/
+    var  heji = $("#total_num").text();
+    var  all = $("#all").text();
+    if(number>1){
+        number--;
+        $("#"+cart_id+"good_count").val(number);
+        $("#"+cart_id+"total_price").text((price*number).toFixed(2));
+        heji =  (parseFloat(all) - parseFloat(price)).toFixed(2) ;
+        $("#total_num").text(heji);
+        $("#all").text(heji);
+    }
+}
+
+function  good_count(cart_id){
+var  num   = $("#"+cart_id+"good_count").val();
+var  price = $("#"+cart_id+"present_price").text();/*单价*/
+var  total =$("#"+cart_id+"total_price").text();/*原单个商品总价*/
+var  heji  = $("#total_num").text();
+var  all   = $("#all").text();
+var  par = /^[1-9]\d*$/;
+if(par.test(num)){
+    var new_total = (price*num).toFixed(2);
+    var chajia = (new_total-total).toFixed(2);
+    $("#"+cart_id+"total_price").text((price*num).toFixed(2));
+    heji =  (parseFloat(all) + parseFloat(chajia)).toFixed(2) ;
+    $("#total_num").text(heji);
+    $("#all").text(heji);
+
+}else{
+    $("#"+cart_id+"good_count").val(1);
+    var new_total = (price*1).toFixed(2);
+    var chajia = (new_total-total).toFixed(2);
+    $("#"+cart_id+"total_price").text((price*1).toFixed(2));
+    heji =  (parseFloat(all) + parseFloat(chajia)).toFixed(2) ;
+    $("#total_num").text(heji);
+    $("#all").text(heji);
+}
+}
+
+</script>

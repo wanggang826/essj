@@ -1,0 +1,63 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('edit_cate')}">
+	<input type="hidden" name="cate_id" value="{$cate_info.cate_id}">
+   <div class="form-group">
+        <label for="select-tree" class="col-sm-2 control-label">上级类别</label>
+        <div class="col-sm-4">
+            {$select}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">类别名称</label>
+        <div class="col-sm-4">
+            <input type="text" name="name" class="form-control" id="name" placeholder="类别名称" value="{$cate_info.name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sort" class="col-sm-2 control-label">排序</label>
+        <div class="col-sm-2">
+            <input type="text" js-test="" name="sort" class="form-control" id="sort" placeholder="排序" value="{$cate_info.sort}"><i id="sortwarning" style="color: red" ></i>
+        </div>
+    </div>
+    {if condition="$cate_info.pid eq 0"}
+    <div class="form-group">
+        <label for="cate_icon" class="col-sm-2 control-label">类别图标</label>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="text" name="cate_icon" id="cate_icon" readonly="" class="form-control" placeholder="">
+                <span class="input-group-btn">
+                    <a class="btn btn-primary btn-w-m js-window-load" href="{:url('fontawesome')}" js-unique="true" js-width="80%" js-height='85%'>选择图标</a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+    {/if}
+    <div class="form-group">
+        <label for="des" class="col-sm-2 control-label">备注</label>
+        <div class="col-sm-4">
+            <input type="text" name="des" class="form-control" id="des" placeholder="类别名称" value="{$cate_info.des}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sort" class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="status" value='1' class="mgr mgr-primary mgr-lg"{if condition="$cate_info.status == 1"} checked{/if}><span>启用</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="status" value='0' class="mgr mgr-primary mgr-lg"{if condition="$cate_info.status == 0"} checked{/if}> <span>禁用</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+</script>

@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2017-11-01T09:59:58+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ error ] [1]Call to undefined method app\mobile\controller\Pay::get_config()[D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php:58]
+---------------------------------------------------------------
+[ 2017-11-01T10:00:27+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ error ] [2]openssl_sign(): supplied key param cannot be coerced into a private key[D:\phpStudy\WWW\ershoushouji\vendor\alipay\AopClient.php:104]
+---------------------------------------------------------------
+[ 2017-11-01T10:35:28+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ error ] [8]未定义变量: reS[D:\phpStudy\WWW\ershoushouji\vendor\alipay\AopClient.php:100]
+---------------------------------------------------------------
+[ 2017-11-01T10:36:10+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ error ] [2]openssl_sign(): supplied key param cannot be coerced into a private key[D:\phpStudy\WWW\ershoushouji\vendor\alipay\AopClient.php:104]

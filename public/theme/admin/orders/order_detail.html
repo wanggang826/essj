@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">基本信息</p>
+	</div>
+	<form role="form" action="{:url('user/index')}" class="form-inline panel-body">
+        <div class="form-group">
+           <p class="form-control" style="width: 260px;">订单号:{$info.order_sn}</p>
+        </div>
+       
+        <div class="form-group">
+             <p class="form-control" style="width: 260px;">下单时间：{$info.create_time}</p>
+        </div>
+         <div class="form-group">
+             <p class="form-control" style="width: 260px;">订单状态：{$info.status_name}</p>
+        </div>
+        <div class="form-group">
+             <p class="form-control" style="width: 250px;">支付方式：{$info.paytype}</p>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+		<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">商品信息</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >商品名称</th>
+                <th >商品图片</th>
+                <th >数量</th>
+                <th >金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>{$info.order_info.goods_name}</td>
+            <td>   
+                {if condition="$info.order_info.good_image neq ''"}
+                <img src="{$web_public}upload/{$info.order_info.good_image}" width="170" height="140">
+                {else/}
+                <img src="{$static_path}img/default1.png" width="170" height="140"/>
+                {/if}
+            </td>
+            <td>{$info.order_info.goods_count}</td>
+            <td>{$info.order_info.total_price}</td>
+            </tr>
+        </tbody>
+    </table>
+	</div>
+</div>
+<div class="panel panel-default" style="margin-top: 40px;: ">
+	<div class="panel" style="border-bottom: 1px solid #e7eaec">
+	 	<p style="margin:5px;font-size: 14px;color: #1ab394;font-weight:bold">收件人信息</p>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th >收货人</th>
+                <th >联系电话</th>
+                <th >收货地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>{$info.user_name}</td><td>{$info.user_phone}</td><td>{$info.province}{$info.city_name}{$info.area_name}{$info.address}</td>
+            </tr>
+          
+        </tbody>
+    </table>
+	</div>
+</div>
+

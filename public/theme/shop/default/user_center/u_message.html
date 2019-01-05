@@ -1,0 +1,130 @@
+
+		    <link rel="stylesheet" type="text/css" href="{$css}/xiaoxi.css" />
+			<div class="container">
+				<div class="position">
+					<p>您的位置：</p>
+					<a href="">首页 ></a>
+					<a href="">订单中心 ></a>
+					<p>消息中心</p>
+				</div>
+				<div class="indent_fl">
+					<div class="h_sidebar">
+						{include file="default/user_center/side_bar"}
+					</div>
+				</div>
+				<div class="dsystem">
+					<div class="notice">
+						<div class="notice1">
+							<img src="{$img}/xiaoxi1.png" />
+							<div class="tongzhi">
+								<p class="tongzhi1">系统消息</p>
+								<p class="tongzhi2">{if condition="$shop['unread_num'] gt 0"}{$shop['unread_num']}条读消息{else/}无未读消息{/if}</p>
+							</div>
+						</div>
+						<div class="notice1">
+							<img src="{$img}/gonggao.png" />
+							<div class="tongzhi">
+								<p class="tongzhi1" >系统公告</p>
+							</div>
+						</div>
+					</div>
+					<div class="pack">
+						<div class="posih">
+							<div class="messages">
+								{volist name="shop['messages']" id="message"}
+									<div class="message" >
+										<p class="centerx">{$message.create_time}</p>
+										<div class="textx">
+											<img class="guanbi" src="{$img}/XX_03.png" alt="" />
+											<div class="textmag">
+												<p class="textp">{$message.title}</p>
+												<p class="textp1">{$message.content}</p>
+												<p class="textp2">
+													<a class="url" href="{:U('Index/article_detail',['message_id'=>$message['msg_id']])}">查看详情<img class="dayus" src="{$img}/shuangdayu_03.png" alt="" /></a>
+												</p>
+											</div>
+										</div>
+									</div>
+								{/volist}
+							</div>
+							<div class="chakans">
+								<span class="chakan message_next" >查看更多消息</span>
+								<input type="hidden"  id ="message_page" value="1">
+								<input type="hidden"  id ="message_type" value="message">
+							</div>
+						</div>
+						<div class="posih">
+							<div class="article">
+								{volist name="shop['article']" id="articles"}
+									<div>
+										<p class="centerx">{$articles.create_time}</p>
+										<div class="textx">
+											<img class="guanbi" src="{$img}/XX_03.png" alt="" />
+											<div class="textmag">
+												<p class="textp">{$articles.article_title}</p>
+												<p class="textp1">{$articles.article_content}</p>
+												<p class="textp2">
+													<a class="url" href="{:U('Index/article_detail',['article_id'=>$articles['article_id']])}">查看详情<img class="dayus" src="{$img}/shuangdayu_03.png" alt="" /></a>
+												</p>
+											</div>
+										</div>
+									</div>
+								{/volist}
+							</div>
+							<div class="chakans">
+								<span class="chakan article_next">查看更多消息</span>
+								<input type="hidden"  id ="article_page" value="1">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<script src="{$js}/myjs.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var messageobj = $(".posih").find('.message').eq(0).clone();
+			$(".article_next").click(function(){
+                var dataId = $("#article_page").val();
+                dataId++
+                $("#message_page").val(dataId);
+                message_ajax(dataId,'article',120);
+			})
+			$(".message_next").click(function(){
+				var message_type =  $("#message_type").val();
+				var dataId = $("#message_page").val();
+				dataId++
+				$("#message_page").val(dataId);
+				message_ajax(dataId,message_type,'');
+
+			})
+			function message_ajax(dataId,message_type,message_status) {
+				var url = "{:U('UserCenter/u_message')}";
+				$.ajax({
+					url:url,
+					type:'post',
+					data:{'page':dataId,'message_type':message_type,'message_status':message_status},
+					dataType:'json',
+					success:function(msg){
+						var data = msg.data;
+						var length = data.length;
+						if(length){
+							for (var i=0;i<length;i++){
+								var html = messageobj.clone();
+								if(data[i].article_id){
+									html.find('.centerx').html(data[i].create_time);
+									html.find('.textp').html(data[i].article_title);
+									html.find('.textp1').html(data[i].article_content);
+									html.find('.url').attr('href',data[i].article_url+"?article_id="+data[i].article_id);
+                                    $('.article').append(html[0].outerHTML);
+								}else if(data[i].msg_id){
+									html.find('.centerx').html(data[i].create_time);
+									html.find('.textp').html(data[i].title);
+									html.find('.textp1').html(data[i].content);
+									html.find('.url').attr('href',data[i].message_url+"?message_id="+data[i].msg_id);
+                                    $('.messages').append(html[0].outerHTML);
+								}
+							}
+						}
+					}
+				})
+			}
+		</script>

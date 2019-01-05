@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="{$css}/cart.css" />
+<link rel="stylesheet" href="{$css}/usernew.css" />
+<link rel="stylesheet" href="{$web_static}/css/reset.css" />
+<div class="width1200 spcart">
+	{if condition="$cart_data"}
+	<h3>全部商品（<span id="kind_num">{$cart_data['kind_num']}</span>）</h3>
+	<ul>
+		<li><input type="checkbox" class="checkall"/></li>
+		<li>全选</li>
+		<li>商品</li>
+		<li>单价</li>
+		<li>数量</li>
+		<li>小计</li>
+		<li>操作</li>
+	</ul>
+				{volist name="cart_data['shop']" id="vo" key="key"}
+				<ul class="store-name">
+					<li><input type="checkbox" class="store"/></li>
+					<li>店铺：<span>{$key}</span></li>
+				</ul>
+					{volist name="vo['goods']" id="goods"}
+					<ul class="shop-detail" id="ul_{$goods['id']}">
+						<li><input type="checkbox" name="Check[]" value="{$goods['id']}"/></li>
+						<li><img src="{$goods['good_image']|getImg}"/></li>
+						<li>
+
+							<p>{$goods['goods_name']}</p>
+							{foreach name="goods['good_attr']" item="attr" key="k"}
+							<p>{$k}:{$attr}</p>
+							{/foreach}
+						</li>
+						<li>￥{$goods['present_price']}</li>
+						<li>
+							<button class="minus" onclick="change_quantity(this,{$goods['id']},'minus')">-</button>
+							<input type="text" name="good_count_{$goods['id']}" id="good_count_{$goods['id']}"  value="{$goods['good_count']}" onchange="change_quantity(this,{$goods['id']},'change')"/>
+							<button class="plus" onclick="change_quantity(this,{$goods['id']},'plus')">+</button>
+						</li>
+						<li id="total_price_{$goods['id']}">￥{$goods['total_price']}</li>
+						<li>
+							<p onclick="delete_goods(0,{$goods['id']})">删除</p>
+							{if condition="$goods['collection'] gt 0"}
+							<p onclick="ajax_collection(0,{$goods['goods_id']},this)" id="collection_{$goods['id']}" >取消收藏</p>{else/}<p onclick="ajax_collection(0,{$goods['goods_id']},this)" id="collection_{$goods['id']}" sta="-1">加入我的收藏</p>
+							{/if}
+						</li>
+					</ul>
+					{/volist}
+				{/volist}
+			<ul>
+				<li><input type="checkbox" class="checkall"/></li>
+				<li>全选 </li>
+				<li onclick="delete_goods(1)">删除</li>
+				<li	onclick="ajax_collection(1)">加入我的收藏夹</li>
+				<li class=" fr" onclick="location.href='{:U(\'order/index\')}'">结算</li>
+				<li class=" fr">合计(不含运费)：<span id="totalmoney" class="num">￥{$cart_data['money']}</span></li>
+				<li class=" fr">已选购 <span id="totalnum" class="num">{$cart_data['goods_count']}</span> 件 <span class="iconfont icon-doubleangleup"></span></li>
+			</ul>
+		</div>
+{else/}
+<div class="empty_msg">
+	<p style="font-size:30px ">您购物车没有商品，跳转到<a href="{:U('shop/index/index')}" style="font-size:30px ;color: red">首页</a></p>
+</div>
+{/if}
+		<script type="text/javascript">
+			/*
+			* 改变购物车商品数量
+			* */
+            function change_quantity(obj,id,type) {
+                var good_count=$("#good_count_"+id).val();
+                if(type=='minus'){
+                    good_count--;
+				}else if(type=='plus'){
+					good_count++;
+				}
+                var url = "{:U('Cart/change_quantity')}";
+				var data={'id':id,'good_count':good_count};
+				$.post(url,data,function (res) {
+					if(res.code==1){
+                        $("#good_count_"+id).val(good_count);
+						$("#total_price_"+id).html(res.data.total_price);
+						$("#totalmoney").html("￥"+res.data.cart_total.total_price);
+                        $("#totalnum").html(res.data.cart_total.goods_count);
+					}else{
+					    layer.msg(res.msg,{shade: 0.3,});
+					}
+                },"json")
+            }
+//type 1:删除checked选中 0：删除点击
+            function delete_goods(type,id) {
+                layer.confirm('您确定要删除选择的商品？', {
+                    btn: ['确定','取消'] //按钮
+                }, function(){
+                    var ids;
+                    (typeof(id) != "undefined")?ids=id:ids='';
+                    if(ids==''){
+                        ids=get_checked();
+					}
+
+					var url = "{:U('Cart/delect_goods')}";
+					$.post(url,{'ids':ids},function (res) {
+						if(res.code==1){
+						    $("#kind_num").html(res.data.kind_num)
+                            $("#totalmoney").html("￥"+res.data.total_price);
+                            $("#totalnum").html(res.data.goods_count);
+                            if(type==0){
+                                $("#ul_"+id).remove();
+							}else {
+                                $("input[name='Check[]']:checkbox:checked").each(function(){
+                                    $("#ul_"+$(this).val()).remove();
+                                });
+							}
+                            //当店铺商品全部删除，删除店铺
+                            $(".store-name").each(function () {
+                                if($(this).next().attr("class")!='shop-detail'){
+                                    this.remove();
+                                }
+                            });
+						}
+                        layer.msg(res.msg,{shade: 0.3,});
+                    },"json")
+                }, function(){
+
+                });
+            }
+
+            //商品或店铺收藏
+			//ctype 1:收藏checked选中 0：收藏点击
+            function ajax_collection(ctype,id,obj){
+                var target_id;
+                var type = 'goods';
+                var url = "{:U('collection/ajax_collection')}";
+                (typeof(id) != "undefined")?target_id=id:target_id='';
+                if(target_id==''){
+                    target_id=get_checked();
+                }
+                $.ajax({
+                    type: "post",
+                    url: url,
+                    data: {id: target_id, type: type,ctype:ctype},
+                    dataType: 'json',
+                    success: function (re) {
+                        if (ctype == 1) {
+                            $("input[name='Check[]']:checkbox:checked").each(function(k,v){
+                                $("#collection_"+$(v).val()).html("取消收藏");
+                            })
+
+                        }else {
+                            if (re == '1') {
+                                $(obj).html('取消收藏');
+                            } else if (re == '-1') {
+                                $(obj).html('加入我的收藏');
+                            }
+						}
+                    }
+                })
+            }
+			$(function(){
+				$(".checkall").on("click",function(){
+					var self=this;
+					$(":checkbox").prop("checked",self.checked);					
+				})
+				$(".store").on("click",function(){
+					var self=this;
+					$(self).parent().parent().parent().find(":checkbox").prop("checked",self.checked);					
+				})
+			})
+
+			function get_checked() {
+                var ids='';
+                    $("input[name='Check[]']:checkbox:checked").each(function(k,v){
+                        if(k==0){
+                            ids+=$(v).val();
+                        }else{
+                            ids+=","+$(v).val();
+                        }
+                    })
+                return ids;
+            }
+		</script>
+	</body>
+</html>
+</div>

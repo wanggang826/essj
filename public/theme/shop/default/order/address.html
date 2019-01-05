@@ -1,0 +1,112 @@
+{volist name="areas" id="area"}
+<div class="ibackgroud ">
+    <div class="address">
+        {if condition="$area['is_default'] eq 1"}
+            <input class="moren" type="button" name=""  value="默认地址" />
+            <strong class="height11" style="display: none;"> {$area.area_id1}{$area.area_id2}{$area.address}</strong><!--默认地址-->
+            <strong class="usersphone1" style="display: none;">{$area.user_name}&nbsp;{$area.user_phone}</strong><!--默认联系方式-->
+            <input type="radio" name="user_address" class="radio" value="{$area.address_id}" checked style="display: none"> <!--默认地址id-->
+        {else/}
+            <input class="swmoren" type="button" name=""  value="设为默认" />
+            <input   type="radio" name="user_address"   class="radio" value="{$area.address_id}"  style="display: none">
+        {/if}
+        <p class="dizhi1">{$area.area_id1}&nbsp;{$area.area_id2}（{$area.user_name} 收 ）</p>
+        <p class="height1"> {$area.area_id1}{$area.area_id2}{$area.area_id3}{$area.address}</p><!--地址-->
+        <span class="usersphone">{$area.user_name}&nbsp;{$area.user_phone}</span><!--联系方式-->
+        <span class="user_address">{$area.address_id}</span><!--默认地址id-->
+        <p class="xiugai">修改</p>
+        {if condition="$area['is_default'] eq 1"}
+            <img class="default" src="{$img}/sanjiaos_03.png" style="display: block;" alt="" />
+        {else/}
+            <img class="default" src="{$img}/sanjiaos_03.png" style="display: none;" alt="" />
+        {/if}
+    </div>
+</div>
+{/volist}
+
+<!--<div class="ibackgroud ">
+    <div class="address">
+        <input class="moren" type="button" name="" id="" value="默认地址" />
+        <p class="dizhi1">广东 汕头 （李ADA 收 ）</p>
+        <p class="height1"> 广东 深圳市 龙华新区 大浪街道龙峰三 路锦华大厦507</p>
+        <p class="xiugai">修改</p>
+        <img class="default" src="{$img}/sanjiaos_03.png" alt="" />
+    </div>
+</div>
+<div class="ibackgroud mag-left2">
+    <div class="address">
+        <input class="swmoren" type="button" name="" id="" value="设为默认" />
+        <p class="dizhi1">广东 汕头 （李ADA 收 ）</p>
+        <p class="height1"> 广东 深圳市 龙华新区 大浪街道龙峰三 路锦华大厦507</p>
+        <p class="xiugai">修改</p>
+        <img class="default" src="{$img}/sanjiaos_03.png" alt="" />
+    </div>
+</div>-->
+
+<div class="ibackgroud">
+    <div class="address add_addr">
+        <img src="{$img}/tianjia_03.png" class="tianjiaimg"/>
+        <p class="tianjia">添加新地址</p>
+    </div>
+</div>
+
+<div id="addr-form" >{include file="default/layout/u_address"}</div>
+
+<script type="text/javascript">
+    //地址
+/*$(".default").hide();
+$(".ibackgroud").eq(0).find("img").show();*/
+$(".ibackgroud").click(function() {
+    $(this).children().find("input").css({
+        background: "rgba(52, 52, 52, 0.5)",
+        color: "white"
+    });
+    $(this).siblings().children().find("input").css({
+        background: "white",
+        color: "#4C4C4C"
+    });
+    $(".default").hide();
+    $(this).find("img").show();
+    $('.address').find('.radio').removeAttr('checked');
+    $(this).find('.radio').get(0).checked=true;
+    var areas = $(this).children().find(".height1").text();
+    var usersname = $(this).children().find(".usersphone").text();
+    $("#areas").text(areas);
+    $("#usersname").text(usersname);
+})
+    /*
+    * 让默认地址显示在提交表单处
+    * */
+    $(document).ready(function() {
+        var bool = $("strong").is(".height11");
+        var areas = $(".height11").text();
+        var usersname = $(".usersphone1").text();
+        if(bool){
+            $("#areas").text(areas);
+            $("#usersname").text(usersname);
+        }
+    })
+</script>
+
+<!--修改收货、退货地址信息-->
+<script>
+    $('.add_addr').click(function() {
+        var form = $('#addr-form');
+        form.css('display','block');
+        $('.city-picker-span,.city-picker-dropdown').css('width','300px');
+        layer.open({
+            type: 1 //Page层类型
+            ,area: ['700px', '450px']
+            ,title: '添加收货地址'
+            ,shade: 0.6 //遮罩透明度
+            ,maxmin: true //允许全屏最小化
+            ,anim: 1 //0-6的动画形式，-1不开启
+            ,content: form
+            ,end:function () {
+                $('#js-submit').submit();
+                form.css('display','none');
+            }
+        });
+    })
+
+</script>

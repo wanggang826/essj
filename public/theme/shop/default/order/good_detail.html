@@ -1,0 +1,71 @@
+<!-- 店铺循环开始 -->
+{foreach name="shop_list.shop" item="lists" key="k"}
+<div class="secl">
+    <div class="ifh">
+        <div class="ftl">
+            <div class="inforshop">
+                <p class="dianpu">店铺:官方旗舰店</p>
+                <p class="maijia">卖家名称:{$k}</p>
+            </div>
+        </div>
+        <!-- 商品循环开始 -->
+        {foreach name="lists.goods" item="list" }
+        <span id="{$list.id}id" style="display: none">{$list.id}</span><!--购物车里的ID-->
+        <div class="sssssssss">
+            <div class="inforback">
+                <div class="col-md-2 col-sm-3 toux">
+                    <img class="touxiang" src="{$upload}{$list.good_image}" alt="" />
+                    <input type="hidden" name="image[{$list.goods_id}]" value="{$list.good_image}">
+                </div>
+                <div class="inforright col-md-10 col-sm-9">
+                    <p>{$list.goods_name}</p>
+                   <!-- <p>春夏新款 CA200190359</p>-->
+                </div>
+            </div>
+            <div class="ftl1">
+                <div class="inforshop1">
+                    <div class="rih">
+                        <div class="inforop">
+                           {foreach name="list['good_attr']" item="attr" key="attr_name"}
+                                <p>{$attr_name} : {$attr} </p>
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ftl2">
+                <div class="inforop">
+                    <p  id="{$list.id}present_price">{$list.present_price}</p>
+                </div>
+            </div>
+            <div class="ftl2">
+                <div class="jiaj">
+                    <img class="good{$list.goods_id}jian" onclick='jian("{$list.id}")' src="{$img}/jian_03.png" />
+                    <input class="num"  type="num" name="good[{$list.shop_id}][{$list.id}]" id="{$list.id}good_count" value="{$list.good_count}" onkeyup="good_count('{$list.id}')" />
+                    <img class="good{$list.goods_id}jia" onclick='jia("{$list.id}")' src="{$img}/jia_03.png" />
+                </div>
+            </div>
+            <div class="ftl3">
+                <div class="inforop">
+                    <p id="{$list.id}total_price">{$list.total_price}</p>
+                </div>
+            </div>
+        </div>
+
+        {/foreach}
+    <div class="container tap">
+        <div class="row">
+            <div class="widt">
+                <div class="lenglef">
+                    给卖家留言:
+                    <input class="leaving" type="text" name="shop[{$lists.shop_id}]"  value="" placeholder="对本次交易的说明（建议填写已和卖家协商一致的内容）" />
+                </div>
+                <p class="lengrig">运送方式：普通配送 快递 免邮</p>
+                <input type="hidden" name="despatch[{$lists.shop_id}]" value="{$lists.despatch_money}">
+                <p class="lenglat" id="{$list.id}despatch_money">{$lists.despatch_money}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    {/foreach}

@@ -1,0 +1,227 @@
+
+       <link rel="stylesheet" type="text/css" href="{$css}/shoucang.css" />
+
+
+
+            <div class="navx container">
+                <div class="row">
+
+                    <div class="position">
+                        <p>您的位置：</p>
+                        <a href="">首页 ></a>
+                        <a href="">订单中心 ></a>
+                        <p>收藏的商品</p>
+                    </div>
+                    <div class="indent_fl">
+                        <div class="h_sidebar">
+                            {include file="default/user_center/side_bar"}
+                        </div>
+                    </div>
+                    <div class="scshop">
+                        <div class="schead">
+                            <p class="schead1" onClick="collection('goods')">收藏商品<span class="scleft">{$count.goods_count}</span></p>
+                            <p class="schead2 schead1" onClick="collection('shop')">收藏店铺<span class="scleft">{$count.shop_count}</span></p>
+                        </div>
+                        <div class="scshopp">
+                            <div class="ovflod" id="c_goods">
+
+                    <!--收藏商品开始-->
+                    {if condition="isset($collection)"}
+                            {volist name='collection' id='vo'}
+                                <div class="tap col-lg-3 col-md-4 col-sm-6">
+                                    <div class="tapmengban">
+                                        <a href="{:U('Shop/good_detail',['id'=>$vo['goods']['goods_id']])}"><img src="{$vo['goods']['goods_thums']|getImg}" /></a>
+                                        <div class="tapmbdiv">
+                                            <a class="tapjinu" href="">进入店铺</a>
+                                            <a class="tapquxiao" href="">取消订单</a>
+                                        </div>
+                                    </div>
+
+                                    <p class="scp1">￥{$vo['goods']['shop_price']}</p>
+                                    <a href="{:U('Shop/good_detail',['id'=>$vo['goods']['goods_id']])}" class="scp2">{$vo['goods']['goods_name']} &nbsp;{$vo['goods']['recom_desc']}</a>
+                                    <div class="pays">
+                                        <p class="pays1">{$vo['goods']['comment']}人评价</p>
+                                        <p class="pays2">销量：{$vo['goods']['sale_count']}</p>
+                                    </div>
+                                    <div class="gohome">
+                                        <div class="widsc">
+                                            <a class="gohome1" href="">加入购物车</a>
+                                        </div>
+                                        <div class="widsc">
+                                            <a class="gohome2" href="">立即购买</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {/volist}
+
+                    {/if}
+                    <!--收藏商品结束-->
+                                
+                            </div>
+                            <div class="page" >
+                                <div class="page1" id='goods_page'>
+                                    {$collection->render()}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="scshopp">
+                            <div class="ovflod" id="c_shop">
+                    <!--收藏店铺开始-->
+                    <!-- {if condition="isset($collection['shop'])"}
+                            {volist name='collection.shop' id='vo'}
+                                <div class="taps">
+                                    <div class="tapsimg">
+                                        <img src="{$vo.shop_logo|getImg} " alt="" />
+                                        <p class="tapsp">{$vo.shop_name}</p>
+                                        <div class="tapsdiv">
+                                            <div class="tapsdiv1">
+                                                <a href="">进入店铺</a>
+                                            </div>
+                                            <div class="tapsdiv2">
+                                                <p>关注店铺</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tapsshop">
+                                        <div class="tapspading">
+                                            <p class="tapsshopp">热销产品</p>
+
+                                            {volist name='vo.goods_is_hot' id='v'}                        
+                                            <div class="tapshopimg">
+                                                <div class="mengban">
+                                                    <a href=""><img src="{$v.goods_thums|getImg}" /></a>
+                                                    <div class="tapsposition">
+                                                        <a href="">{$v.goods_name}</a></div>
+                                                </div>
+                                                <p>￥{$v.shop_price}</p>
+                                            </div>
+                                            {/volist}
+ 
+                                        </div>
+                                    </div>
+                                </div>
+                                {/volist}
+                    {/if} -->
+                    <!--收藏店铺结束-->
+                            </div>
+                            <div class="page">
+                                <div class="page1" id='shop_page'>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <script src="{$js}/myjs.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            function collection(type){
+                $.ajax({
+                    url:"{:url('UserCenter/u_collection')}",
+                    type:'post',
+                    data:{type:type},
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data);
+                        var collection = data.data
+                        if(collection != null){
+                            if(type == 'goods'){
+                                $('#c_goods').empty();
+                                $('#goods_page').empty();
+                                var goods = '';
+                                for (var i = 0; i < collection.length;  i++) {
+                                    goods += '<div class="tap col-lg-3 col-md-4 col-sm-6">';
+                                    goods += '<div class="tapmengban">';
+                                    goods += '<a href=""><img src="'+collection[i]['goods'].goods_thums+'" /></a>';
+                                    goods += '<div class="tapmbdiv">';
+                                    goods += '<a class="tapjinu" href="">进入店铺</a>';
+                                    goods += '<a class="tapquxiao" href="">取消订单</a>';
+                                    goods += '</div></div>';
+                                    goods += '<p class="scp1">￥'+collection[i]['goods'].shop_price+'</p>';
+                                    goods += '<a href="" class="scp2">'+collection[i]['goods'].goods_name+' '+collection[i]['goods'].recom_desc+'</a>';
+                                    goods += '<div class="pays">';
+                                    goods += '<p class="pays1">'+collection[i]['goods'].comment+'人评价</p>';
+                                    goods += '<p class="pays2">销量：'+collection[i]['goods'].sale_count+'</p>';
+                                    goods += '</div>';
+                                    goods += '<div class="gohome">';
+                                    goods += '<div class="widsc">';
+                                    goods += '<a class="gohome1" href="">加入购物车</a>';
+                                    goods += '</div>';
+                                    goods += '<div class="widsc">';
+                                    goods += '<a class="gohome2" href="">立即购买</a>';
+                                    goods += ' </div></div></div>';
+                                    
+                                }
+                                $(collection[0].page).appendTo("#goods_page");
+                                $(goods).appendTo('#c_goods');
+                            }else if(type == 'shop'){
+                                $('#c_shop').empty();
+                                $('#shop_page').empty();
+                                var shop = '';
+                                for (var i = 0; i < collection.length ; i++) {
+                                    shop += '<div class="taps">';
+                                    shop += '<div class="tapsimg">';
+                                    shop += '<img src="'+collection[i]['shop'].shop_logo+'" alt="" />';
+                                    shop += '<p class="tapsp">'+collection[i]['shop'].shop_name+'</p>';
+                                    shop += '<div class="tapsdiv">';
+                                    shop += '<div class="tapsdiv1">';
+                                    shop += '<a href="">进入店铺</a>';
+                                    shop += '</div>';
+                                    shop += '<div class="tapsdiv2">';
+                                    shop += '<p>关注店铺</p>';
+                                    shop += '</div></div></div>';
+                                    shop += '<div class="tapsshop">';
+                                    shop += '<div class="tapspading">';
+                                    shop += '<p class="tapsshopp">热销产品</p>';
+                                        for (var a = 0; a < collection[i]['shop']['goods_is_hot'].length ; a++) {
+                                            shop += '<div class="tapshopimg">';
+                                            shop += '<div class="mengban">';
+                                            shop += '<a href=""><img src="'+collection[i]['shop']['goods_is_hot'][a].goods_thums+'" /></a>';
+                                            shop += '<div class="tapsposition">';
+                                            shop += '<a href="">'+collection[i]['shop']['goods_is_hot'][a].goods_name+'</a></div>';
+                                            shop += '</div>';
+                                            shop += '<p>￥'+collection[i]['shop']['goods_is_hot'][a].shop_price+'</p>';
+                                            shop += '</div>';
+                                        }
+                                    shop += '</div></div></div>';
+                                }
+                                $(shop).appendTo('#c_shop');
+                                $(collection[0].page).appendTo("#shop_page");
+                            }
+                        }
+                    $(".active").addClass("adcol");
+                    $(".active").unbind();  
+                    }
+                })
+            }
+        </script>
+    <script>
+    $(function(){
+        // $('.star1').initStar({
+        //     score   : 1
+        // });
+        // $('.star2').initStar({
+        //     score   : 2
+        // })
+        // $('.star3').initStar({
+        //     score   : 3
+        // });
+        // $('.star4').initStar({
+        //     score   : 4
+        // })
+        // $('.star5').initStar({
+        //     score   : 5
+        // });
+        // $(".pagefy").eq(2).addClass("adcol");
+        //     $(".pagefy").click(function(){
+        //     $(this).addClass("adcol").siblings().removeClass("adcol")
+        // })
+        $(".active").addClass("adcol");
+        $(".active").unbind();
+    })
+
+    </script>

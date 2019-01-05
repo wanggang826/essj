@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 微软雅黑;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+.l_hand{
+    color: #ED145B;
+    font-size: 60px;
+    padding-left: 400px;
+    font-weight: 600;
+    margin: 50px 0;
+}
+.conta{
+    border-radius: 5px ;
+    margin-bottom: 150px;
+}
+.l_cont{
+    width: 980px;
+    margin: 0 auto;
+}
+.img1{
+    vertical-align:top;
+    width: 575px;
+    height: 400px;
+}
+.l_content{
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    background: white;
+    color: #666666;
+}
+.l_content h1{
+    width: 90%;
+    font-weight: normal;
+    font-size: 32px;
+    text-align: left;
+    margin: 0 auto;
+
+}
+.content{
+    width: 90%;
+    margin: 20px auto;
+    font-size: 20px;
+    position: relative;
+}
+.content .co_input{
+    width: 80%;
+    padding: 3px 1px;
+    outline: none;
+    margin-top: 5px;
+    border: 1px solid rgba(207,207,207,0.8) ;
+    font-size: 20px;
+    border-radius:3px;
+    box-shadow: -1px 0 rgba(102,102,102,0.4);
+    position: absolute;
+    right: 0;
+    top: -10px;
+}
+.co_input_div{
+    width: 80%;
+    margin-top: 5px;
+    font-size: 20px;
+    border-radius:3px;
+    position: absolute;
+    right: 0;
+    top:-10px;
+    display: inline-block;
+}
+.content_cont{
+    display: inline-block;
+
+}
+.yanzheng{
+    width: 30%;
+    padding: 3px 1px;
+    outline: none;
+    border: 1px solid rgba(207,207,207,0.8) ;
+    font-size: 20px;
+    border-radius:3px;
+    box-shadow: -1px 0 rgba(102,102,102,0.4);
+}
+.img2{
+    vertical-align:middle;
+    margin-bottom: 5px;
+    width: 77px;
+    height: 33px;
+    margin-left: 20px;
+}
+.l_con_span_a{
+    margin-left: 10px;
+}
+.con_span{
+    letter-spacing: 0.5em;
+}
+ .button_denglu{
+     display: inline-block;
+    width: 25%;
+    padding: 5px 1px;
+    font-size: 17px;
+    background: #ED145B;
+     text-align: center;
+    outline: none;
+    color: white!important;
+    margin-left: 19.5%;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+.content a{
+    font-size: 15px;
+    text-decoration: underline;
+    color:#666666;
+}
+.xian{
+    width: 90%;
+   border: 1px solid rgba(207,207,207,0.8);
+    margin: 0 auto;
+}
+.wangji{
+    margin-left: 5px;
+}
+.muzhang{
+    font-size: 14px;
+}
+.zhuce{
+    font-size: 17px!important;
+    color: #ed145b!important;
+    font-weight: 400;
+}
+.text{
+    text-align: center;
+}
+.foot{
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    margin: 150px auto;
+    color: #666666;
+}
+.foot_son{
+    margin-top: 20px;
+}
+.foot_sonimg{
+   display: inline-block;
+    width: 20px;
+}
+.d_dingdan img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.d_dingdan p {
+    color: #ED3263;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.d_padding {
+    padding: 0 !important;
+}
+
+.grap {
+    color: #999999 !important;
+}
+
+.d_title {
+    font-size: 34px;
+    color: #4C4C4C;
+    margin-top: 40px;
+}
+
+.ibackgroud {
+    position: relative;
+    cursor: pointer;
+    width: 23%;
+    float: left;
+    padding: 3px !important;
+    background: url(../img/buxuanzedingdan_05.jpg)no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mag-left1 {
+    margin-left: 30px;
+}
+
+.address {
+    color: #4C4C4C;
+    background: white;
+    margin: 3px;
+    height: 115px;
+    overflow: hidden;
+}
+
+.address p {
+    margin: 0 2.5%;
+}
+
+.default {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.maginTop {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.height1 {
+    height: 40px;
+    overflow: hidden;
+}
+.mag-top{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

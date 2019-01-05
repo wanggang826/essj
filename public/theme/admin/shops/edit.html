@@ -1,0 +1,120 @@
+<!-- 地区插件 -->
+<link href="{$web_static}/plugins/citypicker/css/city-picker.css" rel="stylesheet">
+<script src="{$web_static}/cache/city.cache.js"></script>
+<script src="{$web_static}/plugins/citypicker/js/city-picker.js"></script>
+<script src="{$web_static}/js/uploadImg.js"></script>
+
+<form class="form-horizontal js-ajax-form clearfix" action='{:U('shops/edit')}' name="form0" id="form0">
+	<input type="hidden" name="shop_id" value="{$shop_info.shop_id}">
+    <div class="form-group">
+        <label for="shop_name" class="col-sm-2 control-label">店铺名称</label>
+        <div class="col-sm-6">
+            <input type="text" name="shop_name" class="form-control" id="shop_name" placeholder="店铺名称" value="{$shop_info.shop_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="account" class="col-sm-2 control-label">关联帐号</label>
+        <div class="col-sm-6">
+            <p class="form-control-static">{$shop_info.account}</p>
+            <!-- <input type="text" name="account" class="form-control" id="account" placeholder="关联帐号" value="{$shop_info.account}"> -->
+        </div>
+    </div>
+    
+    <!-- <div class="form-group imgUpload" js-img="shop_logo">
+        <label  class="col-sm-2 control-label">店铺图标</label>
+        <div class="col-sm-6" id="crop-avatar">
+            <input id="shop_logo" name="shop_logo" type="file" data="{$web_public}upload{$shop_info.shop_logo}" >
+        </div>
+    </div> -->
+
+    <div class="form-group imgUpload" js-img="shop_logo">
+        <label  class="col-sm-2 control-label">店铺图标</label>
+        <div class="img_cont">
+            <div class="img_prev"></div>
+            <input type="file" name="shop_logo" id="shop_logo"  value="{$web_public}upload{$shop_info.shop_logo}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">所在地</label>
+        <div class="col-sm-6">
+             <input  class="form-control" readonly type="text" value="{$shop_info.area_name1}/{$shop_info.area_name2}/{$shop_info.area_name3}" data-toggle="city-picker" name='citys'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="shop_intro" class="col-sm-2 control-label">店铺简介</label>
+        <div class="col-sm-6">
+            <textarea class="form-control" name="shop_intro" id="shop_intro" cols="53" rows="3">{$shop_info.shop_intro}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="shop_des" class="col-sm-2 control-label">店铺介绍</label>
+        <div class="col-sm-6">
+            <textarea class="form-control" name="shop_des" id="shop_des" cols="53" rows="6">{$shop_info.shop_des}</textarea>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label  class="col-sm-2 control-label">身份证</label>
+        <div class="col-sm-8" id="crop-avatar">
+            <div class="img_cont">
+                <div class="img_prev"></div>
+                <input type="file" name="idcard1" id="idcard1"  value="{$web_public}upload{$shop_info.idcard1}"/>
+            </div>
+            <div class="img_cont">
+                <div class="img_prev"></div>
+                <input type="file" name="idcard2" id="idcard2"  value="{$web_public}upload{$shop_info.idcard2}"/>
+            </div>
+            <!-- <div class="col-sm-6 imgUpload" js-img="idcard1">
+            <input id="idcard1" name="idcard1" type="file" data="{$web_public}upload{$shop_info.idcard1}" >
+            </div>
+            <div class="col-sm-6 imgUpload" js-img="idcard2">
+            <input id="idcard2" name="idcard2" type="file" data="{$web_public}upload{$shop_info.idcard2}" >
+            </div> -->
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-6">
+              <label class="i-lab"><input type="radio" name="status" value='1' class="mgr mgr-primary" {if condition="$shop_info.status ==1"}checked{/if}><span>正常</span></label>
+              <label class="i-lab"><input type="radio" name="status" value='0' class="mgr mgr-primary" {if condition="$shop_info.status ==0"}checked{/if}><span>禁用</span></label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script>
+    $('#shop_logo').imgUpload({
+    // width:150,//预览宽度
+    // height:150,//预览高度
+    imgWidth:150,//图片上传宽度
+    imgHeight:150,//图片上传高度
+    allowedNum:1,//允许上传最大数量
+    files:{
+        1:'{$shop_info.shop_logo|getImg}',
+    }
+    })
+    $('#idcard1').imgUpload({
+    width:180,//预览宽度
+    height:150,//预览高度
+    imgWidth:180,//图片上传宽度
+    imgHeight:150,//图片上传高度
+    allowedNum:1,//允许上传最大数量
+    files:{
+        1:'{$shop_info.idcard1|getImg}',
+    }
+    })
+    $('#idcard2').imgUpload({
+    width:180,//预览宽度
+    height:150,//预览高度
+    imgWidth:180,//图片上传宽度
+    imgHeight:150,//图片上传高度
+    allowedNum:1,//允许上传最大数量
+    files:{
+        1:'{$shop_info.idcard2|getImg}',
+    }
+})
+</script>

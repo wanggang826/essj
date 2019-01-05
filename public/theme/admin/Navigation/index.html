@@ -1,0 +1,103 @@
+<div class="panel panel-default">
+    <div class="panel-footer clearfix ">
+        <div class="btn-group pull-left hidden-xs">
+            <a href="{:U('Navigation/add')}" class="btn btn-outline btn-default js-window-load"js-title="新增导航" js-unique="true">
+                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;新增
+            </a>
+            <a href="{:U('Navigation/del')}" class="btn btn-outline btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+        <div class="pull-right">
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-condensed"   id="cateTree" style="width:100%">
+        <thead>
+        <tr>
+            <th width='1'><input type="checkbox" class="i-checks i-check-all" id="all" name="input[]"></th>
+            <th width="200" >导航名称</th>
+            <th width="200" class="hidden-xs">导航链接</th>
+            <th width="185" class="hidden-xs">导航类型</th>
+            <th width="185" >导航位置</th>
+            <th width="185"class="hidden-xs">打开方式</th>
+            <th width="185" class="hidden-xs">排序</th>
+            <th width="150" class="hidden-xs">是否隐藏</th>
+            <th width="220">操作</th>
+        </tr>
+        </thead>
+        <tbody id="list">
+        {volist name="tree" id="navs"}
+        <tr id="{$navs.id}" {if condition="$navs.pid neq 0"}pId="{$navs.pid}"{/if}>
+            <td width='1'><input type="checkbox" value="{$navs.id}" class="i-checks" name="input[]"></td>
+            <td controller="true">{$navs.name}</td>
+            <td class="hidden-xs">{$navs.url}</td>
+            {if condition="$navs['url_type']  eq 1"}
+                <td class="hidden-xs">内连接</td>
+            {elseif  condition="$navs['url_type'] eq 2 " /}
+                <td class="hidden-xs">外链接</td>
+            {/if}
+            {if condition="$navs['type']  eq 1"}
+                 <td >顶部</td>
+            {elseif  condition="$navs['type'] eq 2 " /}
+                 <td >底部</td>
+            {/if}
+            {if condition="$navs['open_way'] eq 1" }
+                 <td class="hidden-xs">窗口打开</td>
+            {elseif  condition="$navs['open_way'] eq 2 "  /}
+                 <td class="hidden-xs">跳转打开</td>
+            {/if}
+            <td class="hidden-xs">{$navs.sort}</td>
+            {if condition="$navs['status'] eq 1" }
+               <td class="hidden-xs"> <a href="{:U('Navigation/status',['id'=>$navs['id'],'status'=>0])}"  js-color="#eea236" class="btn btn-danger btn-outline btn-xs js-del-btn" text="将不会在导航中显示" js-btn="<i class='fa fa-check fa-fw'></i>显示"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">隐藏</span></a> </td>
+            {elseif  condition="$navs['status'] eq 0 "  /}
+                 <td class="hidden-xs"> <a href="{:U('Navigation/status',['id'=>$navs['id'],'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="将会显示在导航中" js-btn="<i class='fa fa-times fa-fw'></i>隐藏"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">显示</span></a> </td>
+            {/if}
+            <td >
+                <span class="btn-group">
+                     {if condition="$navs['level'] < 1"}
+                        <a href="{:U('Navigation/add',['pid'=>$navs['id']])}" class="btn btn-outline btn-default btn-xs js-window-load" js-title="新增子菜单" js-unique="true"><i class="fa fa-plus fa-fw"></i><span class="hidden-xs">新增子项</span></a>
+                        {else/}
+                        <a href="javascript:;" class="btn btn-outline btn-default btn-xs disabled"><i class="fa fa-plus fa-fw"></i><span class="hidden-xs">新增子项</span></a>
+                        {/if}
+                    <a href="{:U('Navigation/edit',['id'=>$navs.id ,'pid'=>$navs.pid,'page'=>$nowpage])}" class="btn btn-default btn-outline btn-xs js-window-load" title="编辑&#45;&#45;{$navs.name}"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+                    <a href="{:U('Navigation/del',['id'=>$navs.id ,'page'=>$nowpage])}" class="btn  btn-danger btn-outline btn-xs js-del-btn" text="删除后将无法恢复,请谨慎操作！"><i class="fa fa-trash-o fa-fw"></i><span class="hidden-xs">删除</span></a>
+                </span>
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+
+<link id="tree_table_default" href="{$web_static}/plugins/treetable/default/jquery.treeTable.css" rel="stylesheet" type="text/css" />
+<script src="{$web_static}/plugins/treetable/jquery.treeTable.js" type="text/javascript"> </script>
+<script type="text/javascript">
+    //提交分页size
+   /* function page_size(){
+        $('.pagesize_form').submit();
+    }*/
+    //全选/反选
+    $("#all").click(function(){
+        if(this.checked){
+            $("#list :checkbox").prop("checked", true);
+        }else{
+            $("#list :checkbox").prop("checked", false);
+        }
+    });
+
+    $(function(){
+        var option = {
+            theme:'default',
+            column:1,
+            expandLevel : 10,
+            beforeExpand : function($treeTable, id) {},//展开过后动作
+            onSelect : function($treeTable, id) {}//选中时操作
+        };
+        $('#cateTree').treeTable(option);
+    });
+
+
+
+</script>

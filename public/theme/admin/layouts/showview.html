@@ -1,0 +1,53 @@
+    项目中使用
+        bootstrap按钮、表单以及插件,
+        THINKPHP版本{:THINK_VERSION},
+        PHP版本5.4及以上
+    <div class="content">
+        <a href="{:U('index/main',['id'=>1])}" class="btn btn-danger js-del-btn" title="删除确认" text="删除后将无法恢复，请谨慎操作！">删除</a>
+        删除按钮添加.js-del-btn类会自动调用ajax提交到href指定的链接
+    </div>
+
+    <form role="form" action="" class="content form-inline js-ajax-form">
+        <div class="form-group">
+            <label for="exampleInputEmail2" class="sr-only">用户名</label>
+            <input type="text" name="name" value="表单数据" placeholder="请输入用户名" id="exampleInputEmail2" class="form-control">
+        </div>
+         <button href="" class="btn btn-w-m btn-primary js-submit-btn" >提交</button>
+        提交按钮添加.js-submit-btn类,当前表单添加.js-ajax-form(须同时)自动调用ajax提交到action地址，必须存在action属性，可以为空
+    </form>
+
+    <div class="content">
+        <a href="http://www.qq.com" class="btn btn-w-m btn-danger js-window-load" js-width="70%" js-height="80%" title="腾讯首页">打开腾讯</a>
+        按钮添加.js-window-load类会弹出iframe打开href指定的链接(支持键盘esc关闭)
+    </div>
+    <div class="content">
+        <a href="#demo" class="btn btn-w-m btn-danger js-window-load" js-width="600px" js-height="300px" >打开#demo</a>
+        按钮添加.js-window-load类会弹出窗口打开href指定ID的元素(支持键盘esc关闭)
+    </div>
+    <div class="content">
+        <button class="btn btn-default btn-circle btn-sm btn-outline js-return-btn" type="button"><i class="fa fa-reply"></i></button>
+        <a class="btn btn-default btn-circle btn-sm btn-outline" href="http://www.baidu.com"><i class="fa fa-reply"></i></a>
+        返回按钮添加.js-return-btn类，返回上一级或返回a标签指定链接
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="content">
+       {$lists->render();}
+    </div>
+
+    <div id="demo" style="display: none;padding: 30px">
+
+        <p>这里是用于测试js-window-load,</p>
+        <p>与js-window-load可以以iframe打开网页或以模拟窗口打开当前页面ID元素</p>
+        <p>js-width,js-height设置窗口宽高,不设置默认为auto,可单独设置一个</p>
+        <p>title 或js-title设置弹出窗口标题，两者同时存在时会优先显示js-title</p>
+
+    </div>
+
+    <style type="text/css">
+        .content{
+            margin: 10px;
+        }
+    </style>
+

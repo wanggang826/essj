@@ -1,0 +1,137 @@
+
+<link rel="stylesheet" href="{$css}/usernew.css">
+<link rel="stylesheet" href="{$static}icon/iconfont.css">
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>发布商品</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+
+    <div class="indent_rirgt_basic clearfloat">
+        <div class="indent_rirgt_delive">
+            <input type="text" placeholder="搜索关键词" class="indent_rirgt_delive_input" id="cate1">
+            <div class="indent_rirgt_delive_addddddd" id="cate_id1">
+                {volist name="cates" id="vo"}
+                <p class="cate_item" data-id="{$vo.cate_id}">{$vo.name}<i class="icon i-xiayibu"></i></p>
+                {/volist}
+            </div>
+        </div>
+        <div class="indent_rirgt_delive" >
+            <input type="text" placeholder="搜索关键词" class="indent_rirgt_delive_input cate_id2" id="cate2">
+            <div class="indent_rirgt_delive_addddddd" id="cate_id2">
+                <p>----选择一级分类----</p>
+            </div>
+
+        </div>
+
+        <div class="indent_rirgt_delive">
+            <input type="text" placeholder="搜索关键词" class="indent_rirgt_delive_input cate_id3" id="cate3">
+            <div class="indent_rirgt_delive_addddddd" id="cate_id3">
+                <p>----选择二级分类----</p>
+            </div>
+
+        </div>
+
+        <div class="indent_rirgt_delive_fa">
+            <a href="javascript:void(0);" class="indent_rirgt_delive_faa" onclick="submit_form()">确定商品类型，发布商品</a>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+
+
+
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+        $(this).children(".hei").addClass("adddis")
+
+    })
+
+    $(document).on('click','.indent_rirgt_delive p',function () {
+        var  phtml     = $(this).text(),
+             _this_id  = $(this).data('id'),
+             cate_type = $(this).parent('.indent_rirgt_delive_addddddd').attr('id');
+        $(this).parents(".indent_rirgt_delive").children(".indent_rirgt_delive_input").val(phtml).data('id',_this_id);
+        if (!$(this).hasClass('sidebar_red') && cate_type != 'cate_id3') {
+            $.ajax({
+                url:"{:url('SellerCenter/ajax_get_cate')}",
+                data:{cate_id:_this_id},
+                type:"post",
+                dataType:"json",
+                success:function(msg){
+                    var html = "";
+                    for (var i = msg.length - 1; i >= 0; i--) {
+                       html  += '<p class="cate_item" data-id="'+msg[i].cate_id+'">'+msg[i].name+'<i class="icon i-xiayibu"></i></p>'
+                    }
+                    if(cate_type == "cate_id1"){
+                        $("#cate_id2").empty()
+                        $("#cate_id3").empty()
+                        $("#cate2").val('').data('id',null);
+                        $("#cate3").val('').data('id',null);
+                        $("#cate3").val('');
+                        $(html).appendTo($("#cate_id2"))
+                    }else if(cate_type == "cate_id2"){
+                        $("#cate_id3").empty()
+                        $("#cate3").val('').data('id',null);
+                        $(html).appendTo($("#cate_id3"))
+                    }
+                },
+                error:function(msg){
+                    alert(22)
+                }
+            })
+        }
+    })
+
+    function submit_form(){
+        var cate_id1 = $("#cate1").data('id'),
+            cate_id2 = $("#cate2").data('id'),
+            cate_id3 = $("#cate3").data('id');
+        $('#cate_form').remove();
+        var form = '<form method="post" id="cate_form" style="display:none;">'
+                 + '<input name="step" value="2">'
+                 + '<input name="cate1" value="'+cate_id1+'">'
+                 + '<input name="cate2" value="'+cate_id2+'">'
+                 + '<input name="cate3" value="'+cate_id3+'">'
+                 + '</form>';
+        if (cate_id3) {
+            $('.h_concent').append(form);
+            $('#cate_form').submit();
+        } else{
+            layer.alert('请选择商品分类');
+        }
+    }
+</script>
+
+<script type="text/javascript">
+
+$(document).on('input', '.indent_rirgt_delive_input', function() {
+    var inputText  = $.trim($(this).val()),
+        pTag       = $(this).parents('.indent_rirgt_delive').find('p');
+    if (inputText.length>0) {
+        pTag.css('display', 'none');
+    } else {
+        pTag.css('display', 'block');
+    }
+    for (var i = pTag.length - 1; i >= 0; i--) {
+        if ($(pTag[i]).text().indexOf(inputText) > -1) {
+            $(pTag[i]).css('display', 'block');
+        }
+    }
+});
+$(document).on('click', '.cate_item', function() {
+    $(this).parents('.indent_rirgt_delive').find('p').css('display', 'block').removeClass('sidebar_red')
+    $(this).addClass('sidebar_red');
+});
+</script>

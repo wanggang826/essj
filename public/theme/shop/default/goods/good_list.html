@@ -1,0 +1,18 @@
+{volist name='goods.goods_list' id='vo'}
+<div class="col-lg-3 col-md-4 col-sm-6 d_mabottom1">
+    <a href="{:url('Shop/good_detail',['goods_id'=>$vo['goods_id']])}">
+    <img src="{$vo.goods_thums|getImg}" alt="" />
+    </a>
+    <span href="" class="firstp1">￥{$vo.shop_price}</span>
+    <a href="{:url('Shop/good_detail',['goods_id'=>$vo['goods_id']])}" class="lastp1">{$vo.goods_name}&nbsp;{$vo.recom_desc}
+    </a>
+    <div class="mag01">
+        <a href="{:url('Shop/index',['shop_id'=>$vo['shop_id']])}" class="firp1">{$vo.shop_name}</a>
+        <p class="latp1">{$vo.sale_count}人付款</p>
+    </div>
+    <div class="d_baoyou">
+        <a class="bya1" href="">包邮</a>
+        <a class="bya2" href="">险</a>
+    </div>
+</div>
+{/volist}

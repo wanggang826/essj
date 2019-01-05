@@ -1,0 +1,45 @@
+<form class="form-horizontal js-ajax-form clearfix">
+    <!-- 自定义大小 -->
+    <div class="form-group">
+        <label for="account" class="col-sm-2 control-label">流水号：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.account_sn}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">取现人：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.realname}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">取现账号：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.account}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">取现金额：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.amount}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">状态：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{if condition="$info['status'] eq 1"}提现成功{else/}提现失败{/if}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">描述：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.desc}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">取现时间：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$info.create_time}</p>
+        </div>
+    </div>
+</form>

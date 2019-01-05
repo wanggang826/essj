@@ -1,0 +1,200 @@
+
+<link type="text/css" rel="stylesheet" href="{$css}/good_detail.css" />
+<style type="text/css">
+	#magnifier{
+		width:350px;
+		height:350px;
+		font-size:0;
+		border:1px solid #000;
+	}
+	#img{
+		width:350px;
+		height:350px;
+	}
+
+	#mag{
+		border:1px solid #000;
+		overflow:hidden;
+		z-index:100;
+	}
+</style>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":[]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		{include file="default/shop/shop_nav"}
+		<div class="h_concent">
+			<div class="h_glass">
+				<div class="glass_lf">
+					{include file="default/goods/good_detail_pic"}
+			        <div class="h_share">
+			        	<div class="bdsharebuttonbox">
+			        		<a href="#" class="bds_more" data-cmd="more">
+			        			<img src="{$img}/share.png" class="h_share_img"/> 分享商品
+			        		</a>
+			        		<p  class="h_share_atwo ajax_collection" id='collection_goods'  data-id="{$good_info.goods_id}" data-type="goods" data-look="{$good_info.look_num}" data-url="{:url('Collection/ajax_collection')}" >
+			        		{if condition="$good_info.c_goods eq 1"}
+			        			<i class='icon i-shoucang' style='color:yellow'></i>取消收藏({$good_info.look_num}人气)
+			        		{else /}
+			        			<i class='icon i-shoucang'></i>收藏商品({$good_info.look_num}人气)
+			        		{/if}
+			        		</p>
+			        		<p  class="h_share_athree">举报</p>
+			        	</div>
+			        </div>
+				</div>
+				<div class="glass_ri">
+					<p class="glass_title"><a href="#">{$good_info.goods_name}</a></p>
+					<div class="h_price">
+						<div class="price_lf">
+							<div class="price_sp1"><span>价格：</span><span>￥{$good_info.market_price}</span></div>
+							<div class="price_sp2"><span>促销：</span><span class="aaa">￥{$good_info.shop_price}</span></div>
+						</div>
+						<div class="price_ri">
+							<span>累计销售：{$good_info.sale_count}</span>
+							<span>累计评价：{$good_info.goods_comment}</span>
+						</div>
+					</div>
+					<form id="good_detail" action="{:U('Cart/shopping_cart')}"  method="post" class="js-ajax-form">
+						<input class="inputclass" name="shop_id"       type='hidden' value="{$good_info.shop_id}"><!--商品id-->
+						<input class="inputclass" name="goods_name"    type='hidden' value="{$good_info.goods_name}"><!--商品名称-->
+						<input class="inputclass" name="goods_id"      type='hidden' value="{$good_info.goods_id}"><!--商品id-->
+						<input class="inputclass" name="market_price"  type='hidden' value="{$good_info.market_price}"><!--商品原价-->
+						<input class="inputclass" name="present_price" type='hidden' value="{$good_info.shop_price}"><!--商品成交价-->
+						<input class="inputclass" name="good_image"    type='hidden' value="{$good_info.goods_thums}"><!--图片名称-->
+						<input class="inputclass" name="despatch_money"type='hidden' value="0"><!--快递费-->
+						<div class="h_detail">
+							<div class="detail_sp1">
+								<span class="first_sp">运费</span>
+								<span>{$shop_info.area_name1}{$shop_info.area_name2}{$shop_info.area_name3}至{$area['region']}{$area['city']}<img src="{$img}/jiantou.png"></span>
+								<span>快递免邮</span>
+							</div>
+							{volist name="goods_attrs" id="attrs"}
+								<div class="detail_sp1 addbackgroudone {$attrs.attr_name}" >
+									<span class="first_sp">{$attrs.attr_name}</span>
+									{volist name="attrs['value']" id="values"}
+										<input class="inputclass" name="{$attrs.attr_name}_attr" id="{$attrs.attr_name}" type='hidden' value="">
+										<button id="{$attrs.attr_name}{$values}" style="" type="button" onclick='check("{$values}","{$attrs.attr_name}")'>{$values}</button>
+									{/volist}
+								</div>
+							{/volist}
+							<div class="detail_sp1">
+								 <span class="first_sp">数量</span>
+								 <input class="inputclass" id="input2" type='button' value="-">
+								 <input class="inputclass" id="input0" type='text' min="1" max="{$good_info.book_quantity}" onkeyup="count(this.value)" name='good_count' value="1" >
+								 <input class="inputclass" id="input1" type='button'  value="+">
+								 <span style="float: left;padding-left: 30px;" class="">剩余库存：<b id="inventory" mid="{$good_info.sale_count}" style="color: #900;">{$good_info.book_quantity-$good_info.sale_count-1}</b></span>
+							</div>
+						</div>
+						<div class="h_button">
+							<button type="button" onclick="buy({$good_info['goods_id']})">立即购买</button>
+							<button type="button"  class="js-submit-btn">加入购物车</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="detail_show">
+				{include file="default/goods/good_detail_left_bar"}
+				<div class="detailshow_ri">
+					<div id="h_sp3">
+					  <span class="red">商品详情</span>
+					  <span>规格参数</span>
+					  <span>商品评价<b>({$comment_info.all_num})</b></span>
+				    </div>
+				<div id="h_xxk">
+					<div class="stencil_img">
+						{include file="default/goods/good_detail_content"}
+					</div>
+					<div class="stencil_img">
+						{include file="default/goods/good_detail_attr"}
+					</div>
+					<div class="stencil_img">
+						{include file="default/goods/good_detail_com"}
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="h_sponsor">
+				{include file="default/adv_pos/good_detail_bottom"}
+			</div>
+		</div>
+		<!-- <script src="{$web_static}/js/vue.js"></script> -->
+        <script src="{$web_static}/plugins/jquery.jqzoom.js"></script>
+	<script type="text/javascript">
+        function change_pic(){
+            var imgObj = document.getElementById("caocao_pic");
+            var Flag=(imgObj.getAttribute("src",2)=="img/shoucangh.png");
+            imgObj.src=Flag?"img/shoucang.png":"img/shoucangh.png";
+            return false;
+        }
+        /*
+         * 点击选中商品属性并改变选中样式
+         * */
+		function  check(val,type){
+			$('#'+type).val(val);
+            $("."+type).find('button').css('border-color','');
+			$("#"+type+val).css('border-color','#ed145b');
+		}
+		/*
+		* 立即购买
+		* */
+		function buy(id){
+		    var url = "{:U('Shop/good_detail')}?id="+id;
+            var obj = window.parent.document;
+            $(obj).find('#good_detail').attr('action',url);
+            $("#good_detail").submit();
+		}
+        /**
+		 * 手动输入商品数量
+         */
+        function count(count){
+            var  par = /^[1-9]\d*$/;
+            if(!par.test(count)){
+            	$("#input0").val(1);
+            }
+		}
+
+		//剩余库存数量
+		$("input[type='text']").change(function(){
+			var num = $('#input0').val();
+			var num2 = $('#inventory').attr('mid');
+			var inventory = $('#inventory').text();
+			var x = inventory - num - num2;
+			console.log(x);
+			if(x<0){
+				layer.msg("抱歉库存不足",{shade:0.3});
+			}else{
+				$('#inventory').text(x);
+			}
+			
+		})
+		$('#input1').click(function(){
+			var add = $('#inventory').text();
+			if(add == 0){
+				return false;
+			}else{
+				add--;
+				if(add<0){
+					return false;
+				}
+				$('#inventory').text(add);	
+			}
+			
+		})
+		$('#input2').click(function(){
+			var add = $('#inventory').text();
+			var num = $('#input0').val();
+			// console.log(num);
+			if(num == 1){
+				return false;
+			}else{
+				add++;
+				if(add>4){
+					return false;
+				}
+				$('#inventory').text(add);
+			}
+			
+		})
+	</script>
+
+
+
+

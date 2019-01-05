@@ -1,0 +1,25 @@
+<div class="d_shangjia">
+    <div class="left1">
+        <p class="dingweid">上架时间<img class="huixd" src="{$img}/huixia_05.png" alt="" /></p>
+        <p class="dingweid">好评度<img class="huixd" src="{$img}/huixia_05.png" alt="" /></p>
+        <p class="dingweid">销售量<img class="huixd" src="{$img}/huixia_05.png" alt="" /></p>
+        <p class="dingweid">价格<img class="huixd" src="{$img}/huixia_05.png" alt="" /></p>
+    </div>
+    <div class="rightp1">
+        <p>一共999件商品</p>
+        <p><span>1</span>/100</p>
+        <a href><img src="{$img}/leftan_03.jpg" /></a>
+        <a href><img src="{$img}/rightliang_03.jpg" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".dingweid").click(function() {
+        if($(this).find("img").attr("src")==("{$img}/huishang.png")){
+            $(this).find("img").attr("src", "{$img}/huixia_05.png")
+        }else{
+            $(".huixd").attr("src", "{$img}/huixia_05.png");
+            $(this).find("img").attr("src", "{$img}/huishang.png")
+
+        }
+    })
+</script>

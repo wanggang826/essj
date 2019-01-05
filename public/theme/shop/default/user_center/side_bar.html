@@ -1,0 +1,40 @@
+<div class="sidebar_centre">
+    <ul>
+        <div class="h_square">
+        <i class="icon i-wodedingdan"></i><span>订单中心</span>
+        </div>
+        <li><a href="{:urldo('user_center/u_order')}">我的订单</a></li>
+        <li><a href="{:urldo('user_center/order_recycle')}">订单回收站</a></li>
+        <li><a href="{:urldo('user_center/evaluate')}">评价管理</a></li>
+        <li><a href="#">购买过的店铺</a></li>
+        <li><a href="#">我的积分</a></li>
+        <li><a href="{:urldo('user_center/u_message')}">消息中心</a></li>
+        <li><a href="{:urldo('user_center/u_collection')}">我的收藏</a></li>
+        <li><a href="{:urldo('cart/index')}">购物车</a></li>
+        <li><a href="#">我的足迹</a></li>
+        <div class="h_borde"></div>
+    </ul>
+    <ul>
+        <div class="h_square">
+            <i class="icon i-shezhi"></i><span>设置</span>
+        </div>
+        <li><a href="{:urldo('user_center/u_info')}">个人信息</a></li>
+        <li><a href="{:urldo('user_center/u_safe')}">账户安全</a></li>
+        <li><a href="{:urldo('user_center/u_address')}">收货地址</a></li>
+        <li><a href="{:urldo('user_center/u_binding')}">账户绑定</a></li>
+        <li><a href="{:urldo('user_center/u_changepass')}">修改密码</a></li>
+        <div class="h_borde"></div>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var url = window.location.href;
+    var $a  = $('.sidebar_centre ul li').find('a');
+    $a.parent().removeClass('sidebar_lired');
+    $a.removeClass('sidebar_red');
+    $a.each(function() {
+        if($(this).attr('href') == url){
+            $(this).addClass('sidebar_red');
+        }
+    });
+</script>

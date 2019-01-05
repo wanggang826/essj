@@ -1,0 +1,21 @@
+---------------------------------------------------------------
+[ 2017-11-06T10:16:50+08:00 ] 127.0.0.4 127.0.0.1 POST /mobile/pay/order_commit_view?user_id=12
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-11-06T10:17:23+08:00 ] 127.0.0.4 127.0.0.1 POST /mobile/Order/order_commit_view?user_id=12
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]
+---------------------------------------------------------------
+[ 2017-11-06T10:18:05+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021001s ]

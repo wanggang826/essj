@@ -1,0 +1,310 @@
+
+    <link rel="stylesheet" href="{$static}icon/iconfont.css">
+    <link rel="stylesheet" href="{$css}/usernew.css">
+
+    <div>
+        <!--head-->
+        <div class="h_concent">
+            <div class="position">
+                <p>您的位置：</p>
+                <a href="">首页 ></a>
+                <p>卖家中心 ></p>
+                <p>发货</p>
+            </div>
+            <div class="indent_fl">
+                <div class="h_sidebar">
+                    {include file="default/seller_center/seller_bar"}
+                </div>
+            </div>
+            <div class="indent_rirgt_basic">
+            <!--<div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">发货</div></div>-->
+            <!--<div class="right_nav_basic_fenshu"> 好评度：<span class="right_nav_basic_fenshus">5分</span> </div>-->
+                <div class="indent_ri clearfloat">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>最近一周</th>
+                            <th>最近1个月</th>
+                            <th>最近6个月</th>
+                            <th>总计</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>非常满意</td>
+                            <td>{$data5['w']}</td>
+                            <td>{$data5['m']}</td>
+                            <td>{$data5['lm']}</td>
+                            <td>{$data5['z']}</td>
+                        </tr>
+                        <tr>
+                            <td>满意</td>
+                            <td>{$data4['w']}</td>
+                            <td>{$data4['m']}</td>
+                            <td>{$data4['lm']}</td>
+                            <td>{$data4['z']}</td>
+                        </tr>
+                        <tr>
+                            <td>一般</td>
+                            <td>{$data3['w']}</td>
+                            <td>{$data3['m']}</td>
+                            <td>{$data3['lm']}</td>
+                            <td>{$data3['z']}</td>
+                        </tr>
+                        <tr>
+                            <td>不满意</td>
+                            <td>{$data2['w']}</td>
+                            <td>{$data2['m']}</td>
+                            <td>{$data2['lm']}</td>
+                            <td>{$data2['z']}</td>
+                        </tr>
+                        <tr>
+                            <td>非常不满意</td>
+                            <td>{$data1['w']}</td>
+                            <td>{$data1['m']}</td>
+                            <td>{$data1['lm']}</td>
+                            <td>{$data1['z']}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="h_managebox">
+                    <div class="h_manage">
+                        <div class="h_managediv1 h_sp1">
+                            <div class="h_divsp1">
+                                <span class="h_managesp1">
+                                    {if condition="$id eq 0"}评价
+                                    {elseif condition="$id eq 1"}好评
+                                    {elseif condition="$id eq 2"}中评
+                                    {elseif condition="$id eq 3"}差评
+                                    {/if}
+                                </span>
+                                <i class="icon i-xiala"></i>
+                            </div>
+                        </div>
+                        <div class="h_managediv2 h_sp1">
+                            <span class="h_managesp2">被评价人</span>
+                        </div>
+                        <div class="h_managediv3 h_sp1">
+                            <span class="h_managesp3">商品信息</span>
+                        </div>
+                        <div class="h_managediv4 h_sp1">
+                            <span class="h_managesp4">操作</span>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="modhearsp4box1">
+                            <ul>
+                                <li sid="0">评价</li>
+                                <li sid="1">好评</li>
+                                <li sid="2">中评</li>
+                                <li sid="3">差评</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {volist name="comments" id="vo" k="key"}
+                    <div class="h_managelist">
+                        <div class="h_pingjia">
+                            <p>{$vo.comment_new}</p>
+                            {if condition="$vo.com_img1 !=null"}
+                            <img class="h_pingjiaimg" src="{$vo.com_img1|getImg}"/>
+                            {/if}
+                            {if condition="$vo.com_img2 !=null"}
+                            <img class="h_pingjiaimg" src="{$vo.com_img2|getImg}"/>
+                            {/if}
+                            {if condition="$vo.com_img3 !=null"}
+                            <img class="h_pingjiaimg" src="{$vo.com_img3|getImg}"/>
+                            {/if}
+                            {if condition="$vo.com_img4 !=null"}
+                            <img class="h_pingjiaimg" src="{$vo.com_img4|getImg}"/>
+                            {/if}
+                            {if condition="$vo.com_img5 !=null"}
+                            <img class="h_pingjiaimg" src="{$vo.com_img5|getImg}"/>
+                            {/if}
+                            <div class="clear"></div>
+                            <div class="h_xing clearfloat">
+                                <div  class="block clearfix " >
+                                    <ul class="star{$vo.score}"></ul>
+                                    <div class="clearfix">
+                                        <span class="fenshu">{$vo.score}分</span>
+                                        <span>[{$vo.create_time}]</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {if condition="$vo.comment neq ''"}
+                            <div class="vendor">
+                                买家评论：<span>{$vo.comment}</span>
+                            </div>
+                            {/if}
+                            <div class="clear"></div>
+                        </div>
+                        <div class="merchant_name">
+                            <p>商家名称：</p>
+                            <span>{$vo.shop_name}</span>
+                        </div>
+                        <div class="commodity">
+                            <p>{$vo.goods_name}</p>
+                            <span>￥{$vo.goods_price}</span>
+                        </div>
+                        <div class="reply_but">
+                            <input type="button" id="reply" value="回复" name="{$vo.comment_new}" />
+                        </div>
+                        <div class="clear"></div>
+                        <div class="h_textbox">
+                            <div class="h_textbox1">
+                                <div class="sanjiao"></div>
+                                <img src="{$img}/h_xxx.png"/>
+                                <textarea name="comment" ></textarea>
+                                <span>至多输入255字</span>
+                                <input type="button"  class="ajax-reply" goodId="{$vo.goods_id}" replyId="{$vo.comment_id}" orderId="{$vo.order_id}" value="发表回复" />
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                    <div class="page">
+                        <div class="page1">
+                            {$comments->render()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+    <script src="{$js}/jquery.inisStar.js"></script>
+    <script type="text/javascript" src="{$web_static}/js/uploadImg.js"></script>
+    <!--分页样式-->
+    <script>
+        $(function(){
+            $(".active").addClass("adcol");
+        })
+    </script>
+
+    <script>
+        $('.star1').initStar({
+            score   : 1
+        });
+        $('.star2').initStar({
+            score   : 2
+        })
+        $('.star3').initStar({
+            score   : 3
+        });
+        $('.star4').initStar({
+            score   : 4
+        })
+        $('.star5').initStar({
+            score   : 5
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            //点击回复
+            $(".reply_but input").click(function(){
+                var reply = $(this).attr('name');
+                if(reply == ''){
+                    console.log(reply);
+                    $(this).parent().next().next().css({display:"block",top:$(this).parent().parent().innerHeight()});
+                }else {
+                    layer.msg('您已对该评论回复，请勿重复操作！',{time:2000,shade:0.2});
+                }
+
+            })
+            //点击x
+            $(".h_textbox1 img").click(function(){
+                $(this).parent().parent().css("display","none")
+            })
+           //头部收藏
+
+    //侧边栏
+            $('.h_sidebar li').click(function(){
+            $(this).find('a').parent().parent().parent().find('a').removeClass('sidebar_red')
+            $(this).parent().parent().find('li').removeClass('sidebar_lired');
+            $(this).find('a').addClass('sidebar_red');
+            $(this).addClass('sidebar_lired');
+           });
+            //全部状态的下拉列表
+           $(".modhearsp4box1 li").bind('click', function(){
+              $(".h_managesp1").html($(this).html());
+          });
+            $(".h_managesp1").click(function(){
+
+                $(".modhearsp4box1").toggle();
+                $(this).parent().toggleClass("h_spdivbor");
+                $(this).addClass("h_spdivborsp");         //上
+                $(".h_divsp1").children(".icon ").toggleClass("i-xiala").toggleClass("i-shouqi");
+
+                $(".h_divsp1").css({"border":"1px solid #e6e6e6","border-bottom":"none"});
+
+                if($(".modhearsp4box1").css("display")==="none"){
+                    $(".h_managesp1").removeClass("h_spdivborsp");
+                    $(".h_divsp1").css({"border":"1px solid #FFF","border-bottom":"none"});
+                    $(".modhear_spimg").attr('src','{$img}/jian.png');  //下
+
+                }
+            })
+          }).click (function (e){
+            e = e || window.event;
+            if (e.target != $ ('.h_managesp1')[0] && e.target != $ ('.modhearsp4box1')[0])
+            {
+                $('.modhearsp4box1').hide();
+                $(".modhear_spimg").attr('src','{$img}/jian.png');  //下
+                $(".h_managesp1").removeClass("h_spdivborsp");
+                $(".h_divsp1").css({"border":"1px solid #fff","border-bottom":"none"}).children(".icon ").toggleClass("i-xiala").toggleClass("i-shouqi");
+            }
+          });
+    </script>
+
+    <!--ajax提交回复-->
+    <script type="text/javascript">
+        $(".ajax-reply").click(function () {
+            var order_id = $(this).attr('orderId');
+//            console.log(order_id);
+            var goods_id = $(this).attr('goodId');
+//            console.log(goods_id);
+            var reply_id =  $(this).attr('replyId');
+//            console.log(reply_id);
+            var comment = $(this).parent().find('textarea').val();
+//            console.log(comment);
+            $.ajax({
+                url:'{:U("manage")}',
+                type:'post',
+                data:{order_id:order_id,goods_id:goods_id,comment:comment,reply_id:reply_id},
+                success:function (res) {
+                    if(isNaN(res)){
+                        layer.msg(res,{time:2000,shade:0.2});
+                    }else {
+                        $('.h_textbox').hide();
+                        window.location.href = '';
+                    }
+                }
+            })
+        })
+    </script>
+
+    <!--传递评价参数-->
+    <script>
+        $(function () {
+            $('.modhearsp4box1 li').click(function () {
+                var id = $(this).attr('sid');
+//                console.log(id);
+                window.location.href = "{:urldo('manage')}?id="+id;
+            });
+        })
+    </script>
+
+    <!--删除最后一条记录的下边框-->
+    <script>
+       /* $(function () {
+            var len = $('.h_managelist').length;
+            $('.h_managebox>div').eq(len).css('border-bottom',0)
+        })*/
+    </script>
+
+</html>
+

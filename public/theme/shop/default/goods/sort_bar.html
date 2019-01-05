@@ -1,0 +1,41 @@
+<div class="d_shangjia1">
+
+
+    <div class="left2">
+        <span class="timer">综合排序</span>
+        <p class="dingwei" onclick="getGoods(this,'look_num')">人气<i class="icon i-xiala"></i></p>
+        <p class="dingwei" onclick="getGoods(this,'sale_count')">销售<i class="icon i-xiala"></i></p>
+        <p class="dingwei" onclick="getGoods(this,'is_new')">新品<i class="icon i-xiala"></i></p>
+        <p class="dingwei" onclick="getGoods(this,'shop_price')">价格<i class="icon i-xiala"></i></p>
+        <input type="tel" name="" id="" value="" placeholder="￥" />
+        <span>-</span>
+        <input type="tel" name="" id="" value="" placeholder="￥" />
+    </div>
+    <a href="https://www.baidu.com" id="aaa"></a>
+    <div class="rightp2">
+        <p>一共<span id='goods_count'>{$goods.goods_count}</span>件商品</p>
+        <p><span>1</span>/100</p>
+        <a href="javascript:;" onclick="getpage('on')"><img src="{$img}/leftan_03.jpg" /></a>
+        <a href="javascript:;" onclick="getpage('next')"><img src="{$img}/rightliang_03.jpg" /></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".dingwei").click(function() {
+        if($(this).find("img").attr("src")==("{$img}/huishang.png")){
+            $(this).find("img").attr("src", "{$img}/huixia_05.png")
+        }else{
+            $(".huix").attr("src", "{$img}/huixia_05.png");
+            $(this).find("img").attr("src", "{$img}/huishang.png")
+
+        }
+
+    })
+    function  getpage(type){
+        if(type == 'on'){
+           document.getElementById("shang").click() ;
+        }else if(type == 'next'){
+            document.getElementById("xia").click() ;
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!-- 登录状态 by  wanggang -->
+<div class="h_datatop">
+	{~$user = session('user');}
+	{if condition="$user"}
+    <div class="datatop_img">
+        <a href="#"><img class="datatop_img1" src=""/></a>
+        <span>hi  {$user.account}</span>
+    </div>
+    <div class="datatop_but">
+        <a href="{:url('UserCenter/u_order',['status'=>5,'id'=>3])}" class="datatop_but_a"><p>{$recycle.delivery}</p>待收货</a>
+        <a href="{:url('UserCenter/u_order',['status'=>2,'id'=>1])}" class="datatop_but_a"><p>{$recycle.money}</p>待付款</a>
+        <a href="{:url('UserCenter/u_order',['status'=>4,'id'=>2])}" class="datatop_but_a"><p>{$recycle.momentum}</p>待发货</a>
+        <a href="{:url('UserCenter/u_order',['status'=>11,'id'=>4])}"  class="datatop_but_a"><p>{$recycle.evaluation}</p>待评价</a>
+    </div>
+    {else/}
+	    <div class="datatop_img">
+	        <a href="#"><img class="datatop_img1" src=""/></a>
+	        <span>hi  你好</span>
+	    </div>
+	    <div class="datatop_but">
+	        <a href="{:url('user_center/login')}" class="datatop_but_aa">登录</a>
+	        <a href="{:url('user_center/reg')}" class="datatop_but_aa">注册</a>
+	        <a class="datatop_but_aa">开店</a>
+	    </div>
+    {/if}
+</div>

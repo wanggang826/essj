@@ -1,0 +1,92 @@
+<!-- 商品评价 by wanggang-->
+<link type="text/css" rel="stylesheet" href="{$css}/evaluate.css" />
+ <script type="text/javascript" src="{$js}/startScore.js"></script>
+    <script type="text/javascript" src="{$web_static}/js//uploadImg.js"></script>
+        <div class="h_concent">
+            <div class="position">
+                <p>您的位置：</p>
+                <a href="">首页 ></a>
+                <a href="">订单中心 ></a>
+                <p>评价晒单</p>
+            </div>
+            <div class="h_evaliate">
+            <form class="form-horizontal js-ajax-form clearfix" action=''>
+                <p class="evaliate_p1"></p><p class="evaliate_p2"><span>订单评价</span></p>
+                <span class="evaliate_sp">订单号：{$order.order_sn}</span><span class="evaliate_sp">时间：{$order.create_time}</span>
+                <input type="hidden" name="user_id" value="{$user_id}">
+                <input type="hidden" name="shop_id" value="{$order.shop_id}">
+                <input type="hidden" name="order_id" value="{$order.order_id}">
+                <div class="pingjia_sd">
+                    {volist name="order_info" id="vo" key="k"}
+                    <div class="pingjiasd_img">
+                        <img src="{$vo.good_image|getImg}"/>
+                        <p>{$vo.goods_name}</p>
+                        <span>￥<i>{$vo.deal_price}</i></span>
+                    </div>
+                    <input type="hidden" name="goods_id[{$k}]" value="{$vo.goods_id}"/>
+                    <div class="satisfaction">
+                        <div class="satisfaction_fl">
+                            <span>商品满意度</span>
+                            <span>评价晒单</span>
+                        </div>
+                        <div class="satisfaction_ri">
+                            <div id="startone{$k}"  class="block clearfix" >
+                            <div class="star_score"></div>
+                            <p style="float:left;"><span class="fenshu"></span> 分<input type="hidden" name="score[{$k}]" value="" class="hidden_score"></p>
+                        </div>
+                            <div class="satisfaction_text">
+                            <textarea placeholder="商品是否给力？快分享你的购物心得把~" name="comment[{$k}]" rows="" cols=""></textarea>
+                            <span>0/300</span>
+                           </div>
+                               <div class="img_cont">
+                                   <div class="img_prev"></div>
+                                   <input type="file" name="{$k}" id="{$k}" />
+                               </div>
+                               <div class="clear"></div>
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <script type="text/javascript">
+                        $('#{$k}').imgUpload({
+                            allowedNum:5,//允许上传最大数量
+                            width:'100',//预览框宽度
+                            height:'85',//预览框高度
+                            imgWidth:'300',//图片上传宽度
+                            imgHeight:'400',//图片上传高度
+                        })
+
+
+                //      打星系统
+                     scoreFun($("#startone{$k}"),{
+                           fen_d:32,//每一个a的宽度
+                           ScoreGrade:5 ,//a的个数 10或者
+                           default_star:0  // 传参数 没有参数的时候就可以选择星星  有参数时不能选择星星 且参数值为 0-9 共10个参数
+                        })
+
+                    </script>
+                    {/volist}
+                </div>
+                <div class="h_submit">
+                    <button class="h_submit1 js-submit-btn" type="submit">提交</button>
+                    <input class="h_checkbox1" type="checkbox" name="is_anonymous"  value="1" />
+                    <span>匿名评价</span>
+                </div>
+            </form>
+            </div>
+        </div>
+
+   
+
+    <script>
+
+    //显示分数
+      $(".show_number li p").each(function(index, element) {
+        var num=$(this).attr("tip");
+        var www=num*2*16;//
+        $(this).css("width",ww);
+        $(this).parent(".atar_Show").siblings("span").text(num+"分");
+    });
+    </script>
+

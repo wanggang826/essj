@@ -1,0 +1,117 @@
+<div class="panel-body">
+    {foreach name="configs" item="config"}
+    {if condition="$config['group'] eq 'run'"}
+    <div class="form-group">
+        <label  class="col-sm-2 control-label">{$config['config_name']}</label>
+        <div class="col-sm-4">
+            {if condition="$config['type'] eq 'select'"}
+                <select class="form-control"  name="{$config.id}{$config.config_mark}">
+                    {foreach name="$config['type_value']" item="val" }
+                        {if condition="$config['config_value'] eq $val['value']"}
+                            <option value="{$val['value']}" selected="selected">{$val.name}</option>
+                        {else/}
+                            <option value="{$val['value']}" >{$val.name}</option>
+                        {/if}
+                    {/foreach}
+                </select>
+            {elseif condition="$config['type'] eq 'textarea'"}
+                <textarea name="{$config.id}{$config.config_mark}" id="" cols="53" rows="5">{$config.config_value}</textarea>
+            {elseif condition="$config['type'] eq 'checkbox'"}
+                {foreach name="$config['type_value']" item="box" key="k"}
+                    {if condition="in_array($box['value'],$config['config_value'])"}
+                        <label class="i-lab"><input class="mgc mgc-primary" type="checkbox" name="{$config.id}{$config['config_mark']}[{$k}]" value="{$box['value']}" checked="checked"  class="mgc"><span>{$box.name}</span></label>
+                    {else/}
+                        <label class="i-lab"><input class="mgc mgc-primary" type="checkbox" name="{$config.id}{$config['config_mark']}[{$k}]" value="{$box['value']}"  class="mgc"><span>{$box.name}</span></label>
+                    {/if}
+                {/foreach}
+            {elseif condition="$config['type'] eq 'radio' "}
+                {foreach name="$config['type_value']" item="box" key="k"}
+            {foreach name="$config['type_value']" item="box" key="k"}
+            <label class="i-lab"><input class="mgr mgr-primary mgr-lg" type="radio" name="{$config.id}{$config.config_mark}" value="{$box['value']}" {if condition="$config['config_value'] eq $box['value']"}checked="checked"{/if} class="mgr">
+                {if condition="$box['value'] eq 0 and $config['id'] eq 3"}<span>关闭</span>{elseif condition="$box['value'] eq 1 and $config['id'] eq 3"/}<span>开启</span>
+                {else/}<span>{$box.value}</span>{/if}</label>
+            {/foreach}
+                {/foreach}
+            {elseif condition="$config['type'] eq 'file'"}
+                {if  condition="$config['config_value'] neq ''"}
+                    <img class="run" src="{$web_public}upload{$config.config_value}" data-id="{$config.config_mark}" id="{$config['config_mark']}" name="{$config.id}" style="width:218px;height:150px" >
+                {else /}
+                    <img class="run" src="{$web_public}static/img/upload.jpg"  data-id="{$config.config_mark}" id="{$config['config_mark']}" name="{$config.id}" style="width:218px;height:150px" >
+                {/if}
+                <input class ="{$config['config_mark']}" name="{$config.id}{$config.config_mark}" accept="image/*" type="file" style="display: none" value=""/>
+                <input type="hidden" class="base64"  name="file_base64" id="{$config.id}"  value="" /><!-- 将上传的图片转为base64位编码-->
+                <div class="upload_image" data-id="{$config.id}" name="{$config['config_mark']}">上传</div>
+            {else/}
+                <input type="{$config.type}" class="form-control"  name="{$config.id}{$config.config_mark}"  id="{$config.config_mark}" value="{$config.config_value}">
+            {/if}
+        </div>
+    </div>
+    {/if}
+    {/foreach}
+</div>
+<script>
+
+    /*
+     * 图片预览
+     * */
+    $(function() {
+        $(".run").click(function () {
+            var  img = $(this).attr('data-id');
+            var  img_name = $(this).attr('name');
+            $("."+img).click(); //隐藏了input:file样式后，点击头像就可以本地上传
+            $("."+img).on("change",function(){
+                var objUrl = getObjectURL(this.files[0]) ; //获取图片的路径，该路径不是图片在本地的路径
+                if (objUrl) {
+                    $("#"+img) .attr("src", objUrl) ; //将图片路径存入src中，显示出图片
+                    /* 图片转base64*/
+                    var v = $(this).val();
+                    var reader = new FileReader();
+                    reader.readAsDataURL(this.files[0]);
+                    reader.onload = function(){
+                        $("#"+img_name).val(this.result);
+                    };
+                    /* 图片转base64*/
+
+                }
+            });
+        });
+    });
+    function getObjectURL(file) {
+        var url = null ;
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+    $(function(){
+        $(".upload_image").click(function () {
+            var eles=document.getElementsByClassName("base64");
+            var length = $(".base64").length;
+            var config_arr= {};
+            for (var i=0;i<length;i++) {
+                if (eles[i]['value'] != '') {
+                    var config_id = eles[i]['id'];
+                    var config_value = eles[i]['value'];
+                    config_arr[config_id] = config_value;
+                }
+            }
+            var  url="{:U('Mallconfig/index')}";
+            $.ajax({
+                type:'post',
+                url:url,
+                data:config_arr,
+                dataType:'json',
+                success:function(re){
+                    console.log(re);
+                }
+            })
+        })
+    })
+
+
+
+</script>

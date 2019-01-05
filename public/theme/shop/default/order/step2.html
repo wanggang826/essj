@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="{$css}/ordersuccess.css">
+<div class="ordercont">
+    <div class="container mag-top">
+        <div class="row">
+            {include file="default/order/header"}
+        </div>
+    </div>
+     <div class="content">
+         <img src="{$img}/gouzi.png" alt="" class="contimg">
+         <div class="contson">
+             <div class="cont_so">订单提交成功，请尽快付款！ <span class="contsonri">应付金额：<span>{$good['deal_price']}元</span></span></div>
+             <p>请您在24小时内完成支付，否则订单会被自动取消(库存紧俏商品支付时限以订单详情页为准)。 <a href="#"  class="contson_a">显示全部信息</a></p>
+            <span class="order_info">
+           {volist name="good['good_name']" id="goods"}
+             <p class="lincaor">商品名称：<span>{$goods}</span></p>
+            {/volist}
+             <p class="lincaor">购买时间：<span>{$good['time']}</span></p>
+             <p class="lincaor">收货地址：<span> {$good['areas']['province']} {$good['areas']['city']}{$good['areas']['area']}{$good['areas']['address']} </span><span> 收货人：{$good['areas']['user_name']}&nbsp; {$good['areas']['user_phone']}</span></p>
+            </span>
+         </div>
+     </div>
+
+    <div class="zhifukuang">
+        <h1>微信支付<p>距离二维码过期还剩<span>40</span>秒，过期请刷新页面重新获取二维码。</p></h1>
+        <div class="zhifukuangson">
+            {include file="$paytype_inc"}
+        </div>
+        <a href="{:U('Order/index',['step'=>1,'serial_sn'=>$good['serial_sn']])}" class="qitazhifu"> < 选择其他支付方式</a>
+    </div>
+
+    {include file="default/adv_pos/order_step2_bottom"}
+</div>
+<script>
+ $(document).ready(function (){
+     $(".order_info").css('display','none');
+     window.history.forward(1);
+ })
+$(".contson_a").click(function(){
+    var text = $(".contson_a").text();
+    if(text== "显示全部信息"){
+        $(".order_info").css('display','block');
+        $(".contson_a").text("收起");
+    }else if(text== "收起"){
+        $(".order_info").css('display','none');
+        $(".contson_a").text("显示全部信息");
+    }
+
+})
+</script>

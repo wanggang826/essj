@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+	<meta name="renderer" content="Webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{$title}</title>
+    <link href="{$web_static}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{$css}headfoot.css" />
+    <link href="{$web_static}/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{$web_static}/css/animate.css" rel="stylesheet">
+    <script src="{$web_static}/js/jquery.min.js"></script>
+    <script src="{$web_static}/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="{$web_static}/plugins/layui/layer/layer.js"></script>
+    <!--时间日期插件-->
+    <script src="{$web_static}/plugins/layui/laydate/laydate.js"></script>
+    <script src="{$web_static}/js/layer.com.js"></script>
+
+    <link rel="stylesheet" href="{$css}/icon/iconfont.css">
+</head>
+<body>
+    {include file="default/layout/top_bar"}
+    {if condition="!isset($load_search) || $load_search !== false"}
+        {include file="default/layout/logo_serch"}
+    {/if}
+    {__CONTENT__}
+
+    {if condition="!isset($bottom_nav) || $bottom_nav !== false"}
+        {include file="default/layout/bottom_bar"}
+        {include file="default/layout/bottom_nav"}
+    {/if}
+    {include file="default/layout/footer"}
+
+    <script type="text/javascript">
+        //收藏夹图标
+        $(".shouc").hover(
+            function() {
+                $(".shouc img").attr("src", "{$img}/shoucangh.png")
+            },
+            function() {
+                $(".shouc img").attr("src", "{$img}/shoucang.png")
+            }
+        );
+    </script>
+</body>
+<script src="{$web_static}/js/common.js"></script>
+<script src="{$js}/shop.js"></script>
+
+</html>

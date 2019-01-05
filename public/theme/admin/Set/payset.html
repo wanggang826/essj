@@ -1,0 +1,64 @@
+<div class="panel panel-default">
+    <form role="form" action="{:url('set/payset')}" class="panel-body hidden-xs form-inline">
+                <div class="form-group">
+                    <input type="text" placeholder="支付名称" id="ex1" class="form-control" name="pay_name" value="{:input('goods_name')}">
+                </div>            
+                <div class="form-group">
+                    <select   class="form-control"  name="is_sale">
+                        <option value="">-- 状态 --</option>
+                        <option value="1">禁用</option>
+                        <option value="2">启用</option>
+                    </select>
+                </div>
+               
+
+            <div class="form-group pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-outline btn-w-m btn-rec">
+                        <i class="fa fa-search"></i><span class="btn-desc">&nbsp;查询</span>
+                    </button>
+                    <a href="{:url('')}" class="btn btn-default btn-outline btn-rec">
+                        <i class="fa fa-refresh"></i><span class="btn-desc">&nbsp;重置</span>
+                    </a>
+                </div>
+            </div>
+    </form>
+    <div class="panel-footer clearfix ">
+        <div class="pull-left btn-group hidden-xs" >
+            <a href="{:U('disable')}" class="btn btn-default del-all" text="删除后将无法恢复，请谨慎操作">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;删除
+            </a>
+        </div>
+    </div>
+</div>
+<div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th width='1'><input type="checkbox" class="my-all-check" name="input[]"></th>
+                <th width="200">名称</th>
+                <th width="150" class="hidden-xs">标识</th>
+                <th width="150" class="hidden-xs">描述</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name="list" id="vo"}
+            <tr>
+             <td width='1'><input type="checkbox" class="i-checks" name="input[]" value="{$vo.id}"></td>
+             <th>{$vo.pay_name}</th>
+             <th>{$vo.pay_mark}</th>
+             <th>{$vo.pay_des}</th>
+             <th>
+                <a href="{:U('edit','id='.$vo['id'])}" class="btn btn-default btn-outline btn-xs js-window-load"><i class="fa fa-edit fa-fw"></i><span class="hidden-xs">编辑</span></a>
+                {if condition="$vo.status eq 0"}
+                <a href="{:U('status',['id'=>$vo.id,'status'=>1])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="启用后该账号可以进行交易"><i class="fa fa-check fa-fw"></i><span class="hidden-xs">启用</span></a>
+                {elseif condition="$vo.status eq 1"/}
+                <a href="{:U('status',['id'=>$vo.id,'status'=>0])}" js-color="#eea236" class="btn btn-default btn-outline btn-xs js-del-btn" text="禁用后该帐号将无法交易,请谨慎操作！"><i class="fa fa-times fa-fw"></i><span class="hidden-xs">禁用</span></a>
+                {/if}
+             </th>
+            </tr>
+            {/volist}
+        </tbody>
+    </table>
+    </div>

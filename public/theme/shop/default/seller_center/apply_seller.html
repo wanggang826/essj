@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请开店修改</title>
+    <link rel="stylesheet" href="{$css}/usernew.css">
+</head>
+<body>
+ <div class="h_concent">
+     <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">申请开店</div></div>
+     <form class="js-ajax-form" action="{:urldo('seller_center/in_application')}" method="post" enctype="multipart/form-data" >
+     <div class="l_applycont">
+         <div class="l_clciks clearfloat">
+             <div class="l_clciksons addcolorfen">
+                 申请成为卖家
+                 <img src="{$img}/dingdan_01.png" alt="" class="ding">
+             </div>
+             <div class="l_clciksons addcolorfen">
+                 填写相关信息
+                 <img src="{$img}/dingdan_03(1).png" alt="">
+             </div>
+             <div class="l_clciksons">
+                 商城审核
+                 <img src="{$img}/dingdan_02.png" alt="">
+             </div>
+             <div class="l_clciksons">
+                 申请卖家成功
+                 <img src="{$img}/dingdan_02.png" alt="">
+             </div>
+         </div>
+         <!--<div class="l_applyconts">-->
+             <!--<span></span>-->
+             <!--<input type="text">-->
+         <!--</div>-->
+         <div class="l_applyconts">
+             <span class="l_applycontsspan"><img src="{$img}/right.png" alt="">身份证号码</span>
+             <input type="text" name="idcard_sn" class="l_applycontschanginput" js-check="idcard_sn" value="{$shop_seller.idcard_sn|default=''}">
+         </div>
+         <div class="l_applyconts">
+             <span class="l_applycontsspan"><img src="{$img}/right.png" alt="">手机号码</span>
+             <input type="text" name="phone" class="l_applycontschanginput" js-check="phone" placeholder="请输入11位数的手机号码" value="{$shop_seller.phone|default=''}">
+         </div>
+         <div class="l_applyconts">
+             <span class="l_applycontsspan"><img src="{$img}/right.png" alt="">手机验证码</span>
+             <input type="text" class="l_applycontsinput">
+             <input type="button"  id="btn" name="phonecap" class="but phonecap" value="获取验证码" />
+         </div>
+         <div class="l_applycontss">
+            <span class="l_applycontsspans">身份证正面</span>
+                <div class="l_applycontshangchuan">
+                    <div class="img_cont">
+                        <div class="img_prev"></div>
+                        <input type="file" name="idcard1" id="idcard1" />
+                    </div>
+                </div>
+                <span class="l_applycontsspansone">实例</span>
+                <img src="{$img}/qqqqzhengtou.jpg" alt="" class="l_applycontsspanstwo">
+                <div class="l_applycontsspansthree">
+                    <p>1、照片清晰不能被遮挡住，显示身份证信息</p>
+                    <p>2、照片支持jsp、bng、jpeg，最大不能超过5M</p>
+                </div>
+         </div>
+         <div class="l_applycontss">
+             <span class="l_applycontsspans">身份证反面</span>
+             <div class="l_applycontshangchuan">
+                 <div class="img_cont">
+                     <div class="img_prev"></div>
+                     <input type="file" name="idcard2" id="idcard2" />
+                 </div>
+             </div>
+             <span class="l_applycontsspansone">实例</span>
+             <img src="{$img}/qqqqqfantou.jpg" alt="" class="l_applycontsspanstwo">
+             <div class="l_applycontsspansthree">
+                 <p>1、照片清晰不能被遮挡住，显示身份证信息</p>
+                 <p>2、照片支持jsp、bng、jpeg，最大不能超过5M</p>
+             </div>
+
+         </div>
+         <div class="l_applycontss">
+             <span class="l_applycontsspanss">手持身份证头部照</span>
+             <div class="l_applycontshangchuan">
+                 <div class="img_cont">
+                     <div class="img_prev"></div>
+                     <input type="file" name="idcard3" id="idcard3" />
+                 </div>
+             </div>
+             <span class="l_applycontsspansone">实例</span>
+             <img src="{$img}/qqqqshen.jpg" alt="" class="l_applycontsspanstwo">
+             <div class="l_applycontsspansthree">
+                 <p>1、手持相关证件，临时身份证有效期15天以上</p>
+                 <p>2、照片需免冠，建议未化妆需本人手持身份证</p>
+                 <p>3、必须看清身份证号，不能被遮挡</p>
+                 <p>4、照片支持jsp、bng、jpeg，最大不能超过5M</p>
+             </div>
+         </div>
+         <div class="l_applycontent">
+             <input type="checkbox" name="box" id="box" js-check="box">
+             同意并阅读
+             <a href="">  《相关协议》</a>
+         </div>
+         <input type="hidden" name="shop_id" value="{$shop_seller.shop_id|default=''}">
+         <a class="indent_rirgt_delivesure js-submit-btn ">提交申请</a>
+         <div class="l_applycontentfoot">
+             <img src="{$img}/ssssssssss_03.jpg" alt="">
+             申请后商城会在24小时内审核，审核通过后将可以进入卖家中心进行操作！
+        </div>
+     </div>
+     </form>
+ </div>
+
+<script src="{$web_static}/js/checkForm.js"></script>
+<script src="{$web_static}js/uploadImg.js"></script>
+<script>
+    //======表单验证开始======//
+    function idcard_sn(e){
+        var idcard_sn = $(e).val();
+        if (idcard_sn == '') {
+            return '请填写身份证号码!';
+        } else if (!/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(idcard_sn)){
+            return '身份证格式错误!';
+        }
+        return true;
+    }
+
+    function phone(e){
+        var phone = $(e).val();
+        if (phone == '') {
+            return '请填写手机号码!';
+        } else if(!/^1[3|4|5|7|8][0-9]{9}$/.test(phone)){
+            return '手机号码格式有误!';
+        }
+        return true;
+    }
+
+    function box(e){
+        if($('#box').is(':checked')) {
+            return true;
+        }else{
+            return '请阅读相关协议,同意请勾选!';
+        }
+    }
+    //======表单验证结束======//
+    var wait=60;
+    function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");
+            o.value="获取验证码";
+            wait = 60;
+            document.getElementById("btn").style.background = "#ED145B";
+        } else {
+            document.getElementById("btn").style.background = "#EAEAEA";
+            o.setAttribute("disabled", true);
+            o.value=wait+"秒后可以重新发送";
+            wait--;
+
+            setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+        }
+    }
+    document.getElementById("btn").onclick=function(){time(this);}
+
+    var imgBase64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB+CAIAAABptOLiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowOTQ2MDhFOUQyMzNFNDExODRDQUJBQTZDNUIwOUUyOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDRkE4OTgzNjVDQTUxMUU3OEEyRkQ0MUY3RTIwRDBBNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDRkE4OTgzNTVDQTUxMUU3OEEyRkQ0MUY3RTIwRDBBNSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDUzMzExNzMtMzdmOS1jNzQ2LTg5YjktNWI0ODVlNzA2ZTQwIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6Y2IyNWVhZTAtNDAzMS0xMWU3LThkODYtYmJiOWFiNmMwYjg4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+oKe8KwAAA+BJREFUeNrsnd2O4jAMhYfAlp/3f1IugNLC7hFeEBqgLdSJTX3ORaUZIaBfXPskac1su93+UGU1I3RCJ3SK0AmdInRCpwid0ClCJ3RCpwid0ClCJ3SK0AmdInRCJ3SK0AmdInRCp6YGffZM+P/fq87nM/6UI6GPUkppsVjgOJ/Pcex+saCHTqdT27b4k9Df05+LAFoi+l2BONAfj0ccCb1fCO2qqhDaKu+GkK/r2k/a8Qh9uVyCuO57IuqPFxH6k/S9Wq20AvxRTdMcDgf769iVOVmv172lcmSRwNGce/IDPTfxG3ekL0L/n8fzZZVfUizRXwwdCNQrZ7dQOT6zodOBXv56Rx4rPMy+oMOSm1zsSO5WwW4PXRyFiVmy+mhj6LKuEm28U8wwvw25SWYzhm5r3aSixIKeLgo46sbQDc3yrZyW/w7J9oTNvROhR/kOjha8TGSynxcdetAZKaFThM5Cqi4P2/MspDbQy3NnTv8h9BBpPYUKMboXm3waHbrJYhOhRyTOQkrohB5kRhox0j24F06OQow6J0ecHMWoKyngOd/L5MG7FPCco0d627a2xCNGujzdHG3I7S1j0zTRPtoFdBMPg8RidZHZQ5cn+ENdYS5mpOWfHsdIG9ZwF9BPF0XIaY6gl7/YDXOLL+jFQg+JxXYm7GiVsVj0mTcgcQQdLAoEO8LcfO3BEfQyjsJDnx1fmxh1XWcNdg9h7g46iGfN7E7aSbnbrsuX2Z2EuUfoII4kkyl3OTlHjxvTyDDqIemqRaDTuwF0e5tJS0w/Z+cUOqJSizvylYe2gF8AXZLM+PAE8f1+7+1WsoVP4oq9GqTPBbj7uc3GUQdSUL7vHq17I7V0mz5dZTsA9tABF5Sle3SZ9i+yVyUeyYS+JfTFVVZPB8hqj2ji0CWBVFVl3tbo3lNK4JcpuUWhg7L0off54Ius/EC50ReCLh0/DTPJuzkHbjUf+uzQBbdtK8AxE4Uc6DNCd55Mhicc9YXPLNCloyoCfBoPLar/tIM+dMHtx5loCXmmrmsVc6kJHUawZO95K3MJ9CNXnnWgI66B27BV8XfV2LHQv9ecGKL/HPoXWW9vpv4T6DKJj5NMhkjQD8z170FHUFcXkfJTibPsNfVvQJ+qF1R3luDefffOIOgIcJiTmNXy4xrbcbdaP3SEdpnf2ppeyL/anu2BjpoJ4pH9yUhvA+6P1bULOohvNhuyG6ndbveLe+rI44hxIhuvx1SRhr+U+nDS/xC+6ZU7nPa6VWHJ7Q490Dn9Udc90vTKJhKTru6REq7FABABoRM6ReiEThE6oVOETugUoZvonwADAFMsx43YcpNrAAAAAElFTkSuQmCC';
+
+    $('#idcard1').imgUpload({
+        allowedNum:1,//允许上传最大数量
+        width:'120',//预览框宽度
+        height:'120',//预览框高度
+        showBtn:true,  //选择按钮
+        btnText:'上传图片',
+        btnClass:'fileimg', //选择按钮的样式
+        maxSize: 5100,//允许上传最大值(KB)
+        bg_img:imgBase64,
+        {if condition="(isset($shop_seller['idcard1']))"}
+        files:["{$shop_seller['idcard1']|getImg}",]
+        {/if}
+    })
+    $('#idcard2').imgUpload({
+        allowedNum:1,//允许上传最大数量
+        width:'120',//预览框宽度
+        height:'120',//预览框高度
+        showBtn:true,  //选择按钮
+        btnText:'上传图片',
+        btnClass:'fileimg', //选择按钮的样式
+        maxSize: 5100,//允许上传最大值(KB)
+        bg_img:imgBase64,
+        {if condition="(isset($shop_seller['idcard2']))"}
+        files:["{$shop_seller['idcard2']|getImg}",]
+        {/if}
+    })
+    $('#idcard3').imgUpload({
+        allowedNum:1,//允许上传最大数量
+        width:'120',//预览框宽度
+        height:'120',//预览框高度
+        showBtn:true,  //选择按钮
+        btnText:'上传图片',
+        btnClass:'fileimg', //选择按钮的样式
+        maxSize: 5100,//允许上传最大值(KB)
+        bg_img:imgBase64,
+        {if condition="(isset($shop_seller['idcard3']))"}
+        files:["{$shop_seller['idcard3']|getImg}",]
+        {/if}
+    })
+</script>

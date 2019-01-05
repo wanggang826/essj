@@ -1,0 +1,54 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('advers/advpos_edit',['page'=>input('page')])}" method='post'>
+    <!-- 自定义大小 -->
+    <input type="hidden" name='advpos_id' value="{$advpos_info.advpos_id}">
+    <div class="form-group">
+        <label for="advpos_name" class="col-sm-2 control-label">广告位名称</label>
+        <div class="col-sm-4">
+             <input type="text" name="advpos_name" class="form-control" id="advpos_name" placeholder="广告位名称" value="{$advpos_info.advpos_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">广告位类型</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="advpos_type" value='PC' class="mgr mgr-primary mgr-lg" {if condition='$advpos_info.advpos_type eq "PC"'}checked{/if}><span>PC</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="advpos_type" value='APP' class="mgr mgr-primary mgr-lg" {if condition='$advpos_info.advpos_type eq "APP"'}checked{/if}><span>APP</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="account" class="col-sm-2 control-label">广告位标识</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$advpos_info.advpos_ename}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">广告位宽度</label>
+        <div class="col-sm-4">
+            <input type="text" name="advpos_width" class="form-control" id="nickname" placeholder="广告位宽度（宽度为0时则为自适应宽度）"
+            value='{$advpos_info.advpos_width}'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">广告位高度</label>
+        <div class="col-sm-4">
+            <input type="text" name="advpos_height" class="form-control" id="password" placeholder="广告位高度（高度为0时则为自适应高度）"value='{$advpos_info.advpos_height}'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">可放置图片个数</label>
+        <div class="col-sm-4">
+            <input type="text" name="img_num" class="form-control" id="password" placeholder="可放置图片个数" value='{$advpos_info.img_num}'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>

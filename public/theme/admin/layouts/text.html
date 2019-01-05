@@ -1,0 +1,33 @@
+
+<script src="{$web_static}/plugins/editor/wangEditor.min.js"></script>
+
+带图片上传
+    <!-- href传入编辑器实例名称，实例名称必须以editor开头 -->
+    <a class="js-window-load" js-width="950px" js-height="90%" href="editor_1">预览</a>
+    <div id="div2" class="text">
+        <p>这里是测试内容</p>
+    </div>
+    <div>
+        <input type="hidden" value="" name="article_content" id="article_content"/>
+    </div>
+
+    <script type="text/javascript">
+        var E = window.wangEditor
+        var editor_1 = new E('#div2');//必须以 editorxxxxx 方式命名
+        editor_1.customConfig = {
+            uploadImgServer    :'{:url("layouts/text")}',// 上传图片服务器
+            showLinkImg        : false,// 隐藏“网络图片”tab
+            uploadImgMaxSize   : 3*1024*1024,//限制图片大小
+            uploadImgMaxLength : 5,// 限制一次最多上传 5 张图片
+            uploadFileName     : 'image',//自定义上传文件名
+            uploadImgParams    : {
+                token: 'abcdef12345'   // 自定义上传参数，属性值会自动进行 encode ，此处无需 encode
+            },
+        }
+        editor_1.create();
+        $('.js-submit-btn').click(function () {
+            $("#article_content").attr('value',editor_1.txt.html());
+            console.log(editor_1.txt.html());
+        })
+    </script>
+

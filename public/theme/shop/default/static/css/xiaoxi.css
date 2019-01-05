@@ -1,0 +1,429 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	box-sizing: border-box;
+}
+.d_container-fluid{
+	width: 100%;
+	background: #F2F2F2;
+}
+.d_padi{
+	padding: 0 !important;
+}
+.d_mag{
+	margin: 0 !important;
+}
+.d_top a{
+	
+	color:black;
+	text-decoration: none;
+	font-size: 12px;
+	float: left;
+	margin: 0 !important;
+	padding: 8px 5px;
+}
+.activ{
+	margin: 0 5px;
+	margin-top: 5px;
+	float: right;
+	height: 25px;
+	width: 1px;
+	background: #E0E0E0;
+}
+.d_redp{
+	color: #ED145B !important;
+}
+.d_huip{
+	color: #666666 !important;
+}
+
+.d_float a{
+	text-decoration: none;
+	float: right;
+	display: block;
+	padding: 8px 5px;
+	color: #666666 !important;
+}
+.d_float img{
+	vertical-align:auto !important;
+	margin: 0 3px;
+}
+
+.mag-top{
+	margin-top:20px ;
+}
+.mag-top1{
+	margin-top: 30px;
+}
+.mag-top2{
+	margin-top: 8px;
+}
+.d_logo{
+	margin-left: 15px;
+}
+.input1{
+	background: url(../img/sousuo_03.png)no-repeat left;
+	padding-left: 35px;
+	outline: none;
+	margin-left: -30px;
+	float: left;
+	border: 2px solid #ED145B;
+	width: 80%;
+	height: 33px;
+}
+.input2{
+	border: none;
+	outline: none;
+	font-family: "宋体";
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 33px;
+	text-align: center;
+	color: white;
+	width: 11%;
+	height: 33px;
+	background: #ED145B;
+	float:left;
+
+}
+
+/*head*/
+
+.position{
+	font-size: 12px;
+	overflow: hidden;
+	margin: 10px auto;
+	
+}
+.position p{
+	color: #616161;
+	float: left;
+	padding-left: 3px;
+}
+.position a{
+	text-decoration: none !important;
+	color:#616161; 
+	float: left;
+	padding-left: 3px;
+}
+/*面包屑*/
+.navx{
+	overflow: hidden;
+	width: 1190px;
+	margin: 0 auto;
+}
+.indent_fl {
+	float: left;
+	width: 15%;
+	background: #f6f6f6;
+	/*border: 1px solid #e6e6e6;*/
+	margin-right: 1%;
+}
+.sidebar_centre ul {
+	list-style-type: none;
+	margin-bottom: 0;
+}
+.sidebar_centre li {
+	height: 27px;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	transition: all .35s;
+}
+.sidebar_centre li a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 5px 20px;
+	transition: all .35s;
+	color: #6f6f6f;
+	font-size: 12px;
+	text-decoration: none;	
+}
+.sidebar_centre .h_borde {
+	height: 16px;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+}
+.sidebar_centre ul:nth-of-type(2) .h_borde {
+	height: 16px;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+.sidebar_red {
+	background: #ed145b;
+	color: #fff!important;	
+}
+.sidebar_lired {
+	border-left: 1px solid #ed145b!important;
+	border-right: 1px solid #ed145b!important;
+}
+.h_square span {
+	display: inline-block;
+	font-size: 14px;
+	color: #333333;
+	padding: 5px 0px;
+	font-weight: 600;
+}
+.h_square img {
+	padding: 0 5px 0 12px;
+}
+.sidebar_centre .h_square{
+	border: 1px solid #e6e6e6;
+}
+.dsystem{
+	margin-bottom: 60px;
+	border: 1px solid #E6E6E6;
+	overflow: hidden;
+	width: 84%;
+	float: right;
+}
+.notice{
+	height: 445px;
+	background: #F6F6F6;
+	overflow: hidden;
+	width:16% ;
+	float: left;
+}
+.notice img{
+	float: left;
+}
+.notice1 img{
+	float: left;
+}
+.notice1{
+	cursor: pointer;
+	padding: 15px 20px;
+	overflow: hidden;
+	clear: left;
+}
+.tongzhi{
+	padding-left: 5px;
+	float: left;
+}
+.tongzhi1{
+	font-weight: bold;
+	color:#595959 ;
+	font-size: 14px;
+	margin-bottom: 3px !important;
+}
+.tongzhi2{
+	color: #A9A9A9;
+	font-size: 12px;
+	margin-bottom: 0 !important;
+}
+.pack{
+	overflow: hidden;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+.centerx{
+	margin-bottom: 0 !important;
+	text-align: center;
+	color: #A9A9A9;
+	font-size: 12px;
+	padding: 20px 0;
+}
+.textx{
+	position: relative;
+	background: #F6F6F6;
+}
+.guanbi{
+	cursor: pointer;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+.textmag{
+	padding: 15px 30px;
+}
+.textp{
+	font-size: 14px;
+	color:#333333;
+	border-bottom: 1px solid #E6E6E6;
+}
+.textp1{
+	font-size: 12px;
+	text-align: justify;
+}
+.textp2{
+	margin-bottom: 0 !important;
+	text-decoration: none;
+	display: block;
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+	text-align: right;
+}
+.textp2 a{
+	text-decoration: none;
+	color: #EE3269 ;
+	text-align: right;
+}
+.dayus{
+	margin-left: 5px;
+}
+.posih{
+	display: none;
+}
+.chakans{
+	text-align: center;
+	margin: 20px 0;
+	
+}
+.chakan{
+	text-decoration: none !important;
+	
+	display: inline-block;
+	color: white !important;
+	background: #ED145B;
+	width: 15%;
+	padding:12px 12px;
+	text-align: center;
+	
+}
+/*foot*/
+.fild{
+	overflow: hidden;
+	background: #F5F5F5;
+	border-top: 2px solid #ED145B;
+	width: 100%;
+}
+.d_floarig{
+	text-align: center;
+	margin-top: 15px  ;
+	margin-bottom: 15px  ;
+}
+.d_floarig p{
+	margin-top: 5px;
+}
+.d_floarig img{
+	display: block;
+	margin: 0 auto;
+}
+.magleft{
+	margin-left: 11%;
+}
+.flaorigt{
+	float: right;
+}
+.list-style{
+	margin-top: 15px;
+	font-family: "宋体";
+}
+.list-style ul li{
+	padding:5px 0;
+	
+	list-style: none;
+}
+.list-style a{
+	text-decoration: none;
+	color: #898989;
+}
+.list-style a:hover{
+	font-weight: bold;
+	color: black;
+}
+.ul1{
+	float: left;
+	width: 10%;
+}
+.ul2{
+	text-align: center;
+	float: left;
+	width: 15%;
+}
+.ul3{
+	float: left;
+	width: 14%;
+}
+.ul3 img{
+	display: block;
+	margin: 0 auto;
+}
+.fenge{
+	float: left;
+	width: 1px;
+	height: 160px;
+	background:#E6E6E6 ;
+}
+.text{
+	color: #999999;
+	margin-top: 8px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+/*兼容*/
+@media only screen and (min-width:768px ) {
+	.notice1 img{
+		width: 36px;
+		height: 36px;
+	}
+	
+	.dsystem{
+		width: 82%;
+	}
+	.notice1{
+		padding: 15px 8px;
+	}
+	.notice{
+		width: 20%;
+	}
+	.indent_fl{
+		width: 17%;
+	}
+	.pack{
+		width: 76%;
+	}
+	.chakan{
+		width: 25%;
+	}
+}
+
+@media only screen and (min-width:992px ) {
+	.dsystem{
+		width: 83%;
+	}
+	.indent_fl{
+		width: 16%;
+	}
+	.notice{
+		width: 17%;
+	}
+	.notice1{
+		padding: 15px 15px;	
+	}
+	.pack{
+		width: 79%;
+	}
+	.chakan{
+		width: 18%;
+	}
+	
+	
+}
+@media only screen and (min-width:1200px ) {
+	.chakan{
+		width: 15%;
+	}
+	
+	.dsystem{
+		width: 84%;
+	}
+	
+	.indent_fl{
+		width: 15%;
+	}
+	.notice{
+		width: 16%;
+	}
+	.notice1{
+		padding: 15px 20px;	
+	}
+	.pack{
+		width: 80%;
+	}
+}

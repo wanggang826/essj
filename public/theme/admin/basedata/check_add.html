@@ -1,0 +1,301 @@
+<style type="text/css">
+	.right-border{border: 1px solid lightgrey; }
+	.left{width:49%;border-right: 1px solid lightgrey;float: left;margin-top: 10px}
+	.right{width:49%;  float: right;margin-top: 10px}
+	.check{margin-top: 10px;}
+	.check li{list-style: none}
+	.right-border table{margin:4px 10px;width: 97%;text-align:center;}
+	.right-border tr{height: 30px}
+	.check-content{height: 7rem;position: relative;bottom: 0;width: 97%;margin: 10px  ;overflow-y: show;border:1px solid lightgrey;}
+	.add-point{margin-right: 7px}
+	.grey-point{color:grey;}
+	.dis-btn{color:grey;}
+</style>
+<script src="{$web_static}/js/uploadImg.js"></script>
+ <form class="form-horizontal js-ajax-form clearfix" action="{:U('check_add')}" method='post'>
+	 <input type="hidden" name="id" value="{:isset($check) ? $check['id'] :  ''}">
+    <!-- 自定义大小 -->
+
+    <div class="form-group">
+        <label  class="col-sm-3 control-label">质检报告名称</label>
+        <div class="col-sm-4">
+            <input type="text" name="check_name" class="form-control" placeholder="质检报告名称" value="{:isset($check) ? $check['check_name'] :  ''}">
+        </div>
+    </div>
+	 {if condition="!empty($check)"}
+	 <div class="form-group">
+		 <label class="col-sm-3 control-label">质检人头像</label>
+		 <div class="img_cont">
+			 <img src="__UPLOAD__{$check['checker_photo']}">
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <label class="col-sm-3 control-label">修改质检人头像</label>
+		 <div class="img_cont">
+			 <div class="img_prev"></div>
+			 <input type="file" name="checker_photo" id="edit_photo"  value=""/>
+		 </div>
+	 </div>
+	 {else/}
+	 <div class="form-group">
+		 <label class="col-sm-3 control-label">质检人头像</label>
+		 <div class="img_cont">
+			 <div class="img_prev"></div>
+			 <input type="file" name="checker_photo" id="checker_photo"  value=""/>
+		 </div>
+	 </div>
+	 {/if}
+	 <div class="form-group">
+		 <label class="col-sm-3 control-label">质检人姓名</label>
+		 <div class="col-sm-4">
+			 <input type="text" name="checker" class="form-control" placeholder="质检人姓名" value="{:isset($check) ? $check['checker'] :  ''}">
+		 </div>
+	 </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">质检描述</label>
+        <div class="col-sm-7">
+            <textarea name="check_desc" id="des" placeholder="备注长度不可大于240个字符" class="form-control">{:isset($check) ? $check['check_desc'] :  ''}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">外观检测</label>
+        <div class="col-sm-7 ">
+        <div class="right-border">
+        	<div class="left">
+        	<ul class="check">
+        	<li>
+        		<label class="col-sm-3 control-label">背部</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="backside" value='Y' <?php if(isset($check) && $check['backside'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="backside" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['backside'] == 'N'){echo "checked='checked'"; }?>  class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            <li>
+        		<label class="col-sm-3 control-label">侧边</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="broadside" value='Y' <?php if(isset($check) && $check['broadside'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="broadside" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['broadside'] == 'N'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            <li>
+        		<label  class="col-sm-3 control-label">顶部</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="top" value='Y' <?php if(isset($check) && $check['top'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="top" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['top'] == 'N'){echo "checked='checked'"; }?>  class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            </ul>
+        	</div>
+        	<div class="right">
+    		<ul class="check">
+        	<li>
+        		<label  class="col-sm-3 control-label">四角</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="quadrangle" value='Y' <?php if(isset($check) && $check['quadrangle'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="quadrangle" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['quadrangle'] == 'N'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            <li>
+        		<label class="col-sm-3 control-label">屏幕</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="screen" value='Y' <?php if(isset($check) && $check['screen'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="screen" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['screen'] == 'N'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            <li>
+        		<label  class="col-sm-3 control-label">底部</label>
+	        	<label class="i-lab">
+	                <input type="radio" name="bottom" value='Y' <?php if(isset($check) && $check['bottom'] == 'Y'){echo "checked='checked'"; }?> class="mgr mgr-primary mgr-lg" ><span>有划痕</span>
+	            </label>
+	            <label class="i-lab">
+	                <input type="radio" name="bottom" value='N' <?php if(!isset($check)){echo "checked='checked'";}?> <?php if(isset($check) && $check['bottom'] == 'N'){echo "checked='checked'"; }?>  class="mgr mgr-primary mgr-lg" ><span>无划痕</span>
+	            </label>
+            </li>	
+            </ul>
+        	</div>
+        	<div class="bottom">
+        		<textarea class="check-content" name="appearance_desc" placeholder="请输入外感检测说明">{:isset($check) ? $check['appearance_desc'] :  ''}</textarea>
+        	</div>
+        </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">功能检测</label>
+        <div class="col-sm-7">
+           <div class="right-border" style="padding: 17px 10px">
+       	    <table class="table table-hover table-bordered table-condensed"> 
+		        <tbody>
+		        	<tr>
+		        		<td width="14%" >根节点</td>
+		        		<td width="14%" ></td>
+		        		<td width="25%" ></td>
+		        		<td width="25%" >状态</td>
+		        		<td width="30%" >
+		        			<span class="add-point first_add"><a href="javascript:void(0)">添加节点</a></span>
+		        			<span class="del-point dis-btn">删除节点</span>
+		        		</td>
+		        	</tr>
+<?php if(isset($fun_check)){?>
+	<?php $first_num = 100;?>
+	{foreach $fun_check as $key => $values}
+	<tr>
+		<td width="14%" ></td>
+		<td width="14%" >
+			<input type="text" name="fun_name[{$first_num}][name]" value="{$key}" class="form-control" placeholder="节点名称">
+
+		</td>
+		<td width="25%" ></td>
+		<td width="25%" ></td>
+		<td width="30%" >
+			<span class="add-point sec_add" first_num="{$first_num}"><a href="javascript:void(0)">添加节点</a></span>
+			<span class="del-point"><a href="javascript:void(0)">删除节点</a></span>
+		</td>
+	</tr>
+	<?php $sec_num = 1000;?>
+	{foreach $values as $k => $v}
+		<tr>
+			<td width="14%" ></td>
+			<td width="14%" ></td>
+			<td width="25%" >
+				<input type="text" name="fun_name[{$first_num}][{$sec_num}]" value="{$k}" class="form-control" placeholder="节点名称">
+			</td>
+			<td width="25%" >
+				<select class="form-control"  name="fun_type[{$first_num}][{$sec_num}]">
+					<option value="1" <?php if($v == 1){echo "selected='selected'";}?>>合格</option>
+					<option value="2" <?php if($v == 2){echo "selected='selected'";}?>>不合格</option>
+				</select>
+			</td>
+			<td width="30%" >
+				<span class="add-point dis-btn">添加节点</span>
+				<span class="del-point del_btn"><a href="javascript:void(0)">删除节点</a></span>
+			</td>
+		</tr>
+	<?php $sec_num ++ ; ?>
+	{/foreach}
+<?php $first_num ++ ; ?>
+{/foreach}
+<?php }?>
+		        	<!-- <tr>
+		        		<td width="14%" ></td>
+		        		<td width="14%" ><input type="text" name="check_name" class="form-control" placeholder="节点名称"></td>
+		        		<td width="25%" ></td>
+		        		<td width="25%" ></td>
+		        		<td width="30%" >
+		        			<span class="add-point sec_add"><a href="javascript:void(0)">添加节点</a></span>
+		        			<span class="del-point"><a href="javascript:void(0)">删除节点</a></span>
+		        		</td>
+		        	</tr>
+		        	<tr>
+		        		<td width="14%" ></td>
+		        		<td width="14%" ></td>
+		        		<td width="25%" >
+		        			<input type="text" name="check_name" class="form-control" placeholder="节点名称">
+		        		</td>
+		        		<td width="25%" >
+		        			<select class="form-control"  name="type">
+								<option value="1">合格</option>
+								<option value="2">不合格</option>
+				            </select>
+		        		</td>
+		        		<td width="30%" >
+		        			<span class="add-point dis-btn">添加节点</span>
+		        			<span class="del-point"><a href="javascript:void(0)">删除节点</a></span>
+		        		</td>
+		        	</tr> -->
+		        </tbody>
+    		</table>
+           </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-4 control-label"></label>
+        <div class="col-sm-3">
+            <button type="submit" id="sub_btn" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+	$(function(){
+		var num = 0;
+		$('table .first_add').on('click',function(){
+			var tr = '';
+			tr +='<tr>'+
+        		'<td width="14%" ></td>'+
+        		'<td width="14%" ><input type="text" name="fun_name['+num+'][name]" class="form-control" placeholder="节点名称"></td>'+
+        		'<td width="25%" ></td>'+
+        		'<td width="25%" ></td>'+
+        		'<td width="30%" >'+
+    			'<span class="add-point sec_add" first_num ='+num+'><a href="javascript:void(0)">添加节点</a></span>'+
+    			'<span class="del-point del_btn"><a href="javascript:void(0)">删除节点</a></span>'+
+        		'</td>'+
+        		'</tr>';
+			$('tbody').append(tr);
+			num ++;
+		})
+
+		var click_num = 0;
+		$('table').on('click','.sec_add',function(){
+			var parent_num = $(this).attr('first_num');
+			var tr = '';
+			$(this).siblings('span').removeClass('del_btn');
+			tr +='<tr>'+
+        		'<td width="14%" ></td>'+
+        		'<td width="14%" ></td>'+
+        		'<td width="25%" >'+
+    			'<input type="text" name="fun_name['+parent_num+']['+click_num+']" class="form-control" placeholder="节点名称33">'+
+        		'</td>'+
+        		'<td width="25%" >'+
+    			'<select class="form-control"  name="fun_type['+parent_num+']['+click_num+']">'+
+				'<option value="1">合格</option>'+
+				'<option value="2">不合格</option>'+
+	            '</select>'+
+        		'</td>'+
+        		'<td width="30%" >'+
+    			'<span class="add-point dis-btn">添加节点</span>'+
+    			'<span class="del-point del_btn"><a href="javascript:void(0)">删除节点</a></span>'+
+        		'</td>'+
+        		'</tr>';
+			$(this).closest('tr').after(tr);
+			click_num ++;
+		})
+
+		$('table').on('click','.del_btn',function(){
+			$(this).closest('tr').remove();
+		})
+
+        $('#checker_photo').imgUpload({
+            // width:150,//预览宽度
+            // height:150,//预览高度
+            maxSize: 500,//允许上传最大值(KB)
+            imgWidth:120,//图片上传宽度
+            imgHeight:120,//图片上传高度
+            allowedNum:1,//允许上传最大数量
+            files:{
+                1:'{getImg}',
+            }
+        })
+        $('#edit_photo').imgUpload({
+            // width:150,//预览宽度
+            // height:150,//预览高度
+            maxSize: 500,//允许上传最大值(KB)
+            imgWidth:120,//图片上传宽度
+            imgHeight:120,//图片上传高度
+            allowedNum:1,//允许上传最大数量
+            files:{
+                1:'{getImg}',
+            }
+        })
+
+	})
+</script>

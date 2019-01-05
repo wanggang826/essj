@@ -1,0 +1,27 @@
+---------------------------------------------------------------
+[ 2017-09-28T09:19:44+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ error ] [8]未定义变量: model[D:\phpStudy\WWW\ershoushouji\runtime\temp\6bec30beee1e09948ca9fb9fd440ddf2.php:11]
+---------------------------------------------------------------
+[ 2017-09-28T09:27:47+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ error ] [2]Illegal string offset 'model_id'[D:\phpStudy\WWW\ershoushouji\runtime\temp\6bec30beee1e09948ca9fb9fd440ddf2.php:11]
+---------------------------------------------------------------
+[ 2017-09-28T09:30:58+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ error ] [2]Illegal string offset 'brand_id'[D:\phpStudy\WWW\ershoushouji\runtime\temp\6bec30beee1e09948ca9fb9fd440ddf2.php:11]
+---------------------------------------------------------------
+[ 2017-09-28T09:39:33+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/add.shtml
+[ error ] [2]Illegal string offset 'brand_id'[D:\phpStudy\WWW\ershoushouji\runtime\temp\6bec30beee1e09948ca9fb9fd440ddf2.php:11]
+---------------------------------------------------------------
+[ 2017-09-28T10:40:57+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/edit/goods_id/1/page/1.shtml
+[ error ] [8]未定义变量: model[D:\phpStudy\WWW\ershoushouji\runtime\temp\20fd75c18906c45e5bb7085549b4f9ce.php:11]
+---------------------------------------------------------------
+[ 2017-09-28T10:58:28+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]
+---------------------------------------------------------------
+[ 2017-09-28T10:59:06+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]
+---------------------------------------------------------------
+[ 2017-09-28T10:59:58+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]
+---------------------------------------------------------------
+[ 2017-09-28T11:03:39+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]

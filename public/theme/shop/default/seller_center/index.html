@@ -1,0 +1,115 @@
+
+<link rel="stylesheet" href="{$css}/usernew.css">
+<link rel="stylesheet" href="{$static}icon/iconfont.css">
+<div class="h_concent">
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+      <div class="sellercont">
+            <div class="sellerconts">
+                <img src="{$upload}{$shop_info.shop_logo}" alt="" class="sellercontsimg">
+                <div class="sellercontsleft">
+                     <p>店铺名称：<span>{$shop_info.shop_name}</span></p>
+                    <p><a href="{:U('SellerCenter/basic_settings',['shop_id'=>$shop_info['shop_id']])}"  class="sellercontsleftonea">店铺设置</a>|<a href="{:U('SellerCenter/basic_settings',['shop_id'=>$shop_info['shop_id']])}" class="sellercontslefttwoa">查看店铺</a></p>
+                    <p>我的账号：<span>{$shop_info.account}</span></p>
+                </div>
+            </div>
+            <div class="sellerconts">
+                <h2>我的余额：<span>{$shop_info.money}</span></h2>
+                <div class="sellercontsright">
+                    <a href="{:U('SellerCenter/cash')}">提现 </a>
+                    |<a href="">交易记录</a>|
+                    <a href="">绑定银行卡</a>
+                </div>
+            </div>
+      </div>
+        <div class="sellerconttwo">
+            <div class="sellerconttwos">
+                <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">订单处理</div></div>
+                   <div class="sellerconttwoson">
+                       <div class="sellerconttwosonleft">
+                           <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">待付款订单：</span><span class="sellerconttwosonspans">{$recycle.money}</span></p>
+                           <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">待发货订单：</span><span class="sellerconttwosonspans">{$recycle.delivery}</span></p>
+                       </div>
+                    <div class="sellerconttwosonright">
+                        <p class="sellerconttwosonrightsons"><span class="sellerconttwosonrightsonspan">待评价订单：</span><span class="sellerconttwosonrightsonspans">{$recycle.evaluation}</span></p>
+                        <p class="sellerconttwosonrightsons"><span class="sellerconttwosonrightsonspan">退款待处理订单：</span><span class="sellerconttwosonrightsonspans">{$recycle.reimburse}</span></p>
+                    </div>
+                   </div>
+            </div>
+            <div class="sellerconttwos">
+                <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">今日必读</div><a href="" class="right_nav_hen_henhmore">更多</a></div>
+                   <div class="sellerconttwostab">
+                      <ul class="sellerconttwostabul"><li class="sellerconttwostaboxborder">商城公告</li><li>商城规则</li></ul>
+                      <div class="sellerconttwostabox">
+                           <div class="sellerconttwostabox1 sellerconttwostaboxblock">
+                               {volist name="article['notice']" id="notices"}
+                               <p><a href="{:U('Index/article_detail',['article_id'=>$notices['article_id']])}" class="sellerconttwostabox1span">{$notices.article_title}</a><span class="sellerconttwostabox1time">{$notices.create_time}</span></p>
+                               {/volist}
+                           </div>
+                           <div class="sellerconttwostabox1">
+                               {volist name="article['rules']" id="ruless"}
+                               <p><a href="{:U('Index/article_detail',['article_id'=>$ruless['article_id']])}" class="sellerconttwostabox1span">{$ruless.article_title}</a><span class="sellerconttwostabox1time">{$ruless.create_time}</span></p>
+                               {/volist}
+                           </div>
+                      </div>
+                   </div>
+            </div>
+        </div>
+        <div class="sellerconttwo">
+            <div class="sellerconttwos">
+                <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">店铺数据</div><span class="right_nav_hen_henhmorespan">本月</span></div>
+                <div class="sellerconttwoson">
+                    <div class="sellerconttwosonleft">
+                        <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">下单金额：</span><span class="sellerconttwosonspans">{$order_order.money}</span></p>
+                        <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">退款数量：</span><span class="sellerconttwosonspans">{$order_order.t_money_num}</span></p>
+                        <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">中评数量：</span><span class="sellerconttwosonspans">{$shop_comment.good}</span></p>
+                        <p class="sellerconttwosonleftsons"><span class="sellerconttwosonspan">差评数量：</span><span class="sellerconttwosonspans">{$shop_comment.poor}</span></p>
+                    </div>
+                    <div class="sellerconttwosonright">
+                        <p class="sellerconttwosonrightsons"><span class="sellerconttwosonrightsonspan">下单买家数量：</span><span class="sellerconttwosonrightsonspans">{$order_order.user_num}</span></p>
+                        <p class="sellerconttwosonrightsons"><span class="sellerconttwosonrightsonspan">订单数量：</span><span class="sellerconttwosonrightsonspans">{$order_order.order_num}</span></p>
+                        <p class="sellerconttwosonrightsons"><span class="sellerconttwosonrightsonspan">好评数量：</span><span class="sellerconttwosonrightsonspans">{$shop_comment.optimal}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="sellerconttwos">
+                <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">商家学习</div><a href="" class="right_nav_hen_henhmore">更多</a></div>
+                {volist name="article['learning']" id="learnings"}
+                    <div class="sellerconttwostabdiv clearfloat">
+                         <img src="{$upload}{$learnings.image}" alt="" class="sellerconttwostabdivimg">
+                         <div class="sellerconttwostabdivone">
+                             <a href="{:U('Index/article_detail',['article_id'=>$learnings['article_id']])}" class="sellerconttwostabdivonebiao">{$learnings.article_title}</a>
+                               <div class="sellerconttwostabdivtwo clearfloat">
+                                   <p class="sellerconttwostabdivtwoone"><img src="{$img}/sssyan.png" alt="">{$learnings.hits}</p>
+                                   <p class="sellerconttwostabdivtwotwo">{$learnings.create_time}</p>
+                               </div>
+                         </div>
+                    </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //侧边栏
+    $('.h_sidebar li').click(function(){
+        $(this).find('a').parent().parent().parent().find('a').removeClass('sidebar_red')
+        $(this).parent().parent().find('li').removeClass('sidebar_lired');
+        $(this).find('a').addClass('sidebar_red');
+        $(this).addClass('sidebar_lired');
+    });
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis");
+        $(this).children(".hei").addClass("adddis");
+    });
+//    今日必读选项卡
+    $(".sellerconttwostabul li").click(function () {
+         var a = $(this).index();
+        $(this).addClass("sellerconttwostaboxborder").siblings().removeClass("sellerconttwostaboxborder");
+        $(".sellerconttwostabox1").eq(a).addClass("sellerconttwostaboxblock").siblings().removeClass("sellerconttwostaboxblock");
+    })
+</script>

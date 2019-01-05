@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2017-09-30T09:26:02+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]
+---------------------------------------------------------------
+[ 2017-09-30T09:26:12+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/add.shtml
+[ error ] [0]类的属性不存在:app\common\model\Goods->goods_id[D:\phpStudy\WWW\ershoushouji\frame\library\think\Model.php:548]

@@ -1,0 +1,4 @@
+{if condition="isset($adv['CAROUSEL_FIGURE_BOTTOM'])"}
+{~$vo = $adv['CAROUSEL_FIGURE_BOTTOM']['0']}
+    <a href="{$vo.adv_url}" class='adv_click_num' data-id='{$vo.adv_id}' data-url="{:U('AdvPos/adv_click_num')}"><img src="{$vo.adv_img|getImg}" alt="轮播下方广告位carousel_figure_buttom"/></a>
+{/if}

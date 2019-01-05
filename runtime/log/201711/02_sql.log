@@ -1,0 +1,16 @@
+---------------------------------------------------------------
+[ 2017-11-02T17:53:27+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/ailpay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.020001s ]
+---------------------------------------------------------------
+[ 2017-11-02T17:53:39+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=ershoushouji;host=192.168.124.222;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_config` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_config` WHERE `ui_config`.`delete_time` IS NULL [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_city` WHERE  `pid` <> 0 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ui_pay_config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `ui_pay_config` WHERE (  `pay_mark` = 'alipay' ) AND `ui_pay_config`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002000s ]

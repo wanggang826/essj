@@ -1,0 +1,45 @@
+<div class="paddng">
+    <p class="towp">品牌:</p>
+    <p class="rightp" onclick="getGoods(this,'brands','0')">不限</p>
+    <div class="pagleft">
+        {volist name='cate_brands' id='vo'}
+        <p class="rightp" data-id='{$vo.brand_id}' onclick="getGoods(this,'brands')">{$vo.brand_name}</p>
+        {/volist}
+    </div>
+</div>
+{volist name='cate_attr' id='vo'}
+{if condition='$key lt 3'}
+<div class="paddng">
+    <p class="towp">{$vo.attr_name}:</p>
+    <p class="rightp" data-id='{$vo.attr_id}' data-val='不限' onclick="getGoods(this,'attr')">不限</p>
+    <div class="pagleft">
+        {volist name='vo.value' id='v'}
+        <p class="rightp" data-id='{$vo.attr_id}' data-val='{$v.value}'  onclick="getGoods(this,'attr')">{$v.value}</p>
+        {/volist}
+    </div>
+</div>
+{/if}
+{/volist}
+    <div class="mag-top3">
+        <p class="towp d_magin">高级选项:</p>
+        {volist name='cate_attr' id='vo'}
+        {if condition='$key gt 2'}
+        <p class="d_table">{$vo.attr_name}<i class="icon i-shouqi"></i></p>
+        {/if}
+        {/volist}
+    </div>
+
+<div class="season1">
+    {volist name='cate_attr' id='vo'}
+    {if condition='$key gt 2'}
+    <div class="season">
+        <span class="firstmagin" data-id='{$vo.attr_id}' data-val='不限' onclick="getGoods(this,'attr')">不限</span>
+            {volist name='vo.value' id='v'}
+            <span data-id='{$vo.attr_id}' data-val='{$v.value}'  onclick="getGoods(this,'attr')">{$v.value}</span>
+            {/volist}
+    </div>
+    {/if}
+    {/volist}
+</div>
+
+

@@ -1,0 +1,5 @@
+<div class="backg"><a href="{if condition='isset($adv.INDEX_TOP_BG)'}{$adv.INDEX_TOP_BG.0.adv_url}{/if}"></a></div>
+
+<script type="text/javascript">
+    $('.backg a').css({'background':'url({if condition="isset($adv.INDEX_TOP_BG)"}{$upload}{$adv.INDEX_TOP_BG.0.adv_img}{/if}) no-repeat 50%'});
+</script>

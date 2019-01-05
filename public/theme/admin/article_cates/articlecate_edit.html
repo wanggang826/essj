@@ -1,0 +1,41 @@
+<form class="form-horizontal js-ajax-form clearfix" action="{:U('ArticleCates/articleCate_edit',['cate_id'=>input('cate_id')])}" method='post' enctype=multipart/form-data>
+    <!-- 自定义大小 -->
+    <div class="form-group">
+        <label for="cate_id" class="col-sm-2 control-label">文章类别</label>
+        <div class="col-sm-4">
+            <select class="i-select form-control" name="pid" id="cate_id">
+                <option value="0" {if condition = "$articleCate_info.pid eq 0"}selected{/if} >顶级菜单</option>
+                {volist name="articleCates" id="vo"}
+                    <option value="{$vo.cate_id}" {if condition = "$articleCate_info.pid eq $vo.cate_id"}selected{/if}>{$vo.cate_name}</option>
+                {/volist}
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cate_name" class="col-sm-2 control-label">分类名称</label>
+        <div class="col-sm-4">
+            <input type="text" name="cate_name" class="form-control"  value="{$articleCate_info.cate_name}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">分类类型</label>
+        <div class="col-sm-4">
+            <label class="i-lab">
+                <input type="radio" name="cate_type" value='0' class="mgr mgr-primary mgr-lg" {if condition = "$articleCate_info.cate_type eq 0"}checked{/if}><span>系统</span>
+            </label>
+            <label class="i-lab">
+                <input type="radio" name="cate_type" value='1' class="mgr mgr-primary mgr-lg" disabled {if condition = "$articleCate_info.cate_type eq 1"}checked{/if}><span>普通</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-info js-submit-btn mr_3px">确认</button>
+            <button type="reset" class="btn btn-info">重置</button>
+        </div>
+    </div>
+</form>

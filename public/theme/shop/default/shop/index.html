@@ -1,0 +1,26 @@
+
+<link rel="stylesheet" href="{$css}/dianpu.css" />
+
+<form action="" method="post">
+    {include file="default/shop/shop_nav"}
+</form>
+<div class="container mag-top2 ">
+    <div class="row border">
+        <div class="col-sm-2 d_padi bor-botom">
+           {include file="default/shop/shop_cate"}
+        </div>
+        <div class="col-sm-10 d_padi d_ovflow ">
+            <div class="col7 ">
+            {include file="default/shop/sort_bar"}
+                <div class="d_count">
+                    <div class="magin0">
+                    {include file="default/shop/good_list"}
+                    </div>
+                    {include file="default/layout/page"}
+            </div>
+        </div>
+    </div>
+        {include file="default/adv_pos/shop_index_bottom"}
+</div>
+
+<script src="{$js}/myjs.js" type="text/javascript" charset="utf-8"></script>

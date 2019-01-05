@@ -1,0 +1,70 @@
+---------------------------------------------------------------
+[ 2017-11-02T17:53:27+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/ailpay
+[ info ] 127.0.0.4/mobile/pay/ailpay [运行时间：0.677039s][吞吐率：1.48req/s] [内存消耗：6,331.45kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mobile',
+    1 => 'pay',
+    2 => 'ailpay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'mobile',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'user',
+  'type' => '',
+  'auto_start' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-02T17:53:39+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ info ] 127.0.0.4/mobile/pay/alipay [运行时间：0.408024s][吞吐率：2.45req/s] [内存消耗：5,379.23kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mobile',
+    1 => 'pay',
+    2 => 'alipay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=d2l17iov4r80q4e00vnveo4mi6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'mobile',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'user',
+  'type' => '',
+  'auto_start' => false,
+)
+[ info ] [ RUN ] app\mobile\controller\Pay->alipay[ D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php ]
+[ info ] [ LOG ] INIT File

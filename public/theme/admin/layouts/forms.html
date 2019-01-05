@@ -1,0 +1,109 @@
+
+
+
+<link href="{$web_static}/plugins/citypicker/css/city-picker.css" rel="stylesheet">
+
+<script src="{$web_static}/cache/city.cache.js"></script>
+<script src="{$web_static}/plugins/citypicker/js/city-picker.js"></script>
+
+<form class="form-horizontal js-ajax-form clearfix" action='{:U('index/main')}'>
+    <!-- 自定义大小 -->
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">选择城市</label>
+        <div class="col-sm-6">
+            <input  class="form-control" readonly type="text" value="" data-toggle="city-picker" name='citys'>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-8">
+            <p class="form-control-static">email@example.com</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-3">
+            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="date1" class="col-sm-2 control-label">时间</label>
+        <div class="col-sm-3">
+            <input type="text" name="datetime" istime="true" class="form-control i-date" id="date1" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="date2" class="col-sm-2 control-label">日期</label>
+        <div class="col-sm-3">
+            <input type="text" name="date" class="form-control i-date" id="date2">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="date3" class="col-sm-2 control-label">日期</label>
+        <div class="col-sm-6 form-inline ">
+            <input type="text" name="datestart" class="form-control i-datestart" id="date3" placeholder="开始日期"> 至
+            <input type="text" name="dateend" class="form-control i-dateend" placeholder="结束日期">
+        </div>
+    </div>
+
+    <div class="form-group has-success has-feedback">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-6">
+            <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="select-tree" class="col-sm-2 control-label">请选择</label>
+        <div class="col-sm-6 ">
+            {$select}
+        </div>
+    </div>
+
+<div>
+    <label class="i-lab"><input type="checkbox" name="icheck" value="1" class="mgc"><span>默认</span></label>
+    <label class="i-lab"><input type="checkbox" name="icheck" value="1" class="mgc mgc-success"><span>success(同bootstrap)</span></label>
+    <label class="i-lab"><input type="checkbox" name="icheck" value="1" class="mgc mgc-primary" checked=""><span>选中</span></label>
+    <label class="i-lab"><input type="checkbox" name="icheck" value="1" class="mgc" disabled=""><span>不可用</span></label>
+    <label class="i-lab"><input type="checkbox" name="icheck" value="1" class="mgc" disabled="" checked=""><span>选中不可用</span></label>
+</div>
+
+<div>
+    <label class="i-lab"><input type="radio" name="sex" value='1' class="mgr"><span>默认</span></label>
+    <label class="i-lab"><input type="radio" name="sex" value='2' class="mgr mgr-success"><span>success(同bootstrap)</span></label>
+    <label class="i-lab"><input type="radio" name="sex" value='1' class="mgr mgr-primary" checked=""><span>选中</span></label>
+    <label class="i-lab"><input type="radio" name="sex1" value='2' class="mgr" disabled=""><span>不可用</span></label>
+    <label class="i-lab"><input type="radio" name="sex1" value='2' class="mgr" checked="" disabled=""><span>选中不可用</span></label>
+</div>
+
+
+<hr>
+<!-- 按钮左对齐 -->
+    <button type="submit" class="btn btn-danger js-submit-btn">提交(页面左)</button>
+<!-- 按钮右对齐 -->
+    <button type="submit" class="btn btn-primary pull-right js-submit-btn">提交(页面右)</button>
+<!-- 按钮页面居中 -->
+    <button type="submit" class="btn btn-primary center-block js-submit-btn">提交(页面中)</button>
+
+
+<hr>
+<!-- 按钮对齐到表单 -->
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary js-submit-btn">提交(表单左)</button>
+            <button type="submit" class="btn btn-primary pull-right js-submit-btn">提交(表单右)</button>
+            <button type="submit" class="btn btn-primary center-block js-submit-btn">提交(表单中)</button>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>

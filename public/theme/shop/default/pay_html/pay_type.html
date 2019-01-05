@@ -1,0 +1,58 @@
+{volist name="pay_type" id="type"}
+    <label class="pay">
+        <img class="wlog" src="" alt="" />
+        <p>{$type.pay_name}</p>
+        <input type="radio" name="paytype" id="pay_type" value="{$type.pay_mark}">
+    </label>
+{/volist}
+
+
+
+<!--<label class="pay">
+    <img class="wlog" src="" alt="" />
+    <p>微信支付</p>
+    <input type="radio" name="paytype" value="weipay">
+</label>
+
+<label class="pay">
+    <img class="wlog" class="maleft" src="" alt="" />
+    <p>支付宝支付</p>
+    <input type="radio" name="paytype" value="alipay" checked>
+</label>-->
+
+
+<style type="text/css">
+    label.pay{
+        font-weight: normal;
+    }
+    label.pay input[name='paytype']{
+        display: none;
+    }
+    label.pay p{
+        padding: 5px 15px;
+    }
+</style>
+<script type="text/javascript">
+    $('.pay').append('<img class="triangle" src="{$img}/sanjiaos_03.png" alt="" />');
+    $(".triangle").hide();
+    if ($('.pay input[name="paytype"]:checked').length>0) {
+        $p = $('.pay input[name="paytype"]:checked').parents('.pay');
+        $p.addClass("redob")
+        $p.find('.triangle').show()
+    } else {
+        $(".pay").eq(0).addClass("redob");
+        $(".triangle").eq(0).show();
+        $('.pay input[name="paytype"]').eq(0).attr('checked',true);
+    }
+    $(".pay").click(function() {
+        $(".triangle").hide();
+        $('.pay').removeClass("redob");
+        $(this).addClass("redob");
+        $(this).children(".triangle").show();
+
+    });
+    $(document).ready(function(){
+
+
+    })
+</script>

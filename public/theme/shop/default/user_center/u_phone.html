@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机验证</title>
+    <link rel="stylesheet" href="{$css}/usernew.css">
+</head>
+<body>
+
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>设置 ></p>
+        <p>修改手机号</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/user_center/side_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt">
+        <div class="right_nav">修改手机号</div>
+        <div class="indent_rirgt_zhang">
+            <div class="indent_rirgt_pass">
+                <div class="indent_rirgt_passcont">手机号码</div>
+                <input type="text" class="indent_rirgt_passcontsinput">
+            </div>
+            <div class="indent_rirgt_pass">
+                <div class="indent_rirgt_passcont">验证码</div>
+                <input type="text" class="indent_rirgt_passcontrevise">
+                <input type="button"  id="btn" class="but phonecap" value="获取验证码" />
+            </div>
+
+            <div class="indent_rirgt_pass">
+                <input type="button" value="保存" class="indent_rirgt_baocun">
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+<script>
+    var wait=60;
+    function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");
+            o.value="获取验证码";
+            wait = 60;
+            document.getElementById("btn").style.background = "#ED145B";
+        } else {
+            document.getElementById("btn").style.background = "#EAEAEA";
+            o.setAttribute("disabled", true);
+            o.value=wait+"秒后可以重新发送";
+            wait--;
+
+            setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+        }
+    }
+    document.getElementById("btn").onclick=function(){time(this);
+    }
+
+</script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+    //侧边栏
+    $('.h_sidebar li').click(function(){
+        $(this).find('a').parent().parent().parent().find('a').removeClass('sidebar_red')
+        $(this).parent().parent().find('li').removeClass('sidebar_lired');
+        $(this).find('a').addClass('sidebar_red');
+        $(this).addClass('sidebar_lired');
+    });
+
+
+
+    $(".hui").click(function () {
+        $(".hei").removeClass("adddis")
+        $(this).children(".hei").addClass("adddis")
+
+    })
+
+</script>
+
+</html>

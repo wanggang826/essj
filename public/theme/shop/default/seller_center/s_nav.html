@@ -1,0 +1,131 @@
+
+<link rel="stylesheet" href="{$css}/usernew.css">
+<link rel="stylesheet" href="{$web_static}icon/iconfont.css">
+
+
+<div class="h_concent">
+    <div class="position">
+        <p>您的位置：</p>
+        <a href="">首页 ></a>
+        <p>卖家中心 ></p>
+        <p>分类菜单设置</p>
+    </div>
+    <div class="indent_fl">
+        <div class="h_sidebar">
+            {include file="default/seller_center/seller_bar"}
+        </div>
+    </div>
+    <div class="indent_rirgt_basic">
+        <div class="right_nav_basic"><span class="right_nav_hen"></span><div class="right_nav_hen_henh">分类菜单设置</div><span class="right_nav_basic_goodsspans"> :  该功能为店铺中的菜单分类,方便于用户进入店铺后可以根据不同的菜单类型查找对应的商品信息!最多可设置7个菜单</span></div>
+        <div class="right_nav_basic_menu">
+            <button class="right_nav_basic_menubutton"><img src="{$img}/cetegory.png" alt="">新增菜单</button>
+            <div class="right_nav_basic_menus">
+                <div class="right_nav_basic_menuss">
+                    {volist name="tree" id="vo"}
+                    {if condition="$vo.pid eq 0"}
+                    <div class="right_nav_basic_menusson">
+                        <input type="text" name="name" class="right_nav_basic_menussonspan" value="{$vo.name}" mid="{$vo.id}" />
+                        <button class="right_nav_basic_menussonbutton">新增子菜单</button>
+                        <span  class="right_nav_basic_menussona">编辑</span>
+                        <button class="right_nav_basic_menussonbuttontwo" mid="{$vo.id}" pid="{$vo.pid}">删除</button>
+                    </div>
+                    {else/}
+                    <div class="right_nav_basic_menusson">
+                        <input type="text" name="name" class="right_nav_basic_menussonspaner" value="{$vo.name}" mid="{$vo.id}"/>
+                        <span  class="right_nav_basic_menussona">编辑</span>
+                        <button class="right_nav_basic_menussonbuttontwos" mid="{$vo.id}">删除</button>
+                    </div>
+                    {/if}
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+//增加爹菜单
+
+    $(".right_nav_basic_menubutton").click(function () {
+//        $('<div class="right_nav_basic_menuss"><div class="right_nav_basic_menusson"><input class="right_nav_basic_menussonspan" value="请更新菜单名称"><button class="right_nav_basic_menussonbutton">新增子菜单</button> <span href="" class="right_nav_basic_menussona">编辑</span><button class="right_nav_basic_menussonbuttontwo">删除</button> </div> </div>').appendTo(".right_nav_basic_menus")
+        var pid = 0;
+        var name = '请更新菜单名称';
+        addShopMenu(pid,name);
+    });
+
+    $(".right_nav_basic_menussonbutton").click(function () {
+//        $(this).parents(".right_nav_basic_menuss").children('input').append(' <div class="right_nav_basic_menusson"><input class="right_nav_basic_menussonspaner" value="请更新菜单名称"><span href="" class="right_nav_basic_menussona">编辑</span><button class="right_nav_basic_menussonbuttontwos" >删除</button></div>')
+        var pid = $(this).parent(".right_nav_basic_menusson").children(".right_nav_basic_menussonspan").attr('mid');
+        var name = '请更新菜单名称';
+        addShopMenu(pid,name);
+    })
+//   删除爹菜单
+    $(document).on('click','.right_nav_basic_menussonbuttontwo',function(){
+        var id = $(this).attr('mid');
+        layer.alert("是否确定要删除？",{title:'提示信息',closeBtn: 1,icon:7},function () {
+            delShopMenu(id);
+            layer.closeAll();
+        })
+    });
+ //   删除子菜单
+    $(document).on('click','.right_nav_basic_menussonbuttontwos',function(){
+        var id = $(this).attr('mid');
+        layer.alert("是否确定要删除？",{title:'提示信息',closeBtn: 1,icon:7},function () {
+            delShopMenu(id);
+            layer.closeAll();
+        });
+//        $(this).parent(".right_nav_basic_menusson").remove();
+    });
+
+    $(document).on('click','.right_nav_basic_menussona',function(){
+        $(this).parent(".right_nav_basic_menusson").children("input").focus();
+    });
+//  ajax处理数据
+    function addShopMenu(pid,name) {
+        $.ajax({
+            url: '{:U("s_nav")}',
+            type: "post",
+            data:{"pid":pid,"name":name},
+            success: function (res){
+                if(res){
+                    console.log(res);
+                    layer.msg(res,{time:2000,shade:0.2});
+                    setTimeout(function () {
+                        window.location.href ='';
+                    },2000)
+                }else {
+                    window.location.href ='';
+                }
+            }
+        })
+    }
+
+    function delShopMenu(id) {
+        $.ajax({
+            url: '{:U("del_nav")}',
+            type: "post",
+            data:{"id":id},
+            success: function (res){
+                window.location.href ='';
+            }
+        })
+    }
+
+    $("input[type='text']").change(function(){
+        var value    =$(this).val();
+        var id  =$(this).attr('mid');
+        $.ajax({
+            url:"{:U('edit_nav')}",
+            data:{name:value,id:id},
+            type:"post",
+            dataType:"json",
+            beforeSend:function(){
+                layer.load(2,{shade:0.2});
+            },
+            complete:function(){
+                layer.closeAll();
+                layer.msg('已经修改',{time:1000,shade:0.2});
+            }
+        })
+    })
+</script>

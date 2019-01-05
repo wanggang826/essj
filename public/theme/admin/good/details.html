@@ -1,0 +1,67 @@
+<form class="form-horizontal js-ajax-form clearfix">
+    <!-- 自定义大小 -->
+    <h1>后续链接到前台商品详情</h1>
+    <div class="form-group">
+        <label for="account" class="col-sm-2 control-label">商品名称：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.goods_name}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品编号：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.goods_sn}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品单位：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.goods_unit}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品品牌：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.brand_id}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品库存：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.inventory}{$goods_info.goods_unit}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品价格：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.shop_price}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">推荐描述：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static">{$goods_info.recom_desc}</p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品封面：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static"><img src="{$web_static}img/default.jpg"></p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">其它图片：</label>
+        <div class="col-sm-4">
+            <p class="form-control-static"><img src="{$web_static}img/default.jpg"><img src="{$web_static}img/default.jpg"><img src="{$web_static}img/default.jpg"><img src="{$web_static}img/default.jpg"><img src="{$web_static}img/default.jpg"></p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">商品属性：</label>
+        <div class="col-sm-4">
+        {volist name="attrs" id="vo"}
+            <p class="form-control-static">{$vo.attr_name}:{$vo.value}</p>
+        {/volist}
+        </div>
+    </div>
+
+</form>

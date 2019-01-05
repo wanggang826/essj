@@ -1,0 +1,21 @@
+---------------------------------------------------------------
+[ 2017-09-27T17:59:09+08:00 ] 127.0.0.4 127.0.0.1 GET /admin/good/set_model_brand/brand_id/30/page/1.shtml
+[ error ] [8]未定义变量: brand_id[D:\phpStudy\WWW\ershoushouji\runtime\temp\5b896801a32eb245c00c3fe4c2cd235a.php:11]
+---------------------------------------------------------------
+[ 2017-09-27T18:09:59+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]variable type error：array[D:\phpStudy\WWW\ershoushouji\frame\library\think\Request.php:1125]
+---------------------------------------------------------------
+[ 2017-09-27T18:10:27+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]variable type error：array[D:\phpStudy\WWW\ershoushouji\frame\library\think\Request.php:1125]
+---------------------------------------------------------------
+[ 2017-09-27T18:11:38+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]variable type error：array[D:\phpStudy\WWW\ershoushouji\frame\library\think\Request.php:1125]
+---------------------------------------------------------------
+[ 2017-09-27T18:20:16+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]数据表字段不存在:[name][D:\phpStudy\WWW\ershoushouji\frame\library\think\db\Builder.php:107]
+---------------------------------------------------------------
+[ 2017-09-27T18:20:53+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]类不存在:app\common\model\BrandModel[D:\phpStudy\WWW\ershoushouji\frame\library\think\Loader.php:390]
+---------------------------------------------------------------
+[ 2017-09-27T18:23:01+08:00 ] 127.0.0.4 127.0.0.1 POST /admin/good/set_model_brand.shtml
+[ error ] [0]类不存在:app\common\model\BrandModel[D:\phpStudy\WWW\ershoushouji\frame\library\think\Loader.php:390]

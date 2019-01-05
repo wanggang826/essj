@@ -1,0 +1,110 @@
+---------------------------------------------------------------
+[ 2017-11-06T10:16:50+08:00 ] 127.0.0.4 127.0.0.1 POST /mobile/pay/order_commit_view?user_id=12
+[ info ] 127.0.0.4/mobile/pay/order_commit_view?user_id=12 [运行时间：0.458026s][吞吐率：2.18req/s] [内存消耗：6,341.20kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mobile',
+    1 => 'pay',
+    2 => 'order_commit_view',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'content-length' => '0',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => '127.0.0.4',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/3.0.11-hotfix.2',
+  'postman-token' => '6db75d01-b517-406f-a9df-31fa6e5401b4',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '12',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'mobile',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'user',
+  'type' => '',
+  'auto_start' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-06T10:17:23+08:00 ] 127.0.0.4 127.0.0.1 POST /mobile/Order/order_commit_view?user_id=12
+[ info ] 127.0.0.4/mobile/Order/order_commit_view?user_id=12 [运行时间：0.299017s][吞吐率：3.34req/s] [内存消耗：6,370.82kb] [文件加载：49]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mobile',
+    1 => 'Order',
+    2 => 'order_commit_view',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'content-length' => '0',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=s80t9goa6ags5ffujicdo3gcd7',
+  'host' => '127.0.0.4',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/3.0.11-hotfix.2',
+  'postman-token' => '8f32b0d3-c6f0-43ea-b4b6-ac8ad539542f',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'user_id' => '12',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'mobile',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'user',
+  'type' => '',
+  'auto_start' => false,
+)
+[ info ] [ RUN ] app\mobile\controller\Order->order_commit_view[ D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-06T10:18:05+08:00 ] 127.0.0.4 127.0.0.1 GET /mobile/pay/alipay
+[ info ] 127.0.0.4/mobile/pay/alipay [运行时间：0.291016s][吞吐率：3.44req/s] [内存消耗：6,308.59kb] [文件加载：50]
+[ info ] [ LANG ] D:\phpStudy\WWW\ershoushouji\frame\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'mobile',
+    1 => 'pay',
+    2 => 'alipay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'mobile',
+)
+[ info ] [ SESSION ] INIT array (
+  'prefix' => 'user',
+  'type' => '',
+  'auto_start' => false,
+)
+[ info ] [ RUN ] app\mobile\controller\Pay->alipay[ D:\phpStudy\WWW\ershoushouji\application\mobile\controller\Pay.php ]
+[ info ] [ LOG ] INIT File
